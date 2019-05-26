@@ -3,7 +3,7 @@
     "title": "於Angular中，建立Library的心得",
     "bgImageUrl": "/images/10/10-0.jpg",
     "meta": {
-      "index": 0,
+      "index": 1,
       "fileName": "2019-02-20-CreateLibraryWithAngular.md",
       "section": "/",
       "dirName": "/"
@@ -18,7 +18,7 @@
     "title": "談談JavaScript Module part2",
     "bgImageUrl": "/images/08/08-0.jpg",
     "meta": {
-      "index": 1,
+      "index": 2,
       "fileName": "2018-12-23-ModulePatternPart2.md",
       "section": "/",
       "dirName": "/"
@@ -33,7 +33,7 @@
     "title": "談談JavaScript Module part1",
     "bgImageUrl": "/images/08/08-0.jpg",
     "meta": {
-      "index": 2,
+      "index": 3,
       "fileName": "2018-10-31-ModulePattern.md",
       "section": "/",
       "dirName": "/"
@@ -47,7 +47,7 @@
   {
     "title": "draxt.js-簡化存取檔案的小幫手",
     "meta": {
-      "index": 3,
+      "index": 4,
       "fileName": "2018-09-07-TutorialOfDraxtjs.md",
       "section": "/",
       "dirName": "/"
@@ -62,7 +62,7 @@
     "title": "從範例講解Promise概念",
     "bgImageUrl": "/images/06/06-0.jpg",
     "meta": {
-      "index": 4,
+      "index": 5,
       "fileName": "2018-08-12-ExampleOfPromise.md",
       "section": "/",
       "dirName": "/"
@@ -82,7 +82,7 @@
     "title": "使用Nuxt.js及Nuxtent建立Blog的心得",
     "bgImageUrl": "/images/05/05-0.jpg",
     "meta": {
-      "index": 5,
+      "index": 6,
       "fileName": "2018-06-23-NuxtjsAndNuxtent.md",
       "section": "/",
       "dirName": "/"
@@ -96,7 +96,7 @@
   {
     "title": "使用VSCode偵錯Node.js及Angular的小技巧",
     "meta": {
-      "index": 6,
+      "index": 7,
       "fileName": "2017-12-23-VscodeDebugForNodejsAndnAgular.md",
       "section": "/",
       "dirName": "/"
@@ -110,7 +110,7 @@
   {
     "title": "在asp.net MVC上使用vue.js需注意的事項",
     "meta": {
-      "index": 7,
+      "index": 8,
       "fileName": "2017-10-08-VuejsInAspnetMvc.md",
       "section": "/",
       "dirName": "/"
@@ -124,7 +124,7 @@
   {
     "title": "使用Jekyll建立Blog -1",
     "meta": {
-      "index": 8,
+      "index": 9,
       "fileName": "2017-07-13-BuildBlogWithJekyll.md",
       "section": "/",
       "dirName": "/"
@@ -138,7 +138,7 @@
   {
     "title": "Hello World!",
     "meta": {
-      "index": 9,
+      "index": 10,
       "fileName": "2017-06-20-HelloWorld.md",
       "section": "/",
       "dirName": "/"
