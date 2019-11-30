@@ -1,9 +1,24 @@
 [
   {
+    "title": "SVG與Angular",
+    "bgImageUrl": "/images/13/13-0.jpg",
+    "meta": {
+      "index": 0,
+      "fileName": "2019-11-30-SvgAndAngular.md",
+      "section": "/",
+      "dirName": "/"
+    },
+    "date": "2019-11-30",
+    "path": "/svg-and-angular",
+    "permalink": "/svg-and-angular",
+    "anchors": [],
+    "body": "<p>處理 SVG 已經是前端常常會遇到的事情，現在很多頁面上的圖片都是用 SVG 來取代，而 SVG 的優點這裡就不多述說。這邊提供我處理 SVG 的一些心得。</p>\n<h2>icon 資源</h2>\n<p>想要免費並且可以編輯的 icon 資源，我尋找了很久，最後發現<a href=\"https://iconify.design/\">iconify.design</a>這個網站，它的 GitHub 星星數雖不是很多，但很符合我的需求。</p>\n<img class=\"img-responsive\" src=\"/images/13/13-01.png\">\n<p>例如搜索「search」會出現很多相關的 icon。</p>\n<img class=\"img-responsive\" src=\"/images/13/13-02.png\">\n<p>當選擇所想要的 icon 時，可以使用 HTML 來呈現</p>\n<img class=\"img-responsive\" src=\"/images/13/13-03.png\">\n<p>或是使用原始的 SVG 來呈現也可以，我個人是比較喜歡用原始的 SVG 來呈現，如此可進行一些客制化操作。</p>\n<h2>與 Angular 整合</h2>\n<p>AngularV8.0 之後支援<code>tempalteUrl</code>可以是 SVG，而不用是 HTML。可以參考<a href=\"https://levelup.gitconnected.com/using-svg-files-as-component-templates-with-angular-cli-ea58fe79b6c1\">Using svg files as component templates with Angular CLI</a>。</p>\n<iframe width=\"100%\" height=\"450\" frameborder=\"0\" src=\"https://stackblitz.com/edit/ngx-svg-demo?embed=1&file=src/app/svg-title/svg-title.component.svg\"></iframe>\n<p>如以上的範例，SVG 中可以加上 Angular 語法：<code>&lt;text x=&quot;45&quot; y=&quot;80&quot; fill=&quot;#fff&quot;&gt;{{title}}&lt;/text&gt;</code>，成為動態的 SVG。</p>\n<p>另外也可以註冊事件，使用 Angular 語法：<code>(click)=&quot;resetTitle()&quot;</code>，如同範例，點擊 SVG 的圖型後，文字會重設為 Angular。</p>\n<h2>實現 hover</h2>\n<img class=\"img-responsive\" src=\"/images/13/13-04.gif\">\n<p>有時會需要 hover 時改變 SVG 背景顏色，就像上圖所示。</p>\n<pre class=\"language-html\"><code class=\"language-html\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>svg</span>\n  <span class=\"token attr-name\">xmlns</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>http://www.w3.org/2000/svg<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\"><span class=\"token namespace\">xmlns:</span>xlink</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>http://www.w3.org/1999/xlink<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\">aria-hidden</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>true<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\">focusable</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>false<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\">width</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>3em<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\">height</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>3em<span class=\"token punctuation\">\"</span></span><span class=\"token style-attr language-css\"><span class=\"token attr-name\">\n  <span class=\"token attr-name\">style</span></span><span class=\"token punctuation\">=\"</span><span class=\"token attr-value\"><span class=\"token property\">-ms-transform</span><span class=\"token punctuation\">:</span> <span class=\"token function\">rotate</span><span class=\"token punctuation\">(</span>360deg<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token property\">-webkit-transform</span><span class=\"token punctuation\">:</span> <span class=\"token function\">rotate</span><span class=\"token punctuation\">(</span>360deg<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token property\">transform</span><span class=\"token punctuation\">:</span> <span class=\"token function\">rotate</span><span class=\"token punctuation\">(</span>360deg<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></span><span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\">preserveAspectRatio</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>xMidYMid meet<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token attr-name\">viewBox</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>0 0 24 24<span class=\"token punctuation\">\"</span></span>\n<span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>path</span>\n    <span class=\"token attr-name\">d</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>M4 6h2v2H4zm0 5h2v2H4zm0 5h2v2H4zm16-8V6H8.023v2H18.8zM8 11h12v2H8zm0 5h12v2H8z<span class=\"token punctuation\">\"</span></span>\n    <span class=\"token attr-name\">fill</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>#626262<span class=\"token punctuation\">\"</span></span>\n    <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>icon<span class=\"token punctuation\">\"</span></span>\n  <span class=\"token punctuation\">/></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>svg</span><span class=\"token punctuation\">></span></span>\n</code></pre>\n<pre class=\"language-css\"><code class=\"language-css\"><span class=\"token selector\">.icon:hover</span> <span class=\"token punctuation\">{</span>\n  <span class=\"token property\">fill</span><span class=\"token punctuation\">:</span> #2980b9<span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n</code></pre>\n<p>這時只需要將定義的 class<code>.icon</code>放在 path 上<code>&lt;path class=&quot;icon&quot; /&gt;</code>即可，有試過放在 svg 上不會起作用，並且設定顏色時，需用 svg 的屬性 fill 在行。</p>\n<p>以上這三點是我最近處理 SVG 的心得，分享大家參考看看。</p>\n"
+  },
+  {
     "title": "VSCode Extension的開發心得",
     "bgImageUrl": "/images/12/12-0.jpg",
     "meta": {
-      "index": 0,
+      "index": 1,
       "fileName": "2019-09-01-TutorialOfVscodeExtension.md",
       "section": "/",
       "dirName": "/"
@@ -18,7 +33,7 @@
     "title": "Uppy - 最方便的上傳套件",
     "bgImageUrl": "/images/11/11-0.jpg",
     "meta": {
-      "index": 1,
+      "index": 2,
       "fileName": "2019-06-16-TutorialOfUppy.md",
       "section": "/",
       "dirName": "/"
@@ -33,7 +48,7 @@
     "title": "於Angular中，建立Library的心得",
     "bgImageUrl": "/images/10/10-0.jpg",
     "meta": {
-      "index": 2,
+      "index": 3,
       "fileName": "2019-02-20-CreateLibraryWithAngular.md",
       "section": "/",
       "dirName": "/"
@@ -48,7 +63,7 @@
     "title": "談談JavaScript Module part2",
     "bgImageUrl": "/images/08/08-0.jpg",
     "meta": {
-      "index": 3,
+      "index": 4,
       "fileName": "2018-12-23-ModulePatternPart2.md",
       "section": "/",
       "dirName": "/"
@@ -63,7 +78,7 @@
     "title": "談談JavaScript Module part1",
     "bgImageUrl": "/images/08/08-0.jpg",
     "meta": {
-      "index": 4,
+      "index": 5,
       "fileName": "2018-10-31-ModulePattern.md",
       "section": "/",
       "dirName": "/"
@@ -77,7 +92,7 @@
   {
     "title": "draxt.js-簡化存取檔案的小幫手",
     "meta": {
-      "index": 5,
+      "index": 6,
       "fileName": "2018-09-07-TutorialOfDraxtjs.md",
       "section": "/",
       "dirName": "/"
@@ -92,7 +107,7 @@
     "title": "從範例講解Promise概念",
     "bgImageUrl": "/images/06/06-0.jpg",
     "meta": {
-      "index": 6,
+      "index": 7,
       "fileName": "2018-08-12-ExampleOfPromise.md",
       "section": "/",
       "dirName": "/"
@@ -112,7 +127,7 @@
     "title": "使用Nuxt.js及Nuxtent建立Blog的心得",
     "bgImageUrl": "/images/05/05-0.jpg",
     "meta": {
-      "index": 7,
+      "index": 8,
       "fileName": "2018-06-23-NuxtjsAndNuxtent.md",
       "section": "/",
       "dirName": "/"
@@ -126,7 +141,7 @@
   {
     "title": "使用VSCode偵錯Node.js及Angular的小技巧",
     "meta": {
-      "index": 8,
+      "index": 9,
       "fileName": "2017-12-23-VscodeDebugForNodejsAndnAgular.md",
       "section": "/",
       "dirName": "/"
@@ -140,7 +155,7 @@
   {
     "title": "在asp.net MVC上使用vue.js需注意的事項",
     "meta": {
-      "index": 9,
+      "index": 10,
       "fileName": "2017-10-08-VuejsInAspnetMvc.md",
       "section": "/",
       "dirName": "/"
@@ -154,7 +169,7 @@
   {
     "title": "使用Jekyll建立Blog -1",
     "meta": {
-      "index": 10,
+      "index": 11,
       "fileName": "2017-07-13-BuildBlogWithJekyll.md",
       "section": "/",
       "dirName": "/"
@@ -168,7 +183,7 @@
   {
     "title": "Hello World!",
     "meta": {
-      "index": 11,
+      "index": 12,
       "fileName": "2017-06-20-HelloWorld.md",
       "section": "/",
       "dirName": "/"
