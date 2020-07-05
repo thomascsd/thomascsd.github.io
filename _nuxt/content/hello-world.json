@@ -1,7 +1,11 @@
 {
   "title": "Hello World!",
   "meta": {
+<<<<<<< HEAD
     "index": 15,
+=======
+    "index": 13,
+>>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
     "fileName": "2017-06-20-HelloWorld.md",
     "section": "/",
     "dirName": "/"

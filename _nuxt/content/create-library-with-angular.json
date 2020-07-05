@@ -2,7 +2,11 @@
   "title": "於Angular中，建立Library的心得",
   "bgImageUrl": "/images/10/10-0.jpg",
   "meta": {
+<<<<<<< HEAD
     "index": 6,
+=======
+    "index": 4,
+>>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
     "fileName": "2019-02-20-CreateLibraryWithAngular.md",
     "section": "/",
     "dirName": "/"

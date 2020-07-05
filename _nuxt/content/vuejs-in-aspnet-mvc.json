@@ -1,7 +1,11 @@
 {
   "title": "在asp.net MVC上使用vue.js需注意的事項",
   "meta": {
+<<<<<<< HEAD
     "index": 13,
+=======
+    "index": 11,
+>>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
     "fileName": "2017-10-08-VuejsInAspnetMvc.md",
     "section": "/",
     "dirName": "/"

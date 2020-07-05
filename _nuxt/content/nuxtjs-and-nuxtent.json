@@ -2,7 +2,11 @@
   "title": "使用Nuxt.js及Nuxtent建立Blog的心得",
   "bgImageUrl": "/images/05/05-0.jpg",
   "meta": {
+<<<<<<< HEAD
     "index": 11,
+=======
+    "index": 9,
+>>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
     "fileName": "2018-06-23-NuxtjsAndNuxtent.md",
     "section": "/",
     "dirName": "/"
