@@ -1,6 +1,5 @@
 [
   {
-<<<<<<< HEAD
     "title": "6個推薦的Angular Library",
     "bgImageUrl": "/images/15/15-0.jpg",
     "meta": {
@@ -19,11 +18,6 @@
     "title": "class-validator & ngx-dynamic-form-builder",
     "meta": {
       "index": 2,
-=======
-    "title": "class-validator & ngx-dynamic-form-builder",
-    "meta": {
-      "index": 0,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2020-03-13-classValidatorAndNgxDynamicFormBuilder.md",
       "section": "/",
       "dirName": "/"
@@ -38,11 +32,7 @@
     "title": "SVG與Angular",
     "bgImageUrl": "/images/13/13-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 3,
-=======
-      "index": 1,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2019-11-30-SvgAndAngular.md",
       "section": "/",
       "dirName": "/"
@@ -57,11 +47,7 @@
     "title": "VSCode Extension的開發心得",
     "bgImageUrl": "/images/12/12-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 4,
-=======
-      "index": 2,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2019-09-01-TutorialOfVscodeExtension.md",
       "section": "/",
       "dirName": "/"
@@ -76,11 +62,7 @@
     "title": "Uppy - 最方便的上傳套件",
     "bgImageUrl": "/images/11/11-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 5,
-=======
-      "index": 3,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2019-06-16-TutorialOfUppy.md",
       "section": "/",
       "dirName": "/"
@@ -95,11 +77,7 @@
     "title": "於Angular中，建立Library的心得",
     "bgImageUrl": "/images/10/10-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 6,
-=======
-      "index": 4,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2019-02-20-CreateLibraryWithAngular.md",
       "section": "/",
       "dirName": "/"
@@ -114,11 +92,7 @@
     "title": "談談JavaScript Module part2",
     "bgImageUrl": "/images/08/08-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 7,
-=======
-      "index": 5,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2018-12-23-ModulePatternPart2.md",
       "section": "/",
       "dirName": "/"
@@ -133,11 +107,7 @@
     "title": "談談JavaScript Module part1",
     "bgImageUrl": "/images/08/08-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 8,
-=======
-      "index": 6,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2018-10-31-ModulePattern.md",
       "section": "/",
       "dirName": "/"
@@ -151,11 +121,7 @@
   {
     "title": "draxt.js-簡化存取檔案的小幫手",
     "meta": {
-<<<<<<< HEAD
       "index": 9,
-=======
-      "index": 7,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2018-09-07-TutorialOfDraxtjs.md",
       "section": "/",
       "dirName": "/"
@@ -170,11 +136,7 @@
     "title": "從範例講解Promise概念",
     "bgImageUrl": "/images/06/06-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 10,
-=======
-      "index": 8,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2018-08-12-ExampleOfPromise.md",
       "section": "/",
       "dirName": "/"
@@ -194,11 +156,7 @@
     "title": "使用Nuxt.js及Nuxtent建立Blog的心得",
     "bgImageUrl": "/images/05/05-0.jpg",
     "meta": {
-<<<<<<< HEAD
       "index": 11,
-=======
-      "index": 9,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2018-06-23-NuxtjsAndNuxtent.md",
       "section": "/",
       "dirName": "/"
@@ -212,11 +170,7 @@
   {
     "title": "使用VSCode偵錯Node.js及Angular的小技巧",
     "meta": {
-<<<<<<< HEAD
       "index": 12,
-=======
-      "index": 10,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2017-12-23-VscodeDebugForNodejsAndnAgular.md",
       "section": "/",
       "dirName": "/"
@@ -230,11 +184,7 @@
   {
     "title": "在asp.net MVC上使用vue.js需注意的事項",
     "meta": {
-<<<<<<< HEAD
       "index": 13,
-=======
-      "index": 11,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2017-10-08-VuejsInAspnetMvc.md",
       "section": "/",
       "dirName": "/"
@@ -248,11 +198,7 @@
   {
     "title": "使用Jekyll建立Blog -1",
     "meta": {
-<<<<<<< HEAD
       "index": 14,
-=======
-      "index": 12,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2017-07-13-BuildBlogWithJekyll.md",
       "section": "/",
       "dirName": "/"
@@ -266,11 +212,7 @@
   {
     "title": "Hello World!",
     "meta": {
-<<<<<<< HEAD
       "index": 15,
-=======
-      "index": 13,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
       "fileName": "2017-06-20-HelloWorld.md",
       "section": "/",
       "dirName": "/"

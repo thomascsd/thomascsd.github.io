@@ -2,11 +2,7 @@
   "title": "VSCode Extension的開發心得",
   "bgImageUrl": "/images/12/12-0.jpg",
   "meta": {
-<<<<<<< HEAD
     "index": 4,
-=======
-    "index": 2,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
     "fileName": "2019-09-01-TutorialOfVscodeExtension.md",
     "section": "/",
     "dirName": "/"

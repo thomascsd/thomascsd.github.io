@@ -2,11 +2,7 @@
   "title": "從範例講解Promise概念",
   "bgImageUrl": "/images/06/06-0.jpg",
   "meta": {
-<<<<<<< HEAD
     "index": 10,
-=======
-    "index": 8,
->>>>>>> 4bf885389dd76927c00bba5b56f540904693cab5
     "fileName": "2018-08-12-ExampleOfPromise.md",
     "section": "/",
     "dirName": "/"
