@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.0.0-beta.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>從範例講解Promise概念</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thomas Blog">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.min.css">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102188481-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+  </script>
+  <link rel="stylesheet" href="styles.82db6a3cce6aae377155.css"><style></style><script charset="utf-8" src="5-es2015.c26e1f74a27567e7478a.js"></script><style>[_ngcontent-mgn-c18]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.0.0-beta.0">
+    <app-root _nghost-mgn-c16="" ng-version="9.1.1"><div _ngcontent-mgn-c16=""><app-blog-nav _ngcontent-mgn-c16="" _nghost-mgn-c14=""><nav _ngcontent-mgn-c14="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-mgn-c14="" class="container-fluid"><div _ngcontent-mgn-c14="" class="navbar-header page-scroll"><button _ngcontent-mgn-c14="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-mgn-c14="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-mgn-c14="" class="fa fa-bars"></i></button><a _ngcontent-mgn-c14="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-mgn-c14="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-mgn-c14="" class="nav navbar-nav navbar-right"><li _ngcontent-mgn-c14=""><a _ngcontent-mgn-c14="" href="/">Blog</a></li><li _ngcontent-mgn-c14=""><a _ngcontent-mgn-c14="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-mgn-c14=""><a _ngcontent-mgn-c14="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-mgn-c16=""></router-outlet><app-blog _nghost-mgn-c18=""><div _ngcontent-mgn-c18="">
+  
+  <app-post-header _ngcontent-mgn-c18="" _nghost-mgn-c17=""><header _ngcontent-mgn-c17="" class="intro-header" style="background-image: url(&quot;assets/images/06/06-0.jpg&quot;);"><div _ngcontent-mgn-c17="" class="container"><div _ngcontent-mgn-c17="" class="row"><div _ngcontent-mgn-c17="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-mgn-c17="" class="post-heading"><h1 _ngcontent-mgn-c17="">從範例講解Promise概念</h1><span _ngcontent-mgn-c17="" class="meta">on 2018-08-12</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-mgn-c18="">
+    <div _ngcontent-mgn-c18="" class="container">
+      <div _ngcontent-mgn-c18="" class="row">
+        <div _ngcontent-mgn-c18="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-mgn-c18="">一般而言，呼叫多個 ajax，最簡單的方式是用 callback 函式，如以下的範例
+執行完 1 個 ajax 之後，再執行另一個 ajax。</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/ut3cv27k/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mgn-c18=""></iframe>
+
+<p _ngcontent-mgn-c18="">但是這樣會造成維護及讀code都不易，容易產生俗稱callback hell的問題，每次都想到下面這張圖。</p>
+<img class="img-responsive" src="assets/images/06/06-1.png" _ngcontent-mgn-c18="">
+
+<p _ngcontent-mgn-c18="">所以有人想到 Promise 的解決方式</p>
+<p _ngcontent-mgn-c18="">例如下面的範例，getData1 函式是直接回傳 Promise 這個物件，而不是直接回傳結果值，就好像是起了緩衝的作用，等到 server 將結果值回傳，最後再使用 resolve 將結果值回傳出去，並且可以使用 then 串連在一起，可讀性及維護性變高了。</p>
+<p _ngcontent-mgn-c18="">ES2015 的 Promise 物件的範列</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/hu98b63j/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mgn-c18=""></iframe>
+
+<p _ngcontent-mgn-c18="">jQuery Deferred 的物件的範例</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/e2gp57h6/6/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mgn-c18=""></iframe>
+
+<p _ngcontent-mgn-c18="">我最喜歡的用法，是使用 async/ await，因為 async/await 是基於 Promise，所以用像是同步的程式寫法來執行非同步的作業</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/xftmdsb9/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mgn-c18=""></iframe>
+
+<h1 id="結論" _ngcontent-mgn-c18="">結論</h1>
+<p _ngcontent-mgn-c18="">寫前端的程式，或多或少都會遇到同時發出多個 Ajax 的情況，這時 Promise 的概念就很重要</p>
+<!--scullyContent-end--><script>try {window['scullyContent'] = {cssId:"_ngcontent-mgn-c18",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script><scully-content _ngcontent-mgn-c18=""></scully-content>
+        </div>
+      </div>
+
+      <hr _ngcontent-mgn-c18="">
+      <div _ngcontent-mgn-c18="" class="row">
+        <div _ngcontent-mgn-c18="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-mgn-c18="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2018-08-12-ExampleOfPromise&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2018-08-12-ExampleOfPromise&amp;title=%E5%BE%9E%E7%AF%84%E4%BE%8B%E8%AC%9B%E8%A7%A3Promise%E6%A6%82%E5%BF%B5&amp;description=Thomas%20Blog"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-mgn-c16=""><app-footer _ngcontent-mgn-c16="" _nghost-mgn-c15=""><footer _ngcontent-mgn-c15=""><div _ngcontent-mgn-c15="" class="container"><div _ngcontent-mgn-c15="" class="row"><div _ngcontent-mgn-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-mgn-c15="" class="list-inline text-center"><li _ngcontent-mgn-c15=""><a _ngcontent-mgn-c15="" href="https://www.twitter.com/thomascsd"><span _ngcontent-mgn-c15="" class="fa-stack fa-lg"><i _ngcontent-mgn-c15="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-mgn-c15="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-mgn-c15=""><a _ngcontent-mgn-c15="" href="https://github.com/thomascsd"><span _ngcontent-mgn-c15="" class="fa-stack fa-lg"><i _ngcontent-mgn-c15="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-mgn-c15="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-mgn-c15="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.23c494a234f1fed8e1c4.js" type="module"></script><script src="runtime-es5.23c494a234f1fed8e1c4.js" nomodule="" defer=""></script><script src="polyfills-es5.ebbe9a7a13d3baea7960.js" nomodule="" defer=""></script><script src="polyfills-es2015.3c35e62d21190b4c34bc.js" type="module"></script><script src="main-es2015.ca08fa97f3cb119b186a.js" type="module"></script><script src="main-es5.ca08fa97f3cb119b186a.js" nomodule="" defer=""></script>
+
+</body></html>

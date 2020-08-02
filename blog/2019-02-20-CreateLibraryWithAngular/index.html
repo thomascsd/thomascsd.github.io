@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.0.0-beta.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>於Angular中，建立Library的心得</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thomas Blog">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.min.css">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102188481-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+  </script>
+  <link rel="stylesheet" href="styles.82db6a3cce6aae377155.css"><style></style><script charset="utf-8" src="5-es2015.c26e1f74a27567e7478a.js"></script><style>[_ngcontent-ktm-c18]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.0.0-beta.0">
+    <app-root _nghost-ktm-c16="" ng-version="9.1.1"><div _ngcontent-ktm-c16=""><app-blog-nav _ngcontent-ktm-c16="" _nghost-ktm-c14=""><nav _ngcontent-ktm-c14="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-ktm-c14="" class="container-fluid"><div _ngcontent-ktm-c14="" class="navbar-header page-scroll"><button _ngcontent-ktm-c14="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-ktm-c14="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-ktm-c14="" class="fa fa-bars"></i></button><a _ngcontent-ktm-c14="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-ktm-c14="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-ktm-c14="" class="nav navbar-nav navbar-right"><li _ngcontent-ktm-c14=""><a _ngcontent-ktm-c14="" href="/">Blog</a></li><li _ngcontent-ktm-c14=""><a _ngcontent-ktm-c14="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-ktm-c14=""><a _ngcontent-ktm-c14="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-ktm-c16=""></router-outlet><app-blog _nghost-ktm-c18=""><div _ngcontent-ktm-c18="">
+  
+  <app-post-header _ngcontent-ktm-c18="" _nghost-ktm-c17=""><header _ngcontent-ktm-c17="" class="intro-header" style="background-image: url(&quot;assets/images/10/10-0.jpg&quot;);"><div _ngcontent-ktm-c17="" class="container"><div _ngcontent-ktm-c17="" class="row"><div _ngcontent-ktm-c17="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-ktm-c17="" class="post-heading"><h1 _ngcontent-ktm-c17="">於Angular中，建立Library的心得</h1><span _ngcontent-ktm-c17="" class="meta">on 2019-02-20</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-ktm-c18="">
+    <div _ngcontent-ktm-c18="" class="container">
+      <div _ngcontent-ktm-c18="" class="row">
+        <div _ngcontent-ktm-c18="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-ktm-c18="">在 Angular CLI 6.0 以上就可以直接建立 Library，而 Library 的用途可以將自已建立的元件發佈至 NPM，或是專案一些共同的元件拆分出去。</p>
+<h2 id="建立-library" _ngcontent-ktm-c18="">建立 Library</h2>
+<pre _ngcontent-ktm-c18=""><code _ngcontent-ktm-c18="">ng new ngx-lib-demo
+ng g library shared-comp</code></pre>
+<p _ngcontent-ktm-c18="">先使用 Angular CLI 建立範例專案，再來用上列的指令，建立 Library。有時會覺得記住 CLI 的參數很麻煩，會使用<a href="https://angularconsole.com/" _ngcontent-ktm-c18="">Angular Console</a>幫忙建立。</p>
+<img class="img-responsive" src="assets/images/10/10-01.gif" _ngcontent-ktm-c18="">
+
+<pre _ngcontent-ktm-c18=""><code _ngcontent-ktm-c18="">ng g c header --project=shared-comp</code></pre>
+<p _ngcontent-ktm-c18="">接下來，在 Library 中建立 component，這邊是建立 header component，也可以使用 Angular Console 建立。</p>
+<img class="img-responsive" src="assets/images/10/10-2.png" _ngcontent-ktm-c18="">
+
+<p _ngcontent-ktm-c18="">如上圖，我們所建立 library 會在目錄 projects 下，例如這次我建立的 shared-comp，並且與一般的 Angular 專案不同，component 位於 lib 目錄下。</p>
+<pre _ngcontent-ktm-c18=""><code class="language-javascript" _ngcontent-ktm-c18=""><span class="hljs-comment" _ngcontent-ktm-c18="">//public_api.ts</span>
+<span class="hljs-keyword" _ngcontent-ktm-c18="">export</span> * <span class="hljs-keyword" _ngcontent-ktm-c18="">from</span> <span class="hljs-string" _ngcontent-ktm-c18="">'./lib/header/header.component'</span>;
+<span class="hljs-keyword" _ngcontent-ktm-c18="">export</span> * <span class="hljs-keyword" _ngcontent-ktm-c18="">from</span> <span class="hljs-string" _ngcontent-ktm-c18="">'./lib/shared-comp.module'</span>;</code></pre>
+<p _ngcontent-ktm-c18="">接著，在 public_api.ts 中 export 我們所建立的 header component。</p>
+<img class="img-responsive" src="assets/images/10/10-3.png" _ngcontent-ktm-c18="">
+
+<pre _ngcontent-ktm-c18=""><code class="language-javascript" _ngcontent-ktm-c18=""><span class="hljs-comment" _ngcontent-ktm-c18="">//app.module.ts</span>
+<span class="hljs-keyword" _ngcontent-ktm-c18="">import</span> { BrowserModule } <span class="hljs-keyword" _ngcontent-ktm-c18="">from</span> <span class="hljs-string" _ngcontent-ktm-c18="">'@angular/platform-browser'</span>;
+<span class="hljs-keyword" _ngcontent-ktm-c18="">import</span> { NgModule } <span class="hljs-keyword" _ngcontent-ktm-c18="">from</span> <span class="hljs-string" _ngcontent-ktm-c18="">'@angular/core'</span>;
+<span class="hljs-keyword" _ngcontent-ktm-c18="">import</span> { AppComponent } <span class="hljs-keyword" _ngcontent-ktm-c18="">from</span> <span class="hljs-string" _ngcontent-ktm-c18="">'./app.component'</span>;
+<span class="hljs-keyword" _ngcontent-ktm-c18="">import</span> { SharedCompModule } <span class="hljs-keyword" _ngcontent-ktm-c18="">from</span> <span class="hljs-string" _ngcontent-ktm-c18="">'shared-comp'</span>;
+@NgModule({
+  <span class="hljs-attr" _ngcontent-ktm-c18="">declarations</span>: [AppComponent],
+  <span class="hljs-attr" _ngcontent-ktm-c18="">imports</span>: [BrowserModule, SharedCompModule],
+  <span class="hljs-attr" _ngcontent-ktm-c18="">providers</span>: [],
+  <span class="hljs-attr" _ngcontent-ktm-c18="">bootstrap</span>: [AppComponent],
+})
+<span class="hljs-keyword" _ngcontent-ktm-c18="">export</span> <span class="hljs-class" _ngcontent-ktm-c18=""><span class="hljs-keyword" _ngcontent-ktm-c18="">class</span> <span class="hljs-title" _ngcontent-ktm-c18="">AppModule</span> </span>{}</code></pre>
+<pre _ngcontent-ktm-c18=""><code class="language-html" _ngcontent-ktm-c18=""><span class="hljs-comment" _ngcontent-ktm-c18="">&lt;!--app.component.html--&gt;</span>
+<span class="hljs-tag" _ngcontent-ktm-c18="">&lt;<span class="hljs-name" _ngcontent-ktm-c18="">lib-header</span>&gt;</span><span class="hljs-tag" _ngcontent-ktm-c18="">&lt;/<span class="hljs-name" _ngcontent-ktm-c18="">lib-header</span>&gt;</span>
+<span class="hljs-tag" _ngcontent-ktm-c18="">&lt;<span class="hljs-name" _ngcontent-ktm-c18="">div</span>&gt;</span>Hello<span class="hljs-tag" _ngcontent-ktm-c18="">&lt;/<span class="hljs-name" _ngcontent-ktm-c18="">div</span>&gt;</span></code></pre>
+<p _ngcontent-ktm-c18="">使用指令<code _ngcontent-ktm-c18="">ng build shared-comp</code>建置完 library 後，再來就可以在 Angular 應用程式中，匯入我們建立在 library 中的 component。</p>
+<h2 id="發佈至-npm" _ngcontent-ktm-c18="">發佈至 npm</h2>
+<pre _ngcontent-ktm-c18=""><code _ngcontent-ktm-c18="">ng build shared-comp --prod
+cd dist/shared-comp
+npm publish</code></pre>
+<p _ngcontent-ktm-c18="">要如何將我們建立的 conpont 部署至 npm 呢?輸入上列指令即可，最後輸入 npm publish，即可完成發佈的程序。</p>
+<pre _ngcontent-ktm-c18=""><code class="language-json" _ngcontent-ktm-c18="">"scripts": {
+"build:lib": "ng build shared-comp --prod",
+"deploy": "cd dist/shared-comp &amp;&amp; npm publish"
+}</code></pre>
+<p _ngcontent-ktm-c18="">但是每次都這樣打也很麻煩，所以就將這些指令寫成上面的 npm script。</p>
+<h2 id="升級需注意的心得" _ngcontent-ktm-c18="">升級需注意的心得</h2>
+<p _ngcontent-ktm-c18="">我發現從 Angular 5 升級至 Angular6/7 時，除了輸入<code _ngcontent-ktm-c18="">ng update</code>外，還需另外調整一些設定才行，也可以參考這篇官方的<a href="https://github.com/angular/angular-cli/wiki/stories-create-library#note-for-upgraded-projects" _ngcontent-ktm-c18="">文章</a></p>
+<ul _ngcontent-ktm-c18="">
+<li _ngcontent-ktm-c18=""><p _ngcontent-ktm-c18="">tsconfig.json：需調整 paths 的路徑，路徑調整至 dist/project-name，不然會發現找不到 package 的錯誤。</p>
+</li>
+<li _ngcontent-ktm-c18=""><p _ngcontent-ktm-c18="">tsconfig.app.json：需要移除 baseUrl。</p>
+</li>
+</ul>
+<h2 id="結論" _ngcontent-ktm-c18="">結論</h2>
+<p _ngcontent-ktm-c18="">Angular CLI 是很強大的工具，輸入一些命令，即可產生 Application 或是 Library，現在還可以搭配 Angular Console，程式開發變得很方便，</p>
+<!--scullyContent-end--><script>try {window['scullyContent'] = {cssId:"_ngcontent-ktm-c18",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script><scully-content _ngcontent-ktm-c18=""></scully-content>
+        </div>
+      </div>
+
+      <hr _ngcontent-ktm-c18="">
+      <div _ngcontent-ktm-c18="" class="row">
+        <div _ngcontent-ktm-c18="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-ktm-c18="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2019-02-20-CreateLibraryWithAngular&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2019-02-20-CreateLibraryWithAngular&amp;title=%E6%96%BCAngular%E4%B8%AD%EF%BC%8C%E5%BB%BA%E7%AB%8BLibrary%E7%9A%84%E5%BF%83%E5%BE%97&amp;description=Thomas%20Blog"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-ktm-c16=""><app-footer _ngcontent-ktm-c16="" _nghost-ktm-c15=""><footer _ngcontent-ktm-c15=""><div _ngcontent-ktm-c15="" class="container"><div _ngcontent-ktm-c15="" class="row"><div _ngcontent-ktm-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-ktm-c15="" class="list-inline text-center"><li _ngcontent-ktm-c15=""><a _ngcontent-ktm-c15="" href="https://www.twitter.com/thomascsd"><span _ngcontent-ktm-c15="" class="fa-stack fa-lg"><i _ngcontent-ktm-c15="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-ktm-c15="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-ktm-c15=""><a _ngcontent-ktm-c15="" href="https://github.com/thomascsd"><span _ngcontent-ktm-c15="" class="fa-stack fa-lg"><i _ngcontent-ktm-c15="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-ktm-c15="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-ktm-c15="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.23c494a234f1fed8e1c4.js" type="module"></script><script src="runtime-es5.23c494a234f1fed8e1c4.js" nomodule="" defer=""></script><script src="polyfills-es5.ebbe9a7a13d3baea7960.js" nomodule="" defer=""></script><script src="polyfills-es2015.3c35e62d21190b4c34bc.js" type="module"></script><script src="main-es2015.ca08fa97f3cb119b186a.js" type="module"></script><script src="main-es5.ca08fa97f3cb119b186a.js" nomodule="" defer=""></script>
+
+</body></html>
