@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.0.0-beta.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      color-scheme: light;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>使用TypeScript建立Express.js</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thomas Blog">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102188481-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102188481-1');
+    </script>
+  <link rel="stylesheet" href="styles.82db6a3cce6aae377155.css"><style></style><script charset="utf-8" src="5-es2015.39c6e553f52c59385f46.js"></script><style>[_ngcontent-btj-c16]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.0.0-beta.0">
+    <app-root _nghost-btj-c14="" ng-version="10.0.9"><div _ngcontent-btj-c14=""><app-blog-nav _ngcontent-btj-c14="" _nghost-btj-c12=""><nav _ngcontent-btj-c12="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-btj-c12="" class="container-fluid"><div _ngcontent-btj-c12="" class="navbar-header page-scroll"><button _ngcontent-btj-c12="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-btj-c12="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-btj-c12="" class="fa fa-bars"></i></button><a _ngcontent-btj-c12="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-btj-c12="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-btj-c12="" class="nav navbar-nav navbar-right"><li _ngcontent-btj-c12=""><a _ngcontent-btj-c12="" href="/">Blog</a></li><li _ngcontent-btj-c12=""><a _ngcontent-btj-c12="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-btj-c12=""><a _ngcontent-btj-c12="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-btj-c14=""></router-outlet><app-blog _nghost-btj-c16=""><div _ngcontent-btj-c16="">
+  
+  <app-post-header _ngcontent-btj-c16="" _nghost-btj-c15=""><header _ngcontent-btj-c15="" class="intro-header" style="background-image: url(&quot;assets/images/18/18-0.png&quot;);"><div _ngcontent-btj-c15="" class="container"><div _ngcontent-btj-c15="" class="row"><div _ngcontent-btj-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-btj-c15="" class="post-heading"><h1 _ngcontent-btj-c15="">使用TypeScript建立Express.js</h1><span _ngcontent-btj-c15="" class="meta">on 2021-02-07</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-btj-c16="">
+    <div _ngcontent-btj-c16="" class="container">
+      <div _ngcontent-btj-c16="" class="row">
+        <div _ngcontent-btj-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-btj-c16="">(2021-04-26 更新)service class 注入，@Inject 改為 @Service。</p>
+<p _ngcontent-btj-c16="">Express.js 是很受歡迎的 Node.js 框架，一般看來，比較少文章介紹使用 TypeScript 建立 Express.js，所以就想寫篇使用 TypeScript 建立 Express.js 的方式，並且 Express.js 的架構是比較鬆散的，並且有發現兩個套件：<a href="https://github.com/typestack/routing-controllers" _ngcontent-btj-c16="">routing-controller</a>及<a href="https://github.com/typestack/typedi" _ngcontent-btj-c16="">typedi</a>，一些心得感想，請大家參考看看。</p>
+<h2 id="起手式" _ngcontent-btj-c16="">起手式</h2>
+<p _ngcontent-btj-c16="">首先使用 npm 建立 node.js 的站台，將它命名為 webapi。</p>
+<pre _ngcontent-btj-c16=""><code _ngcontent-btj-c16="">npm new webapi -y</code></pre>
+<p _ngcontent-btj-c16="">接著安裝 Express.js 及用 TypeScript 開發所使用的套件。</p>
+<pre _ngcontent-btj-c16=""><code _ngcontent-btj-c16="">npm install express @types/node @types/express</code></pre>
+<h2 id="建立-server" _ngcontent-btj-c16="">建立 Server</h2>
+<pre _ngcontent-btj-c16=""><code class="language-javascript" _ngcontent-btj-c16=""><span class="hljs-keyword" _ngcontent-btj-c16="">import</span> * <span class="hljs-keyword" _ngcontent-btj-c16="">as</span> express <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'express'</span>;</code></pre>
+<p _ngcontent-btj-c16="">首先使用 ESM 的語法戴入 express。</p>
+<pre _ngcontent-btj-c16=""><code class="language-javascript" _ngcontent-btj-c16=""><span class="hljs-comment" _ngcontent-btj-c16="">// Server.ts</span>
+<span class="hljs-keyword" _ngcontent-btj-c16="">export</span> <span class="hljs-keyword" _ngcontent-btj-c16="">default</span> <span class="hljs-class" _ngcontent-btj-c16=""><span class="hljs-keyword" _ngcontent-btj-c16="">class</span> <span class="hljs-title" _ngcontent-btj-c16="">Server</span> </span>{
+&nbsp; public app: express.Application;
+&nbsp; private distFolder = path.join(__dirname, <span class="hljs-string" _ngcontent-btj-c16="">'..'</span>, <span class="hljs-string" _ngcontent-btj-c16="">'client'</span>);
+
+&nbsp; <span class="hljs-keyword" _ngcontent-btj-c16="">constructor</span>() {
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app = express();
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.config();
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.route();
+&nbsp; }
+
+&nbsp; public config() {
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app.set(<span class="hljs-string" _ngcontent-btj-c16="">'view engine'</span>, <span class="hljs-string" _ngcontent-btj-c16="">'html'</span>);
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app.set(<span class="hljs-string" _ngcontent-btj-c16="">'views'</span>, <span class="hljs-string" _ngcontent-btj-c16="">'src'</span>);
+
+&nbsp; &nbsp; <span class="hljs-comment" _ngcontent-btj-c16="">// Server static files from /dist</span>
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app.get(<span class="hljs-string" _ngcontent-btj-c16="">'*.*'</span>, express.static(<span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.distFolder));
+&nbsp; }
+
+&nbsp; public route() {
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app.get(<span class="hljs-string" _ngcontent-btj-c16="">'*'</span>, <span class="hljs-function" _ngcontent-btj-c16="">(<span class="hljs-params" _ngcontent-btj-c16="">req, res, next</span>) =&gt;</span> {
+&nbsp; &nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-btj-c16="">if</span> (req.url.indexOf(<span class="hljs-string" _ngcontent-btj-c16="">'/api'</span>) !== <span class="hljs-number" _ngcontent-btj-c16="">-1</span>) {
+&nbsp; &nbsp; &nbsp; &nbsp; next();
+&nbsp; &nbsp; &nbsp; } <span class="hljs-keyword" _ngcontent-btj-c16="">else</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; res.sendFile(path.join(<span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.distFolder, <span class="hljs-string" _ngcontent-btj-c16="">'index.html'</span>));
+&nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; });
+&nbsp; }
+
+&nbsp; public run(port: number) {
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app.listen(port, <span class="hljs-function" _ngcontent-btj-c16="">() =&gt;</span> {
+&nbsp; &nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">console</span>.log(<span class="hljs-string" _ngcontent-btj-c16="">`App run in Port: <span class="hljs-subst" _ngcontent-btj-c16="">${port}</span>`</span>);
+&nbsp; &nbsp; });
+&nbsp; }
+}</code></pre>
+<p _ngcontent-btj-c16="">接著我習慣建立 class，所以這邊建立名為<code _ngcontent-btj-c16="">Server</code>的 class，建立了 3 個方法：</p>
+<ul _ngcontent-btj-c16="">
+<li _ngcontent-btj-c16=""><p _ngcontent-btj-c16="">config：是設定 Express.js。</p>
+<ul _ngcontent-btj-c16="">
+<li _ngcontent-btj-c16=""><code _ngcontent-btj-c16="">this.app.get('_.\*', express.static(this.distFolder));</code>：因為前端是用 SPA 的架構，所以指定靜態檔案是導向 html 的路徑。</li>
+</ul>
+</li>
+<li _ngcontent-btj-c16=""><p _ngcontent-btj-c16="">route：預設的路由，由於前端是 SPA 的原故，除了網址包點<code _ngcontent-btj-c16="">api</code>之除，其於皆會導向 index.html。</p>
+</li>
+<li _ngcontent-btj-c16=""><p _ngcontent-btj-c16="">run：供外部程式呼叫，啟動 Web Server。</p>
+</li>
+</ul>
+<pre _ngcontent-btj-c16=""><code class="language-javascript" _ngcontent-btj-c16=""><span class="hljs-comment" _ngcontent-btj-c16="">// index.ts</span>
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> <span class="hljs-string" _ngcontent-btj-c16="">'reflect-metadata'</span>;
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> Server <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'./server'</span>;
+<span class="hljs-keyword" _ngcontent-btj-c16="">const</span> server = <span class="hljs-keyword" _ngcontent-btj-c16="">new</span> Server();
+<span class="hljs-keyword" _ngcontent-btj-c16="">const</span> port: number = <span class="hljs-built_in" _ngcontent-btj-c16="">parseInt</span>(process.env.PORT, <span class="hljs-number" _ngcontent-btj-c16="">10</span>) || <span class="hljs-number" _ngcontent-btj-c16="">3000</span>;
+server.run(port);</code></pre>
+<p _ngcontent-btj-c16="">再來就建立進入點 index.ts，這邊很單純的，建立 server 物件，執行 run 的方法。</p>
+<h2 id="tsconfigjson" _ngcontent-btj-c16="">tsconfig.json</h2>
+<p _ngcontent-btj-c16="">tsconfig 設定有時候覺得很麻煩，有發現一個 npm package：<a href="https://github.com/mightyiam/tsconfigs" _ngcontent-btj-c16="">tsconfigs</a>，如此可以比較清鬆的設定。</p>
+<pre _ngcontent-btj-c16=""><code _ngcontent-btj-c16="">{
+&nbsp; "compileOnSave": false,
+&nbsp; "compilerOptions": {
+&nbsp; &nbsp; "module": "esnext",
+&nbsp; &nbsp; "outDir": "./dist/",
+&nbsp; &nbsp; "sourceMap": true,
+&nbsp; &nbsp; "declaration": false,
+&nbsp; &nbsp; "moduleResolution": "node",
+&nbsp; &nbsp; "emitDecoratorMetadata": true,
+&nbsp; &nbsp; "experimentalDecorators": true,
+&nbsp; &nbsp; "target": "ESNext",
+&nbsp; &nbsp; "typeRoots": ["node_modules/@types"],
+&nbsp; &nbsp; "lib": ["ESNext"]
+&nbsp; },
+&nbsp; "baseUrl": "src"
+}</code></pre>
+<p _ngcontent-btj-c16="">或是可以參考上方的設定方式，因為會使用 decorator ，所以將<code _ngcontent-btj-c16="">emitDecoratorMetadata</code>及<code _ngcontent-btj-c16="">experimentalDecorators</code>設為<code _ngcontent-btj-c16="">true</code>。</p>
+<h2 id="加上架構" _ngcontent-btj-c16="">加上架構</h2>
+<p _ngcontent-btj-c16="">Express.js 的架構比較自由、鬆散，沒有規定要如何建立，這讓本人困擾了一段時間，之後參考這篇<a href="https://www.coreycleary.me/project-structure-for-an-express-rest-api-when-there-is-no-standard-way/" _ngcontent-btj-c16="">文章</a>，所以設定以下的目錄結構。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/18/18-1.png" _ngcontent-btj-c16="">
+
+<p _ngcontent-btj-c16="">要如何實作 controller 架構，之後有發現 <a href="https://github.com/typestack/routing-controllers" _ngcontent-btj-c16="">routing-controllers</a>，可以與 Express.js 整合，輕鬆實作 controller 架構。</p>
+<p _ngcontent-btj-c16="">接著也希望能夠可以在 Express.js 實現 DI(Dependency Injection)，所以使用了<a href="https://github.com/typestack/typedi" _ngcontent-btj-c16="">typedi</a>，配合這 2 個套件如此可以實作本人覺得不錯的架構。</p>
+<h3 id="routing-controllers--typedi" _ngcontent-btj-c16="">routing-controllers &amp; typedi</h3>
+<pre _ngcontent-btj-c16=""><code _ngcontent-btj-c16="">npm install routing-controllers typedi class-validator class-transformer</code></pre>
+<p _ngcontent-btj-c16="">使用 npm 安裝 routing-controllers、typedi，以及相依性的 package。</p>
+<pre _ngcontent-btj-c16=""><code class="language-javascript" _ngcontent-btj-c16=""><span class="hljs-comment" _ngcontent-btj-c16="">// ContactControoler.ts</span>
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> { JsonController, Get, Post, Body } <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'routing-controllers'</span>;
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> { Service } <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'typedi'</span>;
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> { ContactService } <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'../services/ContactServices'</span>;
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> { Contact } <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'../models/Contact'</span>;
+
+@Service()
+@JsonController()
+<span class="hljs-keyword" _ngcontent-btj-c16="">export</span> <span class="hljs-class" _ngcontent-btj-c16=""><span class="hljs-keyword" _ngcontent-btj-c16="">class</span> <span class="hljs-title" _ngcontent-btj-c16="">ContactController</span> </span>{
+ <span class="hljs-keyword" _ngcontent-btj-c16="">constructor</span>(private contactService: ContactService) {}
+
+ @Get(<span class="hljs-string" _ngcontent-btj-c16="">'/contact/list'</span>)
+ getContacts() {
+  <span class="hljs-keyword" _ngcontent-btj-c16="">return</span> <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.contactService.getContacts();
+ }
+
+ @Post(<span class="hljs-string" _ngcontent-btj-c16="">'/contact/save'</span>)
+ saveContact(@Body() contact: Contact) {
+  <span class="hljs-keyword" _ngcontent-btj-c16="">return</span> <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.contactService.saveContact(contact);
+ }
+
+ @Post(<span class="hljs-string" _ngcontent-btj-c16="">'/contact/update'</span>)
+ update(@Body() contact: Contact) {
+  <span class="hljs-keyword" _ngcontent-btj-c16="">return</span> <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.contactService.updateContact(contact);
+ }
+}</code></pre>
+<p _ngcontent-btj-c16="">建立 controller 的方式很直覺，只要在 class 上加上 decorator <code _ngcontent-btj-c16="">@Controller()</code>即可，因為是回傳 JSON，所以是使用<code _ngcontent-btj-c16="">@JsonController()</code>。</p>
+<p _ngcontent-btj-c16="">路由建立的方式也是一樣，使用<code _ngcontent-btj-c16="">@Get</code>、<code _ngcontent-btj-c16="">@Post</code>，再傳入路由路徑即可。</p>
+<p _ngcontent-btj-c16="">而 DI 也是同樣的，在 class 上加上<code _ngcontent-btj-c16="">@Inject()</code>代表著可以被注入，如同<code _ngcontent-btj-c16="">ContactService</code>會在 runtime 時被建立實體。</p>
+<pre _ngcontent-btj-c16=""><code class="language-javascript" _ngcontent-btj-c16=""><span class="hljs-comment" _ngcontent-btj-c16="">// Server.ts</span>
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> { useExpressServer, useContainer } <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'routing-controllers'</span>;
+<span class="hljs-keyword" _ngcontent-btj-c16="">import</span> { Container } <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'typedi'</span>;
+
+<span class="hljs-keyword" _ngcontent-btj-c16="">constructor</span>() {
+&nbsp; &nbsp; useContainer(Container);
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app = express();
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.config();
+&nbsp; &nbsp; <span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.setControllers();
+&nbsp; }
+
+public setControllers() {
+&nbsp; &nbsp; useExpressServer(<span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app, {
+&nbsp; &nbsp; &nbsp; <span class="hljs-attr" _ngcontent-btj-c16="">routePrefix</span>: <span class="hljs-string" _ngcontent-btj-c16="">'api'</span>,
+&nbsp; &nbsp; &nbsp; <span class="hljs-attr" _ngcontent-btj-c16="">controllers</span>: [__dirname + <span class="hljs-string" _ngcontent-btj-c16="">'/controllers/**/*.js'</span>],
+&nbsp; &nbsp; });
+&nbsp; }
+</code></pre>
+<p _ngcontent-btj-c16="">要將 routing-controllers、typedi 與 Express.js 整合也很簡單，使用<code _ngcontent-btj-c16="">useExpressServer</code>並戴入 controllers。</p>
+<h3 id="snippets" _ngcontent-btj-c16="">Snippets</h3>
+<p _ngcontent-btj-c16="">因為每次都要設定 controller 覺得很麻煩，本人有<a href="https://gist.github.com/thomascsd/19e1814f1b89c01588fa7f9f18540b20" _ngcontent-btj-c16="">自定義 snippets</a>，來減少一些重覆輸入的程式碼。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/18/18-2.gif" _ngcontent-btj-c16="">
+
+<h2 id="安全性" _ngcontent-btj-c16="">安全性</h2>
+<p _ngcontent-btj-c16="">除了上面的設定之外，最好可以於 Request 的 Header 上設定一些項目來增加網站的安全性，這時可以使用套件：<a href="https://github.com/helmetjs/helmet" _ngcontent-btj-c16="">helmet</a>，設定方式如下。</p>
+<pre _ngcontent-btj-c16=""><code class="language-javascript" _ngcontent-btj-c16=""><span class="hljs-keyword" _ngcontent-btj-c16="">import</span> * <span class="hljs-keyword" _ngcontent-btj-c16="">as</span> helmet <span class="hljs-keyword" _ngcontent-btj-c16="">from</span> <span class="hljs-string" _ngcontent-btj-c16="">'helmet'</span>;
+<span class="hljs-built_in" _ngcontent-btj-c16="">this</span>.app.use(helmet());</code></pre>
+<p _ngcontent-btj-c16="">另外可以參考這篇<a href="https://wanago.io/2020/12/14/security-express-applications-helmet-middleware/" _ngcontent-btj-c16="">文章</a>，總共調整了那些項目。</p>
+<h2 id="結論" _ngcontent-btj-c16="">結論</h2>
+<p _ngcontent-btj-c16="">以上就是我花了一段時間反復測試後，覺得不錯的 Express.js 的架構，並且有建立範本<a href="https://github.com/thomascsd/angular-express-starter" _ngcontent-btj-c16="">angular-express-starter</a> ，請大家參考看看。</p>
+<!--scullyContent-end--><script>try {window['scullyContent'] = {cssId:"_ngcontent-btj-c16",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script><scully-content _ngcontent-btj-c16=""></scully-content>
+        </div>
+      </div>
+
+      <hr _ngcontent-btj-c16="">
+      <div _ngcontent-btj-c16="" class="row">
+        <div _ngcontent-btj-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-btj-c16="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2021-02-07-ExpressjssWithTypescript&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2021-02-07-ExpressjssWithTypescript&amp;title=%E4%BD%BF%E7%94%A8TypeScript%E5%BB%BA%E7%AB%8BExpress.js&amp;description=Thomas%20Blog" loading="lazy"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-btj-c14=""><app-footer _ngcontent-btj-c14="" _nghost-btj-c13=""><footer _ngcontent-btj-c13=""><div _ngcontent-btj-c13="" class="container"><div _ngcontent-btj-c13="" class="row"><div _ngcontent-btj-c13="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-btj-c13="" class="list-inline text-center"><li _ngcontent-btj-c13=""><a _ngcontent-btj-c13="" href="https://www.twitter.com/thomascsd"><span _ngcontent-btj-c13="" class="fa-stack fa-lg"><i _ngcontent-btj-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-btj-c13="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-btj-c13=""><a _ngcontent-btj-c13="" href="https://github.com/thomascsd"><span _ngcontent-btj-c13="" class="fa-stack fa-lg"><i _ngcontent-btj-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-btj-c13="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-btj-c13="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.a221ea5094c71afa9063.js" type="module"></script><script src="runtime-es5.a221ea5094c71afa9063.js" nomodule="" defer=""></script><script src="polyfills-es5.cb32a52bc633c9710ac0.js" nomodule="" defer=""></script><script src="polyfills-es2015.879fe6e0427fd01bbdb6.js" type="module"></script><script src="main-es2015.1956c9ca69e6353b2e25.js" type="module"></script><script src="main-es5.1956c9ca69e6353b2e25.js" nomodule="" defer=""></script>
+
+</body></html>

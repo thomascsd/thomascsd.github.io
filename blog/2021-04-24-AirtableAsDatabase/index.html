@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.0.0-beta.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      color-scheme: light;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>將AirTable做為資料庫的心得</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thomas Blog">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102188481-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102188481-1');
+    </script>
+  <link rel="stylesheet" href="styles.82db6a3cce6aae377155.css"><style></style><script charset="utf-8" src="5-es2015.39c6e553f52c59385f46.js"></script><style>[_ngcontent-hbl-c16]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.0.0-beta.0">
+    <app-root _nghost-hbl-c14="" ng-version="10.0.9"><div _ngcontent-hbl-c14=""><app-blog-nav _ngcontent-hbl-c14="" _nghost-hbl-c12=""><nav _ngcontent-hbl-c12="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-hbl-c12="" class="container-fluid"><div _ngcontent-hbl-c12="" class="navbar-header page-scroll"><button _ngcontent-hbl-c12="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-hbl-c12="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-hbl-c12="" class="fa fa-bars"></i></button><a _ngcontent-hbl-c12="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-hbl-c12="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-hbl-c12="" class="nav navbar-nav navbar-right"><li _ngcontent-hbl-c12=""><a _ngcontent-hbl-c12="" href="/">Blog</a></li><li _ngcontent-hbl-c12=""><a _ngcontent-hbl-c12="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-hbl-c12=""><a _ngcontent-hbl-c12="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-hbl-c14=""></router-outlet><app-blog _nghost-hbl-c16=""><div _ngcontent-hbl-c16="">
+  
+  <app-post-header _ngcontent-hbl-c16="" _nghost-hbl-c15=""><header _ngcontent-hbl-c15="" class="intro-header" style="background-image: url(&quot;assets/images/19/19-0.jpg&quot;);"><div _ngcontent-hbl-c15="" class="container"><div _ngcontent-hbl-c15="" class="row"><div _ngcontent-hbl-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-hbl-c15="" class="post-heading"><h1 _ngcontent-hbl-c15="">將AirTable做為資料庫的心得</h1><span _ngcontent-hbl-c15="" class="meta">on 2021-04-24</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-hbl-c16="">
+    <div _ngcontent-hbl-c16="" class="container">
+      <div _ngcontent-hbl-c16="" class="row">
+        <div _ngcontent-hbl-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-hbl-c16="">當開始寫自已的 Side Project 時，常常遇到問題是，不知道要將資料寫入至那裡?最初是使用<a href="https://restdb.io/" _ngcontent-hbl-c16="">restdb</a>，優點：很好串接，有 UI 介面很好設定，但是只能有 2 個免費的。
+之後尋找了一些解決方案，發現<a href="https://airtable.com/" _ngcontent-hbl-c16="">AirTable</a>符合我的需求。</p>
+<ul _ngcontent-hbl-c16="">
+<li _ngcontent-hbl-c16="">優點：<ul _ngcontent-hbl-c16="">
+<li _ngcontent-hbl-c16="">有 UI 介面，可以很方便設定欄位。</li>
+<li _ngcontent-hbl-c16="">欄位支援很多的類型，連自動編號的類型也有。</li>
+<li _ngcontent-hbl-c16="">使用 CSV，直接匯入。</li>
+</ul>
+</li>
+<li _ngcontent-hbl-c16="">缺點：<ul _ngcontent-hbl-c16="">
+<li _ngcontent-hbl-c16="">每秒可接受的 Request 數有限制，現在每秒最多是 5 個 Request，如果是一般小的 Side Project，這個限制還可以接受。</li>
+</ul>
+</li>
+</ul>
+<h2 id="串接方式" _ngcontent-hbl-c16="">串接方式</h2>
+<p _ngcontent-hbl-c16="">首先要串接至 AirTable 需要 ApiKey ，可以參考<a href="https://support.airtable.com/hc/en-us/articles/219046777-How-do-I-get-my-API-key-" _ngcontent-hbl-c16="">文件</a>，接著取得 Base ID，如下圖所示，點選 Help &gt; API documetation。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/19/19-01.png" _ngcontent-hbl-c16="">
+
+<p _ngcontent-hbl-c16="">在文件中就可以找到呼叫 API 時，需要的 Base ID。並且也可以看到官方的 JavaScript API client，但是我覺得官方的不好用，會使用其他的 Libary 來串接。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/19/19-02.png" _ngcontent-hbl-c16="">
+
+<h3 id="使用-api-client" _ngcontent-hbl-c16="">使用 API Client</h3>
+<p _ngcontent-hbl-c16="">尋找及測試 2 個套件後，最後我選擇了<a href="https://github.com/GV14982/async-airtable" _ngcontent-hbl-c16="">async-airtable</a>，這個套件最主要是 Wrapper Libary，將 AirTable API 包裝成容易呼叫的形式，並因為是使用 TypeScript 開發的，而且到最近都有更新，所有決定採用了。</p>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16=""><span class="hljs-keyword" _ngcontent-hbl-c16="">import</span> AsyncAirtable <span class="hljs-keyword" _ngcontent-hbl-c16="">from</span> <span class="hljs-string" _ngcontent-hbl-c16="">'asyncairtable'</span>;
+<span class="hljs-keyword" _ngcontent-hbl-c16="">import</span> { AirtableRecord, SelectOptions } <span class="hljs-keyword" _ngcontent-hbl-c16="">from</span> <span class="hljs-string" _ngcontent-hbl-c16="">'asyncairtable/lib/@types'</span>;
+<span class="hljs-keyword" _ngcontent-hbl-c16="">import</span> { Service, Inject, Token } <span class="hljs-keyword" _ngcontent-hbl-c16="">from</span> <span class="hljs-string" _ngcontent-hbl-c16="">'typedi'</span>;
+<span class="hljs-keyword" _ngcontent-hbl-c16="">import</span> { BaseModel } <span class="hljs-keyword" _ngcontent-hbl-c16="">from</span> <span class="hljs-string" _ngcontent-hbl-c16="">'../models/BaseModel'</span>;
+
+@Service()
+<span class="hljs-keyword" _ngcontent-hbl-c16="">export</span> <span class="hljs-class" _ngcontent-hbl-c16=""><span class="hljs-keyword" _ngcontent-hbl-c16="">class</span> <span class="hljs-title" _ngcontent-hbl-c16="">DataService</span> </span>{
+&nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> getDatas&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(
+&nbsp; &nbsp; baseId: string,
+&nbsp; &nbsp; <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string,
+&nbsp; &nbsp; options?: SelectOptions
+&nbsp; ): <span class="hljs-built_in" _ngcontent-hbl-c16="">Promise</span>&lt;T[]&gt; {
+&nbsp; &nbsp;&nbsp; ........
+&nbsp; }
+
+&nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> saveData&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(baseId: string, <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string, <span class="hljs-attr" _ngcontent-hbl-c16="">model</span>: T) {
+&nbsp; &nbsp; .........
+&nbsp; }
+
+&nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> updateData&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(baseId: string, <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string, <span class="hljs-attr" _ngcontent-hbl-c16="">model</span>: T) {
+&nbsp; &nbsp; .........
+&nbsp; }
+
+<span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> deleteData&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(baseId: string, <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string, <span class="hljs-attr" _ngcontent-hbl-c16="">model</span>: T) {
+&nbsp; &nbsp; ..........
+&nbsp; }
+
+}
+</code></pre>
+<p _ngcontent-hbl-c16="">另外有寫一個泛型類別將這些包裝起來，定義了新增、修改、刪除及查詢的方法，希望所有的 Model 都是使用相同的方式來存取資料。</p>
+<h2 id="取得資料" _ngcontent-hbl-c16="">取得資料</h2>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16=""><span class="hljs-comment" _ngcontent-hbl-c16="">// BaseModel.ts</span>
+<span class="hljs-keyword" _ngcontent-hbl-c16="">export</span> interface BaseObj <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> Record&lt;string, unknown&gt; {
+&nbsp; id?: string;
+}
+
+<span class="hljs-keyword" _ngcontent-hbl-c16="">export</span> <span class="hljs-class" _ngcontent-hbl-c16=""><span class="hljs-keyword" _ngcontent-hbl-c16="">class</span> <span class="hljs-title" _ngcontent-hbl-c16="">BaseModel</span> <span class="hljs-title" _ngcontent-hbl-c16="">implements</span> <span class="hljs-title" _ngcontent-hbl-c16="">BaseObj</span> </span>{
+&nbsp; [x: string]: unknown;
+&nbsp; id?: string;
+}</code></pre>
+<p _ngcontent-hbl-c16="">接著再建立 BaseModel class，將做為所有 Model 的基礎類別，<code _ngcontent-hbl-c16="">T extends BaseModel</code>，以及繼承<code _ngcontent-hbl-c16="">Record&lt;string, unknown&gt;</code>來做為轉換成<code _ngcontent-hbl-c16="">AirTableRecord</code>的準備。</p>
+<blockquote _ngcontent-hbl-c16="">
+<p _ngcontent-hbl-c16="">Recored&lt;key, value&gt;是 TypeScript 內建的 Helper，它的定義如下：</p>
+</blockquote>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16="">type Record&lt;K <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> keyof any, T&gt; = {
+&nbsp; &nbsp; [P <span class="hljs-keyword" _ngcontent-hbl-c16="">in</span> K]: T;
+};</code></pre>
+<blockquote _ngcontent-hbl-c16="">
+<p _ngcontent-hbl-c16="">就是可以快速宣告 key/value 組合的型別，之前可能需要這樣宣告：</p>
+</blockquote>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16="">interface Options {
+  [key: string]: string;
+}</code></pre>
+<blockquote _ngcontent-hbl-c16="">
+<p _ngcontent-hbl-c16="">現在只要這麼寫</p>
+</blockquote>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16="">type Options = Record&lt;string, string&gt;.</code></pre>
+<pre _ngcontent-hbl-c16=""><code _ngcontent-hbl-c16="">{
+&nbsp; id: 'recYFjxxUF7EWAhH5',
+&nbsp; fields: {
+&nbsp; &nbsp; name: 'thomas123',
+&nbsp; &nbsp; email: 't@sample.com',
+&nbsp; &nbsp; mobile: '0999123456'
+&nbsp; &nbsp; },
+&nbsp; createdTime: '2021-04-17T10:18:47.000Z'
+}</code></pre>
+<p _ngcontent-hbl-c16="">AirtTable 回傳的資料格式如上，id 是自動建立的唯一 key 值，而<code _ngcontent-hbl-c16="">fields</code>就是所定義的欄位，而我的目標就是將<code _ngcontent-hbl-c16="">fields</code>這塊抽出來。</p>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16=""><span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> getDatas&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(
+&nbsp; &nbsp; baseId: string,
+&nbsp; &nbsp; <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string,
+&nbsp; &nbsp; options?: SelectOptions
+&nbsp; ): <span class="hljs-built_in" _ngcontent-hbl-c16="">Promise</span>&lt;T[]&gt; {
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> airtable = <span class="hljs-built_in" _ngcontent-hbl-c16="">this</span>.getAirTableClient(baseId);
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> records: AirtableRecord[] = <span class="hljs-keyword" _ngcontent-hbl-c16="">await</span> airtable.select(tableName, options);
+
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> body = records
+&nbsp; &nbsp; &nbsp; .map(<span class="hljs-function" _ngcontent-hbl-c16="">(<span class="hljs-params" _ngcontent-hbl-c16="">o: AirtableRecord</span>) =&gt;</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> fields = o.fields;
+&nbsp; &nbsp; &nbsp; &nbsp; fields.id = o.id;
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">return</span> fields;
+&nbsp; &nbsp; &nbsp; })
+&nbsp; &nbsp; &nbsp; .map(<span class="hljs-function" _ngcontent-hbl-c16=""><span class="hljs-params" _ngcontent-hbl-c16="">fields</span> =&gt;</span> {
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> obj: Record&lt;string, unknown&gt; = { ...fields };
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">return</span> obj;
+&nbsp; &nbsp; &nbsp; }) <span class="hljs-keyword" _ngcontent-hbl-c16="">as</span> T[];
+
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">return</span> body;
+&nbsp; }</code></pre>
+<p _ngcontent-hbl-c16="">綄合上述的程式，取得資料的地方，使用 2 個<code _ngcontent-hbl-c16="">Map</code>來轉換<code _ngcontent-hbl-c16="">T[]</code>：</p>
+<ul _ngcontent-hbl-c16="">
+<li _ngcontent-hbl-c16="">第 1 個<code _ngcontent-hbl-c16="">Map</code>是要將 fields 屬性抽出，並將唯一值指派至<code _ngcontent-hbl-c16="">fields</code>上。</li>
+<li _ngcontent-hbl-c16="">第 2 個<code _ngcontent-hbl-c16="">Map</code>是為了轉成<code _ngcontent-hbl-c16="">T[]</code>，建立一個物件，使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Spread_syntax" _ngcontent-hbl-c16="">spread operator</a> 複製<code _ngcontent-hbl-c16="">fields</code>至物件中，最後轉型成<code _ngcontent-hbl-c16="">T[]</code>。</li>
+</ul>
+<h2 id="新增資料" _ngcontent-hbl-c16="">新增資料</h2>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16=""><span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> saveData&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(baseId: string, <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string, <span class="hljs-attr" _ngcontent-hbl-c16="">model</span>: T) {
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> airtable = <span class="hljs-built_in" _ngcontent-hbl-c16="">this</span>.getAirTableClient(baseId);
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> body = <span class="hljs-keyword" _ngcontent-hbl-c16="">await</span> airtable.createRecord(tableName, model);
+
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">return</span> body;
+&nbsp; }</code></pre>
+<p _ngcontent-hbl-c16="">新增就很單純，將 Model 物件傳入 <code _ngcontent-hbl-c16="">createRecord</code>方法即可在 AirtTable 新增一筆資料。</p>
+<h2 id="更新資料" _ngcontent-hbl-c16="">更新資料</h2>
+<pre _ngcontent-hbl-c16=""><code class="language-javascript" _ngcontent-hbl-c16=""><span class="hljs-keyword" _ngcontent-hbl-c16="">async</span> updateData&lt;T <span class="hljs-keyword" _ngcontent-hbl-c16="">extends</span> BaseModel&gt;(baseId: string, <span class="hljs-attr" _ngcontent-hbl-c16="">tableName</span>: string, <span class="hljs-attr" _ngcontent-hbl-c16="">model</span>: T) {
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> airtable = <span class="hljs-built_in" _ngcontent-hbl-c16="">this</span>.getAirTableClient(baseId);
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> tmpModel = { ...model };
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> id = tmpModel.id;
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">delete</span> tmpModel.id;
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">const</span> body = <span class="hljs-keyword" _ngcontent-hbl-c16="">await</span> airtable.updateRecord(tableName, {
+&nbsp; &nbsp; &nbsp; <span class="hljs-attr" _ngcontent-hbl-c16="">id</span>: id <span class="hljs-keyword" _ngcontent-hbl-c16="">as</span> string,
+&nbsp; &nbsp; &nbsp; <span class="hljs-attr" _ngcontent-hbl-c16="">fields</span>: tmpModel,
+&nbsp; &nbsp; });
+
+&nbsp; &nbsp; <span class="hljs-keyword" _ngcontent-hbl-c16="">return</span> body;
+&nbsp; }</code></pre>
+<p _ngcontent-hbl-c16="">更新和新增類似，會多傳入唯一鍵值 id ，執行<code _ngcontent-hbl-c16="">updateRecord</code>即可完成，而這邊<code _ngcontent-hbl-c16="">delete tmpModel.id</code>的目的是，id 是自動產生的，所以不需要傳入至 AirTable。</p>
+<h2 id="結論" _ngcontent-hbl-c16="">結論</h2>
+<p _ngcontent-hbl-c16="">雖然還有其他的儲存資料的解決方案，比如使用 Google sheets，或是使用其它的雲端免費方案，但使用 AirTable 一陣子後，有符合我的期待，目前使用蠻滿意的。
+有將這些程式包成 <a href="https://www.npmjs.com/package/@thomascsd/stools" _ngcontent-hbl-c16="">npm package</a>，大家可以參考看看。</p>
+<p _ngcontent-hbl-c16="">原始碼的位置：<a href="https://github.com/thomascsd/stools" _ngcontent-hbl-c16="">https://github.com/thomascsd/stools</a></p>
+<!--scullyContent-end--><script>try {window['scullyContent'] = {cssId:"_ngcontent-hbl-c16",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script><scully-content _ngcontent-hbl-c16=""></scully-content>
+        </div>
+      </div>
+
+      <hr _ngcontent-hbl-c16="">
+      <div _ngcontent-hbl-c16="" class="row">
+        <div _ngcontent-hbl-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-hbl-c16="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2021-04-24-AirtableAsDatabase&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2021-04-24-AirtableAsDatabase&amp;title=%E5%B0%87AirTable%E5%81%9A%E7%82%BA%E8%B3%87%E6%96%99%E5%BA%AB%E7%9A%84%E5%BF%83%E5%BE%97&amp;description=Thomas%20Blog" loading="lazy"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-hbl-c14=""><app-footer _ngcontent-hbl-c14="" _nghost-hbl-c13=""><footer _ngcontent-hbl-c13=""><div _ngcontent-hbl-c13="" class="container"><div _ngcontent-hbl-c13="" class="row"><div _ngcontent-hbl-c13="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-hbl-c13="" class="list-inline text-center"><li _ngcontent-hbl-c13=""><a _ngcontent-hbl-c13="" href="https://www.twitter.com/thomascsd"><span _ngcontent-hbl-c13="" class="fa-stack fa-lg"><i _ngcontent-hbl-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-hbl-c13="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-hbl-c13=""><a _ngcontent-hbl-c13="" href="https://github.com/thomascsd"><span _ngcontent-hbl-c13="" class="fa-stack fa-lg"><i _ngcontent-hbl-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-hbl-c13="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-hbl-c13="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.a221ea5094c71afa9063.js" type="module"></script><script src="runtime-es5.a221ea5094c71afa9063.js" nomodule="" defer=""></script><script src="polyfills-es5.cb32a52bc633c9710ac0.js" nomodule="" defer=""></script><script src="polyfills-es2015.879fe6e0427fd01bbdb6.js" type="module"></script><script src="main-es2015.1956c9ca69e6353b2e25.js" type="module"></script><script src="main-es5.1956c9ca69e6353b2e25.js" nomodule="" defer=""></script>
+
+</body></html>

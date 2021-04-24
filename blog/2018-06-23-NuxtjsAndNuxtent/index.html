@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.0.0-beta.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      color-scheme: light;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>使用Nuxt.js及Nuxtent建立Blog的心得</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thomas Blog">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102188481-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-102188481-1');
+    </script>
+  <link rel="stylesheet" href="styles.82db6a3cce6aae377155.css"><style></style><script charset="utf-8" src="5-es2015.39c6e553f52c59385f46.js"></script><style>[_ngcontent-bxt-c16]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="1.0.0-beta.0">
+    <app-root _nghost-bxt-c14="" ng-version="10.0.9"><div _ngcontent-bxt-c14=""><app-blog-nav _ngcontent-bxt-c14="" _nghost-bxt-c12=""><nav _ngcontent-bxt-c12="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-bxt-c12="" class="container-fluid"><div _ngcontent-bxt-c12="" class="navbar-header page-scroll"><button _ngcontent-bxt-c12="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-bxt-c12="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-bxt-c12="" class="fa fa-bars"></i></button><a _ngcontent-bxt-c12="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-bxt-c12="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-bxt-c12="" class="nav navbar-nav navbar-right"><li _ngcontent-bxt-c12=""><a _ngcontent-bxt-c12="" href="/">Blog</a></li><li _ngcontent-bxt-c12=""><a _ngcontent-bxt-c12="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-bxt-c12=""><a _ngcontent-bxt-c12="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-bxt-c14=""></router-outlet><app-blog _nghost-bxt-c16=""><div _ngcontent-bxt-c16="">
+  
+  <app-post-header _ngcontent-bxt-c16="" _nghost-bxt-c15=""><header _ngcontent-bxt-c15="" class="intro-header" style="background-image: url(&quot;assets/images/05/05-0.jpg&quot;);"><div _ngcontent-bxt-c15="" class="container"><div _ngcontent-bxt-c15="" class="row"><div _ngcontent-bxt-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-bxt-c15="" class="post-heading"><h1 _ngcontent-bxt-c15="">使用Nuxt.js及Nuxtent建立Blog的心得</h1><span _ngcontent-bxt-c15="" class="meta">on 2018-06-23</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-bxt-c16="">
+    <div _ngcontent-bxt-c16="" class="container">
+      <div _ngcontent-bxt-c16="" class="row">
+        <div _ngcontent-bxt-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-bxt-c16="">Nuxt.js 是內建 SSR 的 vue.js 框架，我最感興趣的部份是可輸出靜態的 Html，如此就可以輕鬆的將程式部署至 GitHub Page 上，並且可以使用 module 來擴充功能。</p>
+<p _ngcontent-bxt-c16="">當我看到了 Nuxtent 這個 module，它是可以取得 Markdown 內容的 module，所以想將 Blog 用 Nuxt.js 重新翻寫。</p>
+<h2 id="nuxtent-template" _ngcontent-bxt-c16="">Nuxtent Template</h2>
+<p _ngcontent-bxt-c16="">第一步快速建立的話，可使用<a href="https://github.com/nuxt-community/nuxtent-template" _ngcontent-bxt-c16="">Nuxtent Template</a>建立一個基本的網站架構，需要事先安裝<a href="https://github.com/vuejs/vue-cli" _ngcontent-bxt-c16="">vue-cli</a>。</p>
+<pre _ngcontent-bxt-c16=""><code _ngcontent-bxt-c16="">vue init nuxt-community/nuxtent-template my-site</code></pre>
+<h2 id="網站架構" _ngcontent-bxt-c16="">網站架構</h2>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-1.png" _ngcontent-bxt-c16="">
+
+<h3 id="page" _ngcontent-bxt-c16="">page</h3>
+<p _ngcontent-bxt-c16="">建立網站的路由，例如在目錄中建立 about.vue，網址會成為 localhost:3000/about。</p>
+<h3 id="static" _ngcontent-bxt-c16="">static</h3>
+<p _ngcontent-bxt-c16="">靜態資源，例如：圖片，路徑會基於根目錄，例如/images/bg.png</p>
+<h3 id="content" _ngcontent-bxt-c16="">content</h3>
+<p _ngcontent-bxt-c16="">Nuxtent module 特定的目錄，放置 Markdown 檔案的地方，也就是放入文章的地方</p>
+<h3 id="layout" _ngcontent-bxt-c16="">layout</h3>
+<p _ngcontent-bxt-c16="">預設 layout 為 layout.vue，也可以自定 layout，之後使用 layout 屬性指定自定的 layout</p>
+<pre _ngcontent-bxt-c16=""><code class="language-javascript" _ngcontent-bxt-c16=""><span class="hljs-keyword" _ngcontent-bxt-c16="">export</span> <span class="hljs-keyword" _ngcontent-bxt-c16="">default</span> {
+  <span class="hljs-keyword" _ngcontent-bxt-c16="">async</span> asyncData({ app }) {
+    <span class="hljs-keyword" _ngcontent-bxt-c16="">return</span> {
+      <span class="hljs-attr" _ngcontent-bxt-c16="">posts</span>: <span class="hljs-keyword" _ngcontent-bxt-c16="">await</span> app.$content(<span class="hljs-string" _ngcontent-bxt-c16="">'/'</span>).getAll(),
+      <span class="hljs-attr" _ngcontent-bxt-c16="">name</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'Thomas Blog'</span>,
+    };
+  },
+  <span class="hljs-attr" _ngcontent-bxt-c16="">layout</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'customLayout'</span>,
+};</code></pre>
+<h2 id="設定檔" _ngcontent-bxt-c16="">設定檔</h2>
+<p _ngcontent-bxt-c16="">nuxtent.config.js</p>
+<pre _ngcontent-bxt-c16=""><code class="language-javascript" _ngcontent-bxt-c16=""><span class="hljs-keyword" _ngcontent-bxt-c16="">const</span> Prism = <span class="hljs-built_in" _ngcontent-bxt-c16="">require</span>(<span class="hljs-string" _ngcontent-bxt-c16="">'prismjs'</span>);
+
+<span class="hljs-built_in" _ngcontent-bxt-c16="">module</span>.exports = {
+  <span class="hljs-attr" _ngcontent-bxt-c16="">content</span>: {
+    <span class="hljs-attr" _ngcontent-bxt-c16="">permalink</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'/:slug'</span>,
+    <span class="hljs-attr" _ngcontent-bxt-c16="">page</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'/_content'</span>,
+    <span class="hljs-attr" _ngcontent-bxt-c16="">generate</span>: [
+      <span class="hljs-comment" _ngcontent-bxt-c16="">// for static build</span>
+      <span class="hljs-string" _ngcontent-bxt-c16="">'get'</span>,
+      <span class="hljs-string" _ngcontent-bxt-c16="">'getAll'</span>,
+    ],
+    <span class="hljs-attr" _ngcontent-bxt-c16="">isPost</span>: <span class="hljs-literal" _ngcontent-bxt-c16="">true</span>,
+  },
+  <span class="hljs-attr" _ngcontent-bxt-c16="">api</span>: {
+    <span class="hljs-attr" _ngcontent-bxt-c16="">baseURL</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'http://localhost:3200'</span>,
+  },
+  <span class="hljs-attr" _ngcontent-bxt-c16="">parsers</span>: {
+    <span class="hljs-attr" _ngcontent-bxt-c16="">md</span>: {
+      extend(config) {
+        config.highlight = <span class="hljs-function" _ngcontent-bxt-c16="">(<span class="hljs-params" _ngcontent-bxt-c16="">code, lang</span>) =&gt;</span> {
+          <span class="hljs-keyword" _ngcontent-bxt-c16="">return</span> <span class="hljs-string" _ngcontent-bxt-c16="">`&lt;pre class="language-<span class="hljs-subst" _ngcontent-bxt-c16="">${lang}</span>"&gt;&lt;code class="language-<span class="hljs-subst" _ngcontent-bxt-c16="">${lang}</span>"&gt;<span class="hljs-subst" _ngcontent-bxt-c16="">${Prism.highlight(
+            code,
+            Prism.languages[lang] || Prism.languages.markup
+          )}</span>&lt;/code&gt;&lt;/pre&gt;`</span>;
+        };
+      },
+    },
+  },
+};</code></pre>
+<h3 id="content-1" _ngcontent-bxt-c16="">content</h3>
+<ul _ngcontent-bxt-c16="">
+<li _ngcontent-bxt-c16=""><p _ngcontent-bxt-c16="">permalink：設定文章路徑的顯示方式。</p>
+</li>
+<li _ngcontent-bxt-c16=""><p _ngcontent-bxt-c16="">page：指定顯示文章內容的檔案名稱，預設為_cotent，即指向_cotent.vue。按照文件可以設定為多個。</p>
+</li>
+<li _ngcontent-bxt-c16=""><p _ngcontent-bxt-c16="">isPost:：查看<a href="https://nuxtent.now.sh/guide/writing" _ngcontent-bxt-c16="">官方文件</a>的說明不是很了解這個屬性的用法，但當看了<a href="https://github.com/nuxt-community/nuxtent-module/blob/9423a753c43bbbe69395b400f90b1291ac935084/lib/content/page.js#L161" _ngcontent-bxt-c16="">原始碼</a>後發現</p>
+</li>
+</ul>
+<pre _ngcontent-bxt-c16=""><code class="language-javascript" _ngcontent-bxt-c16="">    <span class="hljs-keyword" _ngcontent-bxt-c16="">get</span> <span class="hljs-title" _ngcontent-bxt-c16="">date</span>() {
+      <span class="hljs-keyword" _ngcontent-bxt-c16="">if</span> (isDev || !cached.date) {
+        <span class="hljs-keyword" _ngcontent-bxt-c16="">const</span> { filePath, fileName, section } = meta
+        <span class="hljs-keyword" _ngcontent-bxt-c16="">if</span> (options.isPost) {
+          <span class="hljs-keyword" _ngcontent-bxt-c16="">const</span> fileDate = fileName.match(<span class="hljs-regexp" _ngcontent-bxt-c16="">/!?(\d{4}-\d{2}-\d{2})/</span>) <span class="hljs-comment" _ngcontent-bxt-c16="">// YYYY-MM-DD</span>
+          <span class="hljs-keyword" _ngcontent-bxt-c16="">if</span> (!fileDate) {
+            <span class="hljs-keyword" _ngcontent-bxt-c16="">throw</span> <span class="hljs-built_in" _ngcontent-bxt-c16="">Error</span>(<span class="hljs-string" _ngcontent-bxt-c16="">`Post in "<span class="hljs-subst" _ngcontent-bxt-c16="">${section}</span>" does not have a date!`</span>)
+          }
+          cached.date = fileDate[<span class="hljs-number" _ngcontent-bxt-c16="">0</span>]
+        } <span class="hljs-keyword" _ngcontent-bxt-c16="">else</span> {
+          <span class="hljs-keyword" _ngcontent-bxt-c16="">const</span> stats = statSync(filePath)
+          cached.date = dateFns.format(stats.ctime, <span class="hljs-string" _ngcontent-bxt-c16="">'YYYY-MM-DD'</span>)
+        }
+      }
+      <span class="hljs-keyword" _ngcontent-bxt-c16="">return</span> cached.date
+    }</code></pre>
+<p _ngcontent-bxt-c16="">當 true 時，需要將 markdown 檔案名稱設成 2017-06-20-HelloWorld.md，即會取得檔名上的日期做為文章日期。</p>
+<p _ngcontent-bxt-c16="">當 false，會使用檔案修改日期做為文章日期。</p>
+<h3 id="parser" _ngcontent-bxt-c16="">parser</h3>
+<p _ngcontent-bxt-c16="">我是參考<a href="https://nuxtent.now.sh/guide/configuration" _ngcontent-bxt-c16="">官方文件</a>，使用 prismjs 將 Mardown 的程式碼加上著色器功能。</p>
+<h2 id="取得內容" _ngcontent-bxt-c16="">取得內容</h2>
+<p _ngcontent-bxt-c16="">可以參考_content.vue 的程式碼，使用<strong _ngcontent-bxt-c16="">get</strong>取得目前路徑的內容。</p>
+<pre _ngcontent-bxt-c16=""><code class="language-javascript" _ngcontent-bxt-c16="">post: <span class="hljs-keyword" _ngcontent-bxt-c16="">await</span> app.$content(<span class="hljs-string" _ngcontent-bxt-c16="">'/'</span>).get(route.path);</code></pre>
+<p _ngcontent-bxt-c16="">如果是要取得所有文章的話，可以使用<strong _ngcontent-bxt-c16="">getAll</strong>這個方法。</p>
+<pre _ngcontent-bxt-c16=""><code class="language-javascript" _ngcontent-bxt-c16="">posts: <span class="hljs-keyword" _ngcontent-bxt-c16="">await</span> app.$content(<span class="hljs-string" _ngcontent-bxt-c16="">'/'</span>).getAll();</code></pre>
+<h2 id="評論功能" _ngcontent-bxt-c16="">評論功能</h2>
+<p _ngcontent-bxt-c16="">想使用基於 GitHub issues 的評論功能，有發現<a href="https://github.com/imsun/gitment" _ngcontent-bxt-c16="">gitment</a>這個套件剛好符合我的需要，安裝及設定都很簡單。</p>
+<pre _ngcontent-bxt-c16=""><code class="language-html" _ngcontent-bxt-c16=""><span class="hljs-tag" _ngcontent-bxt-c16="">&lt;<span class="hljs-name" _ngcontent-bxt-c16="">div</span> <span class="hljs-attr" _ngcontent-bxt-c16="">class</span>=<span class="hljs-string" _ngcontent-bxt-c16="">"row"</span>&gt;</span>
+  <span class="hljs-tag" _ngcontent-bxt-c16="">&lt;<span class="hljs-name" _ngcontent-bxt-c16="">div</span> <span class="hljs-attr" _ngcontent-bxt-c16="">class</span>=<span class="hljs-string" _ngcontent-bxt-c16="">"col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"</span>&gt;</span>
+    <span class="hljs-tag" _ngcontent-bxt-c16="">&lt;<span class="hljs-name" _ngcontent-bxt-c16="">div</span> <span class="hljs-attr" _ngcontent-bxt-c16="">id</span>=<span class="hljs-string" _ngcontent-bxt-c16="">"comments"</span>&gt;</span><span class="hljs-tag" _ngcontent-bxt-c16="">&lt;/<span class="hljs-name" _ngcontent-bxt-c16="">div</span>&gt;</span>
+  <span class="hljs-tag" _ngcontent-bxt-c16="">&lt;/<span class="hljs-name" _ngcontent-bxt-c16="">div</span>&gt;</span>
+<span class="hljs-tag" _ngcontent-bxt-c16="">&lt;/<span class="hljs-name" _ngcontent-bxt-c16="">div</span>&gt;</span></code></pre>
+<pre _ngcontent-bxt-c16=""><code class="language-javascript" _ngcontent-bxt-c16=""><span class="hljs-keyword" _ngcontent-bxt-c16="">import</span> PostHeader <span class="hljs-keyword" _ngcontent-bxt-c16="">from</span> <span class="hljs-string" _ngcontent-bxt-c16="">'../components/PostHeader'</span>;
+<span class="hljs-keyword" _ngcontent-bxt-c16="">import</span> Gitment <span class="hljs-keyword" _ngcontent-bxt-c16="">from</span> <span class="hljs-string" _ngcontent-bxt-c16="">'gitment'</span>;
+
+<span class="hljs-keyword" _ngcontent-bxt-c16="">export</span> <span class="hljs-keyword" _ngcontent-bxt-c16="">default</span> {
+  <span class="hljs-keyword" _ngcontent-bxt-c16="">async</span> asyncData({ app, route, payload }) {
+    <span class="hljs-keyword" _ngcontent-bxt-c16="">return</span> {
+      <span class="hljs-attr" _ngcontent-bxt-c16="">post</span>: <span class="hljs-keyword" _ngcontent-bxt-c16="">await</span> app.$content(<span class="hljs-string" _ngcontent-bxt-c16="">'/'</span>).get(route.path),
+    };
+  },
+  mounted() {
+    <span class="hljs-keyword" _ngcontent-bxt-c16="">const</span> gitment = <span class="hljs-keyword" _ngcontent-bxt-c16="">new</span> Gitment({
+      <span class="hljs-attr" _ngcontent-bxt-c16="">id</span>: <span class="hljs-built_in" _ngcontent-bxt-c16="">this</span>.post.title, <span class="hljs-comment" _ngcontent-bxt-c16="">// optional</span>
+      <span class="hljs-attr" _ngcontent-bxt-c16="">owner</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'thomascsd'</span>,
+      <span class="hljs-attr" _ngcontent-bxt-c16="">repo</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'thomascsd.github.io'</span>,
+      <span class="hljs-attr" _ngcontent-bxt-c16="">oauth</span>: {
+        <span class="hljs-attr" _ngcontent-bxt-c16="">client_id</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'client_id'</span>,
+        <span class="hljs-attr" _ngcontent-bxt-c16="">client_secret</span>: <span class="hljs-string" _ngcontent-bxt-c16="">'client_secret'</span>,
+      },
+    });
+
+    gitment.render(<span class="hljs-built_in" _ngcontent-bxt-c16="">document</span>.getElementById(<span class="hljs-string" _ngcontent-bxt-c16="">'comments'</span>));
+  },
+  <span class="hljs-attr" _ngcontent-bxt-c16="">components</span>: {
+    PostHeader,
+  },
+};</code></pre>
+<p _ngcontent-bxt-c16="">我是參考這篇<a href="https://ihtcboy.com/2018/02/25/2018-02-25_Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5%E8%B8%A9%E5%9D%91%E6%95%99%E7%A8%8B/" _ngcontent-bxt-c16="">文章</a>。</p>
+<p _ngcontent-bxt-c16="">要注意的點是，第一次會顯示<strong _ngcontent-bxt-c16="">Error:Comments Not Initialized</strong>。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-5.png" _ngcontent-bxt-c16="">
+
+<p _ngcontent-bxt-c16="">需要登入自己的 Github 帳號後，啟動應用程式。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-6.png" _ngcontent-bxt-c16="">
+
+<p _ngcontent-bxt-c16="">成功之後，就會變成下圖</p>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-7.png" _ngcontent-bxt-c16="">
+
+<h2 id="部署" _ngcontent-bxt-c16="">部署</h2>
+<p _ngcontent-bxt-c16="">將靜態檔案部署至 Github pages，我遇到了一些問題，按照範例設定會將 NODE_ENV='production'及 baseUrl 會成為正式部署的路徑，例如我的 Blog 網址 thomascsd.github.io。</p>
+<p _ngcontent-bxt-c16="">當使用 npm generate 時，卻會出現下列錯誤</p>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-2.png" _ngcontent-bxt-c16="">
+
+<p _ngcontent-bxt-c16="">最後發現，使用下列步驟就 OK 了</p>
+<ul _ngcontent-bxt-c16="">
+<li _ngcontent-bxt-c16="">不需要加上 NODE_ENV</li>
+<li _ngcontent-bxt-c16="">baseUrl 設定成預設的 localhost:3200，並執行 npm generate</li>
+<li _ngcontent-bxt-c16="">再使用 VSCode 搜索 localhost:3200，即會發現 dist/api.js 內容有 baseURL:localhost:3200，然後將網址替換成正式環境，如我的 Blog 網址 thomascsd.github.io</li>
+</ul>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-3.png" _ngcontent-bxt-c16="">
+
+<ul _ngcontent-bxt-c16="">
+<li _ngcontent-bxt-c16="">最後就可以部署至 GitHub page</li>
+</ul>
+<img class="img-responsive" loading="lazy" src="assets/images/05/05-4.png" _ngcontent-bxt-c16="">
+
+<h2 id="結論" _ngcontent-bxt-c16="">結論</h2>
+<p _ngcontent-bxt-c16="">很方便將一個 Blog 建立起來，但是缺乏一些功能，例如標籤、Archive 功能，這些都要自己實作出來。原始碼可以參考<a href="https://github.com/thomascsd/thomascsd-blog" _ngcontent-bxt-c16="">這裡</a>。</p>
+<!--scullyContent-end--><script>try {window['scullyContent'] = {cssId:"_ngcontent-bxt-c16",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script><scully-content _ngcontent-bxt-c16=""></scully-content>
+        </div>
+      </div>
+
+      <hr _ngcontent-bxt-c16="">
+      <div _ngcontent-bxt-c16="" class="row">
+        <div _ngcontent-bxt-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-bxt-c16="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2018-06-23-NuxtjsAndNuxtent&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2018-06-23-NuxtjsAndNuxtent&amp;title=%E4%BD%BF%E7%94%A8Nuxt.js%E5%8F%8ANuxtent%E5%BB%BA%E7%AB%8BBlog%E7%9A%84%E5%BF%83%E5%BE%97&amp;description=Thomas%20Blog" loading="lazy"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-bxt-c14=""><app-footer _ngcontent-bxt-c14="" _nghost-bxt-c13=""><footer _ngcontent-bxt-c13=""><div _ngcontent-bxt-c13="" class="container"><div _ngcontent-bxt-c13="" class="row"><div _ngcontent-bxt-c13="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-bxt-c13="" class="list-inline text-center"><li _ngcontent-bxt-c13=""><a _ngcontent-bxt-c13="" href="https://www.twitter.com/thomascsd"><span _ngcontent-bxt-c13="" class="fa-stack fa-lg"><i _ngcontent-bxt-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-bxt-c13="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-bxt-c13=""><a _ngcontent-bxt-c13="" href="https://github.com/thomascsd"><span _ngcontent-bxt-c13="" class="fa-stack fa-lg"><i _ngcontent-bxt-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-bxt-c13="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-bxt-c13="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.a221ea5094c71afa9063.js" type="module"></script><script src="runtime-es5.a221ea5094c71afa9063.js" nomodule="" defer=""></script><script src="polyfills-es5.cb32a52bc633c9710ac0.js" nomodule="" defer=""></script><script src="polyfills-es2015.879fe6e0427fd01bbdb6.js" type="module"></script><script src="main-es2015.1956c9ca69e6353b2e25.js" type="module"></script><script src="main-es5.1956c9ca69e6353b2e25.js" nomodule="" defer=""></script>
+
+</body></html>
