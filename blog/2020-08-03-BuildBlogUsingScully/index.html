@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.0.0-beta.0"><style>
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 0.0.0"><style>
     .utterances {
       position: relative;
       box-sizing: border-box;
@@ -8,6 +8,7 @@
       margin-right: auto;
     }
     .utterances-frame {
+      color-scheme: light;
       position: absolute;
       left: 0;
       right: 0;
@@ -20,7 +21,7 @@
   </style>
     <!-- Meta -->
     <meta charset="utf-8">
-    <title>使用Scully建立Blog的心得記錄</title>
+    <title>使用 Angular Static Generator - Scully 建立Blog的心得記錄</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Thomas Blog">
@@ -31,18 +32,19 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link id="theme-style" rel="stylesheet" href="assets/css/style.min.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-102188481-1"></script>
+    <style>@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);body{color:#333}body{font-family:'Noto Sans TC', sans-serif;font-size:20px;-webkit-tap-highlight-color:#0085a1}</style><link id="theme-style" rel="stylesheet" href="assets/css/style.min.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', 'UA-102188481-1');
+
+      gtag('config', 'G-704JZ9KNS1');
     </script>
-  <link rel="stylesheet" href="styles.82db6a3cce6aae377155.css"><style></style><script charset="utf-8" src="5-es2015.39c6e553f52c59385f46.js"></script><style>[_ngcontent-cci-c16]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><style>[_ngcontent-scf-c16]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
       :host {
         display: none;
       }
@@ -50,180 +52,171 @@
         display: none;
       }
     </style><script>window['ScullyIO']='generated';</script></head>
-  <body scully-version="1.0.0-beta.0">
-    <app-root _nghost-cci-c14="" ng-version="10.0.9"><div _ngcontent-cci-c14=""><app-blog-nav _ngcontent-cci-c14="" _nghost-cci-c12=""><nav _ngcontent-cci-c12="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-cci-c12="" class="container-fluid"><div _ngcontent-cci-c12="" class="navbar-header page-scroll"><button _ngcontent-cci-c12="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-cci-c12="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-cci-c12="" class="fa fa-bars"></i></button><a _ngcontent-cci-c12="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-cci-c12="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-cci-c12="" class="nav navbar-nav navbar-right"><li _ngcontent-cci-c12=""><a _ngcontent-cci-c12="" href="/">Blog</a></li><li _ngcontent-cci-c12=""><a _ngcontent-cci-c12="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-cci-c12=""><a _ngcontent-cci-c12="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-cci-c14=""></router-outlet><app-blog _nghost-cci-c16=""><div _ngcontent-cci-c16="">
+  <body scully-version="0.0.0">
+    <app-root _nghost-scf-c14="" ng-version="13.1.1"><div _ngcontent-scf-c14=""><app-blog-nav _ngcontent-scf-c14="" _nghost-scf-c12=""><nav _ngcontent-scf-c12="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-scf-c12="" class="container-fluid"><div _ngcontent-scf-c12="" class="navbar-header page-scroll"><button _ngcontent-scf-c12="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-scf-c12="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-scf-c12="" class="fa fa-bars"></i></button><a _ngcontent-scf-c12="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-scf-c12="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-scf-c12="" class="nav navbar-nav navbar-right"><li _ngcontent-scf-c12=""><a _ngcontent-scf-c12="" href="/">Blog</a></li><li _ngcontent-scf-c12=""><a _ngcontent-scf-c12="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-scf-c12=""><a _ngcontent-scf-c12="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-scf-c14=""></router-outlet><app-blog _nghost-scf-c16=""><div _ngcontent-scf-c16="">
   
-  <app-post-header _ngcontent-cci-c16="" _nghost-cci-c15=""><header _ngcontent-cci-c15="" class="intro-header" style="background-image: url(&quot;assets/images/15/15-0.jpg&quot;);"><div _ngcontent-cci-c15="" class="container"><div _ngcontent-cci-c15="" class="row"><div _ngcontent-cci-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-cci-c15="" class="post-heading"><h1 _ngcontent-cci-c15="">使用Scully建立Blog的心得記錄</h1><span _ngcontent-cci-c15="" class="meta">on 2020-08-03</span></div></div></div></div></header></app-post-header><!---->
+  <app-post-header _ngcontent-scf-c16="" _nghost-scf-c15=""><header _ngcontent-scf-c15="" class="intro-header" style="background-image: url(&quot;assets/images/15/15-0.jpg&quot;);"><div _ngcontent-scf-c15="" class="container"><div _ngcontent-scf-c15="" class="row"><div _ngcontent-scf-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-scf-c15="" class="post-heading"><h1 _ngcontent-scf-c15="">使用 Angular Static Generator - Scully 建立Blog的心得記錄</h1><span _ngcontent-scf-c15="" class="meta">on 2020-08-03</span></div></div></div></div></header></app-post-header><!---->
 
-  <article _ngcontent-cci-c16="">
-    <div _ngcontent-cci-c16="" class="container">
-      <div _ngcontent-cci-c16="" class="row">
-        <div _ngcontent-cci-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <!--scullyContent-begin--><p _ngcontent-cci-c16="">一直以來 Angular 缺 Static Site Genrator，像是 Vue.js 有 Nuxt.js，而 React.js 也有 Gatsby.js，終於 Angular 也出了 Static Site Generator - <a href="https://scully.io" _ngcontent-cci-c16="">Scully</a>，並且我的 Blog 從最早的 Jekyll，之後是用 Nuxt.js，現在要用 Scully 第三次改寫，因為我對 Angular 還是比較熟悉的原故，建立 Blog 的過程心程分享給大家參考看看</p>
-<h2 id="起手式" _ngcontent-cci-c16="">起手式</h2>
-<pre _ngcontent-cci-c16=""><code _ngcontent-cci-c16="">ng new blog-demo</code></pre>
-<p _ngcontent-cci-c16="">首先是用 Angular CLI 建立基本的版型。</p>
-<pre _ngcontent-cci-c16=""><code _ngcontent-cci-c16="">ng add @scullyio/init</code></pre>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-1.png" _ngcontent-cci-c16="">
+  <article _ngcontent-scf-c16="">
+    <div _ngcontent-scf-c16="" class="container">
+      <div _ngcontent-scf-c16="" class="row">
+        <div _ngcontent-scf-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-scf-c16="">2022/09/09 更新：程式碼著色，改為 <code _ngcontent-scf-c16="">prismjs</code></p>
+<p _ngcontent-scf-c16="">一直以來 Angular 缺 Static Site Generator，像是 Vue.js 有 Nuxt.js，而 React.js 也有 Gatsby.js，終於 Angular 也出了 Static Site Generator - <a href="https://scully.io" _ngcontent-scf-c16="">Scully</a>，並且我的 Blog 從最早的 Jekyll，之後是用 Nuxt.js，現在要用 Scully 第三次改寫，因為我對 Angular 還是比較熟悉的原故，建立 Blog 的過程心程分享給大家參考看看</p>
+<h2 id="起手式" _ngcontent-scf-c16="">起手式</h2>
+<pre _ngcontent-scf-c16=""><code _ngcontent-scf-c16="">ng <span class="token keyword" _ngcontent-scf-c16="">new</span> <span class="token class-name" _ngcontent-scf-c16="">blog</span><span class="token operator" _ngcontent-scf-c16="">-</span>demo</code></pre><p _ngcontent-scf-c16="">首先是用 Angular CLI 建立基本的版型。</p>
+<pre _ngcontent-scf-c16=""><code _ngcontent-scf-c16="">ng add <span class="token decorator" _ngcontent-scf-c16=""><span class="token at operator" _ngcontent-scf-c16="">@</span><span class="token function" _ngcontent-scf-c16="">scullyio</span></span><span class="token operator" _ngcontent-scf-c16="">/</span>init</code></pre><img class="img-responsive" loading="lazy" src="assets/images/16/16-1.png" _ngcontent-scf-c16="">
 
-<p _ngcontent-cci-c16="">接著參考<a href="https://scully.io/docs/getting-started/" _ngcontent-cci-c16="">官方文件</a>，輸入上方指令，將 Scully 加入 Angular 專案，並產生 scully.{your project}.config.ts。</p>
-<pre _ngcontent-cci-c16=""><code _ngcontent-cci-c16="">ng generate @scullyio/init:blog</code></pre>
-<p _ngcontent-cci-c16="">再來就是建立 Blog 模組，輸入上列指命，就會產生基本的檔案。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-2.png" _ngcontent-cci-c16="">
+<p _ngcontent-scf-c16="">接著參考<a href="https://scully.io/docs/getting-started/" _ngcontent-scf-c16="">官方文件</a>，輸入上方指令，將 Scully 加入 Angular 專案，並產生 scully.{your project}.config.ts。</p>
+<pre _ngcontent-scf-c16=""><code _ngcontent-scf-c16="">ng generate <span class="token decorator" _ngcontent-scf-c16=""><span class="token at operator" _ngcontent-scf-c16="">@</span><span class="token function" _ngcontent-scf-c16="">scullyio</span></span><span class="token operator" _ngcontent-scf-c16="">/</span>init<span class="token operator" _ngcontent-scf-c16="">:</span>blog</code></pre><p _ngcontent-scf-c16="">再來就是建立 Blog 模組，輸入上列指命，就會產生基本的檔案。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-2.png" _ngcontent-scf-c16="">
 
-<p _ngcontent-cci-c16="">如上圖所示，主要會建立 Blog 目錄 - 存放 markdown 格式的文章，以及 BlogComponent - 顯示文章。這時再套上主題樣式就成為基本的 Blog 了。但是還要再加上下列的功能，才會是比較完整的 Blog。</p>
-<h2 id="程式碼著色功能" _ngcontent-cci-c16="">程式碼著色功能</h2>
-<p _ngcontent-cci-c16=""><a href="https://scully.io" _ngcontent-cci-c16="">Scully</a>是使用 Plugin 的機制來擴充功能，除了<a href="https://scully.io/docs/scully-provided-plugins/" _ngcontent-cci-c16="">內建</a>之外，也有其他人所寫的 Plugin，而程式碼著色功能使用內建的 Plugin - MD。</p>
-<pre _ngcontent-cci-c16=""><code class="language-javascript" _ngcontent-cci-c16=""><span class="hljs-keyword" _ngcontent-cci-c16="">import</span> { ScullyConfig, setPluginConfig } <span class="hljs-keyword" _ngcontent-cci-c16="">from</span> <span class="hljs-string" _ngcontent-cci-c16="">'@scullyio/scully'</span>;
+<p _ngcontent-scf-c16="">如上圖所示，主要會建立 Blog 目錄 - 存放 markdown 格式的文章，以及 BlogComponent - 顯示文章。這時再套上主題樣式就成為基本的 Blog 了。但是還要再加上下列的功能，才會是比較完整的 Blog。</p>
+<h2 id="程式碼著色功能" _ngcontent-scf-c16="">程式碼著色功能</h2>
+<p _ngcontent-scf-c16=""><a href="https://scully.io" _ngcontent-scf-c16="">Scully</a>是使用 Plugin 的機制來擴充功能，除了<a href="https://scully.io/docs/scully-provided-plugins/" _ngcontent-scf-c16="">內建</a>之外，也有其他人所寫的 Plugin，而程式碼著色功能使用內建的 Plugin - MD。</p>
+<pre class="language-javascript" _ngcontent-scf-c16=""><code class="language-javascript" _ngcontent-scf-c16=""><span class="token keyword" _ngcontent-scf-c16="">import</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> ScullyConfig<span class="token punctuation" _ngcontent-scf-c16="">,</span> setPluginConfig <span class="token punctuation" _ngcontent-scf-c16="">}</span> <span class="token keyword" _ngcontent-scf-c16="">from</span> <span class="token string" _ngcontent-scf-c16="">'@scullyio/scully'</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-setPluginConfig(<span class="hljs-string" _ngcontent-cci-c16="">'md'</span>, { <span class="hljs-attr" _ngcontent-cci-c16="">enableSyntaxHighlighting</span>: <span class="hljs-literal" _ngcontent-cci-c16="">true</span> });
+<span class="token function" _ngcontent-scf-c16="">setPluginConfig</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'md'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> <span class="token literal-property property" _ngcontent-scf-c16="">enableSyntaxHighlighting</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token boolean" _ngcontent-scf-c16="">true</span> <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-<span class="hljs-keyword" _ngcontent-cci-c16="">export</span> <span class="hljs-keyword" _ngcontent-cci-c16="">const</span> config: ScullyConfig = {
-...
-}</code></pre>
-<p _ngcontent-cci-c16="">在 scully.{your project name}.config.ts 中加上以上的設定，設定<code _ngcontent-cci-c16="">enableSyntaxHighlighting: true</code>啟用程式碼著色功能。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-3.png" _ngcontent-cci-c16="">
+<span class="token keyword" _ngcontent-scf-c16="">export</span> <span class="token keyword" _ngcontent-scf-c16="">const</span> <span class="token literal-property property" _ngcontent-scf-c16="">config</span><span class="token operator" _ngcontent-scf-c16="">:</span> ScullyConfig <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+<span class="token operator" _ngcontent-scf-c16="">...</span>
+<span class="token punctuation" _ngcontent-scf-c16="">}</span></code></pre><p _ngcontent-scf-c16="">在 scully.{your project name}.config.ts 中加上以上的設定，設定<code _ngcontent-scf-c16="">enableSyntaxHighlighting: true</code>啟用程式碼著色功能。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-3.png" _ngcontent-scf-c16="">
 
-<p _ngcontent-cci-c16="">但是只有設定到一半，因為 css 還沒戴入，所以程式碼就是預設的文字顏色。</p>
-<pre _ngcontent-cci-c16=""><code _ngcontent-cci-c16="">npm install highlight.js</code></pre>
-<p _ngcontent-cci-c16="">因為 Plugin - MD 是使用 highlight.js 來著色程式碼，所以另外安裝 highlight.js，接著再取得我們所需要的 css。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-4.png" _ngcontent-cci-c16="">
+<p _ngcontent-scf-c16="">但是只有設定到一半，因為 css 還沒戴入，所以程式碼就是預設的文字顏色。</p>
+<pre _ngcontent-scf-c16=""><code _ngcontent-scf-c16="">npm install prismjs</code></pre><p _ngcontent-scf-c16="">因為 Plugin - MD 是使用 <code _ngcontent-scf-c16="">prismjs</code> 來著色程式碼，所以另外安裝 <code _ngcontent-scf-c16="">prismjs</code>，接著再取得我們所需要的 css。</p>
+<pre class="language-css" _ngcontent-scf-c16=""><code class="language-css" _ngcontent-scf-c16=""><span class="token atrule" _ngcontent-scf-c16=""><span class="token rule" _ngcontent-scf-c16="">@import</span> <span class="token string" _ngcontent-scf-c16="">'~prismjs/themes/prism-coy.min.css'</span><span class="token punctuation" _ngcontent-scf-c16="">;</span></span></code></pre><p _ngcontent-scf-c16="">接著在 <code _ngcontent-scf-c16="">style.css</code> 戴入樣式。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-5.png" _ngcontent-scf-c16="">
 
-<p _ngcontent-cci-c16="">在 angular.json 裡的 styles 加上自已所喜好的樣式 css。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-5.png" _ngcontent-cci-c16="">
+<p _ngcontent-scf-c16="">這樣就 OK 了，程式碼有顏色了。</p>
+<h2 id="留言系統" _ngcontent-scf-c16="">留言系統</h2>
+<p _ngcontent-scf-c16="">一般說來，都希望在文章下方放置留言區塊，和讀者有互動，並且我想要比較簡單，可以與 GitHub issue 整合的，最後終於找到了<a href="https://utteranc.es/" _ngcontent-scf-c16="">utterances</a>。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-6.png" _ngcontent-scf-c16="">
 
-<p _ngcontent-cci-c16="">這樣就 OK 了，程式碼有顏色了。</p>
-<h2 id="留言系統" _ngcontent-cci-c16="">留言系統</h2>
-<p _ngcontent-cci-c16="">一般說來，都希望在文章下方放置留言區塊，和讀者有互動，並且我想要比較簡單，可以與 GitHub issue 整合的，最後終於找到了<a href="https://utteranc.es/" _ngcontent-cci-c16="">utterances</a>。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-6.png" _ngcontent-cci-c16="">
+<p _ngcontent-scf-c16="">按照網站上的步驟設定後，能將產生的 Script 放在想要顯示的地方，但是 script 放到 Angular html template 的話，script 會被過瀘掉，所以要動態插入 script。</p>
+<pre class="language-javascript" _ngcontent-scf-c16=""><code class="language-javascript" _ngcontent-scf-c16=""><span class="token keyword" _ngcontent-scf-c16="">import</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> Component<span class="token punctuation" _ngcontent-scf-c16="">,</span> OnInit<span class="token punctuation" _ngcontent-scf-c16="">,</span> Renderer2 <span class="token punctuation" _ngcontent-scf-c16="">}</span> <span class="token keyword" _ngcontent-scf-c16="">from</span> <span class="token string" _ngcontent-scf-c16="">'@angular/core'</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+<span class="token keyword" _ngcontent-scf-c16="">import</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> <span class="token constant" _ngcontent-scf-c16="">DOCUMENT</span> <span class="token punctuation" _ngcontent-scf-c16="">}</span> <span class="token keyword" _ngcontent-scf-c16="">from</span> <span class="token string" _ngcontent-scf-c16="">'@angular/common'</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-<p _ngcontent-cci-c16="">按照網站上的步驟設定後，能將產生的 Script 放在想要顯示的地方，但是 script 放到 Angular html template 的話，script 會被過瀘掉，所以要動態插入 script。</p>
-<pre _ngcontent-cci-c16=""><code class="language-javascript" _ngcontent-cci-c16=""><span class="hljs-keyword" _ngcontent-cci-c16="">import</span> { Component, OnInit, Renderer2 } <span class="hljs-keyword" _ngcontent-cci-c16="">from</span> <span class="hljs-string" _ngcontent-cci-c16="">'@angular/core'</span>;
-<span class="hljs-keyword" _ngcontent-cci-c16="">import</span> { DOCUMENT } <span class="hljs-keyword" _ngcontent-cci-c16="">from</span> <span class="hljs-string" _ngcontent-cci-c16="">'@angular/common'</span>;
+@<span class="token function" _ngcontent-scf-c16="">Component</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">{</span>
+  <span class="token literal-property property" _ngcontent-scf-c16="">selector</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">'app-blog'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+  <span class="token literal-property property" _ngcontent-scf-c16="">templateUrl</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">'./blog.component.html'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+  <span class="token literal-property property" _ngcontent-scf-c16="">styleUrls</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token punctuation" _ngcontent-scf-c16="">[</span><span class="token string" _ngcontent-scf-c16="">'./blog.component.css'</span><span class="token punctuation" _ngcontent-scf-c16="">]</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+  <span class="token literal-property property" _ngcontent-scf-c16="">preserveWhitespaces</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token boolean" _ngcontent-scf-c16="">true</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+<span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">)</span>
+<span class="token keyword" _ngcontent-scf-c16="">export</span> <span class="token keyword" _ngcontent-scf-c16="">class</span> <span class="token class-name" _ngcontent-scf-c16="">BlogComponent</span> <span class="token keyword" _ngcontent-scf-c16="">implements</span> <span class="token class-name" _ngcontent-scf-c16="">OnInit</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
 
-@Component({
-  <span class="hljs-attr" _ngcontent-cci-c16="">selector</span>: <span class="hljs-string" _ngcontent-cci-c16="">'app-blog'</span>,
-  <span class="hljs-attr" _ngcontent-cci-c16="">templateUrl</span>: <span class="hljs-string" _ngcontent-cci-c16="">'./blog.component.html'</span>,
-  <span class="hljs-attr" _ngcontent-cci-c16="">styleUrls</span>: [<span class="hljs-string" _ngcontent-cci-c16="">'./blog.component.css'</span>],
-  <span class="hljs-attr" _ngcontent-cci-c16="">preserveWhitespaces</span>: <span class="hljs-literal" _ngcontent-cci-c16="">true</span>,
-})
-<span class="hljs-keyword" _ngcontent-cci-c16="">export</span> <span class="hljs-class" _ngcontent-cci-c16=""><span class="hljs-keyword" _ngcontent-cci-c16="">class</span> <span class="hljs-title" _ngcontent-cci-c16="">BlogComponent</span> <span class="hljs-title" _ngcontent-cci-c16="">implements</span> <span class="hljs-title" _ngcontent-cci-c16="">OnInit</span> </span>{
+  <span class="token function" _ngcontent-scf-c16="">constructor</span><span class="token punctuation" _ngcontent-scf-c16="">(</span>
+    <span class="token parameter" _ngcontent-scf-c16=""><span class="token keyword" _ngcontent-scf-c16="">private</span> <span class="token literal-property property" _ngcontent-scf-c16="">renderer2</span><span class="token operator" _ngcontent-scf-c16="">:</span> Renderer2<span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    @<span class="token function" _ngcontent-scf-c16="">Inject</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token constant" _ngcontent-scf-c16="">DOCUMENT</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token keyword" _ngcontent-scf-c16="">private</span> document</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span><span class="token punctuation" _ngcontent-scf-c16="">}</span>
 
-  <span class="hljs-keyword" _ngcontent-cci-c16="">constructor</span>(
-    private renderer2: Renderer2,
-    @Inject(DOCUMENT) private document
-  ) {}
+  <span class="token function" _ngcontent-scf-c16="">ngOnInit</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+    <span class="token keyword" _ngcontent-scf-c16="">const</span> s <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>renderer2<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">createElement</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'script'</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span>type <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token string" _ngcontent-scf-c16="">'text/javascript'</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span>src <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token string" _ngcontent-scf-c16="">'https://utteranc.es/client.js'</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">setAttribute</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'repo'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token string" _ngcontent-scf-c16="">'thomascsd/thomascsd.github.io'</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">setAttribute</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'issue-term'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token string" _ngcontent-scf-c16="">'pathname'</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">setAttribute</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'theme'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token string" _ngcontent-scf-c16="">'github-light'</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">setAttribute</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'crossorigin'</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token string" _ngcontent-scf-c16="">'anonymous'</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    s<span class="token punctuation" _ngcontent-scf-c16="">.</span>text <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token template-string" _ngcontent-scf-c16=""><span class="token template-punctuation string" _ngcontent-scf-c16="">`</span><span class="token template-punctuation string" _ngcontent-scf-c16="">`</span></span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>renderer2<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">appendChild</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>document<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">querySelector</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token string" _ngcontent-scf-c16="">'#comments'</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> s<span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">}</span></code></pre><p _ngcontent-scf-c16="">使用 renderer2 來動態產生 script 元素，最後插入想要顯示的地方。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-7.png" _ngcontent-scf-c16="">
 
-  ngOnInit() {
-    <span class="hljs-keyword" _ngcontent-cci-c16="">const</span> s = <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.renderer2.createElement(<span class="hljs-string" _ngcontent-cci-c16="">'script'</span>);
-    s.type = <span class="hljs-string" _ngcontent-cci-c16="">'text/javascript'</span>;
-    s.src = <span class="hljs-string" _ngcontent-cci-c16="">'https://utteranc.es/client.js'</span>;
-    s.setAttribute(<span class="hljs-string" _ngcontent-cci-c16="">'repo'</span>, <span class="hljs-string" _ngcontent-cci-c16="">'thomascsd/thomascsd.github.io'</span>);
-    s.setAttribute(<span class="hljs-string" _ngcontent-cci-c16="">'issue-term'</span>, <span class="hljs-string" _ngcontent-cci-c16="">'pathname'</span>);
-    s.setAttribute(<span class="hljs-string" _ngcontent-cci-c16="">'theme'</span>, <span class="hljs-string" _ngcontent-cci-c16="">'github-light'</span>);
-    s.setAttribute(<span class="hljs-string" _ngcontent-cci-c16="">'crossorigin'</span>, <span class="hljs-string" _ngcontent-cci-c16="">'anonymous'</span>);
-    s.text = <span class="hljs-string" _ngcontent-cci-c16="">``</span>;
-    <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.renderer2.appendChild(<span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.document.querySelector(<span class="hljs-string" _ngcontent-cci-c16="">'#comments'</span>), s);
-  }</code></pre>
-<p _ngcontent-cci-c16="">使用 renderer2 來動態產生 script 元素，最後插入想要顯示的地方。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-7.png" _ngcontent-cci-c16="">
+<h2 id="分頁功能" _ngcontent-scf-c16="">分頁功能</h2>
+<pre class="language-javascript" _ngcontent-scf-c16=""><code class="language-javascript" _ngcontent-scf-c16="">  <span class="token function" _ngcontent-scf-c16="">constructor</span><span class="token punctuation" _ngcontent-scf-c16="">(</span>
+    <span class="token parameter" _ngcontent-scf-c16=""><span class="token keyword" _ngcontent-scf-c16="">private</span> <span class="token literal-property property" _ngcontent-scf-c16="">scullyService</span><span class="token operator" _ngcontent-scf-c16="">:</span> ScullyRoutesService<span class="token punctuation" _ngcontent-scf-c16="">,</span></span>
+  <span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">}</span>
 
-<h2 id="分頁功能" _ngcontent-cci-c16="">分頁功能</h2>
-<pre _ngcontent-cci-c16=""><code class="language-javascript" _ngcontent-cci-c16="">  <span class="hljs-keyword" _ngcontent-cci-c16="">constructor</span>(
-    private scullyService: ScullyRoutesService,
-  ) {
-  }
+  <span class="token keyword" _ngcontent-scf-c16="">private</span> <span class="token function" _ngcontent-scf-c16="">loadData</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+    <span class="token keyword" _ngcontent-scf-c16="">const</span> pageSize <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token number" _ngcontent-scf-c16="">10</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-  private loadData() {
-    <span class="hljs-keyword" _ngcontent-cci-c16="">const</span> pageSize = <span class="hljs-number" _ngcontent-cci-c16="">10</span>;
+    <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>links$ <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token function" _ngcontent-scf-c16="">zip</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>scullyService<span class="token punctuation" _ngcontent-scf-c16="">.</span>available$<span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>route<span class="token punctuation" _ngcontent-scf-c16="">.</span>queryParams<span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">pipe</span><span class="token punctuation" _ngcontent-scf-c16="">(</span>
+      <span class="token function" _ngcontent-scf-c16="">map</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token parameter" _ngcontent-scf-c16=""><span class="token punctuation" _ngcontent-scf-c16="">[</span>routes<span class="token punctuation" _ngcontent-scf-c16="">,</span> params<span class="token punctuation" _ngcontent-scf-c16="">]</span></span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token operator" _ngcontent-scf-c16="">=&gt;</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+        <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>page <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token function" _ngcontent-scf-c16="">parseInt</span><span class="token punctuation" _ngcontent-scf-c16="">(</span>params<span class="token punctuation" _ngcontent-scf-c16="">.</span>page <span class="token operator" _ngcontent-scf-c16="">||</span> <span class="token number" _ngcontent-scf-c16="">1</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token number" _ngcontent-scf-c16="">10</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span> <span class="token comment" _ngcontent-scf-c16="">// 取得QueryString的頁數</span>
 
-    <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.links$ = zip(<span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.scullyService.available$, <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.route.queryParams).pipe(
-      map(<span class="hljs-function" _ngcontent-cci-c16="">(<span class="hljs-params" _ngcontent-cci-c16="">[routes, params]</span>) =&gt;</span> {
-        <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.page = <span class="hljs-built_in" _ngcontent-cci-c16="">parseInt</span>(params.page || <span class="hljs-number" _ngcontent-cci-c16="">1</span>, <span class="hljs-number" _ngcontent-cci-c16="">10</span>); <span class="hljs-comment" _ngcontent-cci-c16="">// 取得QueryString的頁數</span>
+        <span class="token keyword" _ngcontent-scf-c16="">const</span> items <span class="token operator" _ngcontent-scf-c16="">=</span> routes
+          <span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">filter</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token parameter" _ngcontent-scf-c16="">route</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token operator" _ngcontent-scf-c16="">=&gt;</span> <span class="token operator" _ngcontent-scf-c16="">!</span><span class="token operator" _ngcontent-scf-c16="">!</span>route<span class="token punctuation" _ngcontent-scf-c16="">.</span>title<span class="token punctuation" _ngcontent-scf-c16="">)</span>
+          <span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">reverse</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">)</span>
+          <span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">slice</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>page <span class="token operator" _ngcontent-scf-c16="">-</span> <span class="token number" _ngcontent-scf-c16="">1</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token operator" _ngcontent-scf-c16="">*</span> pageSize<span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>page <span class="token operator" _ngcontent-scf-c16="">*</span> pageSize<span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span> <span class="token comment" _ngcontent-scf-c16="">// 使用slice來切割Arrary</span>
 
-        <span class="hljs-keyword" _ngcontent-cci-c16="">const</span> items = routes
-          .filter(<span class="hljs-function" _ngcontent-cci-c16="">(<span class="hljs-params" _ngcontent-cci-c16="">route</span>) =&gt;</span> !!route.title)
-          .reverse()
-          .slice((<span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.page - <span class="hljs-number" _ngcontent-cci-c16="">1</span>) * pageSize, <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.page * pageSize); <span class="hljs-comment" _ngcontent-cci-c16="">// 使用slice來切割Arrary</span>
+        items<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">forEach</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token parameter" _ngcontent-scf-c16="">route</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token operator" _ngcontent-scf-c16="">=&gt;</span> <span class="token punctuation" _ngcontent-scf-c16="">(</span>route<span class="token punctuation" _ngcontent-scf-c16="">.</span>date <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>blogService<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">getPostDateFormRoute</span><span class="token punctuation" _ngcontent-scf-c16="">(</span>route<span class="token punctuation" _ngcontent-scf-c16="">.</span>route<span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-        items.forEach(<span class="hljs-function" _ngcontent-cci-c16="">(<span class="hljs-params" _ngcontent-cci-c16="">route</span>) =&gt;</span> (route.date = <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.blogService.getPostDateFormRoute(route.route)));
+        <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>itemCount <span class="token operator" _ngcontent-scf-c16="">=</span> items<span class="token punctuation" _ngcontent-scf-c16="">.</span>length<span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-        <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.itemCount = items.length;
+        <span class="token keyword" _ngcontent-scf-c16="">return</span> items<span class="token punctuation" _ngcontent-scf-c16="">;</span>
+      <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">)</span>
+    <span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">}</span>
 
-        <span class="hljs-keyword" _ngcontent-cci-c16="">return</span> items;
-      })
-    );
-  }
+  <span class="token function" _ngcontent-scf-c16="">previous</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+    <span class="token keyword" _ngcontent-scf-c16="">let</span> pageNum <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>page <span class="token operator" _ngcontent-scf-c16="">-</span> <span class="token number" _ngcontent-scf-c16="">1</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
 
-  previous() {
-    <span class="hljs-keyword" _ngcontent-cci-c16="">let</span> pageNum = <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.page - <span class="hljs-number" _ngcontent-cci-c16="">1</span>;
+    <span class="token keyword" _ngcontent-scf-c16="">if</span> <span class="token punctuation" _ngcontent-scf-c16="">(</span>pageNum <span class="token operator" _ngcontent-scf-c16="">===</span> <span class="token number" _ngcontent-scf-c16="">0</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+      pageNum <span class="token operator" _ngcontent-scf-c16="">=</span> <span class="token number" _ngcontent-scf-c16="">1</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+    <span class="token punctuation" _ngcontent-scf-c16="">}</span>
 
-    <span class="hljs-keyword" _ngcontent-cci-c16="">if</span> (pageNum === <span class="hljs-number" _ngcontent-cci-c16="">0</span>) {
-      pageNum = <span class="hljs-number" _ngcontent-cci-c16="">1</span>;
-    }
+    <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>router<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">navigate</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">[</span><span class="token string" _ngcontent-scf-c16="">'/'</span><span class="token punctuation" _ngcontent-scf-c16="">]</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> <span class="token literal-property property" _ngcontent-scf-c16="">queryParams</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> <span class="token literal-property property" _ngcontent-scf-c16="">page</span><span class="token operator" _ngcontent-scf-c16="">:</span> pageNum <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token literal-property property" _ngcontent-scf-c16="">replaceUrl</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token boolean" _ngcontent-scf-c16="">true</span> <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">}</span>
 
-    <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.router.navigate([<span class="hljs-string" _ngcontent-cci-c16="">'/'</span>], { <span class="hljs-attr" _ngcontent-cci-c16="">queryParams</span>: { <span class="hljs-attr" _ngcontent-cci-c16="">page</span>: pageNum }, <span class="hljs-attr" _ngcontent-cci-c16="">replaceUrl</span>: <span class="hljs-literal" _ngcontent-cci-c16="">true</span> });
-  }
+  <span class="token function" _ngcontent-scf-c16="">next</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">)</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+    <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>router<span class="token punctuation" _ngcontent-scf-c16="">.</span><span class="token function" _ngcontent-scf-c16="">navigate</span><span class="token punctuation" _ngcontent-scf-c16="">(</span><span class="token punctuation" _ngcontent-scf-c16="">[</span><span class="token string" _ngcontent-scf-c16="">'/'</span><span class="token punctuation" _ngcontent-scf-c16="">]</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> <span class="token literal-property property" _ngcontent-scf-c16="">queryParams</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span> <span class="token literal-property property" _ngcontent-scf-c16="">page</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token keyword" _ngcontent-scf-c16="">this</span><span class="token punctuation" _ngcontent-scf-c16="">.</span>page <span class="token operator" _ngcontent-scf-c16="">+</span> <span class="token number" _ngcontent-scf-c16="">1</span> <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">,</span> <span class="token literal-property property" _ngcontent-scf-c16="">replaceUrl</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token boolean" _ngcontent-scf-c16="">true</span> <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">)</span><span class="token punctuation" _ngcontent-scf-c16="">;</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">}</span></code></pre><p _ngcontent-scf-c16="">隨著文章愈來愈多，所以就會想要有分頁的功能，運用 Scully 現成的 API，就可以輕鬆實現。如上列的程式碼，使用<code _ngcontent-scf-c16="">ScullyRoutesService</code>的<code _ngcontent-scf-c16="">available$</code>即可取得目前可使用的文章路由物件。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-8.png" _ngcontent-scf-c16="">
 
-  next() {
-    <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.router.navigate([<span class="hljs-string" _ngcontent-cci-c16="">'/'</span>], { <span class="hljs-attr" _ngcontent-cci-c16="">queryParams</span>: { <span class="hljs-attr" _ngcontent-cci-c16="">page</span>: <span class="hljs-built_in" _ngcontent-cci-c16="">this</span>.page + <span class="hljs-number" _ngcontent-cci-c16="">1</span> }, <span class="hljs-attr" _ngcontent-cci-c16="">replaceUrl</span>: <span class="hljs-literal" _ngcontent-cci-c16="">true</span> });
-  }</code></pre>
-<p _ngcontent-cci-c16="">隨著文章愈來愈多，所以就會想要有分頁的功能，運用 Scully 現成的 API，就可以輕鬆實現。如上列的程式碼，使用<code _ngcontent-cci-c16="">ScullyRoutesService</code>的<code _ngcontent-cci-c16="">available$</code>即可取得目前可使用的文章路由物件。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-8.png" _ngcontent-cci-c16="">
-
-<p _ngcontent-cci-c16="">而所謂的可使用就是文章 markdown 設定<code _ngcontent-cci-c16="">published: true</code>。接著使用 Array 的<code _ngcontent-cci-c16="">slice</code>，就可以根據 QueryString 所傳入頁數來切割 Array。</p>
-<h2 id="cli-指令" _ngcontent-cci-c16="">CLI 指令</h2>
-<p _ngcontent-cci-c16="">完整的指令可以參考<a href="https://scully.io/docs/scully-cmd-line/" _ngcontent-cci-c16="">文件</a>，我這邊列出幾個常用的。</p>
-<ul _ngcontent-cci-c16="">
-<li _ngcontent-cci-c16=""><p _ngcontent-cci-c16="">scanRoutes：<code _ngcontent-cci-c16="">npx scully --scan</code>，當新增路由時，例如：新增一篇文章，需要執行這個指令，來找到新的路由。</p>
+<p _ngcontent-scf-c16="">而所謂的可使用就是文章 markdown 設定<code _ngcontent-scf-c16="">published: true</code>。接著使用 Array 的<code _ngcontent-scf-c16="">slice</code>，就可以根據 QueryString 所傳入頁數來切割 Array。</p>
+<h2 id="cli-指令" _ngcontent-scf-c16="">CLI 指令</h2>
+<p _ngcontent-scf-c16="">完整的指令可以參考<a href="https://scully.io/docs/scully-cmd-line/" _ngcontent-scf-c16="">文件</a>，我這邊列出幾個常用的。</p>
+<ul _ngcontent-scf-c16="">
+<li _ngcontent-scf-c16=""><p _ngcontent-scf-c16="">scanRoutes：<code _ngcontent-scf-c16="">npx scully --scan</code>，當新增路由時，例如：新增一篇文章，需要執行這個指令，來找到新的路由。</p>
 </li>
-<li _ngcontent-cci-c16=""><p _ngcontent-cci-c16="">watch：<code _ngcontent-cci-c16="">npx scully --watch</code>，啟用 watch 模式，在開發階段很有幫助，可以立即看到修改的成果。</p>
+<li _ngcontent-scf-c16=""><p _ngcontent-scf-c16="">watch：<code _ngcontent-scf-c16="">npx scully --watch</code>，啟用 watch 模式，在開發階段很有幫助，可以立即看到修改的成果。</p>
 </li>
 </ul>
-<img class="img-responsive" loading="lazy" src="assets/images/16/16-9.png" _ngcontent-cci-c16="">
+<img class="img-responsive" loading="lazy" src="assets/images/16/16-9.png" _ngcontent-scf-c16="">
 
-<ul _ngcontent-cci-c16="">
-<li _ngcontent-cci-c16=""><p _ngcontent-cci-c16="">serve：<code _ngcontent-cci-c16="">npx scully serve</code>，啟用 Scully Server，與<code _ngcontent-cci-c16="">ng serve</code>相似，但不同點在於不會 build 專案。</p>
+<ul _ngcontent-scf-c16="">
+<li _ngcontent-scf-c16=""><p _ngcontent-scf-c16="">serve：<code _ngcontent-scf-c16="">npx scully serve</code>，啟用 Scully Server，與<code _ngcontent-scf-c16="">ng serve</code>相似，但不同點在於不會 build 專案。</p>
 </li>
-<li _ngcontent-cci-c16=""><p _ngcontent-cci-c16="">scully: <code _ngcontent-cci-c16="">scully</code>，如果不加上任何參數的話，Scully 根據路由就會產生靜態檔案，並將靜態檔案預設放在<code _ngcontent-cci-c16="">dist/static</code>下，所以很適合與<code _ngcontent-cci-c16="">ng build --prod</code>一併使用。</p>
+<li _ngcontent-scf-c16=""><p _ngcontent-scf-c16="">scully: <code _ngcontent-scf-c16="">scully</code>，如果不加上任何參數的話，Scully 根據路由就會產生靜態檔案，並將靜態檔案預設放在<code _ngcontent-scf-c16="">dist/static</code>下，所以很適合與<code _ngcontent-scf-c16="">ng build --prod</code>一併使用。</p>
 </li>
 </ul>
-<pre _ngcontent-cci-c16=""><code _ngcontent-cci-c16="">  "scripts": {
-    "ng": "ng",
-    "start": "ng serve -o",
-    "build": "ng build --prod &amp;&amp; npm run scully",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "node deploy.js",
-    "scully": "scully",
-    "scully:scan": "npx scully --scan",
-    "scully:watch": "npx scully --watch",
-    "scully:serve": "npx scully serve"
-  },</code></pre>
-<p _ngcontent-cci-c16="">並且為了方便，我將這些常用的指令放在 npm scripts 中。</p>
-<h2 id="結論" _ngcontent-cci-c16="">結論</h2>
-<p _ngcontent-cci-c16="">靠著 cli 的幫助，可以很快地建立 Blog 樣板，但我覺得這個只是開始，有些功能都還需求調整。而 Scully 目前在 1.0Beta 版，應該很快就到 1.0 正式版，加上之後 Plugins 愈來愈多的話，以後可以值得期待。</p>
-<p _ngcontent-cci-c16="">原始碼：<a href="https://github.com/thomascsd/blog-new" _ngcontent-cci-c16="">https://github.com/thomascsd/blog-new</a></p>
-<!--scullyContent-end--><script>try {window['scullyContent'] = {cssId:"_ngcontent-cci-c16",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script><scully-content _ngcontent-cci-c16=""></scully-content>
-        </div>
+<pre _ngcontent-scf-c16=""><code _ngcontent-scf-c16="">  <span class="token string-property property" _ngcontent-scf-c16="">"scripts"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token punctuation" _ngcontent-scf-c16="">{</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"ng"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"ng"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"start"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"ng serve -o"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"build"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"ng build --prod &amp;&amp; npm run scully"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"test"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"ng test"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"lint"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"ng lint"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"e2e"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"ng e2e"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"deploy"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"node deploy.js"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"scully"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"scully"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"scully:scan"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"npx scully --scan"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"scully:watch"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"npx scully --watch"</span><span class="token punctuation" _ngcontent-scf-c16="">,</span>
+    <span class="token string-property property" _ngcontent-scf-c16="">"scully:serve"</span><span class="token operator" _ngcontent-scf-c16="">:</span> <span class="token string" _ngcontent-scf-c16="">"npx scully serve"</span>
+  <span class="token punctuation" _ngcontent-scf-c16="">}</span><span class="token punctuation" _ngcontent-scf-c16="">,</span></code></pre><p _ngcontent-scf-c16="">並且為了方便，我將這些常用的指令放在 npm scripts 中。</p>
+<h2 id="結論" _ngcontent-scf-c16="">結論</h2>
+<p _ngcontent-scf-c16="">靠著 cli 的幫助，可以很快地建立 Blog 樣板，但我覺得這個只是開始，有些功能都還需求調整。而 Scully 目前在 1.0Beta 版，應該很快就到 1.0 正式版，加上之後 Plugins 愈來愈多的話，以後可以值得期待。</p>
+<p _ngcontent-scf-c16="">原始碼：<a href="https://github.com/thomascsd/blog-new" _ngcontent-scf-c16="">https://github.com/thomascsd/blog-new</a></p>
+<!--scullyContent-end--><scully-content _ngcontent-scf-c16=""></scully-content>
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-scf-c16",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
       </div>
 
-      <hr _ngcontent-cci-c16="">
-      <div _ngcontent-cci-c16="" class="row">
-        <div _ngcontent-cci-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div _ngcontent-cci-c16="" id="comments"><div class="utterances">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2020-08-03-BuildBlogUsingScully&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2020-08-03-BuildBlogUsingScully&amp;title=%E4%BD%BF%E7%94%A8Scully%E5%BB%BA%E7%AB%8BBlog%E7%9A%84%E5%BF%83%E5%BE%97%E8%A8%98%E9%8C%84&amp;description=Thomas%20Blog" loading="lazy"></iframe>
+      <hr _ngcontent-scf-c16="">
+      <div _ngcontent-scf-c16="" class="row">
+        <div _ngcontent-scf-c16="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-scf-c16="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-scf-c16=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2020-08-03-BuildBlogUsingScully&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2020-08-03-BuildBlogUsingScully&amp;title=%E4%BD%BF%E7%94%A8+Angular+Static+Generator+-+Scully+%E5%BB%BA%E7%AB%8BBlog%E7%9A%84%E5%BF%83%E5%BE%97%E8%A8%98%E9%8C%84&amp;description=Thomas+Blog&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div>
         </div>
       </div>
     </div>
   </article>
 </div>
-</app-blog><!----><hr _ngcontent-cci-c14=""><app-footer _ngcontent-cci-c14="" _nghost-cci-c13=""><footer _ngcontent-cci-c13=""><div _ngcontent-cci-c13="" class="container"><div _ngcontent-cci-c13="" class="row"><div _ngcontent-cci-c13="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-cci-c13="" class="list-inline text-center"><li _ngcontent-cci-c13=""><a _ngcontent-cci-c13="" href="https://www.twitter.com/thomascsd"><span _ngcontent-cci-c13="" class="fa-stack fa-lg"><i _ngcontent-cci-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-cci-c13="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-cci-c13=""><a _ngcontent-cci-c13="" href="https://github.com/thomascsd"><span _ngcontent-cci-c13="" class="fa-stack fa-lg"><i _ngcontent-cci-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-cci-c13="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-cci-c13="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+</app-blog><!----><hr _ngcontent-scf-c14=""><app-footer _ngcontent-scf-c14="" _nghost-scf-c13=""><footer _ngcontent-scf-c13=""><div _ngcontent-scf-c13="" class="container"><div _ngcontent-scf-c13="" class="row"><div _ngcontent-scf-c13="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-scf-c13="" class="list-inline text-center"><li _ngcontent-scf-c13=""><a _ngcontent-scf-c13="" href="https://www.twitter.com/thomascsd"><span _ngcontent-scf-c13="" class="fa-stack fa-lg"><i _ngcontent-scf-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-scf-c13="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-scf-c13=""><a _ngcontent-scf-c13="" href="https://github.com/thomascsd"><span _ngcontent-scf-c13="" class="fa-stack fa-lg"><i _ngcontent-scf-c13="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-scf-c13="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-scf-c13="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="assets/plugins/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.a221ea5094c71afa9063.js" type="module"></script><script src="runtime-es5.a221ea5094c71afa9063.js" nomodule="" defer=""></script><script src="polyfills-es5.cb32a52bc633c9710ac0.js" nomodule="" defer=""></script><script src="polyfills-es2015.879fe6e0427fd01bbdb6.js" type="module"></script><script src="main-es2015.1956c9ca69e6353b2e25.js" type="module"></script><script src="main-es5.1956c9ca69e6353b2e25.js" nomodule="" defer=""></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.29762bc0cb82b3b8.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.38cd93cf243c5a64.js" type="module"></script>
 
 </body></html>
