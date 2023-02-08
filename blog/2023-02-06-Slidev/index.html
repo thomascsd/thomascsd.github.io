@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 0.0.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      color-scheme: light;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>建立簡報的工具 - Slidev 的介紹 - Thomas Blog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);body{color:#333}body{font-family:'Noto Sans TC', sans-serif;font-size:20px;-webkit-tap-highlight-color:#0085a1}</style><link id="theme-style" rel="stylesheet" href="assets/css/style.min.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-704JZ9KNS1');
+    </script>
+  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="建立簡報的工具 - Slidev 的介紹 "><meta name="description" content="建立簡報的工具 - Slidev 的介紹 "><style>[_ngcontent-sxx-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="0.0.0">
+    <app-root _nghost-sxx-c13="" ng-version="13.1.1"><div _ngcontent-sxx-c13=""><app-blog-nav _ngcontent-sxx-c13="" _nghost-sxx-c11=""><nav _ngcontent-sxx-c11="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-sxx-c11="" class="container-fluid"><div _ngcontent-sxx-c11="" class="navbar-header page-scroll"><button _ngcontent-sxx-c11="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-sxx-c11="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-sxx-c11="" class="fa fa-bars"></i></button><a _ngcontent-sxx-c11="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-sxx-c11="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-sxx-c11="" class="nav navbar-nav navbar-right"><li _ngcontent-sxx-c11=""><a _ngcontent-sxx-c11="" href="/">Blog</a></li><li _ngcontent-sxx-c11=""><a _ngcontent-sxx-c11="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-sxx-c11=""><a _ngcontent-sxx-c11="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-sxx-c13=""></router-outlet><app-blog _nghost-sxx-c15=""><div _ngcontent-sxx-c15="">
+  
+  <app-post-header _ngcontent-sxx-c15="" _nghost-sxx-c14=""><header _ngcontent-sxx-c14="" class="intro-header" style="background-image: url(&quot;assets/images/26/26-0.jpg&quot;);"><div _ngcontent-sxx-c14="" class="container"><div _ngcontent-sxx-c14="" class="row"><div _ngcontent-sxx-c14="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-sxx-c14="" class="post-heading"><h1 _ngcontent-sxx-c14="">建立簡報的工具 - Slidev 的介紹</h1><span _ngcontent-sxx-c14="" class="meta">on 2023-02-06</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-sxx-c15="">
+    <div _ngcontent-sxx-c15="" class="container">
+      <div _ngcontent-sxx-c15="" class="row">
+        <div _ngcontent-sxx-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-sxx-c15="">去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 <a href="https://sli.dev" _ngcontent-sxx-c15="">Slidev</a> ，覺得簡單易用，就決定採用了，現在分享給大家參考看看。</p>
+<h2 id="安裝" _ngcontent-sxx-c15="">安裝</h2>
+<pre _ngcontent-sxx-c15=""><code _ngcontent-sxx-c15="">npm init slidev</code></pre><p _ngcontent-sxx-c15="">可以參考<a href="https://sli.dev/guide/" _ngcontent-sxx-c15="">官方網站</a>，輸入上列的指令建立初始樣版。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-01.png" _ngcontent-sxx-c15="">
+
+<p _ngcontent-sxx-c15="">如上圖，輸入簡報名稱後，即會安裝相依的套件。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-02.png" _ngcontent-sxx-c15="">
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-03.png" _ngcontent-sxx-c15="">
+
+<p _ngcontent-sxx-c15="">之後會開啟範例網站 <a href="http://localhost:3030" _ngcontent-sxx-c15="">http://localhost:3030</a> 。可以確認一下 Slidev 的功能有那些。</p>
+<h2 id="建立簡報" _ngcontent-sxx-c15="">建立簡報</h2>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-04.png" _ngcontent-sxx-c15="">
+
+<p _ngcontent-sxx-c15="">根據<a href="https://sli.dev/guide/#markdown-syntax" _ngcontent-sxx-c15="">文件</a>，進入點是 slides.md，一切的簡報這邊即可。</p>
+<pre _ngcontent-sxx-c15=""><code _ngcontent-sxx-c15=""># Slidev
+
+Hello World
+
+<span class="token operator" _ngcontent-sxx-c15="">--</span><span class="token operator" _ngcontent-sxx-c15="">-</span>
+
+# Page <span class="token number" _ngcontent-sxx-c15="">2</span>
+
+Directly use code blocks <span class="token keyword" _ngcontent-sxx-c15="">for</span> highlighting
+
+
+<span class="token template-string" _ngcontent-sxx-c15=""><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span></span><span class="token template-string" _ngcontent-sxx-c15=""><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span><span class="token string" _ngcontent-sxx-c15=""> ts
+console.log('Hello, World!')
+</span><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span></span><span class="token template-string" _ngcontent-sxx-c15=""><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span></span>
+
+<span class="token operator" _ngcontent-sxx-c15="">--</span><span class="token operator" _ngcontent-sxx-c15="">-</span>
+
+# Page <span class="token number" _ngcontent-sxx-c15="">3</span></code></pre><p _ngcontent-sxx-c15="">而內容格式如上，看起來一目了然，都是很基本的 <a href="https://sli.dev/guide/syntax.html" _ngcontent-sxx-c15="">markdown 語法</a>就可以建立簡報了。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-05.png" _ngcontent-sxx-c15="">
+
+<p _ngcontent-sxx-c15="">另外為了便於建立簡報，可以安裝 <a href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev" _ngcontent-sxx-c15="">Slidev VSCode Extension</a>。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-06.png" _ngcontent-sxx-c15="">
+
+<p _ngcontent-sxx-c15="">這樣子就可以列表目前的簡報，及目前所選擇簡報的預覽圖</p>
+<h2 id="程式碼" _ngcontent-sxx-c15="">程式碼</h2>
+<pre _ngcontent-sxx-c15=""><code _ngcontent-sxx-c15=""><span class="token template-string" _ngcontent-sxx-c15=""><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span></span><span class="token template-string" _ngcontent-sxx-c15=""><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span><span class="token string" _ngcontent-sxx-c15="">ts {all|2|1-6|9|all}
+interface User {
+  id: number
+  firstName: string
+  lastName: string
+  role: string
+}
+</span><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span></span><span class="token template-string" _ngcontent-sxx-c15=""><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span><span class="token template-punctuation string" _ngcontent-sxx-c15="">`</span></span>
+
+<span class="token keyword" _ngcontent-sxx-c15="">function</span> <span class="token function" _ngcontent-sxx-c15="">updateUser</span><span class="token punctuation" _ngcontent-sxx-c15="">(</span>id<span class="token operator" _ngcontent-sxx-c15="">:</span> <span class="token builtin" _ngcontent-sxx-c15="">number</span><span class="token punctuation" _ngcontent-sxx-c15="">,</span> update<span class="token operator" _ngcontent-sxx-c15="">:</span> User<span class="token punctuation" _ngcontent-sxx-c15="">)</span> <span class="token punctuation" _ngcontent-sxx-c15="">{</span>
+  <span class="token keyword" _ngcontent-sxx-c15="">const</span> user <span class="token operator" _ngcontent-sxx-c15="">=</span> <span class="token function" _ngcontent-sxx-c15="">getUser</span><span class="token punctuation" _ngcontent-sxx-c15="">(</span>id<span class="token punctuation" _ngcontent-sxx-c15="">)</span>
+  <span class="token keyword" _ngcontent-sxx-c15="">const</span> newUser <span class="token operator" _ngcontent-sxx-c15="">=</span> <span class="token punctuation" _ngcontent-sxx-c15="">{</span> <span class="token operator" _ngcontent-sxx-c15="">...</span>user<span class="token punctuation" _ngcontent-sxx-c15="">,</span> <span class="token operator" _ngcontent-sxx-c15="">...</span>update <span class="token punctuation" _ngcontent-sxx-c15="">}</span>
+  <span class="token function" _ngcontent-sxx-c15="">saveUser</span><span class="token punctuation" _ngcontent-sxx-c15="">(</span>id<span class="token punctuation" _ngcontent-sxx-c15="">,</span> newUser<span class="token punctuation" _ngcontent-sxx-c15="">)</span>
+<span class="token punctuation" _ngcontent-sxx-c15="">}</span>
+</code></pre><p _ngcontent-sxx-c15="">接著就是我選擇 Slidev 的原因之一，可以 Highlight 程式碼，如同上面的格式，參考<a href="https://sli.dev/guide/syntax.html#line-highlighting" _ngcontent-sxx-c15="">文件</a>，在後方加上程式碼的行號 <code _ngcontent-sxx-c15="">{all|2|1-6|9|all}</code>，即可顯示 Highlight 的程式碼。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-07.gif" _ngcontent-sxx-c15="">
+
+<p _ngcontent-sxx-c15="">之後就像是上方的圖片，可以配合簡報強調特定行數的程式碼。</p>
+<h2 id="pdf" _ngcontent-sxx-c15="">PDF</h2>
+<pre _ngcontent-sxx-c15=""><code _ngcontent-sxx-c15="">npm i <span class="token operator" _ngcontent-sxx-c15="">-</span><span class="token constant" _ngcontent-sxx-c15="">D</span> playwright<span class="token operator" _ngcontent-sxx-c15="">-</span>chromium</code></pre><p _ngcontent-sxx-c15="">另外還可以匯出成 PDF，就需要安裝 <code _ngcontent-sxx-c15="">playwright-chromium</code> ，可以參考<a href="https://sli.dev/guide/exporting.html#pdf" _ngcontent-sxx-c15="">文件</a> 。</p>
+<pre _ngcontent-sxx-c15=""><code _ngcontent-sxx-c15="">slidev <span class="token keyword" _ngcontent-sxx-c15="">export</span></code></pre><p _ngcontent-sxx-c15="">接著輸入指令<code _ngcontent-sxx-c15="">export</code> 即可匯出 PDF。</p>
+<h2 id="結論" _ngcontent-sxx-c15="">結論</h2>
+<p _ngcontent-sxx-c15="">Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備，推薦給大家參考看看。</p>
+<!--scullyContent-end--><scully-content _ngcontent-sxx-c15=""></scully-content>
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-sxx-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+      </div>
+
+      <hr _ngcontent-sxx-c15="">
+      <div _ngcontent-sxx-c15="" class="row">
+        <div _ngcontent-sxx-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-sxx-c15="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-sxx-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2023-02-06-Slidev&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2023-02-06-Slidev&amp;title=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+-+Thomas+Blog&amp;description=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-sxx-c13=""><app-footer _ngcontent-sxx-c13="" _nghost-sxx-c12=""><footer _ngcontent-sxx-c12=""><div _ngcontent-sxx-c12="" class="container"><div _ngcontent-sxx-c12="" class="row"><div _ngcontent-sxx-c12="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-sxx-c12="" class="list-inline text-center"><li _ngcontent-sxx-c12=""><a _ngcontent-sxx-c12="" href="https://www.twitter.com/thomascsd"><span _ngcontent-sxx-c12="" class="fa-stack fa-lg"><i _ngcontent-sxx-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-sxx-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-sxx-c12=""><a _ngcontent-sxx-c12="" href="https://github.com/thomascsd"><span _ngcontent-sxx-c12="" class="fa-stack fa-lg"><i _ngcontent-sxx-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-sxx-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-sxx-c12="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.9a374f826f8776dc.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.15182dcea57f5b6d.js" type="module"></script>
+
+</body></html>

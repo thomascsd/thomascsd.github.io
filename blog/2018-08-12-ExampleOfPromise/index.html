@@ -43,7 +43,7 @@
 
       gtag('config', 'G-704JZ9KNS1');
     </script>
-  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="從範例講解Promise概念 "><meta name="description" content="從範例講解Promise概念 "><style>[_ngcontent-mcn-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="從範例講解Promise概念 "><meta name="description" content="從範例講解Promise概念 "><style>[_ngcontent-lxm-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
       :host {
         display: none;
       }
@@ -52,50 +52,50 @@
       }
     </style><script>window['ScullyIO']='generated';</script></head>
   <body scully-version="0.0.0">
-    <app-root _nghost-mcn-c13="" ng-version="13.1.1"><div _ngcontent-mcn-c13=""><app-blog-nav _ngcontent-mcn-c13="" _nghost-mcn-c11=""><nav _ngcontent-mcn-c11="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-mcn-c11="" class="container-fluid"><div _ngcontent-mcn-c11="" class="navbar-header page-scroll"><button _ngcontent-mcn-c11="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-mcn-c11="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-mcn-c11="" class="fa fa-bars"></i></button><a _ngcontent-mcn-c11="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-mcn-c11="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-mcn-c11="" class="nav navbar-nav navbar-right"><li _ngcontent-mcn-c11=""><a _ngcontent-mcn-c11="" href="/">Blog</a></li><li _ngcontent-mcn-c11=""><a _ngcontent-mcn-c11="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-mcn-c11=""><a _ngcontent-mcn-c11="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-mcn-c13=""></router-outlet><app-blog _nghost-mcn-c15=""><div _ngcontent-mcn-c15="">
+    <app-root _nghost-lxm-c13="" ng-version="13.1.1"><div _ngcontent-lxm-c13=""><app-blog-nav _ngcontent-lxm-c13="" _nghost-lxm-c11=""><nav _ngcontent-lxm-c11="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-lxm-c11="" class="container-fluid"><div _ngcontent-lxm-c11="" class="navbar-header page-scroll"><button _ngcontent-lxm-c11="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-lxm-c11="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-lxm-c11="" class="fa fa-bars"></i></button><a _ngcontent-lxm-c11="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-lxm-c11="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-lxm-c11="" class="nav navbar-nav navbar-right"><li _ngcontent-lxm-c11=""><a _ngcontent-lxm-c11="" href="/">Blog</a></li><li _ngcontent-lxm-c11=""><a _ngcontent-lxm-c11="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-lxm-c11=""><a _ngcontent-lxm-c11="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-lxm-c13=""></router-outlet><app-blog _nghost-lxm-c15=""><div _ngcontent-lxm-c15="">
   
-  <app-post-header _ngcontent-mcn-c15="" _nghost-mcn-c14=""><header _ngcontent-mcn-c14="" class="intro-header" style="background-image: url(&quot;assets/images/06/06-0.jpg&quot;);"><div _ngcontent-mcn-c14="" class="container"><div _ngcontent-mcn-c14="" class="row"><div _ngcontent-mcn-c14="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-mcn-c14="" class="post-heading"><h1 _ngcontent-mcn-c14="">從範例講解Promise概念</h1><span _ngcontent-mcn-c14="" class="meta">on 2018-08-12</span></div></div></div></div></header></app-post-header><!---->
+  <app-post-header _ngcontent-lxm-c15="" _nghost-lxm-c14=""><header _ngcontent-lxm-c14="" class="intro-header" style="background-image: url(&quot;assets/images/06/06-0.jpg&quot;);"><div _ngcontent-lxm-c14="" class="container"><div _ngcontent-lxm-c14="" class="row"><div _ngcontent-lxm-c14="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-lxm-c14="" class="post-heading"><h1 _ngcontent-lxm-c14="">從範例講解Promise概念</h1><span _ngcontent-lxm-c14="" class="meta">on 2018-08-12</span></div></div></div></div></header></app-post-header><!---->
 
-  <article _ngcontent-mcn-c15="">
-    <div _ngcontent-mcn-c15="" class="container">
-      <div _ngcontent-mcn-c15="" class="row">
-        <div _ngcontent-mcn-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <!--scullyContent-begin--><p _ngcontent-mcn-c15="">一般而言，呼叫多個 ajax，最簡單的方式是用 callback 函式，如以下的範例
+  <article _ngcontent-lxm-c15="">
+    <div _ngcontent-lxm-c15="" class="container">
+      <div _ngcontent-lxm-c15="" class="row">
+        <div _ngcontent-lxm-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-lxm-c15="">一般而言，呼叫多個 ajax，最簡單的方式是用 callback 函式，如以下的範例
 執行完 1 個 ajax 之後，再執行另一個 ajax。</p>
-<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/ut3cv27k/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mcn-c15=""></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/ut3cv27k/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-lxm-c15=""></iframe>
  
-<p _ngcontent-mcn-c15="">但是這樣會造成維護及讀code都不易，容易產生俗稱callback hell的問題，每次都想到下面這張圖。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/06/06-1.png" _ngcontent-mcn-c15="">
+<p _ngcontent-lxm-c15="">但是這樣會造成維護及讀code都不易，容易產生俗稱callback hell的問題，每次都想到下面這張圖。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/06/06-1.png" _ngcontent-lxm-c15="">
 
-<p _ngcontent-mcn-c15="">所以有人想到 Promise 的解決方式</p>
-<p _ngcontent-mcn-c15="">例如下面的範例，getData1 函式是直接回傳 Promise 這個物件，而不是直接回傳結果值，就好像是起了緩衝的作用，等到 server 將結果值回傳，最後再使用 resolve 將結果值回傳出去，並且可以使用 then 串連在一起，可讀性及維護性變高了。</p>
-<p _ngcontent-mcn-c15="">ES2015 的 Promise 物件的範列</p>
-<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/hu98b63j/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mcn-c15=""></iframe>
+<p _ngcontent-lxm-c15="">所以有人想到 Promise 的解決方式</p>
+<p _ngcontent-lxm-c15="">例如下面的範例，getData1 函式是直接回傳 Promise 這個物件，而不是直接回傳結果值，就好像是起了緩衝的作用，等到 server 將結果值回傳，最後再使用 resolve 將結果值回傳出去，並且可以使用 then 串連在一起，可讀性及維護性變高了。</p>
+<p _ngcontent-lxm-c15="">ES2015 的 Promise 物件的範列</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/hu98b63j/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-lxm-c15=""></iframe>
 
-<p _ngcontent-mcn-c15="">jQuery Deferred 的物件的範例</p>
-<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/e2gp57h6/6/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mcn-c15=""></iframe>
+<p _ngcontent-lxm-c15="">jQuery Deferred 的物件的範例</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/e2gp57h6/6/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-lxm-c15=""></iframe>
 
-<p _ngcontent-mcn-c15="">我最喜歡的用法，是使用 async/ await，因為 async/await 是基於 Promise，所以用像是同步的程式寫法來執行非同步的作業</p>
-<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/xftmdsb9/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-mcn-c15=""></iframe>
+<p _ngcontent-lxm-c15="">我最喜歡的用法，是使用 async/ await，因為 async/await 是基於 Promise，所以用像是同步的程式寫法來執行非同步的作業</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/xftmdsb9/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest="" frameborder="0" _ngcontent-lxm-c15=""></iframe>
 
-<h1 id="結論" _ngcontent-mcn-c15="">結論</h1>
-<p _ngcontent-mcn-c15="">寫前端的程式，或多或少都會遇到同時發出多個 Ajax 的情況，這時 Promise 的概念就很重要</p>
-<!--scullyContent-end--><scully-content _ngcontent-mcn-c15=""></scully-content>
-        <script>try {window['scullyContent'] = {cssId:"_ngcontent-mcn-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+<h1 id="結論" _ngcontent-lxm-c15="">結論</h1>
+<p _ngcontent-lxm-c15="">寫前端的程式，或多或少都會遇到同時發出多個 Ajax 的情況，這時 Promise 的概念就很重要</p>
+<!--scullyContent-end--><scully-content _ngcontent-lxm-c15=""></scully-content>
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-lxm-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
       </div>
 
-      <hr _ngcontent-mcn-c15="">
-      <div _ngcontent-mcn-c15="" class="row">
-        <div _ngcontent-mcn-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div _ngcontent-mcn-c15="" id="comments"><div class="utterances">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-mcn-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2018-08-12-ExampleOfPromise&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2018-08-12-ExampleOfPromise&amp;title=%E5%BE%9E%E7%AF%84%E4%BE%8B%E8%AC%9B%E8%A7%A3Promise%E6%A6%82%E5%BF%B5+-+Thomas+Blog&amp;description=%E5%BE%9E%E7%AF%84%E4%BE%8B%E8%AC%9B%E8%A7%A3Promise%E6%A6%82%E5%BF%B5+&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
+      <hr _ngcontent-lxm-c15="">
+      <div _ngcontent-lxm-c15="" class="row">
+        <div _ngcontent-lxm-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-lxm-c15="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-lxm-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2018-08-12-ExampleOfPromise&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2018-08-12-ExampleOfPromise&amp;title=%E5%BE%9E%E7%AF%84%E4%BE%8B%E8%AC%9B%E8%A7%A3Promise%E6%A6%82%E5%BF%B5+-+Thomas+Blog&amp;description=%E5%BE%9E%E7%AF%84%E4%BE%8B%E8%AC%9B%E8%A7%A3Promise%E6%A6%82%E5%BF%B5+&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div>
         </div>
       </div>
     </div>
   </article>
 </div>
-</app-blog><!----><hr _ngcontent-mcn-c13=""><app-footer _ngcontent-mcn-c13="" _nghost-mcn-c12=""><footer _ngcontent-mcn-c12=""><div _ngcontent-mcn-c12="" class="container"><div _ngcontent-mcn-c12="" class="row"><div _ngcontent-mcn-c12="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-mcn-c12="" class="list-inline text-center"><li _ngcontent-mcn-c12=""><a _ngcontent-mcn-c12="" href="https://www.twitter.com/thomascsd"><span _ngcontent-mcn-c12="" class="fa-stack fa-lg"><i _ngcontent-mcn-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-mcn-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-mcn-c12=""><a _ngcontent-mcn-c12="" href="https://github.com/thomascsd"><span _ngcontent-mcn-c12="" class="fa-stack fa-lg"><i _ngcontent-mcn-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-mcn-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-mcn-c12="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+</app-blog><!----><hr _ngcontent-lxm-c13=""><app-footer _ngcontent-lxm-c13="" _nghost-lxm-c12=""><footer _ngcontent-lxm-c12=""><div _ngcontent-lxm-c12="" class="container"><div _ngcontent-lxm-c12="" class="row"><div _ngcontent-lxm-c12="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-lxm-c12="" class="list-inline text-center"><li _ngcontent-lxm-c12=""><a _ngcontent-lxm-c12="" href="https://www.twitter.com/thomascsd"><span _ngcontent-lxm-c12="" class="fa-stack fa-lg"><i _ngcontent-lxm-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-lxm-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-lxm-c12=""><a _ngcontent-lxm-c12="" href="https://github.com/thomascsd"><span _ngcontent-lxm-c12="" class="fa-stack fa-lg"><i _ngcontent-lxm-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-lxm-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-lxm-c12="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="assets/plugins/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
