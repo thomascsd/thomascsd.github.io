@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 0.0.0"><style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      color-scheme: light;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>建立簡報的工具 - Slidev 的介紹 - Thomas Blog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thomas Chang">
+    <link rel="shortcut icon" href="favicon.ico">
+    <base href="/">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);body{color:#333}body{font-family:'Noto Sans TC', sans-serif;font-size:20px;-webkit-tap-highlight-color:#0085a1}</style><link id="theme-style" rel="stylesheet" href="assets/css/style.min.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
+    <!-- Google tag (gtag.js) -->
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202312070101/show_ads_impl.js" id="google_shimpl"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-704JZ9KNS1');
+    </script>
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1636928419295654" crossorigin="anonymous" data-checked-head="true"></script>
+  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="建立簡報的工具 - Slidev 的介紹 "><meta name="description" content="建立簡報的工具 - Slidev 的介紹 Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備"><meta name="og:title" content="建立簡報的工具 - Slidev 的介紹 - Thomas Blog"><meta name="twitter:title" content="建立簡報的工具 - Slidev 的介紹 - Thomas Blog"><meta name="og:site_name" content="建立簡報的工具 - Slidev 的介紹 - Thomas Blog"><meta name="og:locale" content="zh-tw"><meta name="og:type" content="website"><meta name="og:description" content="建立簡報的工具 - Slidev 的介紹 Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備"><meta name="twitter:description" content="建立簡報的工具 - Slidev 的介紹 Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備"><meta name="og:url" content="http://localhost:1864/blog/2023-02-06-Slidev"><meta name="twitter:url" content="http://localhost:1864/blog/2023-02-06-Slidev"><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><style>[_ngcontent-wym-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><script>window['ScullyIO']='generated';</script></head>
+  <body scully-version="0.0.0">
+    <app-root _nghost-wym-c13="" ng-version="13.1.1"><div _ngcontent-wym-c13=""><app-blog-nav _ngcontent-wym-c13="" _nghost-wym-c11=""><nav _ngcontent-wym-c11="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-wym-c11="" class="container-fluid"><div _ngcontent-wym-c11="" class="navbar-header page-scroll"><button _ngcontent-wym-c11="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-wym-c11="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-wym-c11="" class="fa fa-bars"></i></button><a _ngcontent-wym-c11="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-wym-c11="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-wym-c11="" class="nav navbar-nav navbar-right"><li _ngcontent-wym-c11=""><a _ngcontent-wym-c11="" href="/">Blog</a></li><li _ngcontent-wym-c11=""><a _ngcontent-wym-c11="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-wym-c11=""><a _ngcontent-wym-c11="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-wym-c13=""></router-outlet><app-blog _nghost-wym-c15=""><div _ngcontent-wym-c15="">
+  
+  <app-post-header _ngcontent-wym-c15="" _nghost-wym-c14=""><header _ngcontent-wym-c14="" class="intro-header" style="background-image: url(&quot;assets/images/26/26-0.jpg&quot;);"><div _ngcontent-wym-c14="" class="container"><div _ngcontent-wym-c14="" class="row"><div _ngcontent-wym-c14="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-wym-c14="" class="post-heading"><h1 _ngcontent-wym-c14="">建立簡報的工具 - Slidev 的介紹</h1><span _ngcontent-wym-c14="" class="meta">on 2023-02-06</span></div></div></div></div></header></app-post-header><!---->
+
+  <article _ngcontent-wym-c15="">
+    <div _ngcontent-wym-c15="" class="container">
+      <div _ngcontent-wym-c15="" class="row">
+        <div _ngcontent-wym-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--scullyContent-begin--><p _ngcontent-wym-c15="">去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 <a href="https://sli.dev" _ngcontent-wym-c15="">Slidev</a> ，覺得簡單易用，就決定採用了，現在分享給大家參考看看。</p>
+<h2 id="安裝" _ngcontent-wym-c15="">安裝</h2>
+<pre _ngcontent-wym-c15=""><code _ngcontent-wym-c15="">npm init slidev</code></pre><p _ngcontent-wym-c15="">可以參考<a href="https://sli.dev/guide/" _ngcontent-wym-c15="">官方網站</a>，輸入上列的指令建立初始樣版。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-01.png" _ngcontent-wym-c15="">
+
+<p _ngcontent-wym-c15="">如上圖，輸入簡報名稱後，即會安裝相依的套件。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-02.png" _ngcontent-wym-c15="">
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-03.png" _ngcontent-wym-c15="">
+
+<p _ngcontent-wym-c15="">之後會開啟範例網站 <a href="http://localhost:3030" _ngcontent-wym-c15="">http://localhost:3030</a> 。可以確認一下 Slidev 的功能有那些。</p>
+<h2 id="建立簡報" _ngcontent-wym-c15="">建立簡報</h2>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-04.png" _ngcontent-wym-c15="">
+
+<p _ngcontent-wym-c15="">根據<a href="https://sli.dev/guide/#markdown-syntax" _ngcontent-wym-c15="">文件</a>，進入點是 slides.md，一切的簡報這邊即可。</p>
+<pre _ngcontent-wym-c15=""><code _ngcontent-wym-c15=""># Slidev
+
+Hello World
+
+<span class="token operator" _ngcontent-wym-c15="">--</span><span class="token operator" _ngcontent-wym-c15="">-</span>
+
+# Page <span class="token number" _ngcontent-wym-c15="">2</span>
+
+Directly use code blocks <span class="token keyword" _ngcontent-wym-c15="">for</span> highlighting
+
+
+<span class="token template-string" _ngcontent-wym-c15=""><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span></span><span class="token template-string" _ngcontent-wym-c15=""><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span><span class="token string" _ngcontent-wym-c15=""> ts
+console.log('Hello, World!')
+</span><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span></span><span class="token template-string" _ngcontent-wym-c15=""><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span></span>
+
+<span class="token operator" _ngcontent-wym-c15="">--</span><span class="token operator" _ngcontent-wym-c15="">-</span>
+
+# Page <span class="token number" _ngcontent-wym-c15="">3</span></code></pre><p _ngcontent-wym-c15="">而內容格式如上，看起來一目了然，都是很基本的 <a href="https://sli.dev/guide/syntax.html" _ngcontent-wym-c15="">markdown 語法</a>就可以建立簡報了。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-05.png" _ngcontent-wym-c15="">
+
+<p _ngcontent-wym-c15="">另外為了便於建立簡報，可以安裝 <a href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev" _ngcontent-wym-c15="">Slidev VSCode Extension</a>。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-06.png" _ngcontent-wym-c15="">
+
+<p _ngcontent-wym-c15="">這樣子就可以列表目前的簡報，及目前所選擇簡報的預覽圖</p>
+<h2 id="程式碼" _ngcontent-wym-c15="">程式碼</h2>
+<pre _ngcontent-wym-c15=""><code _ngcontent-wym-c15=""><span class="token template-string" _ngcontent-wym-c15=""><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span></span><span class="token template-string" _ngcontent-wym-c15=""><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span><span class="token string" _ngcontent-wym-c15="">ts {all|2|1-6|9|all}
+interface User {
+  id: number
+  firstName: string
+  lastName: string
+  role: string
+}
+</span><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span></span><span class="token template-string" _ngcontent-wym-c15=""><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span><span class="token template-punctuation string" _ngcontent-wym-c15="">`</span></span>
+
+<span class="token keyword" _ngcontent-wym-c15="">function</span> <span class="token function" _ngcontent-wym-c15="">updateUser</span><span class="token punctuation" _ngcontent-wym-c15="">(</span>id<span class="token operator" _ngcontent-wym-c15="">:</span> <span class="token builtin" _ngcontent-wym-c15="">number</span><span class="token punctuation" _ngcontent-wym-c15="">,</span> update<span class="token operator" _ngcontent-wym-c15="">:</span> User<span class="token punctuation" _ngcontent-wym-c15="">)</span> <span class="token punctuation" _ngcontent-wym-c15="">{</span>
+  <span class="token keyword" _ngcontent-wym-c15="">const</span> user <span class="token operator" _ngcontent-wym-c15="">=</span> <span class="token function" _ngcontent-wym-c15="">getUser</span><span class="token punctuation" _ngcontent-wym-c15="">(</span>id<span class="token punctuation" _ngcontent-wym-c15="">)</span>
+  <span class="token keyword" _ngcontent-wym-c15="">const</span> newUser <span class="token operator" _ngcontent-wym-c15="">=</span> <span class="token punctuation" _ngcontent-wym-c15="">{</span> <span class="token operator" _ngcontent-wym-c15="">...</span>user<span class="token punctuation" _ngcontent-wym-c15="">,</span> <span class="token operator" _ngcontent-wym-c15="">...</span>update <span class="token punctuation" _ngcontent-wym-c15="">}</span>
+  <span class="token function" _ngcontent-wym-c15="">saveUser</span><span class="token punctuation" _ngcontent-wym-c15="">(</span>id<span class="token punctuation" _ngcontent-wym-c15="">,</span> newUser<span class="token punctuation" _ngcontent-wym-c15="">)</span>
+<span class="token punctuation" _ngcontent-wym-c15="">}</span>
+</code></pre><p _ngcontent-wym-c15="">接著就是我選擇 Slidev 的原因之一，可以 Highlight 程式碼，如同上面的格式，參考<a href="https://sli.dev/guide/syntax.html#line-highlighting" _ngcontent-wym-c15="">文件</a>，在後方加上程式碼的行號 <code _ngcontent-wym-c15="">{all|2|1-6|9|all}</code>，即可顯示 Highlight 的程式碼。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/26/26-07.gif" _ngcontent-wym-c15="">
+
+<p _ngcontent-wym-c15="">之後就像是上方的圖片，可以配合簡報強調特定行數的程式碼。</p>
+<h2 id="pdf" _ngcontent-wym-c15="">PDF</h2>
+<pre _ngcontent-wym-c15=""><code _ngcontent-wym-c15="">npm i <span class="token operator" _ngcontent-wym-c15="">-</span><span class="token constant" _ngcontent-wym-c15="">D</span> playwright<span class="token operator" _ngcontent-wym-c15="">-</span>chromium</code></pre><p _ngcontent-wym-c15="">另外還可以匯出成 PDF，就需要安裝 <code _ngcontent-wym-c15="">playwright-chromium</code> ，可以參考<a href="https://sli.dev/guide/exporting.html#pdf" _ngcontent-wym-c15="">文件</a> 。</p>
+<pre _ngcontent-wym-c15=""><code _ngcontent-wym-c15="">slidev <span class="token keyword" _ngcontent-wym-c15="">export</span></code></pre><p _ngcontent-wym-c15="">接著輸入指令<code _ngcontent-wym-c15="">export</code> 即可匯出 PDF。</p>
+<h2 id="結論" _ngcontent-wym-c15="">結論</h2>
+<p _ngcontent-wym-c15="">Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備，推薦給大家參考看看。</p>
+<!--scullyContent-end--><scully-content _ngcontent-wym-c15=""></scully-content>
+        <script>try {window['scullyContent'] = {cssId:"_ngcontent-wym-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
+      </div>
+
+      <hr _ngcontent-wym-c15="">
+      <div _ngcontent-wym-c15="" class="row">
+        <div _ngcontent-wym-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div _ngcontent-wym-c15="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-wym-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2023-02-06-Slidev&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2023-02-06-Slidev&amp;title=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+-+Thomas+Blog&amp;description=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+Slidev+%E6%98%AF%E5%BE%88%E5%A5%BD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%8C%E6%90%AD%E9%85%8D+VSCode+Exntension+%EF%BC%8C%E8%83%BD%E5%BF%AB%E9%80%9F%E8%BC%95%E9%AC%86%E5%BB%BA%E7%AB%8B%E8%B5%B7%E7%B0%A1%E5%A0%B1%E3%80%82%E8%80%8C%E7%B0%A1%E5%A0%B1%E6%89%80%E9%9C%80%E7%9A%84%E5%8A%9F%E8%83%BD%E9%83%BD%E6%9C%89%E5%85%B7%E5%82%99&amp;og%3Atitle=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+-+Thomas+Blog&amp;session=" loading="lazy"></iframe>
+  </div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+</app-blog><!----><hr _ngcontent-wym-c13=""><app-footer _ngcontent-wym-c13="" _nghost-wym-c12=""><footer _ngcontent-wym-c12=""><div _ngcontent-wym-c12="" class="container"><div _ngcontent-wym-c12="" class="row"><div _ngcontent-wym-c12="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-wym-c12="" class="list-inline text-center"><li _ngcontent-wym-c12=""><a _ngcontent-wym-c12="" href="https://www.twitter.com/thomascsd"><span _ngcontent-wym-c12="" class="fa-stack fa-lg"><i _ngcontent-wym-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-wym-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-wym-c12=""><a _ngcontent-wym-c12="" href="https://github.com/thomascsd"><span _ngcontent-wym-c12="" class="fa-stack fa-lg"><i _ngcontent-wym-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-wym-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-wym-c12="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.f463352c063bbe36.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.c9df63d3e3525fe5.js" type="module"></script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1636928419295654&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1703997860&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2023-02-06-Slidev&amp;ea=0&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;asiscm=1&amp;aslmt=0.4&amp;asamt=-1&amp;asedf=0&amp;asefa=1&amp;aseiel=1~2~4~6&amp;aslcwct=150&amp;asacwct=25&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;dt=1703997966545&amp;bpp=4&amp;bdt=765&amp;idt=685&amp;shv=r20231207&amp;mjsv=m202312070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=4097363831166&amp;frm=20&amp;pv=2&amp;ga_vid=337957654.1703997950&amp;ga_sid=1703997968&amp;ga_hid=1545253066&amp;ga_fc=1&amp;u_tz=480&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31079965%2C44798934%2C95320885&amp;oid=2&amp;pvsid=2296344420442793&amp;tmod=1160919103&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=964" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe src="https://tpc.googlesyndication.com/sodar/sodar2/225/runner.html" width="0" height="0" style="display: none;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20231207/r20190131/zrt_lookup.html" style="display: none;"></iframe></body></html>
