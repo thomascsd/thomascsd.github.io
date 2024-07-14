@@ -29,11 +29,10 @@
     <base href="/">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);body{color:#333}body{font-family:'Noto Sans TC', sans-serif;font-size:20px;-webkit-tap-highlight-color:#0085a1}</style><link id="theme-style" rel="stylesheet" href="assets/css/style.min.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Google tag (gtag.js) -->
-    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202401080101/show_ads_impl.js" id="google_shimpl"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202407090101/show_ads_impl.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -44,106 +43,135 @@
       gtag('config', 'G-704JZ9KNS1');
     </script>
     <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1636928419295654" crossorigin="anonymous" data-checked-head="true"></script>
-  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="VSCode Extension的開發心得 "><meta name="description" content="VSCode Extension的開發心得 "><meta name="og:title" content="VSCode Extension的開發心得 - Thomas Blog"><meta name="twitter:title" content="VSCode Extension的開發心得 - Thomas Blog"><meta name="og:site_name" content="VSCode Extension的開發心得 - Thomas Blog"><meta name="og:locale" content="zh-tw"><meta name="og:type" content="website"><meta name="og:description" content="VSCode Extension的開發心得 "><meta name="twitter:description" content="VSCode Extension的開發心得 "><meta name="og:url" content="http://localhost:1864/blog/2019-09-01-TutorialOfVscodeExtension"><meta name="twitter:url" content="http://localhost:1864/blog/2019-09-01-TutorialOfVscodeExtension"><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><style>[_ngcontent-xhd-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+      nav.navbar {
+        height: 6rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+      }
+      ::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #efefef;
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d5d5d5;
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c4c4c4;
+      }
+    </style>
+  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="VSCode Extension的開發心得 "><meta name="description" content="VSCode Extension的開發心得 "><meta name="og:title" content="VSCode Extension的開發心得 - Thomas Blog"><meta name="twitter:title" content="VSCode Extension的開發心得 - Thomas Blog"><meta name="og:site_name" content="VSCode Extension的開發心得 - Thomas Blog"><meta name="og:locale" content="zh-tw"><meta name="og:type" content="website"><meta name="og:description" content="VSCode Extension的開發心得 "><meta name="twitter:description" content="VSCode Extension的開發心得 "><meta name="og:url" content="http://localhost:1864/blog/2019-09-01-TutorialOfVscodeExtension"><meta name="twitter:url" content="http://localhost:1864/blog/2019-09-01-TutorialOfVscodeExtension"><style>[_ngcontent-gop-c14]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
       :host {
         display: none;
       }
       scully-content {
         display: none;
       }
-    </style><script>window['ScullyIO']='generated';</script></head>
+    </style><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9uiHDzQFAhqALUhTgTYJcz9XrGH2y0/9AORwCSapUO/f7Uh7ysIzyszNkuWDLqNYg8446Uj48XIstBW1qv/wAQAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9R+gkZL3TWq+Z7RJ2L0c7ZN7FZD5z4mHmVvjrPitg/EMz9P3j5d3W7Vw5ZR9jtJGmWKltM4BO3smNzpCgwYuwwAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script>window['ScullyIO']='generated';</script></head>
   <body scully-version="0.0.0">
-    <app-root _nghost-xhd-c13="" ng-version="13.1.1"><div _ngcontent-xhd-c13=""><app-blog-nav _ngcontent-xhd-c13="" _nghost-xhd-c11=""><nav _ngcontent-xhd-c11="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-xhd-c11="" class="container-fluid"><div _ngcontent-xhd-c11="" class="navbar-header page-scroll"><button _ngcontent-xhd-c11="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-xhd-c11="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-xhd-c11="" class="fa fa-bars"></i></button><a _ngcontent-xhd-c11="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-xhd-c11="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-xhd-c11="" class="nav navbar-nav navbar-right"><li _ngcontent-xhd-c11=""><a _ngcontent-xhd-c11="" href="/">Blog</a></li><li _ngcontent-xhd-c11=""><a _ngcontent-xhd-c11="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-xhd-c11=""><a _ngcontent-xhd-c11="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-xhd-c13=""></router-outlet><app-blog _nghost-xhd-c15=""><div _ngcontent-xhd-c15="">
-  
-  <app-post-header _ngcontent-xhd-c15="" _nghost-xhd-c14=""><header _ngcontent-xhd-c14="" class="intro-header" style="background-image: url(&quot;assets/images/12/12-0.jpg&quot;);"><div _ngcontent-xhd-c14="" class="container"><div _ngcontent-xhd-c14="" class="row"><div _ngcontent-xhd-c14="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-xhd-c14="" class="post-heading"><h1 _ngcontent-xhd-c14="">VSCode Extension的開發心得</h1><span _ngcontent-xhd-c14="" class="meta">on 2019-09-01</span></div></div></div></div></header></app-post-header><!---->
+    <app-root _nghost-gop-c12="" ng-version="13.1.1"><div _ngcontent-gop-c12=""><app-blog-nav _ngcontent-gop-c12="" _nghost-gop-c10=""><nav _ngcontent-gop-c10="" class="navbar"><div _ngcontent-gop-c10="" class="container"><div _ngcontent-gop-c10="" class="navbar-brand"><a _ngcontent-gop-c10="" class="navbar-item" href="/"> Thomas Blog </a><span _ngcontent-gop-c10="" data-target="navbarMenu" class="navbar-burger burger"><span _ngcontent-gop-c10=""></span><span _ngcontent-gop-c10=""></span><span _ngcontent-gop-c10=""></span></span></div><div _ngcontent-gop-c10="" id="navbarMenu" class="navbar-menu"><div _ngcontent-gop-c10="" class="navbar-end"><div _ngcontent-gop-c10="" class="navbar-item"><div _ngcontent-gop-c10="" class="control has-icons-left"></div></div><a _ngcontent-gop-c10="" class="navbar-item is-size-5 has-text-weight-semibold" href="/"> Blog </a><a _ngcontent-gop-c10="" href="https://thomascsd.github.io/repos/" target="_blank" class="navbar-item is-size-5 has-text-weight-semibold"> Repos </a><a _ngcontent-gop-c10="" class="navbar-item is-size-5 has-text-weight-semibold" href="/about"> About </a></div></div></div></nav></app-blog-nav><router-outlet _ngcontent-gop-c12=""></router-outlet><app-blog _nghost-gop-c14=""><section _ngcontent-gop-c14="" class="hero">
+  <div _ngcontent-gop-c14="" class="hero-body">
+    <div _ngcontent-gop-c14="" class="container">
+      <app-post-header _ngcontent-gop-c14="" _nghost-gop-c13=""><div _ngcontent-gop-c13="" class="columns"><div _ngcontent-gop-c13="" class="column is-8 is-offset-2"><figure _ngcontent-gop-c13="" class="image is-16by9"><img _ngcontent-gop-c13="" alt="blog image" src="assets/images/12/12-0.jpg"></figure></div></div></app-post-header><!---->
 
-  <article _ngcontent-xhd-c15="">
-    <div _ngcontent-xhd-c15="" class="container">
-      <div _ngcontent-xhd-c15="" class="row">
-        <div _ngcontent-xhd-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <!--scullyContent-begin--><p _ngcontent-xhd-c15="">[2020/08/29 更新：加上 package.json 的設定]</p>
-<p _ngcontent-xhd-c15="">前一陣子，開發了產生 README.md 的 VSCode - <a href="https://marketplace.visualstudio.com/items?itemName=thomascsd.vscode-readme-pattern" _ngcontent-xhd-c15="">Readme Pattern</a>，如何大家還沒安裝的話，可以試試看。在開發中，有遇到一些問題，以及累積了一些心得，分享給的大家。</p>
-<h2 id="初始" _ngcontent-xhd-c15="">初始</h2>
-<p _ngcontent-xhd-c15="">首先按照<a href="https://code.visualstudio.com/api/get-started/your-first-extension" _ngcontent-xhd-c15="">官方文件</a>，需要先安裝<a href="https://yeoman.io/" _ngcontent-xhd-c15="">Yeoman</a>以及 VS Code Extension Generator。</p>
-<pre _ngcontent-xhd-c15=""><code _ngcontent-xhd-c15="">npm install <span class="token operator" _ngcontent-xhd-c15="">-</span>g yo generator<span class="token operator" _ngcontent-xhd-c15="">-</span>code</code></pre><p _ngcontent-xhd-c15="">輸入<code _ngcontent-xhd-c15="">yo code</code>，來初始化 VSCode extesion 專案，接著輸入一些參數，這邊我是用 TypeScript 開發的，接著輸入一些參數後，就可以很輕易的建立一個樣板。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/12/12-1.png" _ngcontent-xhd-c15="">
+      <section _ngcontent-gop-c14="" class="section">
+        <div _ngcontent-gop-c14="" class="columns">
+          <div _ngcontent-gop-c14="" class="column is-8 is-offset-2">
+            <div _ngcontent-gop-c14="" class="content is-medium">
+              <h2 _ngcontent-gop-c14="" class="subtitle is-4">2019-09-01</h2>
+              
 
-<img class="img-responsive" loading="lazy" src="assets/images/12/12-2.png" _ngcontent-xhd-c15="">
+              <h1 _ngcontent-gop-c14="" class="title">VSCode Extension的開發心得</h1>
+              <p _ngcontent-gop-c14="">
+                <!--scullyContent-begin--><p _ngcontent-gop-c14="">[2020/08/29 更新：加上 package.json 的設定]</p>
+<p _ngcontent-gop-c14="">前一陣子，開發了產生 README.md 的 VSCode - <a href="https://marketplace.visualstudio.com/items?itemName=thomascsd.vscode-readme-pattern" _ngcontent-gop-c14="">Readme Pattern</a>，如何大家還沒安裝的話，可以試試看。在開發中，有遇到一些問題，以及累積了一些心得，分享給的大家。</p>
+<h2 id="初始" _ngcontent-gop-c14="">初始</h2>
+<p _ngcontent-gop-c14="">首先按照<a href="https://code.visualstudio.com/api/get-started/your-first-extension" _ngcontent-gop-c14="">官方文件</a>，需要先安裝<a href="https://yeoman.io/" _ngcontent-gop-c14="">Yeoman</a>以及 VS Code Extension Generator。</p>
+<pre _ngcontent-gop-c14=""><code _ngcontent-gop-c14="">npm install <span class="token operator" _ngcontent-gop-c14="">-</span>g yo generator<span class="token operator" _ngcontent-gop-c14="">-</span>code</code></pre><p _ngcontent-gop-c14="">輸入<code _ngcontent-gop-c14="">yo code</code>，來初始化 VSCode extesion 專案，接著輸入一些參數，這邊我是用 TypeScript 開發的，接著輸入一些參數後，就可以很輕易的建立一個樣板。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/12/12-1.png" _ngcontent-gop-c14="">
 
-<h2 id="packagejson-的設定" _ngcontent-xhd-c15="">package.json 的設定</h2>
-<pre _ngcontent-xhd-c15=""><code _ngcontent-xhd-c15=""><span class="token punctuation" _ngcontent-xhd-c15="">{</span>
-   <span class="token string-property property" _ngcontent-xhd-c15="">"activationEvents"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token punctuation" _ngcontent-xhd-c15="">[</span>
-     <span class="token string" _ngcontent-xhd-c15="">"onCommand:extension.readme"</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-     <span class="token string" _ngcontent-xhd-c15="">"onCommand:extension.readmeOnExplorer"</span>
-  <span class="token punctuation" _ngcontent-xhd-c15="">]</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-  <span class="token string-property property" _ngcontent-xhd-c15="">"contributes"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token punctuation" _ngcontent-xhd-c15="">{</span>
-    <span class="token string-property property" _ngcontent-xhd-c15="">"commands"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token punctuation" _ngcontent-xhd-c15="">[</span>
-      <span class="token punctuation" _ngcontent-xhd-c15="">{</span>
-        <span class="token string-property property" _ngcontent-xhd-c15="">"command"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token string" _ngcontent-xhd-c15="">"extension.readme"</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-        <span class="token string-property property" _ngcontent-xhd-c15="">"title"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token string" _ngcontent-xhd-c15="">"readme: Generates README.md"</span>
-      <span class="token punctuation" _ngcontent-xhd-c15="">}</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-      <span class="token punctuation" _ngcontent-xhd-c15="">{</span>
-        <span class="token string-property property" _ngcontent-xhd-c15="">"command"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token string" _ngcontent-xhd-c15="">"extension.readmeOnExplorer"</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-        <span class="token string-property property" _ngcontent-xhd-c15="">"title"</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token string" _ngcontent-xhd-c15="">"readme: Generates README.md on here"</span>
-      <span class="token punctuation" _ngcontent-xhd-c15="">}</span>
-    <span class="token punctuation" _ngcontent-xhd-c15="">]</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-  <span class="token punctuation" _ngcontent-xhd-c15="">}</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-<span class="token punctuation" _ngcontent-xhd-c15="">}</span></code></pre><p _ngcontent-xhd-c15="">需要在<code _ngcontent-xhd-c15="">activationEvents</code>及<code _ngcontent-xhd-c15="">contributes.commands</code>這 2 個地方都需加上需執行的 command，有多少的 command 就加上多少，不然 command 不會有作用。</p>
-<h2 id="建立" _ngcontent-xhd-c15="">建立</h2>
-<p _ngcontent-xhd-c15="">因為 VSCode 是使用 Electron 來開發的，代表使用 Node.js 的模組是沒有問題的，所以這邊有使用到<code _ngcontent-xhd-c15="">path</code>及<code _ngcontent-xhd-c15="">fs</code>。</p>
-<blockquote _ngcontent-xhd-c15="">
-<p _ngcontent-xhd-c15="">在 1.37 版之後，VSCode Extension API 有增加 vscode.workspace.fs 來取代 fs，是由於需要遠端存取檔案，可參考<a href="https://code.visualstudio.com/updates/v1_37#_extension-authoring" _ngcontent-xhd-c15="">VSCode 更新記錄 1.37</a>， 並且要注意的是，vscode 套件被拆分為@types/vscode 及 vscode-test。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/12/12-2.png" _ngcontent-gop-c14="">
+
+<h2 id="packagejson-的設定" _ngcontent-gop-c14="">package.json 的設定</h2>
+<pre _ngcontent-gop-c14=""><code _ngcontent-gop-c14=""><span class="token punctuation" _ngcontent-gop-c14="">{</span>
+   <span class="token string-property property" _ngcontent-gop-c14="">"activationEvents"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token punctuation" _ngcontent-gop-c14="">[</span>
+     <span class="token string" _ngcontent-gop-c14="">"onCommand:extension.readme"</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+     <span class="token string" _ngcontent-gop-c14="">"onCommand:extension.readmeOnExplorer"</span>
+  <span class="token punctuation" _ngcontent-gop-c14="">]</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+  <span class="token string-property property" _ngcontent-gop-c14="">"contributes"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token punctuation" _ngcontent-gop-c14="">{</span>
+    <span class="token string-property property" _ngcontent-gop-c14="">"commands"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token punctuation" _ngcontent-gop-c14="">[</span>
+      <span class="token punctuation" _ngcontent-gop-c14="">{</span>
+        <span class="token string-property property" _ngcontent-gop-c14="">"command"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token string" _ngcontent-gop-c14="">"extension.readme"</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+        <span class="token string-property property" _ngcontent-gop-c14="">"title"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token string" _ngcontent-gop-c14="">"readme: Generates README.md"</span>
+      <span class="token punctuation" _ngcontent-gop-c14="">}</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+      <span class="token punctuation" _ngcontent-gop-c14="">{</span>
+        <span class="token string-property property" _ngcontent-gop-c14="">"command"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token string" _ngcontent-gop-c14="">"extension.readmeOnExplorer"</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+        <span class="token string-property property" _ngcontent-gop-c14="">"title"</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token string" _ngcontent-gop-c14="">"readme: Generates README.md on here"</span>
+      <span class="token punctuation" _ngcontent-gop-c14="">}</span>
+    <span class="token punctuation" _ngcontent-gop-c14="">]</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+  <span class="token punctuation" _ngcontent-gop-c14="">}</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+<span class="token punctuation" _ngcontent-gop-c14="">}</span></code></pre><p _ngcontent-gop-c14="">需要在<code _ngcontent-gop-c14="">activationEvents</code>及<code _ngcontent-gop-c14="">contributes.commands</code>這 2 個地方都需加上需執行的 command，有多少的 command 就加上多少，不然 command 不會有作用。</p>
+<h2 id="建立" _ngcontent-gop-c14="">建立</h2>
+<p _ngcontent-gop-c14="">因為 VSCode 是使用 Electron 來開發的，代表使用 Node.js 的模組是沒有問題的，所以這邊有使用到<code _ngcontent-gop-c14="">path</code>及<code _ngcontent-gop-c14="">fs</code>。</p>
+<blockquote _ngcontent-gop-c14="">
+<p _ngcontent-gop-c14="">在 1.37 版之後，VSCode Extension API 有增加 vscode.workspace.fs 來取代 fs，是由於需要遠端存取檔案，可參考<a href="https://code.visualstudio.com/updates/v1_37#_extension-authoring" _ngcontent-gop-c14="">VSCode 更新記錄 1.37</a>， 並且要注意的是，vscode 套件被拆分為@types/vscode 及 vscode-test。</p>
 </blockquote>
-<h3 id="取得檔案的路徑" _ngcontent-xhd-c15="">取得檔案的路徑</h3>
-<p _ngcontent-xhd-c15="">一開始遇到的第一個問題是不知道專案內的檔案路徑是什麼?因為需要戴入 Markdown 檔案。</p>
-<p _ngcontent-xhd-c15="">查看範例及文件後，發現使用下列方法即可：</p>
-<blockquote _ngcontent-xhd-c15="">
-<p _ngcontent-xhd-c15="">ExtensionContext.asAbsolutePath('relative path');</p>
+<h3 id="取得檔案的路徑" _ngcontent-gop-c14="">取得檔案的路徑</h3>
+<p _ngcontent-gop-c14="">一開始遇到的第一個問題是不知道專案內的檔案路徑是什麼?因為需要戴入 Markdown 檔案。</p>
+<p _ngcontent-gop-c14="">查看範例及文件後，發現使用下列方法即可：</p>
+<blockquote _ngcontent-gop-c14="">
+<p _ngcontent-gop-c14="">ExtensionContext.asAbsolutePath('relative path');</p>
 </blockquote>
-<pre class="language-javascript" _ngcontent-xhd-c15=""><code class="language-javascript" _ngcontent-xhd-c15=""><span class="token keyword" _ngcontent-xhd-c15="">const</span> tempPath <span class="token operator" _ngcontent-xhd-c15="">=</span> <span class="token keyword" _ngcontent-xhd-c15="">this</span><span class="token punctuation" _ngcontent-xhd-c15="">.</span>context<span class="token punctuation" _ngcontent-xhd-c15="">.</span><span class="token function" _ngcontent-xhd-c15="">asAbsolutePath</span><span class="token punctuation" _ngcontent-xhd-c15="">(</span>path<span class="token punctuation" _ngcontent-xhd-c15="">.</span><span class="token function" _ngcontent-xhd-c15="">join</span><span class="token punctuation" _ngcontent-xhd-c15="">(</span><span class="token string" _ngcontent-xhd-c15="">'templates'</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span> <span class="token template-string" _ngcontent-xhd-c15=""><span class="token template-punctuation string" _ngcontent-xhd-c15="">`</span><span class="token interpolation" _ngcontent-xhd-c15=""><span class="token interpolation-punctuation punctuation" _ngcontent-xhd-c15="">${</span>selectedItem<span class="token interpolation-punctuation punctuation" _ngcontent-xhd-c15="">}</span></span><span class="token string" _ngcontent-xhd-c15="">.md</span><span class="token template-punctuation string" _ngcontent-xhd-c15="">`</span></span><span class="token punctuation" _ngcontent-xhd-c15="">)</span><span class="token punctuation" _ngcontent-xhd-c15="">)</span><span class="token punctuation" _ngcontent-xhd-c15="">;</span></code></pre><p _ngcontent-xhd-c15="">可以將相對路徑轉換成目前檔案的路徑，另外為了跨平台的相容性，相對路徑應該使用<code _ngcontent-xhd-c15="">path.join</code>來連結各個目錄及檔案。</p>
-<h3 id="工作區workspace" _ngcontent-xhd-c15="">工作區(Workspace)</h3>
-<p _ngcontent-xhd-c15="">接著要將處理過後的內容，寫入至工作區，而取得工作區路徑的方式：</p>
-<blockquote _ngcontent-xhd-c15="">
-<p _ngcontent-xhd-c15="">vscode.workspace.workspaceFolders</p>
+<pre class="language-javascript" _ngcontent-gop-c14=""><code class="language-javascript" _ngcontent-gop-c14=""><span class="token keyword" _ngcontent-gop-c14="">const</span> tempPath <span class="token operator" _ngcontent-gop-c14="">=</span> <span class="token keyword" _ngcontent-gop-c14="">this</span><span class="token punctuation" _ngcontent-gop-c14="">.</span>context<span class="token punctuation" _ngcontent-gop-c14="">.</span><span class="token function" _ngcontent-gop-c14="">asAbsolutePath</span><span class="token punctuation" _ngcontent-gop-c14="">(</span>path<span class="token punctuation" _ngcontent-gop-c14="">.</span><span class="token function" _ngcontent-gop-c14="">join</span><span class="token punctuation" _ngcontent-gop-c14="">(</span><span class="token string" _ngcontent-gop-c14="">'templates'</span><span class="token punctuation" _ngcontent-gop-c14="">,</span> <span class="token template-string" _ngcontent-gop-c14=""><span class="token template-punctuation string" _ngcontent-gop-c14="">`</span><span class="token interpolation" _ngcontent-gop-c14=""><span class="token interpolation-punctuation punctuation" _ngcontent-gop-c14="">${</span>selectedItem<span class="token interpolation-punctuation punctuation" _ngcontent-gop-c14="">}</span></span><span class="token string" _ngcontent-gop-c14="">.md</span><span class="token template-punctuation string" _ngcontent-gop-c14="">`</span></span><span class="token punctuation" _ngcontent-gop-c14="">)</span><span class="token punctuation" _ngcontent-gop-c14="">)</span><span class="token punctuation" _ngcontent-gop-c14="">;</span></code></pre><p _ngcontent-gop-c14="">可以將相對路徑轉換成目前檔案的路徑，另外為了跨平台的相容性，相對路徑應該使用<code _ngcontent-gop-c14="">path.join</code>來連結各個目錄及檔案。</p>
+<h3 id="工作區workspace" _ngcontent-gop-c14="">工作區(Workspace)</h3>
+<p _ngcontent-gop-c14="">接著要將處理過後的內容，寫入至工作區，而取得工作區路徑的方式：</p>
+<blockquote _ngcontent-gop-c14="">
+<p _ngcontent-gop-c14="">vscode.workspace.workspaceFolders</p>
 </blockquote>
-<pre class="language-javascript" _ngcontent-xhd-c15=""><code class="language-javascript" _ngcontent-xhd-c15=""><span class="token keyword" _ngcontent-xhd-c15="">const</span> folders <span class="token operator" _ngcontent-xhd-c15="">=</span> vscode<span class="token punctuation" _ngcontent-xhd-c15="">.</span>workspace<span class="token punctuation" _ngcontent-xhd-c15="">.</span>workspaceFolders<span class="token punctuation" _ngcontent-xhd-c15="">;</span>
-<span class="token keyword" _ngcontent-xhd-c15="">if</span> <span class="token punctuation" _ngcontent-xhd-c15="">(</span>folders<span class="token punctuation" _ngcontent-xhd-c15="">)</span> <span class="token punctuation" _ngcontent-xhd-c15="">{</span>
-  <span class="token keyword" _ngcontent-xhd-c15="">const</span> url <span class="token operator" _ngcontent-xhd-c15="">=</span> folders<span class="token punctuation" _ngcontent-xhd-c15="">[</span><span class="token number" _ngcontent-xhd-c15="">0</span><span class="token punctuation" _ngcontent-xhd-c15="">]</span><span class="token punctuation" _ngcontent-xhd-c15="">.</span>uri<span class="token punctuation" _ngcontent-xhd-c15="">;</span>
-<span class="token punctuation" _ngcontent-xhd-c15="">}</span></code></pre><p _ngcontent-xhd-c15="">這邊取得第 1 個的路徑，最後用<code _ngcontent-xhd-c15="">writeFile</code>將檔案寫入。</p>
-<h3 id="建立項目清單" _ngcontent-xhd-c15="">建立項目清單</h3>
-<img class="img-responsive" loading="lazy" src="assets/images/12/12-3.png" _ngcontent-xhd-c15="">
+<pre class="language-javascript" _ngcontent-gop-c14=""><code class="language-javascript" _ngcontent-gop-c14=""><span class="token keyword" _ngcontent-gop-c14="">const</span> folders <span class="token operator" _ngcontent-gop-c14="">=</span> vscode<span class="token punctuation" _ngcontent-gop-c14="">.</span>workspace<span class="token punctuation" _ngcontent-gop-c14="">.</span>workspaceFolders<span class="token punctuation" _ngcontent-gop-c14="">;</span>
+<span class="token keyword" _ngcontent-gop-c14="">if</span> <span class="token punctuation" _ngcontent-gop-c14="">(</span>folders<span class="token punctuation" _ngcontent-gop-c14="">)</span> <span class="token punctuation" _ngcontent-gop-c14="">{</span>
+  <span class="token keyword" _ngcontent-gop-c14="">const</span> url <span class="token operator" _ngcontent-gop-c14="">=</span> folders<span class="token punctuation" _ngcontent-gop-c14="">[</span><span class="token number" _ngcontent-gop-c14="">0</span><span class="token punctuation" _ngcontent-gop-c14="">]</span><span class="token punctuation" _ngcontent-gop-c14="">.</span>uri<span class="token punctuation" _ngcontent-gop-c14="">;</span>
+<span class="token punctuation" _ngcontent-gop-c14="">}</span></code></pre><p _ngcontent-gop-c14="">這邊取得第 1 個的路徑，最後用<code _ngcontent-gop-c14="">writeFile</code>將檔案寫入。</p>
+<h3 id="建立項目清單" _ngcontent-gop-c14="">建立項目清單</h3>
+<img class="img-responsive" loading="lazy" src="assets/images/12/12-3.png" _ngcontent-gop-c14="">
 
-<p _ngcontent-xhd-c15="">如上圖，有時會需要讓人選擇，可以使用下列 API 來顯示選項：</p>
-<blockquote _ngcontent-xhd-c15="">
-<p _ngcontent-xhd-c15="">vscode.window.showQuickPick</p>
+<p _ngcontent-gop-c14="">如上圖，有時會需要讓人選擇，可以使用下列 API 來顯示選項：</p>
+<blockquote _ngcontent-gop-c14="">
+<p _ngcontent-gop-c14="">vscode.window.showQuickPick</p>
 </blockquote>
-<pre class="language-javascript" _ngcontent-xhd-c15=""><code class="language-javascript" _ngcontent-xhd-c15=""><span class="token keyword" _ngcontent-xhd-c15="">const</span> <span class="token literal-property property" _ngcontent-xhd-c15="">items</span><span class="token operator" _ngcontent-xhd-c15="">:</span> string<span class="token punctuation" _ngcontent-xhd-c15="">[</span><span class="token punctuation" _ngcontent-xhd-c15="">]</span> <span class="token operator" _ngcontent-xhd-c15="">=</span> <span class="token punctuation" _ngcontent-xhd-c15="">[</span><span class="token string" _ngcontent-xhd-c15="">'Bot'</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span> <span class="token string" _ngcontent-xhd-c15="">'Hackathon'</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span> <span class="token string" _ngcontent-xhd-c15="">'Minimal'</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span> <span class="token string" _ngcontent-xhd-c15="">'Standard'</span><span class="token punctuation" _ngcontent-xhd-c15="">]</span><span class="token punctuation" _ngcontent-xhd-c15="">;</span>
-<span class="token keyword" _ngcontent-xhd-c15="">const</span> selectedItem <span class="token operator" _ngcontent-xhd-c15="">=</span> <span class="token keyword" _ngcontent-xhd-c15="">await</span> vscode<span class="token punctuation" _ngcontent-xhd-c15="">.</span>window<span class="token punctuation" _ngcontent-xhd-c15="">.</span><span class="token function" _ngcontent-xhd-c15="">showQuickPick</span><span class="token punctuation" _ngcontent-xhd-c15="">(</span>items<span class="token punctuation" _ngcontent-xhd-c15="">,</span> <span class="token punctuation" _ngcontent-xhd-c15="">{</span>
-  <span class="token literal-property property" _ngcontent-xhd-c15="">placeHolder</span><span class="token operator" _ngcontent-xhd-c15="">:</span> <span class="token string" _ngcontent-xhd-c15="">'Select readme pattern that you want'</span><span class="token punctuation" _ngcontent-xhd-c15="">,</span>
-<span class="token punctuation" _ngcontent-xhd-c15="">}</span><span class="token punctuation" _ngcontent-xhd-c15="">)</span><span class="token punctuation" _ngcontent-xhd-c15="">;</span></code></pre><p _ngcontent-xhd-c15="">這邊是傳入所顯示的字串陣例，並且<code _ngcontent-xhd-c15="">showQuickPick</code>是非同步的，所以使用 async/await 的方式，取得回傳所選擇的值。</p>
-<h2 id="readme-的注意事項" _ngcontent-xhd-c15="">README 的注意事項</h2>
-<p _ngcontent-xhd-c15="">如果 extension 有截圖，截圖的完整路徑必須為<a href="https://raw.githubusercontent.com/%7Buser%7D/%7Brepository%7D/%7Bbranch%7D/%7Bpath%7D%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%B8%8D%E7%84%B6%E5%9C%A8VSCode" _ngcontent-xhd-c15="">https://raw.githubusercontent.com/{user}/{repository}/{branch}/{path}的形式，不然在VSCode</a> marketplace 會因為安全名單的關係，會看不到截圖。</p>
-<h2 id="結論" _ngcontent-xhd-c15="">結論</h2>
-<p _ngcontent-xhd-c15="">這是我第一次建立 VSCode extension，只要按照官方文件及 Yeoman 就可以快速建立一個樣板，但是最花時間是查看範例及文件。老實說，<a href="https://github.com/microsoft/vscode-extension-samples" _ngcontent-xhd-c15="">官方範例</a>不是很清楚，要花些時間來查看。除些之外開發這個 extension 也是很有趣的經驗，分享給大家。</p>
-<!--scullyContent-end--><scully-content _ngcontent-xhd-c15=""></scully-content>
-        <script>try {window['scullyContent'] = {cssId:"_ngcontent-xhd-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
-      </div>
-
-      <hr _ngcontent-xhd-c15="">
-      <div _ngcontent-xhd-c15="" class="row">
-        <div _ngcontent-xhd-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div _ngcontent-xhd-c15="" id="comments"><div class="utterances">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-xhd-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2019-09-01-TutorialOfVscodeExtension&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2019-09-01-TutorialOfVscodeExtension&amp;title=VSCode+Extension%E7%9A%84%E9%96%8B%E7%99%BC%E5%BF%83%E5%BE%97+-+Thomas+Blog&amp;description=VSCode+Extension%E7%9A%84%E9%96%8B%E7%99%BC%E5%BF%83%E5%BE%97+&amp;og%3Atitle=VSCode+Extension%E7%9A%84%E9%96%8B%E7%99%BC%E5%BF%83%E5%BE%97+-+Thomas+Blog&amp;session=" loading="lazy"></iframe>
-  </div></div>
+<pre class="language-javascript" _ngcontent-gop-c14=""><code class="language-javascript" _ngcontent-gop-c14=""><span class="token keyword" _ngcontent-gop-c14="">const</span> <span class="token literal-property property" _ngcontent-gop-c14="">items</span><span class="token operator" _ngcontent-gop-c14="">:</span> string<span class="token punctuation" _ngcontent-gop-c14="">[</span><span class="token punctuation" _ngcontent-gop-c14="">]</span> <span class="token operator" _ngcontent-gop-c14="">=</span> <span class="token punctuation" _ngcontent-gop-c14="">[</span><span class="token string" _ngcontent-gop-c14="">'Bot'</span><span class="token punctuation" _ngcontent-gop-c14="">,</span> <span class="token string" _ngcontent-gop-c14="">'Hackathon'</span><span class="token punctuation" _ngcontent-gop-c14="">,</span> <span class="token string" _ngcontent-gop-c14="">'Minimal'</span><span class="token punctuation" _ngcontent-gop-c14="">,</span> <span class="token string" _ngcontent-gop-c14="">'Standard'</span><span class="token punctuation" _ngcontent-gop-c14="">]</span><span class="token punctuation" _ngcontent-gop-c14="">;</span>
+<span class="token keyword" _ngcontent-gop-c14="">const</span> selectedItem <span class="token operator" _ngcontent-gop-c14="">=</span> <span class="token keyword" _ngcontent-gop-c14="">await</span> vscode<span class="token punctuation" _ngcontent-gop-c14="">.</span>window<span class="token punctuation" _ngcontent-gop-c14="">.</span><span class="token function" _ngcontent-gop-c14="">showQuickPick</span><span class="token punctuation" _ngcontent-gop-c14="">(</span>items<span class="token punctuation" _ngcontent-gop-c14="">,</span> <span class="token punctuation" _ngcontent-gop-c14="">{</span>
+  <span class="token literal-property property" _ngcontent-gop-c14="">placeHolder</span><span class="token operator" _ngcontent-gop-c14="">:</span> <span class="token string" _ngcontent-gop-c14="">'Select readme pattern that you want'</span><span class="token punctuation" _ngcontent-gop-c14="">,</span>
+<span class="token punctuation" _ngcontent-gop-c14="">}</span><span class="token punctuation" _ngcontent-gop-c14="">)</span><span class="token punctuation" _ngcontent-gop-c14="">;</span></code></pre><p _ngcontent-gop-c14="">這邊是傳入所顯示的字串陣例，並且<code _ngcontent-gop-c14="">showQuickPick</code>是非同步的，所以使用 async/await 的方式，取得回傳所選擇的值。</p>
+<h2 id="readme-的注意事項" _ngcontent-gop-c14="">README 的注意事項</h2>
+<p _ngcontent-gop-c14="">如果 extension 有截圖，截圖的完整路徑必須為<a href="https://raw.githubusercontent.com/%7Buser%7D/%7Brepository%7D/%7Bbranch%7D/%7Bpath%7D%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%8C%E4%B8%8D%E7%84%B6%E5%9C%A8VSCode" _ngcontent-gop-c14="">https://raw.githubusercontent.com/{user}/{repository}/{branch}/{path}的形式，不然在VSCode</a> marketplace 會因為安全名單的關係，會看不到截圖。</p>
+<h2 id="結論" _ngcontent-gop-c14="">結論</h2>
+<p _ngcontent-gop-c14="">這是我第一次建立 VSCode extension，只要按照官方文件及 Yeoman 就可以快速建立一個樣板，但是最花時間是查看範例及文件。老實說，<a href="https://github.com/microsoft/vscode-extension-samples" _ngcontent-gop-c14="">官方範例</a>不是很清楚，要花些時間來查看。除些之外開發這個 extension 也是很有趣的經驗，分享給大家。</p>
+<!--scullyContent-end--><scully-content _ngcontent-gop-c14=""></scully-content>
+              <script>try {window['scullyContent'] = {cssId:"_ngcontent-gop-c14",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </article>
-</div>
-</app-blog><!----><hr _ngcontent-xhd-c13=""><app-footer _ngcontent-xhd-c13="" _nghost-xhd-c12=""><footer _ngcontent-xhd-c12=""><div _ngcontent-xhd-c12="" class="container"><div _ngcontent-xhd-c12="" class="row"><div _ngcontent-xhd-c12="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-xhd-c12="" class="list-inline text-center"><li _ngcontent-xhd-c12=""><a _ngcontent-xhd-c12="" href="https://www.twitter.com/thomascsd"><span _ngcontent-xhd-c12="" class="fa-stack fa-lg"><i _ngcontent-xhd-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-xhd-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-xhd-c12=""><a _ngcontent-xhd-c12="" href="https://github.com/thomascsd"><span _ngcontent-xhd-c12="" class="fa-stack fa-lg"><i _ngcontent-xhd-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-xhd-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-xhd-c12="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script id="ScullyIO-transfer-state"></script><script src="runtime.f463352c063bbe36.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.c9df63d3e3525fe5.js" type="module"></script>
+      </section>
 
-<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1636928419295654&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1705114535&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2019-09-01-TutorialOfVscodeExtension&amp;ea=0&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;asro=0&amp;aslmt=0.4&amp;asamt=-1&amp;asedf=0&amp;asefa=1&amp;aseiel=1~2~3~4~6&amp;aslcwct=150&amp;asacwct=25&amp;aslmct=0.5&amp;asamct=0.5&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;dt=1705114545160&amp;bpp=19&amp;bdt=3406&amp;idt=658&amp;shv=r20240109&amp;mjsv=m202401080101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=4648393775251&amp;frm=20&amp;pv=2&amp;ga_vid=1693533115.1705114545&amp;ga_sid=1705114546&amp;ga_hid=1365003902&amp;ga_fc=1&amp;u_tz=480&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31080259%2C42532523%2C44809531%2C95320378%2C95320868%2C95320892&amp;oid=2&amp;pvsid=2719186400957555&amp;tmod=16322063&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=790" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240109/r20190131/zrt_lookup.html" style="display: none;"></iframe></body></html>
+      <div _ngcontent-gop-c14="" class="is-divider"></div>
+      <section _ngcontent-gop-c14="" class="section">
+        <div _ngcontent-gop-c14="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-gop-c14=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2019-09-01-TutorialOfVscodeExtension&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2019-09-01-TutorialOfVscodeExtension&amp;title=VSCode+Extension%E7%9A%84%E9%96%8B%E7%99%BC%E5%BF%83%E5%BE%97+-+Thomas+Blog&amp;description=VSCode+Extension%E7%9A%84%E9%96%8B%E7%99%BC%E5%BF%83%E5%BE%97+&amp;og%3Atitle=VSCode+Extension%E7%9A%84%E9%96%8B%E7%99%BC%E5%BF%83%E5%BE%97+-+Thomas+Blog&amp;session=" loading="lazy"></iframe>
+  </div></div>
+      </section>
+    </div>
+  </div>
+</section>
+</app-blog><!----><hr _ngcontent-gop-c12=""><app-footer _ngcontent-gop-c12="" _nghost-gop-c11=""><footer _ngcontent-gop-c11="" class="footer"><div _ngcontent-gop-c11="" class="content has-text-centered"><div _ngcontent-gop-c11="" class="columns"><div _ngcontent-gop-c11="" class="column"></div><div _ngcontent-gop-c11="" class="column"><a _ngcontent-gop-c11="" href="https://www.twitter.com/thomascsd" target="_blank" class="block"><span _ngcontent-gop-c11="" class="fa-stack fa-lg"><i _ngcontent-gop-c11="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-gop-c11="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a><a _ngcontent-gop-c11="" href="https://github.com/thomascsd" target="_blank" class="block"><span _ngcontent-gop-c11="" class="fa-stack fa-lg"><i _ngcontent-gop-c11="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-gop-c11="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></div><div _ngcontent-gop-c11="" class="column"></div></div><div _ngcontent-gop-c11="" class="columns"><div _ngcontent-gop-c11="" class="column is-2"></div><div _ngcontent-gop-c11="" class="column is-8"><strong _ngcontent-gop-c11="">Bulma - Blog theme</strong> . Based on the <a _ngcontent-gop-c11="" href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. </div><div _ngcontent-gop-c11="" class="column is-2"></div></div></div></footer></app-footer></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.d72ac3ba258b1102.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.0d5b1038593e7111.js" type="module"></script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1636928419295654&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1720947286&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2019-09-01-TutorialOfVscodeExtension&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;aihb=0&amp;asro=0&amp;ailel=32~27~29~1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~30&amp;aiael=32~27~29~1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~30&amp;aifxl=32_18~27_8~29_18~30_19&amp;aiixl=32_9~27_3~29_5~30_6&amp;aslmct=0.7&amp;asamct=0.7&amp;aisaib=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;dt=1720947290604&amp;bpp=35&amp;bdt=786&amp;idt=404&amp;shv=r20240709&amp;mjsv=m202407090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=8301092991388&amp;frm=20&amp;pv=2&amp;ga_vid=1806278250.1720947290&amp;ga_sid=1720947291&amp;ga_hid=1862796408&amp;ga_fc=1&amp;u_tz=480&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C31085138%2C44795921%2C95334509%2C95334527%2C95334578%2C95334829%2C95337026%2C31084184%2C95337092%2C95331954%2C21065724&amp;oid=2&amp;pvsid=4016757554495734&amp;tmod=2078068675&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=502" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240709/r20110914/zrt_lookup.html" style="display: none;"></iframe></body></html>

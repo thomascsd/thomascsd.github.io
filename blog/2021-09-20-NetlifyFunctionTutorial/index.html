@@ -29,11 +29,10 @@
     <base href="/">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);body{color:#333}body{font-family:'Noto Sans TC', sans-serif;font-size:20px;-webkit-tap-highlight-color:#0085a1}</style><link id="theme-style" rel="stylesheet" href="assets/css/style.min.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Google tag (gtag.js) -->
-    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202401080101/show_ads_impl.js" id="google_shimpl"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
+    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202407090101/show_ads_impl.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -44,7 +43,32 @@
       gtag('config', 'G-704JZ9KNS1');
     </script>
     <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1636928419295654" crossorigin="anonymous" data-checked-head="true"></script>
-  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><style></style><meta name="keywords" content="Netlify functions 初體驗記錄 "><meta name="description" content="Netlify functions 初體驗記錄 "><meta name="og:title" content="Netlify functions 初體驗記錄 - Thomas Blog"><meta name="twitter:title" content="Netlify functions 初體驗記錄 - Thomas Blog"><meta name="og:site_name" content="Netlify functions 初體驗記錄 - Thomas Blog"><meta name="og:locale" content="zh-tw"><meta name="og:type" content="website"><meta name="og:description" content="Netlify functions 初體驗記錄 "><meta name="twitter:description" content="Netlify functions 初體驗記錄 "><meta name="og:url" content="http://localhost:1864/blog/2021-09-20-NetlifyFunctionTutorial"><meta name="twitter:url" content="http://localhost:1864/blog/2021-09-20-NetlifyFunctionTutorial"><link crossorigin="" href="https://googleads.g.doubleclick.net" rel="preconnect"><meta http-equiv="origin-trial" content="As0hBNJ8h++fNYlkq8cTye2qDLyom8NddByiVytXGGD0YVE+2CEuTCpqXMDxdhOMILKoaiaYifwEvCRlJ/9GcQ8AAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="AgRYsXo24ypxC89CJanC+JgEmraCCBebKl8ZmG7Tj5oJNx0cmH0NtNRZs3NB5ubhpbX/bIt7l2zJOSyO64NGmwMAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3MTk1MzI3OTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/ERL66fN363FkXxgDc6F1+ucRUkAhjEca9W3la6xaLnD2Y1lABsqmdaJmPNaUKPKVBRpyMKEhXYl7rSvrQw+AkAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6OdGH3fVf4eKRDbXb4thXA4InNqDJDRhZ8U533U/roYjp4Yau0T3YSuc63vmAs/8ga1cD0E3A7LEq6AXk1uXgsAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3MTkzNTk5OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style>[_ngcontent-jsx-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+      nav.navbar {
+        height: 6rem !important;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+      }
+      ::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #efefef;
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d5d5d5;
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c4c4c4;
+      }
+    </style>
+  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="Netlify functions 初體驗記錄 "><meta name="description" content="Netlify functions 初體驗記錄 "><meta name="og:title" content="Netlify functions 初體驗記錄 - Thomas Blog"><meta name="twitter:title" content="Netlify functions 初體驗記錄 - Thomas Blog"><meta name="og:site_name" content="Netlify functions 初體驗記錄 - Thomas Blog"><meta name="og:locale" content="zh-tw"><meta name="og:type" content="website"><meta name="og:description" content="Netlify functions 初體驗記錄 "><meta name="twitter:description" content="Netlify functions 初體驗記錄 "><meta name="og:url" content="http://localhost:1864/blog/2021-09-20-NetlifyFunctionTutorial"><meta name="twitter:url" content="http://localhost:1864/blog/2021-09-20-NetlifyFunctionTutorial"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9uiHDzQFAhqALUhTgTYJcz9XrGH2y0/9AORwCSapUO/f7Uh7ysIzyszNkuWDLqNYg8446Uj48XIstBW1qv/wAQAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9R+gkZL3TWq+Z7RJ2L0c7ZN7FZD5z4mHmVvjrPitg/EMz9P3j5d3W7Vw5ZR9jtJGmWKltM4BO3smNzpCgwYuwwAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style>[_ngcontent-jtq-c14]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
       :host {
         display: none;
       }
@@ -53,95 +77,99 @@
       }
     </style><script>window['ScullyIO']='generated';</script></head>
   <body scully-version="0.0.0">
-    <app-root _nghost-jsx-c13="" ng-version="13.1.1"><div _ngcontent-jsx-c13=""><app-blog-nav _ngcontent-jsx-c13="" _nghost-jsx-c11=""><nav _ngcontent-jsx-c11="" class="navbar navbar-default navbar-custom navbar-fixed-top"><div _ngcontent-jsx-c11="" class="container-fluid"><div _ngcontent-jsx-c11="" class="navbar-header page-scroll"><button _ngcontent-jsx-c11="" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" class="navbar-toggle"><span _ngcontent-jsx-c11="" class="sr-only">Toggle navigation</span> Menu <i _ngcontent-jsx-c11="" class="fa fa-bars"></i></button><a _ngcontent-jsx-c11="" class="navbar-brand" href="/">Thomas Blog</a></div><div _ngcontent-jsx-c11="" id="bs-example-navbar-collapse-1" class="collapse navbar-collapse"><ul _ngcontent-jsx-c11="" class="nav navbar-nav navbar-right"><li _ngcontent-jsx-c11=""><a _ngcontent-jsx-c11="" href="/">Blog</a></li><li _ngcontent-jsx-c11=""><a _ngcontent-jsx-c11="" href="https://thomascsd.github.io/repos/" target="_blank">Repos</a></li><li _ngcontent-jsx-c11=""><a _ngcontent-jsx-c11="" href="/about">About</a></li></ul></div></div></nav></app-blog-nav><router-outlet _ngcontent-jsx-c13=""></router-outlet><app-blog _nghost-jsx-c15=""><div _ngcontent-jsx-c15="">
-  
-  <app-post-header _ngcontent-jsx-c15="" _nghost-jsx-c14=""><header _ngcontent-jsx-c14="" class="intro-header" style="background-image: url(&quot;assets/images/22/22-0.jpg&quot;);"><div _ngcontent-jsx-c14="" class="container"><div _ngcontent-jsx-c14="" class="row"><div _ngcontent-jsx-c14="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div _ngcontent-jsx-c14="" class="post-heading"><h1 _ngcontent-jsx-c14="">Netlify functions 初體驗記錄</h1><span _ngcontent-jsx-c14="" class="meta">on 2021-09-20</span></div></div></div></div></header></app-post-header><!---->
+    <app-root _nghost-jtq-c12="" ng-version="13.1.1"><div _ngcontent-jtq-c12=""><app-blog-nav _ngcontent-jtq-c12="" _nghost-jtq-c10=""><nav _ngcontent-jtq-c10="" class="navbar"><div _ngcontent-jtq-c10="" class="container"><div _ngcontent-jtq-c10="" class="navbar-brand"><a _ngcontent-jtq-c10="" class="navbar-item" href="/"> Thomas Blog </a><span _ngcontent-jtq-c10="" data-target="navbarMenu" class="navbar-burger burger"><span _ngcontent-jtq-c10=""></span><span _ngcontent-jtq-c10=""></span><span _ngcontent-jtq-c10=""></span></span></div><div _ngcontent-jtq-c10="" id="navbarMenu" class="navbar-menu"><div _ngcontent-jtq-c10="" class="navbar-end"><div _ngcontent-jtq-c10="" class="navbar-item"><div _ngcontent-jtq-c10="" class="control has-icons-left"></div></div><a _ngcontent-jtq-c10="" class="navbar-item is-size-5 has-text-weight-semibold" href="/"> Blog </a><a _ngcontent-jtq-c10="" href="https://thomascsd.github.io/repos/" target="_blank" class="navbar-item is-size-5 has-text-weight-semibold"> Repos </a><a _ngcontent-jtq-c10="" class="navbar-item is-size-5 has-text-weight-semibold" href="/about"> About </a></div></div></div></nav></app-blog-nav><router-outlet _ngcontent-jtq-c12=""></router-outlet><app-blog _nghost-jtq-c14=""><section _ngcontent-jtq-c14="" class="hero">
+  <div _ngcontent-jtq-c14="" class="hero-body">
+    <div _ngcontent-jtq-c14="" class="container">
+      <app-post-header _ngcontent-jtq-c14="" _nghost-jtq-c13=""><div _ngcontent-jtq-c13="" class="columns"><div _ngcontent-jtq-c13="" class="column is-8 is-offset-2"><figure _ngcontent-jtq-c13="" class="image is-16by9"><img _ngcontent-jtq-c13="" alt="blog image" src="assets/images/22/22-0.jpg"></figure></div></div></app-post-header><!---->
 
-  <article _ngcontent-jsx-c15="">
-    <div _ngcontent-jsx-c15="" class="container">
-      <div _ngcontent-jsx-c15="" class="row">
-        <div _ngcontent-jsx-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <!--scullyContent-begin--><p _ngcontent-jsx-c15="">一直以來斷斷續續接獨 Servless funcion 的服務，從 FireBase 到 Azure 都有，但是一些原因，而覺得沒有符合我的需求，直到前一陣子，我嘗試使用 <a href="https://www.netlify.com/products/functions/" _ngcontent-jsx-c15="">Netlify functions</a>&nbsp;，發現簡單易用，並且也整合 CI/CD ，如果想整合至舊有專案也是挻方便的，就想寫篇文章做個記錄。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-08.png" _ngcontent-jsx-c15="">
+      <section _ngcontent-jtq-c14="" class="section">
+        <div _ngcontent-jtq-c14="" class="columns">
+          <div _ngcontent-jtq-c14="" class="column is-8 is-offset-2">
+            <div _ngcontent-jtq-c14="" class="content is-medium">
+              <h2 _ngcontent-jtq-c14="" class="subtitle is-4">2021-09-20</h2>
+              
 
-<p _ngcontent-jsx-c15="">查看了文件之後，發現是將 AWS Lambda 包裝起來，另外免費版的話，提供一個月 125,000 的 Request 數，總共可以執行 100 小時，以一個小專案或是 Side Project 算是足夠了。</p>
-<h2 id="開始" _ngcontent-jsx-c15="">開始</h2>
-<p _ngcontent-jsx-c15="">這次是範例是將概有的 Side Project <a href="https://github.com/thomascsd/form-builder-demo" _ngcontent-jsx-c15="">form-builder-demo</a> 整合進 Netlify function。</p>
-<pre _ngcontent-jsx-c15=""><code _ngcontent-jsx-c15="">npm install netlify<span class="token operator" _ngcontent-jsx-c15="">-</span>cli <span class="token operator" _ngcontent-jsx-c15="">-</span>g</code></pre><p _ngcontent-jsx-c15="">首先安裝 Netlify CLI，後續可以在本機上除錯或是在本機上啟用網站。</p>
-<pre _ngcontent-jsx-c15=""><code _ngcontent-jsx-c15="">npm install <span class="token decorator" _ngcontent-jsx-c15=""><span class="token at operator" _ngcontent-jsx-c15="">@</span><span class="token function" _ngcontent-jsx-c15="">netlify</span></span><span class="token operator" _ngcontent-jsx-c15="">/</span>functions</code></pre><p _ngcontent-jsx-c15="">之後會用 TypeScript 來開發，所以需要安裝 <code _ngcontent-jsx-c15="">@netlify/functions</code>。</p>
-<pre _ngcontent-jsx-c15=""><code _ngcontent-jsx-c15="">netlify init
-</code></pre><p _ngcontent-jsx-c15="">之後為了要和 GitHub 的專案整合，整合至 CI/CD，所以執行 <code _ngcontent-jsx-c15="">netlify init</code>。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-01.png" _ngcontent-jsx-c15="">
+              <h1 _ngcontent-jtq-c14="" class="title">Netlify functions 初體驗記錄</h1>
+              <p _ngcontent-jtq-c14="">
+                <!--scullyContent-begin--><p _ngcontent-jtq-c14="">一直以來斷斷續續接獨 Servless funcion 的服務，從 FireBase 到 Azure 都有，但是一些原因，而覺得沒有符合我的需求，直到前一陣子，我嘗試使用 <a href="https://www.netlify.com/products/functions/" _ngcontent-jtq-c14="">Netlify functions</a>&nbsp;，發現簡單易用，並且也整合 CI/CD ，如果想整合至舊有專案也是挻方便的，就想寫篇文章做個記錄。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-08.png" _ngcontent-jtq-c14="">
 
-<pre _ngcontent-jsx-c15=""><code _ngcontent-jsx-c15=""><span class="token punctuation" _ngcontent-jsx-c15="">[</span>build<span class="token punctuation" _ngcontent-jsx-c15="">]</span>
-  functions <span class="token operator" _ngcontent-jsx-c15="">=</span> <span class="token string" _ngcontent-jsx-c15="">"functions"</span>
-  publish <span class="token operator" _ngcontent-jsx-c15="">=</span> <span class="token string" _ngcontent-jsx-c15="">"dist"</span></code></pre><p _ngcontent-jsx-c15="">執行完後，會一起建立 netlify.toml ，設定值就是剛剛執行<code _ngcontent-jsx-c15="">Netlify init</code>&nbsp; 所詢問問題的答案，用來設定 Netlify functions 的。</p>
-<ul _ngcontent-jsx-c15="">
-<li _ngcontent-jsx-c15="">functions：設定存放 Netlify function 的目錄，預設是在 /netlify/functions。</li>
-<li _ngcontent-jsx-c15="">command：設定建置時，要執行的指令，我是設定 'npm run build' 。</li>
-<li _ngcontent-jsx-c15="">publish：設定建置後檔案的位置，我是用預設的 dist。</li>
+<p _ngcontent-jtq-c14="">查看了文件之後，發現是將 AWS Lambda 包裝起來，另外免費版的話，提供一個月 125,000 的 Request 數，總共可以執行 100 小時，以一個小專案或是 Side Project 算是足夠了。</p>
+<h2 id="開始" _ngcontent-jtq-c14="">開始</h2>
+<p _ngcontent-jtq-c14="">這次是範例是將概有的 Side Project <a href="https://github.com/thomascsd/form-builder-demo" _ngcontent-jtq-c14="">form-builder-demo</a> 整合進 Netlify function。</p>
+<pre _ngcontent-jtq-c14=""><code _ngcontent-jtq-c14="">npm install netlify<span class="token operator" _ngcontent-jtq-c14="">-</span>cli <span class="token operator" _ngcontent-jtq-c14="">-</span>g</code></pre><p _ngcontent-jtq-c14="">首先安裝 Netlify CLI，後續可以在本機上除錯或是在本機上啟用網站。</p>
+<pre _ngcontent-jtq-c14=""><code _ngcontent-jtq-c14="">npm install <span class="token decorator" _ngcontent-jtq-c14=""><span class="token at operator" _ngcontent-jtq-c14="">@</span><span class="token function" _ngcontent-jtq-c14="">netlify</span></span><span class="token operator" _ngcontent-jtq-c14="">/</span>functions</code></pre><p _ngcontent-jtq-c14="">之後會用 TypeScript 來開發，所以需要安裝 <code _ngcontent-jtq-c14="">@netlify/functions</code>。</p>
+<pre _ngcontent-jtq-c14=""><code _ngcontent-jtq-c14="">netlify init
+</code></pre><p _ngcontent-jtq-c14="">之後為了要和 GitHub 的專案整合，整合至 CI/CD，所以執行 <code _ngcontent-jtq-c14="">netlify init</code>。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-01.png" _ngcontent-jtq-c14="">
+
+<pre _ngcontent-jtq-c14=""><code _ngcontent-jtq-c14=""><span class="token punctuation" _ngcontent-jtq-c14="">[</span>build<span class="token punctuation" _ngcontent-jtq-c14="">]</span>
+  functions <span class="token operator" _ngcontent-jtq-c14="">=</span> <span class="token string" _ngcontent-jtq-c14="">"functions"</span>
+  publish <span class="token operator" _ngcontent-jtq-c14="">=</span> <span class="token string" _ngcontent-jtq-c14="">"dist"</span></code></pre><p _ngcontent-jtq-c14="">執行完後，會一起建立 netlify.toml ，設定值就是剛剛執行<code _ngcontent-jtq-c14="">Netlify init</code>&nbsp; 所詢問問題的答案，用來設定 Netlify functions 的。</p>
+<ul _ngcontent-jtq-c14="">
+<li _ngcontent-jtq-c14="">functions：設定存放 Netlify function 的目錄，預設是在 /netlify/functions。</li>
+<li _ngcontent-jtq-c14="">command：設定建置時，要執行的指令，我是設定 'npm run build' 。</li>
+<li _ngcontent-jtq-c14="">publish：設定建置後檔案的位置，我是用預設的 dist。</li>
 </ul>
-<h2 id="開發" _ngcontent-jsx-c15="">開發</h2>
-<pre class="language-javascript" _ngcontent-jsx-c15=""><code class="language-javascript" _ngcontent-jsx-c15=""><span class="token keyword" _ngcontent-jsx-c15="">import</span> <span class="token punctuation" _ngcontent-jsx-c15="">{</span> Handler <span class="token punctuation" _ngcontent-jsx-c15="">}</span> <span class="token keyword" _ngcontent-jsx-c15="">from</span> <span class="token string" _ngcontent-jsx-c15="">'@netlify/functions'</span><span class="token punctuation" _ngcontent-jsx-c15="">;</span>
+<h2 id="開發" _ngcontent-jtq-c14="">開發</h2>
+<pre class="language-javascript" _ngcontent-jtq-c14=""><code class="language-javascript" _ngcontent-jtq-c14=""><span class="token keyword" _ngcontent-jtq-c14="">import</span> <span class="token punctuation" _ngcontent-jtq-c14="">{</span> Handler <span class="token punctuation" _ngcontent-jtq-c14="">}</span> <span class="token keyword" _ngcontent-jtq-c14="">from</span> <span class="token string" _ngcontent-jtq-c14="">'@netlify/functions'</span><span class="token punctuation" _ngcontent-jtq-c14="">;</span>
 
-<span class="token keyword" _ngcontent-jsx-c15="">const</span> <span class="token literal-property property" _ngcontent-jsx-c15="">handler</span><span class="token operator" _ngcontent-jsx-c15="">:</span> <span class="token function-variable function" _ngcontent-jsx-c15="">Handler</span> <span class="token operator" _ngcontent-jsx-c15="">=</span> <span class="token keyword" _ngcontent-jsx-c15="">async</span> <span class="token punctuation" _ngcontent-jsx-c15="">(</span><span class="token parameter" _ngcontent-jsx-c15="">event<span class="token punctuation" _ngcontent-jsx-c15="">,</span> context</span><span class="token punctuation" _ngcontent-jsx-c15="">)</span> <span class="token operator" _ngcontent-jsx-c15="">=&gt;</span> <span class="token punctuation" _ngcontent-jsx-c15="">{</span>
-  <span class="token keyword" _ngcontent-jsx-c15="">return</span> <span class="token punctuation" _ngcontent-jsx-c15="">{</span>
-    <span class="token literal-property property" _ngcontent-jsx-c15="">statusCode</span><span class="token operator" _ngcontent-jsx-c15="">:</span> <span class="token number" _ngcontent-jsx-c15="">200</span><span class="token punctuation" _ngcontent-jsx-c15="">,</span>
-    <span class="token literal-property property" _ngcontent-jsx-c15="">body</span><span class="token operator" _ngcontent-jsx-c15="">:</span> <span class="token constant" _ngcontent-jsx-c15="">JSON</span><span class="token punctuation" _ngcontent-jsx-c15="">.</span><span class="token function" _ngcontent-jsx-c15="">stringify</span><span class="token punctuation" _ngcontent-jsx-c15="">(</span><span class="token punctuation" _ngcontent-jsx-c15="">{</span> <span class="token literal-property property" _ngcontent-jsx-c15="">message</span><span class="token operator" _ngcontent-jsx-c15="">:</span> <span class="token string" _ngcontent-jsx-c15="">'Hello World'</span> <span class="token punctuation" _ngcontent-jsx-c15="">}</span><span class="token punctuation" _ngcontent-jsx-c15="">)</span><span class="token punctuation" _ngcontent-jsx-c15="">,</span>
-  <span class="token punctuation" _ngcontent-jsx-c15="">}</span><span class="token punctuation" _ngcontent-jsx-c15="">;</span>
-<span class="token punctuation" _ngcontent-jsx-c15="">}</span><span class="token punctuation" _ngcontent-jsx-c15="">;</span>
+<span class="token keyword" _ngcontent-jtq-c14="">const</span> <span class="token literal-property property" _ngcontent-jtq-c14="">handler</span><span class="token operator" _ngcontent-jtq-c14="">:</span> <span class="token function-variable function" _ngcontent-jtq-c14="">Handler</span> <span class="token operator" _ngcontent-jtq-c14="">=</span> <span class="token keyword" _ngcontent-jtq-c14="">async</span> <span class="token punctuation" _ngcontent-jtq-c14="">(</span><span class="token parameter" _ngcontent-jtq-c14="">event<span class="token punctuation" _ngcontent-jtq-c14="">,</span> context</span><span class="token punctuation" _ngcontent-jtq-c14="">)</span> <span class="token operator" _ngcontent-jtq-c14="">=&gt;</span> <span class="token punctuation" _ngcontent-jtq-c14="">{</span>
+  <span class="token keyword" _ngcontent-jtq-c14="">return</span> <span class="token punctuation" _ngcontent-jtq-c14="">{</span>
+    <span class="token literal-property property" _ngcontent-jtq-c14="">statusCode</span><span class="token operator" _ngcontent-jtq-c14="">:</span> <span class="token number" _ngcontent-jtq-c14="">200</span><span class="token punctuation" _ngcontent-jtq-c14="">,</span>
+    <span class="token literal-property property" _ngcontent-jtq-c14="">body</span><span class="token operator" _ngcontent-jtq-c14="">:</span> <span class="token constant" _ngcontent-jtq-c14="">JSON</span><span class="token punctuation" _ngcontent-jtq-c14="">.</span><span class="token function" _ngcontent-jtq-c14="">stringify</span><span class="token punctuation" _ngcontent-jtq-c14="">(</span><span class="token punctuation" _ngcontent-jtq-c14="">{</span> <span class="token literal-property property" _ngcontent-jtq-c14="">message</span><span class="token operator" _ngcontent-jtq-c14="">:</span> <span class="token string" _ngcontent-jtq-c14="">'Hello World'</span> <span class="token punctuation" _ngcontent-jtq-c14="">}</span><span class="token punctuation" _ngcontent-jtq-c14="">)</span><span class="token punctuation" _ngcontent-jtq-c14="">,</span>
+  <span class="token punctuation" _ngcontent-jtq-c14="">}</span><span class="token punctuation" _ngcontent-jtq-c14="">;</span>
+<span class="token punctuation" _ngcontent-jtq-c14="">}</span><span class="token punctuation" _ngcontent-jtq-c14="">;</span>
 
-<span class="token keyword" _ngcontent-jsx-c15="">export</span> <span class="token punctuation" _ngcontent-jsx-c15="">{</span> handler <span class="token punctuation" _ngcontent-jsx-c15="">}</span><span class="token punctuation" _ngcontent-jsx-c15="">;</span></code></pre><p _ngcontent-jsx-c15="">可以參考<a href="https://docs.netlify.com/functions/build-with-typescript/" _ngcontent-jsx-c15="">文件</a>，程式格式如上所示，但是關於用去沒有說明很清楚，所以來彙整一下。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-02.png" _ngcontent-jsx-c15="">
+<span class="token keyword" _ngcontent-jtq-c14="">export</span> <span class="token punctuation" _ngcontent-jtq-c14="">{</span> handler <span class="token punctuation" _ngcontent-jtq-c14="">}</span><span class="token punctuation" _ngcontent-jtq-c14="">;</span></code></pre><p _ngcontent-jtq-c14="">可以參考<a href="https://docs.netlify.com/functions/build-with-typescript/" _ngcontent-jtq-c14="">文件</a>，程式格式如上所示，但是關於用去沒有說明很清楚，所以來彙整一下。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-02.png" _ngcontent-jtq-c14="">
 
-<ul _ngcontent-jsx-c15="">
-<li _ngcontent-jsx-c15=""><p _ngcontent-jsx-c15="">event：定義如上圖所示，可以從 node_modules@netlify\functions\src\function\event.d.ts 中找到，如同了包裝 Request 類似。</p>
+<ul _ngcontent-jtq-c14="">
+<li _ngcontent-jtq-c14=""><p _ngcontent-jtq-c14="">event：定義如上圖所示，可以從 node_modules@netlify\functions\src\function\event.d.ts 中找到，如同了包裝 Request 類似。</p>
 </li>
-<li _ngcontent-jsx-c15=""><p _ngcontent-jsx-c15="">boby：與 Express 一樣使用 body 取得 post 來的資訊。</p>
+<li _ngcontent-jtq-c14=""><p _ngcontent-jtq-c14="">boby：與 Express 一樣使用 body 取得 post 來的資訊。</p>
 </li>
-<li _ngcontent-jsx-c15=""><p _ngcontent-jsx-c15="">queryStringParameters：使用此屬性取得 QueryString 資訊。</p>
+<li _ngcontent-jtq-c14=""><p _ngcontent-jtq-c14="">queryStringParameters：使用此屬性取得 QueryString 資訊。</p>
 </li>
-<li _ngcontent-jsx-c15=""><p _ngcontent-jsx-c15="">response：如同程式自我描述般的，回傳 <code _ngcontent-jsx-c15="">statusCode</code> 及 <code _ngcontent-jsx-c15="">body</code>，應 <code _ngcontent-jsx-c15="">body</code>需為字串，所使用 <code _ngcontent-jsx-c15="">JSON.stringify</code> 將物件轉成字串。</p>
+<li _ngcontent-jtq-c14=""><p _ngcontent-jtq-c14="">response：如同程式自我描述般的，回傳 <code _ngcontent-jtq-c14="">statusCode</code> 及 <code _ngcontent-jtq-c14="">body</code>，應 <code _ngcontent-jtq-c14="">body</code>需為字串，所使用 <code _ngcontent-jtq-c14="">JSON.stringify</code> 將物件轉成字串。</p>
 </li>
 </ul>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-03.png" _ngcontent-jsx-c15="">
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-03.png" _ngcontent-jtq-c14="">
 
-<p _ngcontent-jsx-c15="">如果有開發過 Serverless function 程式的人，應該都知道，都是會一支 Api 一支檔案，這邊另外有些共用的程式，我再建立 Services 的目錄。</p>
-<h2 id="netlify-dev" _ngcontent-jsx-c15="">Netlify dev</h2>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-04.png" _ngcontent-jsx-c15="">
+<p _ngcontent-jtq-c14="">如果有開發過 Serverless function 程式的人，應該都知道，都是會一支 Api 一支檔案，這邊另外有些共用的程式，我再建立 Services 的目錄。</p>
+<h2 id="netlify-dev" _ngcontent-jtq-c14="">Netlify dev</h2>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-04.png" _ngcontent-jtq-c14="">
 
-<p _ngcontent-jsx-c15="">執行 <code _ngcontent-jsx-c15="">netlify dev</code>，就可以在本機除錯或是在本機啟動，如上圖啟動 Port 為 8888 的本機 Server ，並且判斷到前端是用 Angular 來開發，跟著執行 ng serve，也同時啟動 Angular Live Development Server，一整個開發的爽快感。</p>
-<h2 id="etlify-站台設定" _ngcontent-jsx-c15="">etlify 站台設定</h2>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-05.png" _ngcontent-jsx-c15="">
+<p _ngcontent-jtq-c14="">執行 <code _ngcontent-jtq-c14="">netlify dev</code>，就可以在本機除錯或是在本機啟動，如上圖啟動 Port 為 8888 的本機 Server ，並且判斷到前端是用 Angular 來開發，跟著執行 ng serve，也同時啟動 Angular Live Development Server，一整個開發的爽快感。</p>
+<h2 id="etlify-站台設定" _ngcontent-jtq-c14="">etlify 站台設定</h2>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-05.png" _ngcontent-jtq-c14="">
 
-<p _ngcontent-jsx-c15="">一開始的<code _ngcontent-jsx-c15="">netlify init</code> 的設定，就會與 GitHub 連結，當程式 push 至 GitHub 後，即會自動部署至 Netlify。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-06.png" _ngcontent-jsx-c15="">
+<p _ngcontent-jtq-c14="">一開始的<code _ngcontent-jtq-c14="">netlify init</code> 的設定，就會與 GitHub 連結，當程式 push 至 GitHub 後，即會自動部署至 Netlify。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-06.png" _ngcontent-jtq-c14="">
 
-<p _ngcontent-jsx-c15="">另外我將資料寫入至 AirTable，所以需要設定環境變數。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/22/22-07.png" _ngcontent-jsx-c15="">
+<p _ngcontent-jtq-c14="">另外我將資料寫入至 AirTable，所以需要設定環境變數。</p>
+<img class="img-responsive" loading="lazy" src="assets/images/22/22-07.png" _ngcontent-jtq-c14="">
 
-<p _ngcontent-jsx-c15="">最後可以在 Functions 頁籤，看到這次所設定的 function 的清單。</p>
-<h2 id="結論" _ngcontent-jsx-c15="">結論</h2>
-<p _ngcontent-jsx-c15="">除了可以將 SPA 的站台部署至 Netlify 上，並且後端功能使用 Netlify function，加上搭配 Netlify CI/CD 之後，覺得開發及部署一氣合成。</p>
-<!--scullyContent-end--><scully-content _ngcontent-jsx-c15=""></scully-content>
-        <script>try {window['scullyContent'] = {cssId:"_ngcontent-jsx-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div>
-      </div>
-
-      <hr _ngcontent-jsx-c15="">
-      <div _ngcontent-jsx-c15="" class="row">
-        <div _ngcontent-jsx-c15="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div _ngcontent-jsx-c15="" id="comments"><div class="utterances">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-jsx-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2021-09-20-NetlifyFunctionTutorial&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2021-09-20-NetlifyFunctionTutorial&amp;title=Netlify+functions+%E5%88%9D%E9%AB%94%E9%A9%97%E8%A8%98%E9%8C%84+-+Thomas+Blog&amp;description=Netlify+functions+%E5%88%9D%E9%AB%94%E9%A9%97%E8%A8%98%E9%8C%84+&amp;og%3Atitle=Netlify+functions+%E5%88%9D%E9%AB%94%E9%A9%97%E8%A8%98%E9%8C%84+-+Thomas+Blog&amp;session=" loading="lazy"></iframe>
-  </div></div>
+<p _ngcontent-jtq-c14="">最後可以在 Functions 頁籤，看到這次所設定的 function 的清單。</p>
+<h2 id="結論" _ngcontent-jtq-c14="">結論</h2>
+<p _ngcontent-jtq-c14="">除了可以將 SPA 的站台部署至 Netlify 上，並且後端功能使用 Netlify function，加上搭配 Netlify CI/CD 之後，覺得開發及部署一氣合成。</p>
+<!--scullyContent-end--><scully-content _ngcontent-jtq-c14=""></scully-content>
+              <script>try {window['scullyContent'] = {cssId:"_ngcontent-jtq-c14",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </article>
-</div>
-</app-blog><!----><hr _ngcontent-jsx-c13=""><app-footer _ngcontent-jsx-c13="" _nghost-jsx-c12=""><footer _ngcontent-jsx-c12=""><div _ngcontent-jsx-c12="" class="container"><div _ngcontent-jsx-c12="" class="row"><div _ngcontent-jsx-c12="" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul _ngcontent-jsx-c12="" class="list-inline text-center"><li _ngcontent-jsx-c12=""><a _ngcontent-jsx-c12="" href="https://www.twitter.com/thomascsd"><span _ngcontent-jsx-c12="" class="fa-stack fa-lg"><i _ngcontent-jsx-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-jsx-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li><li _ngcontent-jsx-c12=""><a _ngcontent-jsx-c12="" href="https://github.com/thomascsd"><span _ngcontent-jsx-c12="" class="fa-stack fa-lg"><i _ngcontent-jsx-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-jsx-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li></ul><p _ngcontent-jsx-c12="" class="copyright text-muted"></p></div></div></div></footer></app-footer></div></app-root>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="assets/plugins/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script id="ScullyIO-transfer-state"></script><script src="runtime.f463352c063bbe36.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.c9df63d3e3525fe5.js" type="module"></script>
+      </section>
 
-<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1636928419295654&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1705114535&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2021-09-20-NetlifyFunctionTutorial&amp;ea=0&amp;pra=5&amp;wgl=1&amp;easpi=1&amp;asro=0&amp;aslmt=0.4&amp;asamt=-1&amp;asedf=0&amp;asefa=1&amp;aseiel=1~2~3~4~6&amp;aslcwct=150&amp;asacwct=25&amp;aslmct=0.7&amp;asamct=0.7&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;dt=1705114548517&amp;bpp=58&amp;bdt=453&amp;idt=119&amp;shv=r20240109&amp;mjsv=m202401080101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=1609050970175&amp;frm=20&amp;pv=2&amp;ga_vid=1693533115.1705114545&amp;ga_sid=1705114549&amp;ga_hid=2069087311&amp;ga_fc=1&amp;u_tz=480&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31079980%2C31080224%2C31080263%2C31080329%2C42532601%2C44795921%2C95320870%2C95320890%2C95321252&amp;oid=2&amp;pvsid=3922049089207778&amp;tmod=16322063&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=196" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><iframe src="https://tpc.googlesyndication.com/sodar/sodar2/225/runner.html" width="0" height="0" style="display: none;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body></html>
+      <div _ngcontent-jtq-c14="" class="is-divider"></div>
+      <section _ngcontent-jtq-c14="" class="section">
+        <div _ngcontent-jtq-c14="" id="comments"><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-jtq-c14=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2021-09-20-NetlifyFunctionTutorial&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2021-09-20-NetlifyFunctionTutorial&amp;title=Netlify+functions+%E5%88%9D%E9%AB%94%E9%A9%97%E8%A8%98%E9%8C%84+-+Thomas+Blog&amp;description=Netlify+functions+%E5%88%9D%E9%AB%94%E9%A9%97%E8%A8%98%E9%8C%84+&amp;og%3Atitle=Netlify+functions+%E5%88%9D%E9%AB%94%E9%A9%97%E8%A8%98%E9%8C%84+-+Thomas+Blog&amp;session=" loading="lazy"></iframe>
+  </div></div>
+      </section>
+    </div>
+  </div>
+</section>
+</app-blog><!----><hr _ngcontent-jtq-c12=""><app-footer _ngcontent-jtq-c12="" _nghost-jtq-c11=""><footer _ngcontent-jtq-c11="" class="footer"><div _ngcontent-jtq-c11="" class="content has-text-centered"><div _ngcontent-jtq-c11="" class="columns"><div _ngcontent-jtq-c11="" class="column"></div><div _ngcontent-jtq-c11="" class="column"><a _ngcontent-jtq-c11="" href="https://www.twitter.com/thomascsd" target="_blank" class="block"><span _ngcontent-jtq-c11="" class="fa-stack fa-lg"><i _ngcontent-jtq-c11="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-jtq-c11="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a><a _ngcontent-jtq-c11="" href="https://github.com/thomascsd" target="_blank" class="block"><span _ngcontent-jtq-c11="" class="fa-stack fa-lg"><i _ngcontent-jtq-c11="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-jtq-c11="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></div><div _ngcontent-jtq-c11="" class="column"></div></div><div _ngcontent-jtq-c11="" class="columns"><div _ngcontent-jtq-c11="" class="column is-2"></div><div _ngcontent-jtq-c11="" class="column is-8"><strong _ngcontent-jtq-c11="">Bulma - Blog theme</strong> . Based on the <a _ngcontent-jtq-c11="" href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. </div><div _ngcontent-jtq-c11="" class="column is-2"></div></div></div></footer></app-footer></div></app-root>
+  <script id="ScullyIO-transfer-state"></script><script src="runtime.d72ac3ba258b1102.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.0d5b1038593e7111.js" type="module"></script>
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1636928419295654&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1720947286&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2021-09-20-NetlifyFunctionTutorial&amp;pra=5&amp;wgl=1&amp;easpi=0&amp;aihb=0&amp;asro=0&amp;ailel=34~32~27~29~1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~30&amp;aiael=34~32~27~29~1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~30&amp;aifxl=32_18~27_9~29_18~30_19&amp;aiixl=32_9~27_3~29_5~30_6&amp;aslmct=0.7&amp;asamct=0.7&amp;aisaib=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;dt=1720947292796&amp;bpp=25&amp;bdt=324&amp;idt=103&amp;shv=r20240709&amp;mjsv=m202407090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=6462217485312&amp;frm=20&amp;pv=2&amp;ga_vid=1806278250.1720947290&amp;ga_sid=1720947293&amp;ga_hid=682238707&amp;ga_fc=1&amp;u_tz=480&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=44759875%2C44759926%2C44759837%2C44795922%2C95331832%2C95334509%2C95334526%2C95334578%2C95334829%2C95337027%2C31084186%2C95337093%2C95331953%2C95337367&amp;oid=2&amp;pvsid=3846100801944744&amp;tmod=2078068675&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=177" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="https://tpc.googlesyndication.com/sodar/sodar2/225/runner.html" width="0" height="0" style="display: none;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240709/r20110914/zrt_lookup.html" style="display: none;"></iframe></body></html>
