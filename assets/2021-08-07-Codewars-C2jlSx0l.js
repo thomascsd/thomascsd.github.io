@@ -1,0 +1,26 @@
+const s=`---
+title: CodeWars - Coding Challenge Site\r
+bgImageUrl: /images/20/20-0.jpg\r
+description: 一般說來，剛剛學習一門程式語言，或是學習一段時間後，除了建立 Side Project 之外，也可以至一些網站練習程式，而之前在 Twitter 上發現有人 PO 出 Coding challenge 的列表，其中有個網站CodeWars，嘗試了一陣子之後覺得很不錯，想說寫篇心得文分享。 <a hr\r
+slug: 2021-08-07-codewars
+tags: []
+---
+
+<p>一般說來，剛剛學習一門程式語言，或是學習一段時間後，除了建立 Side Project 之外，也可以至一些網站練習程式，而之前在 Twitter 上發現有人 PO 出 Coding challenge 的列表，其中有個網站<a href="https://www.codewars.com">CodeWars</a>，嘗試了一陣子之後覺得很不錯，想說寫篇心得文分享。</p><p><a href="https://twitter.com/_KenWilliams_/status/1313077252033179650?s=20"><img class="img-responsive" loading="lazy" src="/images/21/21-08.png"></a></p><h2 id="如何開始-1">如何開始</h2>
+<p>最簡單註冊會員的方式，就是使用 GitHub 的帳戶來註冊，完成之後會請你選擇想要使用的程式語言，接著就可以開始了。</p><img class="img-responsive" loading="lazy" src="/images/21/21-01.png">
+
+<h2 id="kata-1">Kata</h2>
+<p>成功登入後，就可以選擇想要解決的 Kata 了，而所謂的 Kata 就是題目，難度分類從 1 到 8，而 8 kyu 是最簡單的，反之 1 kyu 是最難的，我的個人經驗是從 4 kyu 開始就有難度了。</p><img class="img-responsive" loading="lazy" src="/images/21/21-02.png">
+
+<p>如上圖，選擇想要的條件後，而這邊我選擇難度 4 kyu。</p><img class="img-responsive" loading="lazy" src="/images/21/21-03.png">
+
+<p>顯示所搜索的 Kata 結果，而右邊的圖示表示可以支援的語言。</p><img class="img-responsive" loading="lazy" src="/images/21/21-04.png">
+
+<p>覺得有興趣的問題的話，可以進入說明的頁頁，也可以改變想要使用的語言，如果想繼續進行的話，點選 Train。</p><img class="img-responsive" loading="lazy" src="/images/21/21-05.png">
+
+<p>最後就可以開始你的解題了，不過有個缺點就是程式編輯的區堿不是很好用，所以會在 VSCode 上寫完之後，再貼回頁面上的編輯區裡。</p><img class="img-responsive" loading="lazy" src="/images/21/21-06.png">
+
+<p>當解題完成後，還可以查看其他人的解題方式(solution)。看到有些簡短的寫法，會讓我有種恍然大誤的感覺，原來還有這種寫法，這是我覺得最好的地方，有種被回饋的感覺。</p><p>解完題之後會得到 Honor ，就像 RPG 的經驗值一樣，難度愈高的，得到的 Honer 也愈高，之後還會升級，而開放更多的功能，比如可以出題目、對題目回饋。</p><img class="img-responsive" loading="lazy" src="/images/21/21-07.png">
+
+<p>最後可查看 Profile ，這頁會顯示目前的解題次數，以及各個曾經使用語言的解題次數，會讓人有小小的成就感。</p><h2 id="結論-9">結論</h2>
+<p>透過這種網站可以練習平常很少接觸的題目，也可以練習演算法，並且除了 CodeWars 之外，還有其他的程式練習網站，請大家參考看看。</p>`;export{s as default};

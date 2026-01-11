@@ -1,39 +1,11 @@
-<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 0.0.0"><style>
-    .utterances {
-      position: relative;
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .utterances-frame {
-      color-scheme: light;
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 1px;
-      min-width: 100%;
-      max-width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
-    <!-- Meta -->
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
-    <title>建立簡報的工具 - Slidev 的介紹 - Thomas Blog</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Thomas Chang">
-    <link rel="shortcut icon" href="favicon.ico">
+    <title>thomascsd-blog</title>
     <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202511120101/show_ads_impl.js"></script><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- Google tag (gtag.js) -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -44,134 +16,216 @@
 
       gtag('config', 'G-704JZ9KNS1');
     </script>
-    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1636928419295654" crossorigin="anonymous" data-checked-head="true"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-      body {
-        font-family: 'Nunito', sans-serif;
-      }
-      nav.navbar {
-        height: 6rem !important;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
-      }
-      ::-webkit-scrollbar {
-        height: 10px;
-        width: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #efefef;
-        border-radius: 6px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #d5d5d5;
-        border-radius: 6px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #c4c4c4;
-      }
-    </style>
-  <link rel="stylesheet" href="styles.42d886cd97eb7005.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.42d886cd97eb7005.css"></noscript><style></style><meta name="keywords" content="建立簡報的工具 - Slidev 的介紹 "><meta name="description" content="建立簡報的工具 - Slidev 的介紹 Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備"><meta name="og:title" content="建立簡報的工具 - Slidev 的介紹 - Thomas Blog"><meta name="twitter:title" content="建立簡報的工具 - Slidev 的介紹 - Thomas Blog"><meta name="og:site_name" content="建立簡報的工具 - Slidev 的介紹 - Thomas Blog"><meta name="og:locale" content="zh-tw"><meta name="og:type" content="website"><meta name="og:description" content="建立簡報的工具 - Slidev 的介紹 Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備"><meta name="twitter:description" content="建立簡報的工具 - Slidev 的介紹 Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備"><meta name="og:url" content="http://localhost:1864/blog/2023-02-06-Slidev"><meta name="twitter:url" content="http://localhost:1864/blog/2023-02-06-Slidev"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><style>[_ngcontent-xyq-c15]::slotted(h1){color:#330625;background-color:#f8d3ec;padding:5px;border-radius:5px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content}</style><style>
-      :host {
-        display: none;
-      }
-      scully-content {
-        display: none;
-      }
-    </style><script>window['ScullyIO']='generated';</script></head>
-  <body scully-version="0.0.0">
-    <app-root _nghost-xyq-c13="" ng-version="13.1.1"><div _ngcontent-xyq-c13=""><app-blog-nav _ngcontent-xyq-c13="" _nghost-xyq-c11=""><nav _ngcontent-xyq-c11="" class="navbar"><div _ngcontent-xyq-c11="" class="container"><div _ngcontent-xyq-c11="" class="navbar-brand"><a _ngcontent-xyq-c11="" class="navbar-item" href="/"> Thomas Blog </a><span _ngcontent-xyq-c11="" data-target="navbarMenu" class="navbar-burger burger"><span _ngcontent-xyq-c11=""></span><span _ngcontent-xyq-c11=""></span><span _ngcontent-xyq-c11=""></span></span></div><div _ngcontent-xyq-c11="" id="navbarMenu" class="navbar-menu"><div _ngcontent-xyq-c11="" class="navbar-end"><div _ngcontent-xyq-c11="" class="navbar-item"><div _ngcontent-xyq-c11="" id="docsearch" class="control has-icons-left"><button type="button" aria-label="Search (Ctrl+K)" class="DocSearch DocSearch-Button"><span class="DocSearch-Button-Container"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="DocSearch-Search-Icon"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"><svg width="15" height="15" class="DocSearch-Control-Key-Icon"><path d="M4.505 4.496h2M5.505 5.496v5M8.216 4.496l.055 5.993M10 7.5c.333.333.5.667.5 1v2M12.326 4.5v5.996M8.384 4.496c1.674 0 2.116 0 2.116 1.5s-.442 1.5-2.116 1.5M3.205 9.303c-.09.448-.277 1.21-1.241 1.203C1 10.5.5 9.513.5 8V7c0-1.57.5-2.5 1.464-2.494.964.006 1.134.598 1.24 1.342M12.553 10.5h1.953" stroke-width="1.2" stroke="currentColor" fill="none" stroke-linecap="square"></path></svg></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div></div><a _ngcontent-xyq-c11="" class="navbar-item is-size-5 has-text-weight-semibold" href="/"> Blog </a><a _ngcontent-xyq-c11="" class="navbar-item is-size-5 has-text-weight-semibold" href="/en"> English </a><a _ngcontent-xyq-c11="" href="https://thomascsd.github.io/repos/" target="_blank" class="navbar-item is-size-5 has-text-weight-semibold"> Repos </a><a _ngcontent-xyq-c11="" class="navbar-item is-size-5 has-text-weight-semibold" href="/about"> About </a></div></div></div></nav></app-blog-nav><router-outlet _ngcontent-xyq-c13=""></router-outlet><app-blog _nghost-xyq-c15=""><section _ngcontent-xyq-c15="" class="hero">
-  <div _ngcontent-xyq-c15="" class="hero-body">
-    <div _ngcontent-xyq-c15="" class="container">
-      <app-post-header _ngcontent-xyq-c15="" _nghost-xyq-c14=""><div _ngcontent-xyq-c14="" class="columns"><div _ngcontent-xyq-c14="" class="column is-8 is-offset-2"><figure _ngcontent-xyq-c14="" class="image is-16by9"><img _ngcontent-xyq-c14="" alt="blog image" src="assets/images/26/26-0.jpg"></figure></div></div></app-post-header><!---->
+    <script type="module" crossorigin="" src="/assets/index-DNqm66_E.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
+  <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --link: #2563eb;
+      display: block;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-      <section _ngcontent-xyq-c15="" class="section">
-        <div _ngcontent-xyq-c15="" class="columns">
-          <div _ngcontent-xyq-c15="" class="column is-8 is-offset-2">
-            <div _ngcontent-xyq-c15="" class="content is-medium">
-              <h2 _ngcontent-xyq-c15="" class="subtitle is-4">2023-02-06</h2>
-              
+    [data-theme='dark'][_nghost-ng-c1425333472] {
+      --bg: #0b0f1a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1f2937;
+      --link: #60a5fa;
+    }
 
-              <h1 _ngcontent-xyq-c15="" class="title">建立簡報的工具 - Slidev 的介紹</h1>
-              <p _ngcontent-xyq-c15="">
-                <!--scullyContent-begin--><p _ngcontent-xyq-c15="">去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 <a href="https://sli.dev" _ngcontent-xyq-c15="">Slidev</a> ，覺得簡單易用，就決定採用了，現在分享給大家參考看看。</p>
-<h2 id="安裝" _ngcontent-xyq-c15="">安裝</h2>
-<pre _ngcontent-xyq-c15=""><code _ngcontent-xyq-c15="">npm init slidev</code></pre><p _ngcontent-xyq-c15="">可以參考<a href="https://sli.dev/guide/" _ngcontent-xyq-c15="">官方網站</a>，輸入上列的指令建立初始樣版。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-01.png" _ngcontent-xyq-c15="">
+    header[_ngcontent-ng-c1425333472] {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      width: 100vw;
+      left: 0;
+    }
 
-<p _ngcontent-xyq-c15="">如上圖，輸入簡報名稱後，即會安裝相依的套件。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-02.png" _ngcontent-xyq-c15="">
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-03.png" _ngcontent-xyq-c15="">
+    .nav-wrap[_ngcontent-ng-c1425333472] {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem 1rem 2rem;
+    }
 
-<p _ngcontent-xyq-c15="">之後會開啟範例網站 <a href="http://localhost:3030" _ngcontent-xyq-c15="">http://localhost:3030</a> 。可以確認一下 Slidev 的功能有那些。</p>
-<h2 id="建立簡報" _ngcontent-xyq-c15="">建立簡報</h2>
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-04.png" _ngcontent-xyq-c15="">
+    nav[_ngcontent-ng-c1425333472] {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
 
-<p _ngcontent-xyq-c15="">根據<a href="https://sli.dev/guide/#markdown-syntax" _ngcontent-xyq-c15="">文件</a>，進入點是 slides.md，一切的簡報這邊即可。</p>
-<pre _ngcontent-xyq-c15=""><code _ngcontent-xyq-c15=""># Slidev
+    nav[_ngcontent-ng-c1425333472]   a[_ngcontent-ng-c1425333472] {
+      padding: 0.5rem 0.25rem;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 2px solid transparent;
+      font-size: 1.08rem;
+    }
+
+    nav[_ngcontent-ng-c1425333472]   a.active[_ngcontent-ng-c1425333472] {
+      border-bottom-color: var(--link);
+      color: var(--link);
+    }
+
+    .theme-toggle[_ngcontent-ng-c1425333472] {
+      margin-left: 1.5rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .theme-toggle[_ngcontent-ng-c1425333472]:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    main[_ngcontent-ng-c1425333472] {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    .main-inner[_ngcontent-ng-c1425333472] {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer[_ngcontent-ng-c1425333472] {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      nav[_ngcontent-ng-c1425333472] { flex-wrap: wrap; }
+      .theme-toggle[_ngcontent-ng-c1425333472] { margin-left: 0; }
+    }</style><style>[_nghost-ng-c4148159750] { display: block; }
+
+    .post__image-fullwidth[_ngcontent-ng-c4148159750] {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+
+    .post__image[_ngcontent-ng-c4148159750] {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    article[_ngcontent-ng-c4148159750] {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .post__header[_ngcontent-ng-c4148159750] {
+      margin-bottom: 2rem;
+    }
+
+    .post__date[_ngcontent-ng-c4148159750] {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post__title[_ngcontent-ng-c4148159750] {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .post__content[_ngcontent-ng-c4148159750] {
+      line-height: 1.7;
+    }</style></head>
+  <body><!--nghm-->
+    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c4148159750="" ngh="1"><div _ngcontent-ng-c4148159750="" class="post__image-fullwidth"><img _ngcontent-ng-c4148159750="" class="post__image" src="/images/26/26-0.jpg" alt="建立簡報的工具 - Slidev 的介紹"></div><article _ngcontent-ng-c4148159750=""><header _ngcontent-ng-c4148159750="" class="post__header"><div _ngcontent-ng-c4148159750="" class="post__date">2023-02-06</div><h1 _ngcontent-ng-c4148159750="" class="post__title">建立簡報的工具 - Slidev 的介紹</h1></header><div _ngcontent-ng-c4148159750="" class="post__content"><analog-markdown _ngcontent-ng-c4148159750="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 <a href="https://sli.dev">Slidev</a> ，覺得簡單易用，就決定採用了，現在分享給大家參考看看。</p><h2 id="安裝-3">安裝</h2>
+<pre><code>npm init slidev
+</code></pre><p>可以參考<a href="https://sli.dev/guide/">官方網站</a>，輸入上列的指令建立初始樣版。</p><img class="img-responsive" loading="lazy" src="/images/26/26-01.png">
+
+<p>如上圖，輸入簡報名稱後，即會安裝相依的套件。</p><img class="img-responsive" loading="lazy" src="/images/26/26-02.png">
+<img class="img-responsive" loading="lazy" src="/images/26/26-03.png">
+
+<p>之後會開啟範例網站 <a href="http://localhost:3030">http://localhost:3030</a> 。可以確認一下 Slidev 的功能有那些。</p><h2 id="建立簡報">建立簡報</h2>
+<img class="img-responsive" loading="lazy" src="/images/26/26-04.png">
+
+<p>根據<a href="https://sli.dev/guide/#markdown-syntax">文件</a>，進入點是 slides.md，一切的簡報這邊即可。</p><pre><code># Slidev
 
 Hello World
 
-<span class="token operator" _ngcontent-xyq-c15="">--</span><span class="token operator" _ngcontent-xyq-c15="">-</span>
+<span class="token operator">--</span><span class="token operator">-</span>
 
-# Page <span class="token number" _ngcontent-xyq-c15="">2</span>
+# Page <span class="token number">2</span>
 
-Directly use code blocks <span class="token keyword" _ngcontent-xyq-c15="">for</span> highlighting
+Directly use code blocks <span class="token keyword">for</span> highlighting
 
 
-<span class="token template-string" _ngcontent-xyq-c15=""><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span></span><span class="token template-string" _ngcontent-xyq-c15=""><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span><span class="token string" _ngcontent-xyq-c15=""> ts
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> ts
 console.log('Hello, World!')
-</span><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span></span><span class="token template-string" _ngcontent-xyq-c15=""><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span></span>
+</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>
 
-<span class="token operator" _ngcontent-xyq-c15="">--</span><span class="token operator" _ngcontent-xyq-c15="">-</span>
+<span class="token operator">--</span><span class="token operator">-</span>
 
-# Page <span class="token number" _ngcontent-xyq-c15="">3</span></code></pre><p _ngcontent-xyq-c15="">而內容格式如上，看起來一目了然，都是很基本的 <a href="https://sli.dev/guide/syntax.html" _ngcontent-xyq-c15="">markdown 語法</a>就可以建立簡報了。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-05.png" _ngcontent-xyq-c15="">
+# Page <span class="token number">3</span>
+</code></pre><p>而內容格式如上，看起來一目了然，都是很基本的 <a href="https://sli.dev/guide/syntax.html">markdown 語法</a>就可以建立簡報了。</p><img class="img-responsive" loading="lazy" src="/images/26/26-05.png">
 
-<p _ngcontent-xyq-c15="">另外為了便於建立簡報，可以安裝 <a href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev" _ngcontent-xyq-c15="">Slidev VSCode Extension</a>。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-06.png" _ngcontent-xyq-c15="">
+<p>另外為了便於建立簡報，可以安裝 <a href="https://marketplace.visualstudio.com/items?itemName=antfu.slidev">Slidev VSCode Extension</a>。</p><img class="img-responsive" loading="lazy" src="/images/26/26-06.png">
 
-<p _ngcontent-xyq-c15="">這樣子就可以列表目前的簡報，及目前所選擇簡報的預覽圖</p>
-<h2 id="程式碼" _ngcontent-xyq-c15="">程式碼</h2>
-<pre _ngcontent-xyq-c15=""><code _ngcontent-xyq-c15=""><span class="token template-string" _ngcontent-xyq-c15=""><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span></span><span class="token template-string" _ngcontent-xyq-c15=""><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span><span class="token string" _ngcontent-xyq-c15="">ts {all|2|1-6|9|all}
+<p>這樣子就可以列表目前的簡報，及目前所選擇簡報的預覽圖</p><h2 id="程式碼">程式碼</h2>
+<pre><code><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">ts {all|2|1-6|9|all}
 interface User {
   id: number
   firstName: string
   lastName: string
   role: string
 }
-</span><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span></span><span class="token template-string" _ngcontent-xyq-c15=""><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span><span class="token template-punctuation string" _ngcontent-xyq-c15="">`</span></span>
+</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>
 
-<span class="token keyword" _ngcontent-xyq-c15="">function</span> <span class="token function" _ngcontent-xyq-c15="">updateUser</span><span class="token punctuation" _ngcontent-xyq-c15="">(</span>id<span class="token operator" _ngcontent-xyq-c15="">:</span> <span class="token builtin" _ngcontent-xyq-c15="">number</span><span class="token punctuation" _ngcontent-xyq-c15="">,</span> update<span class="token operator" _ngcontent-xyq-c15="">:</span> User<span class="token punctuation" _ngcontent-xyq-c15="">)</span> <span class="token punctuation" _ngcontent-xyq-c15="">{</span>
-  <span class="token keyword" _ngcontent-xyq-c15="">const</span> user <span class="token operator" _ngcontent-xyq-c15="">=</span> <span class="token function" _ngcontent-xyq-c15="">getUser</span><span class="token punctuation" _ngcontent-xyq-c15="">(</span>id<span class="token punctuation" _ngcontent-xyq-c15="">)</span>
-  <span class="token keyword" _ngcontent-xyq-c15="">const</span> newUser <span class="token operator" _ngcontent-xyq-c15="">=</span> <span class="token punctuation" _ngcontent-xyq-c15="">{</span> <span class="token operator" _ngcontent-xyq-c15="">...</span>user<span class="token punctuation" _ngcontent-xyq-c15="">,</span> <span class="token operator" _ngcontent-xyq-c15="">...</span>update <span class="token punctuation" _ngcontent-xyq-c15="">}</span>
-  <span class="token function" _ngcontent-xyq-c15="">saveUser</span><span class="token punctuation" _ngcontent-xyq-c15="">(</span>id<span class="token punctuation" _ngcontent-xyq-c15="">,</span> newUser<span class="token punctuation" _ngcontent-xyq-c15="">)</span>
-<span class="token punctuation" _ngcontent-xyq-c15="">}</span>
-</code></pre><p _ngcontent-xyq-c15="">接著就是我選擇 Slidev 的原因之一，可以 Highlight 程式碼，如同上面的格式，參考<a href="https://sli.dev/guide/syntax.html#line-highlighting" _ngcontent-xyq-c15="">文件</a>，在後方加上程式碼的行號 <code _ngcontent-xyq-c15="">{all|2|1-6|9|all}</code>，即可顯示 Highlight 的程式碼。</p>
-<img class="img-responsive" loading="lazy" src="assets/images/26/26-07.gif" _ngcontent-xyq-c15="">
+<span class="token keyword">function</span> <span class="token function">updateUser</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> update<span class="token operator">:</span> User<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token function">getUser</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> newUser <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span>user<span class="token punctuation">,</span> <span class="token operator">...</span>update <span class="token punctuation">}</span>
+  <span class="token function">saveUser</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> newUser<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><p>接著就是我選擇 Slidev 的原因之一，可以 Highlight 程式碼，如同上面的格式，參考<a href="https://sli.dev/guide/syntax.html#line-highlighting">文件</a>，在後方加上程式碼的行號 <code>{all|2|1-6|9|all}</code>，即可顯示 Highlight 的程式碼。</p><img class="img-responsive" loading="lazy" src="/images/26/26-07.gif">
 
-<p _ngcontent-xyq-c15="">之後就像是上方的圖片，可以配合簡報強調特定行數的程式碼。</p>
-<h2 id="pdf" _ngcontent-xyq-c15="">PDF</h2>
-<pre _ngcontent-xyq-c15=""><code _ngcontent-xyq-c15="">npm i <span class="token operator" _ngcontent-xyq-c15="">-</span><span class="token constant" _ngcontent-xyq-c15="">D</span> playwright<span class="token operator" _ngcontent-xyq-c15="">-</span>chromium</code></pre><p _ngcontent-xyq-c15="">另外還可以匯出成 PDF，就需要安裝 <code _ngcontent-xyq-c15="">playwright-chromium</code> ，可以參考<a href="https://sli.dev/guide/exporting.html#pdf" _ngcontent-xyq-c15="">文件</a> 。</p>
-<pre _ngcontent-xyq-c15=""><code _ngcontent-xyq-c15="">slidev <span class="token keyword" _ngcontent-xyq-c15="">export</span></code></pre><p _ngcontent-xyq-c15="">接著輸入指令<code _ngcontent-xyq-c15="">export</code> 即可匯出 PDF。</p>
-<h2 id="結論" _ngcontent-xyq-c15="">結論</h2>
-<p _ngcontent-xyq-c15="">Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備，推薦給大家參考看看。</p>
-<!--scullyContent-end--><scully-content _ngcontent-xyq-c15=""></scully-content>
-              <script>try {window['scullyContent'] = {cssId:"_ngcontent-xyq-c15",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></p>
-            </div>
-          </div>
-        </div>
-      </section>
+<p>之後就像是上方的圖片，可以配合簡報強調特定行數的程式碼。</p><h2 id="pdf">PDF</h2>
+<pre><code>npm i <span class="token operator">-</span><span class="token constant">D</span> playwright<span class="token operator">-</span>chromium
+</code></pre><p>另外還可以匯出成 PDF，就需要安裝 <code>playwright-chromium</code> ，可以參考<a href="https://sli.dev/guide/exporting.html#pdf">文件</a> 。</p><pre><code>slidev <span class="token keyword">export</span>
+</code></pre><p>接著輸入指令<code>export</code> 即可匯出 PDF。</p><h2 id="結論-31">結論</h2>
+<p>Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備，推薦給大家參考看看。</p></div> </analog-markdown></div></article><!----></app-blog-post><!----></div></main><footer _ngcontent-ng-c1425333472=""><small _ngcontent-ng-c1425333472="">© 2026 · Contact: <a _ngcontent-ng-c1425333472="" href="https://github.com/thomascsd" rel="noopener" target="_blank">GitHub</a></small></footer></app-layout></app-root>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 
-      <div _ngcontent-xyq-c15="" class="is-divider"></div>
-      <section _ngcontent-xyq-c15="" class="section">
-        <div _ngcontent-xyq-c15="" id="comments"><div class="utterances">
-    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?_ngcontent-xyq-c15=&amp;type=text%2Fjavascript&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=thomascsd%2Fthomascsd.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2023-02-06-Slidev&amp;origin=http%3A%2F%2Flocalhost%3A1864&amp;pathname=blog%2F2023-02-06-Slidev&amp;title=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+-+Thomas+Blog&amp;description=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+Slidev+%E6%98%AF%E5%BE%88%E5%A5%BD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%8C%E6%90%AD%E9%85%8D+VSCode+Exntension+%EF%BC%8C%E8%83%BD%E5%BF%AB%E9%80%9F%E8%BC%95%E9%AC%86%E5%BB%BA%E7%AB%8B%E8%B5%B7%E7%B0%A1%E5%A0%B1%E3%80%82%E8%80%8C%E7%B0%A1%E5%A0%B1%E6%89%80%E9%9C%80%E7%9A%84%E5%8A%9F%E8%83%BD%E9%83%BD%E6%9C%89%E5%85%B7%E5%82%99&amp;og%3Atitle=%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%A0%B1%E7%9A%84%E5%B7%A5%E5%85%B7+-+Slidev+%E7%9A%84%E4%BB%8B%E7%B4%B9+-+Thomas+Blog&amp;session=" loading="lazy"></iframe>
-  </div></div>
-      </section>
-    </div>
-  </div>
-</section>
-</app-blog><!----><hr _ngcontent-xyq-c13=""><app-footer _ngcontent-xyq-c13="" _nghost-xyq-c12=""><footer _ngcontent-xyq-c12="" class="footer"><div _ngcontent-xyq-c12="" class="content has-text-centered"><div _ngcontent-xyq-c12="" class="columns"><div _ngcontent-xyq-c12="" class="column"></div><div _ngcontent-xyq-c12="" class="column"><a _ngcontent-xyq-c12="" href="https://www.twitter.com/thomascsd" target="_blank" class="block"><span _ngcontent-xyq-c12="" class="fa-stack fa-lg"><i _ngcontent-xyq-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-xyq-c12="" class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a><a _ngcontent-xyq-c12="" href="https://github.com/thomascsd" target="_blank" class="block"><span _ngcontent-xyq-c12="" class="fa-stack fa-lg"><i _ngcontent-xyq-c12="" class="fa fa-circle fa-stack-2x"></i><i _ngcontent-xyq-c12="" class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></div><div _ngcontent-xyq-c12="" class="column"></div></div><div _ngcontent-xyq-c12="" class="columns"><div _ngcontent-xyq-c12="" class="column is-2"></div><div _ngcontent-xyq-c12="" class="column is-8"><strong _ngcontent-xyq-c12="">Bulma - Blog theme</strong> . Based on the <a _ngcontent-xyq-c12="" href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>. </div><div _ngcontent-xyq-c12="" class="column is-2"></div></div></div></footer></app-footer></div></app-root>
-  <script id="ScullyIO-transfer-state"></script><script src="runtime.d72ac3ba258b1102.js" type="module"></script><script src="polyfills.683fd6a0711b2044.js" type="module"></script><script src="main.2d6dc3e9e7390671.js" type="module"></script>
+    <script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
+  
 
-<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1636928419295654&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1763883550&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F2023-02-06-Slidev&amp;pra=5&amp;wgl=1&amp;asro=0&amp;aiapm=0.1542&amp;aiapmd=0.1423&amp;aiapmi=0.16&amp;aiapmid=1&amp;aiact=0.5423&amp;aiactd=0.7&amp;aicct=0.7&amp;aicctd=0.5799&amp;ailct=0.5849&amp;ailctd=0.65&amp;aimart=4&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLG51bGwsMCxudWxsLCIiLG51bGwsMF0.&amp;abgtt=6&amp;dt=1763883558883&amp;bpp=25&amp;bdt=646&amp;idt=387&amp;shv=r20251118&amp;mjsv=m202511120101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=7231404416825&amp;frm=20&amp;pv=2&amp;u_tz=480&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=31095752%2C31095810%2C31095814%2C42532523%2C95376242%2C95376711&amp;oid=2&amp;pvsid=3663429985738641&amp;tmod=1000743803&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;pgls=CAo.&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=496" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html" width="0" height="0" style="display: none;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20251118/r20190131/zrt_lookup.html" style="display: none;"></iframe></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c4148159750","r":1}]}}]}</script></body></html>

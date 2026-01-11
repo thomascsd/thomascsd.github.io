@@ -1,0 +1,132 @@
+const n=`---
+title: 使用TypeScript建立Express.js-使用Ts.ED\r
+bgImageUrl: /images/27/27-0.jpg\r
+description: 之前有寫過一篇文章使用 TypeScript 建立 Express.js，介紹了 routing-controllers，可以將 \`TypeScipt\` 與 \`Express.js\`整合，並使用 Controller 的方式建立 \`Express.js\`，然而發現套件更新有點緩慢，最近在該專案的Gi\r
+slug: 2023-05-24-expressjs-typescript-tsed
+tags: ["typescript", "javascript", "express"]
+---
+
+<p>之前有寫過一篇文章<a href="https://thomascsd.github.io/blog/2021-02-07-ExpressjssWithTypescript">使用 TypeScript 建立 Express.js</a>，介紹了 <a href="https://github.com/typestack/routing-controllers">routing-controllers</a>，可以將 <code>TypeScipt</code> 與 <code>Express.js</code>整合，並使用 Controller 的方式建立 <code>Express.js</code>，然而發現套件更新有點緩慢，最近在該專案的<a href="https://github.com/typestack/routing-controllers/issues/900">GitHub issue</a>中有人詢問是否已經停止維護，並在此 isssue 中發現了另一個相似的套件<a href="https://tsed.io/">Ts.ED</a>。在研究和測試後，覺得可以將程式轉換到 Ts.ED，寫篇心得文分享。</p><h2 id="建立專案-1">建立專案</h2>
+<pre><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> @tsed/cli
+tsed init <span class="token builtin class-name">.</span>
+</code></pre><p>參考<a href="https://tsed.io/getting-started/">Getting started</a>，首先安裝 CLI 工具，再初始化專案。</p><img class="img-responsive" loading="lazy" src="/images/27/27-01.png">
+
+<p>TS.ed 本身會與一些套件整合，可以勾選想要整合的功能，一般的選擇是 Testing、Linter、Swagger。</p><img class="img-responsive" loading="lazy" src="/images/27/27-02.png">
+
+<p>接著等待安裝完相依性的套件之後，就可以開啟專案開發了。
+另外因為覺得<a href="https://tsed.io/docs/configuration.html">文件</a>寫得有點分散，所以這篇文章會大致說明一下，從設定 Server，再到建立 Controller，最後建立 Service 的步驟。</p><h2 id="設定-server-1">設定 Server</h2>
+<pre><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">Configuration</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  httpPort<span class="token operator">:</span> <span class="token string">'127.0.0.1:8080'</span><span class="token punctuation">,</span>
+  mount<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'/'</span><span class="token operator">:</span> <span class="token punctuation">[</span>ApiController<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  swagger<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      path<span class="token operator">:</span> <span class="token string">'/doc'</span><span class="token punctuation">,</span>
+      specVersion<span class="token operator">:</span> <span class="token string">'3.0.1'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  middlewares<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'cors'</span><span class="token punctuation">,</span> <span class="token string">'helmet'</span><span class="token punctuation">,</span> <span class="token string">'compression'</span><span class="token punctuation">,</span> <span class="token string">'method-override'</span><span class="token punctuation">,</span> <span class="token string">'json-parser'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  views<span class="token operator">:</span> <span class="token punctuation">{</span>
+    root<span class="token operator">:</span> <span class="token function">join</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'../views'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    extensions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      ejs<span class="token operator">:</span> <span class="token string">'ejs'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Server</span> <span class="token punctuation">{</span>
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Inject</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">protected</span> app<span class="token operator">:</span> PlatformApplication<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>一般會建立類別 <code>Server</code>，並且用<code>@Configuration</code>來設定 Server 的行為，可參考<a href="https://tsed.io/docs/configuration.html">文件 Configuration</a>，講解一下常用的設定。</p><ul>
+<li>mount：設定路由，因想設為每個 API 的起始路由為 api，所以使用了 <a href="https://tsed.io/docs/controllers.html#nested-controllers">Nested Controller</a>。</li>
+<li>middlewares：來戴入 Expression.js 的 middlewares。</li>
+<li>swagger：Swagger 的相關設定，例如 API 文件的路徑和規格版本。</li>
+</ul>
+<h2 id="啟動-application-1">啟動 Application</h2>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> PlatformExpress <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tsed/platform-express'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Server <span class="token keyword">from</span> <span class="token string">'./server'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> dotenv <span class="token keyword">from</span> <span class="token string">'dotenv'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'reflect-metadata'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> config <span class="token operator">=</span> dotenv<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'.env'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">bootstrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> <span class="token literal-property property">httpPort</span><span class="token operator">:</span> string <span class="token operator">|</span> number <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">MODE</span> <span class="token operator">===</span> <span class="token string">'dev'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      httpPort <span class="token operator">=</span> <span class="token string">'127.0.0.1:8080'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> configObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span>config<span class="token punctuation">.</span>parsed<span class="token punctuation">,</span>
+      httpPort<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> platform <span class="token operator">=</span> <span class="token keyword">await</span> PlatformExpress<span class="token punctuation">.</span><span class="token function">bootstrap</span><span class="token punctuation">(</span>Server<span class="token punctuation">,</span> configObj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> platform<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>er<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>er<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">bootstrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>接著在<code>index.ts</code>中，呼叫<code>PlatformExpress.bootstrap</code>來啟動 <code>Express.js</code>，而<code>boostrap</code>的第一個參數就是剛剛建立<code>Server</code>物件，而一般來說，都會使用<code>.env</code>來儲存設定，所以可以將 config 物件傳入至第二個參數。並且這邊有個小技巧，可以覆寫在<code>Server.ts</code>的<code>Configuration</code>的設定，比如正式及測試所使用的 port 不相同，所以就根據正式或是測試來切換<code>httpPort</code>。</p><h2 id="controller-1">Controller</h2>
+<pre><code class="language-javascript">@<span class="token function">Controller</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/api'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>ForecastController<span class="token punctuation">,</span> ContactController<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ApiController</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><p>TS.ed 支援 Nested Controller 的設定方式，因為想將所有的 API 起始路由設為 <code>/api</code>，可以使用屬性 <code>children</code>，來包含其他的 controller。</p><pre><code class="language-javascript">@<span class="token function">Controller</span><span class="token punctuation">(</span><span class="token string">'/contact'</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ContactController</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter"><span class="token keyword">private</span> <span class="token literal-property property">contactService</span><span class="token operator">:</span> ContactService</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  @<span class="token function">Get</span><span class="token punctuation">(</span><span class="token string">'/list'</span><span class="token punctuation">)</span>
+  <span class="token function">getContacts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>contactService<span class="token punctuation">.</span><span class="token function">getContacts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  @<span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">'/save'</span><span class="token punctuation">)</span>
+  <span class="token function">saveContact</span><span class="token punctuation">(</span><span class="token parameter">@<span class="token function">BodyParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span> contact<span class="token operator">:</span> Contact</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>contactService<span class="token punctuation">.</span><span class="token function">saveContact</span><span class="token punctuation">(</span>contact<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  @<span class="token function">Post</span><span class="token punctuation">(</span><span class="token string">'/update'</span><span class="token punctuation">)</span>
+  <span class="token function">update</span><span class="token punctuation">(</span><span class="token parameter">@<span class="token function">BodyParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span> contact<span class="token operator">:</span> Contact</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>contactService<span class="token punctuation">.</span><span class="token function">updateContact</span><span class="token punctuation">(</span>contact<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>與<code>routing-controllers</code>相似，使用 Decorator <code>@Controller</code>來定義 Controller 設定路由，以及使用<code>@Get</code>、<code>@Post</code>來定義 Action。</li>
+<li>使用<code>@BodyParams</code>來對應<code>request.body</code>。</li>
+<li>再來也支援 Depenency Injection，一樣是在建構函式中宣告想注入的類別。</li>
+</ul>
+<h2 id="service-1">Service</h2>
+<pre><code class="language-javascript">@<span class="token function">Service</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ForecastService</span> <span class="token punctuation">{</span>
+  @<span class="token function">Value</span><span class="token punctuation">(</span><span class="token string">'WEATHERBIT_API_KEY'</span><span class="token punctuation">)</span>
+  apiKey<span class="token operator">!</span><span class="token operator">:</span> string<span class="token punctuation">;</span>
+
+  <span class="token keyword">async</span> <span class="token function">getDays</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">lat</span><span class="token operator">:</span> number<span class="token punctuation">,</span> <span class="token literal-property property">lon</span><span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">\`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">\${</span><span class="token keyword">this</span><span class="token punctuation">.</span>apiUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">?key=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">\${</span><span class="token keyword">this</span><span class="token punctuation">.</span>apiKey<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&amp;lang=zh-tw&amp;lat=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">\${</span>lat<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&amp;lon=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">\${</span>lon<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">\`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span>get<span class="token operator">&lt;</span>Daily<span class="token operator">></span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><ul>
+<li>使用<code>@Service</code>來讓 class 成為 Service，代表著這個 class 可以被注入至其他的 Service 或是 Controller 中。</li>
+<li>使用<code>@Value</code>可以取得設定檔.env 內所設定的 value，這邊取得 API key。</li>
+</ul>
+<h2 id="啟動-1">啟動</h2>
+<img class="img-responsive" loading="lazy" src="/images/27/27-03.png">
+
+<pre><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"node ./dist/index.js"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"ts-node ./src/index.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"tsc"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre><p>啟動很簡單的，只要執行<code>index.js</code>即可，而我習慣在本機開發階段是使用<code>ts-node</code>啟用，如此方便使用 VSCode 來 debug。並且站台啟用後，還可以看到輸出內容上顯示執行時間，及 api 列表，能一目了然目前狀態。</p><h2 id="結論-53">結論</h2>
+<p>總結而言，Ts.ED 是一個強大且易於使用的 framework，並且在最新版 7.0.0 之後，不只 Express.js，還會支援 Koa、Fastify，而且與 TypeScript 整合，開發很容易，推薦給大家參考看看。</p>`;export{n as default};
