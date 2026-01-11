@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
-    <title>thomascsd-blog</title>
+    <title>Thomas Blog</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -16,7 +16,7 @@
 
       gtag('config', 'G-704JZ9KNS1');
     </script>
-    <script type="module" crossorigin="" src="/assets/index-DNqm66_E.js"></script>
+    <script type="module" crossorigin="" src="/assets/index-CwsdFOqf.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
   <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
       --bg: #ffffff;
@@ -169,60 +169,60 @@
     }</style></head>
   <body><!--nghm-->
     <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c4148159750="" ngh="1"><div _ngcontent-ng-c4148159750="" class="post__image-fullwidth"><img _ngcontent-ng-c4148159750="" class="post__image" src="/images/29/29-0.jpeg" alt=".NET 好用套件 - commandline"></div><article _ngcontent-ng-c4148159750=""><header _ngcontent-ng-c4148159750="" class="post__header"><div _ngcontent-ng-c4148159750="" class="post__date">2023-12-29</div><h1 _ngcontent-ng-c4148159750="" class="post__title">.NET 好用套件 - commandline</h1></header><div _ngcontent-ng-c4148159750="" class="post__content"><analog-markdown _ngcontent-ng-c4148159750="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件<a href="https://www.nuget.org/packages/System.CommandLine">System.CommandLine</a>，但覺得沒有很好使用，之前有發現一個套件 <a href="https://github.com/commandlineparser/commandline">commandline</a>，設定及讀取參考很簡單易用，寫篇心得文分享一下。</p><h2 id="設定-2">設定</h2>
-<pre><code class="language-csharp">public class DefaultOptions
-    {
+<pre><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DefaultOptions</span>
+    <span class="token punctuation">{</span>
 
-        [Option('n', "name", Required = true, HelpText = "名稱")]
-        public string Name { get; set; }
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'n'</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> Required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> HelpText <span class="token operator">=</span> <span class="token string">"名稱"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-        [Option('r', "retry", HelpText = "是否要重新執行")]
-        public bool Retry { get; set; }
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'r'</span><span class="token punctuation">,</span> <span class="token string">"retry"</span><span class="token punctuation">,</span> HelpText <span class="token operator">=</span> <span class="token string">"是否要重新執行"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> Retry <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-        [Option('d', "date", HelpText = "要執行的日期")]
-        public string Date { get; set; }
-    }
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'d'</span><span class="token punctuation">,</span> <span class="token string">"date"</span><span class="token punctuation">,</span> HelpText <span class="token operator">=</span> <span class="token string">"要執行的日期"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Date <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 </code></pre><p>首先建立 Options 類別，<code>Commandline</code>會透過 <code>Attribute</code>將屬性和 CLI 參數對應，可以參考<a href="https://github.com/commandlineparser/commandline/wiki/Option-Attribute">文件</a>，所以第一個參數設定簡短名稱，第二個參數設定完整名稱，看起來很淺顯易懂。</p><h2 id="解析參數">解析參數</h2>
-<pre><code class="language-csharp">await Parser.Default.ParseArguments&lt;DefaultOptions&gt;(args).WithParsedAsync(RunJob);
+<pre><code class="language-csharp"><span class="token keyword">await</span> Parser<span class="token punctuation">.</span>Default<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">ParseArguments</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>DefaultOptions<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithParsedAsync</span><span class="token punctuation">(</span>RunJob<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
- async Task RunJob(DefaultOptions options)
-{
-    //do something
-    Console.WriteLine($"name:{options.Name}");
-}
+ <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">RunJob</span><span class="token punctuation">(</span><span class="token class-name">DefaultOptions</span> options<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//do something</span>
+    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"name:</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">options<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre><p>使用<code>ParseArguments</code> 及 <code>WithParsedAsync</code>來解析參數，並取得 options 物件，也是很淺顯易懂的。</p><img class="img-responsive" loading="lazy" src="/images/29/29-1.png">
 
 <p>接著就可以使用熟悉的 <a href="https://github.com/commandlineparser/commandline/wiki/CommandLine-Grammar">unix style</a> 方式設定參數來執行。</p><h2 id="另一種方式">另一種方式</h2>
 <img class="img-responsive" loading="lazy" src="/images/29/29-2.png">
 
-<p>有時會需要根據不同的參數，取得不同的 Options 物件。看了一下原始檔，發現 <code>ParseArguments</code> 還有另一個多戴方法，可傳入 factory 工廠方式，來決定傳出的 Options 物件。</p><pre><code class="language-csharp">public class ActionAOptions: DefaultOptions
- {
-        [Option('a', "action")]
-        public string Action { get; set; }
-  }
+<p>有時會需要根據不同的參數，取得不同的 Options 物件。看了一下原始檔，發現 <code>ParseArguments</code> 還有另一個多戴方法，可傳入 factory 工廠方式，來決定傳出的 Options 物件。</p><pre><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ActionAOptions</span><span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">DefaultOptions</span></span>
+ <span class="token punctuation">{</span>
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'a'</span><span class="token punctuation">,</span> <span class="token string">"action"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Action <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 
-await Parser.Default.ParseArguments&lt;DefaultOptions&gt;(SelectOptions(args), args)
-.WithParsedAsync(RunJob2);
+<span class="token keyword">await</span> Parser<span class="token punctuation">.</span>Default<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">ParseArguments</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>DefaultOptions<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token function">SelectOptions</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">WithParsedAsync</span><span class="token punctuation">(</span>RunJob2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-async Task RunJob2(DefaultOptions options)
-{
-    var actionOptions = (ActionAOptions)options;
+<span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">RunJob2</span><span class="token punctuation">(</span><span class="token class-name">DefaultOptions</span> options<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> actionOptions <span class="token operator">=</span> <span class="token punctuation">(</span>ActionAOptions<span class="token punctuation">)</span>options<span class="token punctuation">;</span>
 
-    //do something
-    Console.WriteLine($"name:{actionOptions.Name}, action:{actionOptions.Action}");
-}
+    <span class="token comment">//do something</span>
+    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"name:</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">actionOptions<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string">, action:</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">actionOptions<span class="token punctuation">.</span>Action</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-Func&lt;DefaultOptions&gt; SelectOptions(string[] args)
-{
-    return () =&gt;
-    {
-        var isAction = args[1]?.IndexOf("action") != -1;
-        if (isAction)
-        {
-            return new ActionAOptions();
-        }
-        return new DefaultOptions();
-    };
-}
+<span class="token return-type class-name">Func<span class="token punctuation">&lt;</span>DefaultOptions<span class="token punctuation">&gt;</span></span> <span class="token function">SelectOptions</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> isAction <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">?.</span><span class="token function">IndexOf</span><span class="token punctuation">(</span><span class="token string">"action"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>isAction<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ActionAOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">DefaultOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre><img class="img-responsive" loading="lazy" src="/images/29/29-3.png">
 
 <p>如同上面的程式碼，可以根據不同名稱，取回不同的 options 物件，例如名稱(-n/--name)為 action 時，可以多傳入參數 action。</p><h2 id="結論-33">結論</h2>
