@@ -1,0 +1,3930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Thomas Blog</title>
+        <link>https://thomascsd.github.io/</link>
+        <description>Thomas Blog RSS Feed</description>
+        <lastBuildDate>Sun, 05 Apr 2026 17:00:49 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <language>zh-TW</language>
+        <copyright>All rights reserved, Thomas</copyright>
+        <item>
+            <title><![CDATA[Hello World!]]></title>
+            <link>https://thomascsd.github.io/blog/2017-06-20-hello-world</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2017-06-20-hello-world</guid>
+            <pubDate>Tue, 20 Jun 2017 00:00:00 GMT</pubDate>
+            <description><![CDATA[第一篇文章，談談為什麼想寫 Blog，有兩個原因： 第一是 ITHome 有個鐵人幫幫忙的活動，其中有人說工程師就是要建 Blog，所以開始建立自己的 Blog，順便練習 Angular。 第二點是看了我為什麼鼓勵工程師寫 blog | In 91，想說寫程式這樣久，也有些心得可以分享，並且也可當成]]></description>
+            <content:encoded><![CDATA[第一篇文章，談談為什麼想寫 Blog，有兩個原因：
+
+第一是 ITHome 有個鐵人幫幫忙的活動，其中有人說工程師就是要建 Blog，所以開始建立自己的 Blog，順便練習 Angular。
+
+第二點是看了[我為什麼鼓勵工程師寫 blog | In 91](https://dotblogs.com.tw/hatelove/2017/03/26/why-engineers-should-keep-blogging)，想說寫程式這樣久，也有些心得可以分享，並且也可當成學習筆記，或是記錄曾遇到問題。
+但是有遇到難題，就是將 Meteor 部署至 Google App Engine 卡住了，然後發現了[jekyll-now](https://github.com/barryclark/jekyll-now)，只要簡單幾個步驟，就可以架好 Blog 並且能夠輕鬆客制化樣式，之後在慢慢解決部署的問題。
+
+所以開始囉!!
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[使用Jekyll建立Blog -1]]></title>
+            <link>https://thomascsd.github.io/blog/2017-07-13-build-blog-with-jekyll</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2017-07-13-build-blog-with-jekyll</guid>
+            <pubDate>Thu, 13 Jul 2017 00:00:00 GMT</pubDate>
+            <description><![CDATA[建立 Blog 的工具有很多，但是可以一鍵馬上完成架站及能夠完全客制化的工具就不多了，其中一個就是Jekyll。 但是 Jekyll 需要在本機安裝 Ruby 環境，這樣還是有點麻煩，還要先設定環境，之後我找到一個很方便的工具Jekyll-now，只要 Fork 就可以建立一個網站。 1.到Jeky]]></description>
+            <content:encoded><![CDATA[建立 Blog 的工具有很多，但是可以一鍵馬上完成架站及能夠完全客制化的工具就不多了，其中一個就是[Jekyll](https://jekyllrb.com)。
+
+但是 Jekyll 需要在本機安裝 Ruby 環境，這樣還是有點麻煩，還要先設定環境，之後我找到一個很方便的工具[Jekyll-now](https://github.com/barryclark/jekyll-now)，只要 Fork 就可以建立一個網站。
+
+- 1.到[Jekyll-now](https://github.com/barryclark/jekyll-now)，按下 Fork。
+  <img class="img-responsive" src="/images/01/jekyll-now1.png" loading="lazy" alt="jekyll-now1">
+
+- 2.設定 Respository 的名稱，需要設定成自已的使用者名稱。
+  <img class="img-responsive" src="/images/01/jekyll-now2.png" loading="lazy" alt="jekyll-now1">
+
+- 3.設定\_config.yml 後就可以完成一個基本的 Blog 了。
+  <img class="img-responsive" src="/images/01/jekyll-now3.png" loading="lazy" alt="jekyll-now3">
+
+## 為自已的 Blog 自定樣式
+
+因為預設的樣式一般來說很單，所以我找到另一個樣式，叫做[Clean Blog](https://github.com/BlackrockDigital/startbootstrap-clean-blog)。只需加工一下就能變成蠻有質感的網站。
+
+也是幾個步驟就可以完成
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}
+    </title>
+    {% include meta.html %}
+
+    <!-- Bootstrap Core CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Fonts -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.name }} - {{ site.description }}"
+      href="{{ site.baseurl }}/feed.xml"
+    />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            Menu <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.name }}</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="{{ site.baseurl }}/">Blog</a>
+            </li>
+            <li>
+              <a href="{{ site.baseurl }}/about">About</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    {{ content }}
+
+    <hr />
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <ul class="list-inline text-center">
+              <li>
+                <a href="https://www.twitter.com/{{ site.footer-links.twitter }}">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/{{ site.footer-links.github }}">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted"></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="{{ site.baseurl }}/scripts/clean-blog.min.js"></script>
+    {% include analytics.html %}
+  </body>
+</html>
+```
+
+- 1.將 Clean Blog 中的 Index.html 複製至\_default.html，但是保留原本的 temolate 的語法。
+
+- 2 將 jQuery 及 Bootstrap 之類的 JavaScript 連結換成 cdn 外部的連結。
+
+- 3.因為每篇文章都可更換 header 的圖片，所以 header 也包含在{% raw %}{{content}}{% endraw %}裡，而不是固定在 layout 中。
+
+- 4.新增 scripts 的資料夾，將 clean-blog.min.js 新增至資料夾中，最後放\_default.html 即可。
+
+  ```css
+  ---
+  ---
+
+  //
+  // IMPORTS
+  //
+  @import 'reset';
+  @import 'variables';
+  // Syntax highlighting @import is at the bottom of this file
+
+  /**************/
+  /* BASE RULES */
+  /**************/
+
+  body {
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-size: 20px;
+    color: #333333;
+  }
+
+  ... .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+
+  // Settled on moving the import of syntax highlighting to the bottom of the CSS
+  // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+  @import 'highlights';
+  @import 'svg-icons';
+  ```
+
+- 5.將 clean-blog.css 的內容放入 style.scss，但是原本的@import 需保留，並且 clean-blog.css 沒有.read-more 的樣式，所以這個也需要保留。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[在asp.net MVC上使用vue.js需注意的事項]]></title>
+            <link>https://thomascsd.github.io/blog/2017-10-08-vuejs-in-aspnet-mvc</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2017-10-08-vuejs-in-aspnet-mvc</guid>
+            <pubDate>Sun, 08 Oct 2017 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近開始使用 vue.js 在公司的專案上，並且專案是用 asp.net mvc 來開發的，所以發現在.cshtml 上無法使用 vue.js 的需要注意的小地方。 第 1 個是@click 之類的事件綁定簡寫方式，因為會和原本的 Razor 語法衝突，所以需要使用完整的寫法。 下列的語法會發生錯誤]]></description>
+            <content:encoded><![CDATA[最近開始使用 vue.js 在公司的專案上，並且專案是用 asp.net mvc 來開發的，所以發現在.cshtml 上無法使用 vue.js 的需要注意的小地方。
+
+第 1 個是@click 之類的事件綁定簡寫方式，因為會和原本的 Razor 語法衝突，所以需要使用完整的寫法。
+
+下列的語法會發生錯誤
+
+```html
+<button @click=""></button>
+```
+
+應該用完整的語法
+
+```html
+<button v-on:click=""></button>
+```
+
+第 2 個是 attribure 的資料綁定的簡寫方式，像是要指定圖片的路徑時，可以寫成這樣
+
+```html
+<img :src="defaultUrl" />
+```
+
+但是當執行格式化文件時，冒號(:)會不見，這就產生莫名的 bug，當初尋找原因就花了 1 個小時，所以要寫成下列語法就 OK 了。
+
+```html
+<img v-bind:src="defaultUrl" />
+```
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[使用VSCode偵錯Node.js及Angular的小技巧]]></title>
+            <link>https://thomascsd.github.io/blog/2017-12-23-vscode-debug-for-nodejs-andn-agular</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2017-12-23-vscode-debug-for-nodejs-andn-agular</guid>
+            <pubDate>Sat, 23 Dec 2017 00:00:00 GMT</pubDate>
+            <description><![CDATA[使用 Angular 後就迷上了 TypeScript，我有建立一個小專案叫做angular-express-starter，Server 及 Client 端都是使用 TypeScript 建立的，而 Client 端是使用 Angular CLI，然後 Server 端是使用 Express.j]]></description>
+            <content:encoded><![CDATA[使用 Angular 後就迷上了 TypeScript，我有建立一個小專案叫做[angular-express-starter](https://github.com/thomascsd/angular-express-starter)，Server 及 Client 端都是使用 TypeScript 建立的，而 Client 端是使用 Angular CLI，然後 Server 端是使用 Express.js。
+
+因為 Node.js 在>8.0 以上原生支援 async/await，並且專案中
+也會使用 sequelize.js，所以新增 tsconfig.server.json，並且 target 會指定為**ES6**：
+
+```json
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/server",
+    "baseUrl": "",
+    "target": "es6"
+  }
+}
+```
+
+而 Client 端是由 Angular CLI 建立的，並且 tsconfig.json 的 tartget 是指定**ES5**：
+
+```json
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "src",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types", "node_modules/typescript/lib"],
+    "lib": ["es2016", "dom"]
+  }
+}
+```
+
+偵錯時需要使用 ts-node 來啟用 Node.js，而 ts-node 有個參數**project**可以指定 tsconfig.json 的路徑，在 npm script 可以這樣設定：
+
+```
+"start": "ts-node --project server ./server/app.ts"
+```
+
+## Node.js 的除錯
+
+其實 VSCode 已經內建 Node.js 偵錯
+
+<img class="img-responsive" src="/images/03/03-1.png" loading="lazy" alt="nodejs debug">
+
+如上圖示所示，選擇「偵錯」>「新增組態」，再選擇「Node.js: 啟動程式」即可。
+
+因為我是使用 ts-node 來啟用 Node.js，需要傳入額外參數來指定 tscofig.json 的路徑，但是下列設定會發生錯誤，因為不支援二階參數：
+
+```json
+   {
+      "name": "ts-node",
+      "type": "node",
+      "request": "launch",
+      "args": ["${workspaceRoot}/server/index.ts"],
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register", "-p server"],
+      "sourceMaps": true,y
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "env": {
+        "NODE_ENV": "dev"
+      }
+```
+
+所以需要換個方式改寫，先建立一個命名為 tshook.js 的 js 檔，內容如下：
+
+```javascript
+require('ts-node').register({
+  project: 'server/tsconfig.json',
+});
+```
+
+直接在 tshook.js 中執行 ts-node，然後再指定 tsconfig.json 的路徑。lauch.json 改為下列：
+
+```json
+{
+  "name": "ts-node",
+  "type": "node",
+  "request": "launch",
+  "args": ["${workspaceRoot}/server/index.ts"],
+  "runtimeArgs": ["--nolazy", "-r", "${workspaceRoot}/tshook.js"],
+  "sourceMaps": true,
+  "cwd": "${workspaceRoot}",
+  "protocol": "inspector",
+  "env": {
+    "NODE_ENV": "dev"
+  }
+}
+```
+
+按下 F5 或是綠色播放鍵即可進入偵錯模式，就很像 Visual Studio 偵錯.Net 的程式一樣。
+
+<img class="img-responsive" src="/images/03/03-2.png" loading="lazy" alt="ng debug">
+
+## Angular 偵錯
+
+參考官方文件[Chrome Debugging with Angular CLI](https://github.com/Microsoft/vscode-recipes/tree/master/Angular-CLI)，有幾點需要注意：
+
+1.Angular CLI 需要**1.3**以上。
+
+2.[Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)套件需要**3.1.4**以上。
+
+> 需注意的是要偵錯時需先用`npm start`啟用 Angular 應用程式，之後就可以按 F5 或是綠色播放鍵進入偵錯模式。
+
+## 結論
+
+1.使用 VSCode 偵錯 Node.js 就很像 Visual Studio 偵錯 .Net 程式一樣，按下 F5 就會啟動應用程式。
+
+2.偵錯 Angular 應用程式，需要執行 ng serve 啟動 Angular，然後 VSCode 偵錯程式。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[使用Nuxt.js及Nuxtent建立Blog的心得]]></title>
+            <link>https://thomascsd.github.io/blog/2018-06-23-nuxtjs-and-nuxtent</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2018-06-23-nuxtjs-and-nuxtent</guid>
+            <pubDate>Sat, 23 Jun 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nuxt.js 是內建 SSR 的 vue.js 框架，我最感興趣的部份是可輸出靜態的 Html，如此就可以輕鬆的將程式部署至 GitHub Page 上，並且可以使用 module 來擴充功能。 當我看到了 Nuxtent 這個 module，它是可以取得 Markdown 內容的 module，]]></description>
+            <content:encoded><![CDATA[Nuxt.js 是內建 SSR 的 vue.js 框架，我最感興趣的部份是可輸出靜態的 Html，如此就可以輕鬆的將程式部署至 GitHub Page 上，並且可以使用 module 來擴充功能。
+
+當我看到了 Nuxtent 這個 module，它是可以取得 Markdown 內容的 module，所以想將 Blog 用 Nuxt.js 重新翻寫。
+
+## Nuxtent Template
+
+第一步快速建立的話，可使用[Nuxtent Template](https://github.com/nuxt-community/nuxtent-template)建立一個基本的網站架構，需要事先安裝[vue-cli](https://github.com/vuejs/vue-cli)。
+
+```
+vue init nuxt-community/nuxtent-template my-site
+```
+
+## 網站架構
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-1.png">
+
+### page
+
+建立網站的路由，例如在目錄中建立 about.vue，網址會成為 localhost:3000/about。
+
+### static
+
+靜態資源，例如：圖片，路徑會基於根目錄，例如/images/bg.png
+
+### content
+
+Nuxtent module 特定的目錄，放置 Markdown 檔案的地方，也就是放入文章的地方
+
+### layout
+
+預設 layout 為 layout.vue，也可以自定 layout，之後使用 layout 屬性指定自定的 layout
+
+```javascript
+export default {
+  async asyncData({ app }) {
+    return {
+      posts: await app.$content('/').getAll(),
+      name: 'Thomas Blog',
+    };
+  },
+  layout: 'customLayout',
+};
+```
+
+## 設定檔
+
+nuxtent.config.js
+
+```javascript
+const Prism = require('prismjs');
+
+module.exports = {
+  content: {
+    permalink: '/:slug',
+    page: '/_content',
+    generate: [
+      // for static build
+      'get',
+      'getAll',
+    ],
+    isPost: true,
+  },
+  api: {
+    baseURL: 'http://localhost:3200',
+  },
+  parsers: {
+    md: {
+      extend(config) {
+        config.highlight = (code, lang) => {
+          return `<pre class="language-${lang}"><code class="language-${lang}">${Prism.highlight(
+            code,
+            Prism.languages[lang] || Prism.languages.markup
+          )}</code></pre>`;
+        };
+      },
+    },
+  },
+};
+```
+
+### content
+
+- permalink：設定文章路徑的顯示方式。
+
+- page：指定顯示文章內容的檔案名稱，預設為\_cotent，即指向\_cotent.vue。按照文件可以設定為多個。
+
+- isPost:：查看[官方文件](https://nuxtent.now.sh/guide/writing)的說明不是很了解這個屬性的用法，但當看了[原始碼](https://github.com/nuxt-community/nuxtent-module/blob/9423a753c43bbbe69395b400f90b1291ac935084/lib/content/page.js#L161)後發現
+
+```javascript
+    get date() {
+      if (isDev || !cached.date) {
+        const { filePath, fileName, section } = meta
+        if (options.isPost) {
+          const fileDate = fileName.match(/!?(\d{4}-\d{2}-\d{2})/) // YYYY-MM-DD
+          if (!fileDate) {
+            throw Error(`Post in "${section}" does not have a date!`)
+          }
+          cached.date = fileDate[0]
+        } else {
+          const stats = statSync(filePath)
+          cached.date = dateFns.format(stats.ctime, 'YYYY-MM-DD')
+        }
+      }
+      return cached.date
+    }
+```
+
+當 true 時，需要將 markdown 檔案名稱設成 2017-06-20-HelloWorld.md，即會取得檔名上的日期做為文章日期。
+
+當 false，會使用檔案修改日期做為文章日期。
+
+### parser
+
+我是參考[官方文件](https://nuxtent.now.sh/guide/configuration)，使用 prismjs 將 Mardown 的程式碼加上著色器功能。
+
+## 取得內容
+
+可以參考\_content.vue 的程式碼，使用**get**取得目前路徑的內容。
+
+```javascript
+post: await app.$content('/').get(route.path);
+```
+
+如果是要取得所有文章的話，可以使用**getAll**這個方法。
+
+```javascript
+posts: await app.$content('/').getAll();
+```
+
+## 評論功能
+
+想使用基於 GitHub issues 的評論功能，有發現[gitment](https://github.com/imsun/gitment)這個套件剛好符合我的需要，安裝及設定都很簡單。
+
+```html
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="comments"></div>
+  </div>
+</div>
+```
+
+```javascript
+import PostHeader from '../components/PostHeader';
+import Gitment from 'gitment';
+
+export default {
+  async asyncData({ app, route, payload }) {
+    return {
+      post: await app.$content('/').get(route.path),
+    };
+  },
+  mounted() {
+    const gitment = new Gitment({
+      id: this.post.title, // optional
+      owner: 'thomascsd',
+      repo: 'thomascsd.github.io',
+      oauth: {
+        client_id: 'client_id',
+        client_secret: 'client_secret',
+      },
+    });
+
+    gitment.render(document.getElementById('comments'));
+  },
+  components: {
+    PostHeader,
+  },
+};
+```
+
+我是參考這篇[文章](https://ihtcboy.com/2018/02/25/2018-02-25_Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5%E8%B8%A9%E5%9D%91%E6%95%99%E7%A8%8B/)。
+
+要注意的點是，第一次會顯示**Error:Comments Not Initialized**。
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-5.png">
+
+需要登入自己的 Github 帳號後，啟動應用程式。
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-6.png">
+
+成功之後，就會變成下圖
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-7.png">
+
+## 部署
+
+將靜態檔案部署至 Github pages，我遇到了一些問題，按照範例設定會將 NODE_ENV='production'及 baseUrl 會成為正式部署的路徑，例如我的 Blog 網址 thomascsd.github.io。
+
+當使用 npm generate 時，卻會出現下列錯誤
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-2.png">
+
+最後發現，使用下列步驟就 OK 了
+
+- 不需要加上 NODE_ENV
+- baseUrl 設定成預設的 localhost:3200，並執行 npm generate
+- 再使用 VSCode 搜索 localhost:3200，即會發現 dist/api.js 內容有 baseURL:localhost:3200，然後將網址替換成正式環境，如我的 Blog 網址 thomascsd.github.io
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-3.png">
+
+- 最後就可以部署至 GitHub page
+
+<img class="img-responsive" loading="lazy" src="/images/05/05-4.png">
+
+## 結論
+
+很方便將一個 Blog 建立起來，但是缺乏一些功能，例如標籤、Archive 功能，這些都要自己實作出來。原始碼可以參考[這裡](https://github.com/thomascsd/thomascsd-blog)。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[從範例講解Promise概念]]></title>
+            <link>https://thomascsd.github.io/blog/2018-08-12-example-of-promise</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2018-08-12-example-of-promise</guid>
+            <pubDate>Sun, 12 Aug 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[一般而言，呼叫多個 ajax，最簡單的方式是用 callback 函式，如以下的範例 執行完 1 個 ajax 之後，再執行另一個 ajax。 <iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/ut3cv27k/embed]]></description>
+            <content:encoded><![CDATA[一般而言，呼叫多個 ajax，最簡單的方式是用 callback 函式，如以下的範例
+執行完 1 個 ajax 之後，再執行另一個 ajax。
+
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/ut3cv27k/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+ 
+但是這樣會造成維護及讀code都不易，容易產生俗稱callback hell的問題，每次都想到下面這張圖。
+
+<img class="img-responsive" loading="lazy" src="/images/06/06-1.png">
+
+所以有人想到 Promise 的解決方式
+
+例如下面的範例，getData1 函式是直接回傳 Promise 這個物件，而不是直接回傳結果值，就好像是起了緩衝的作用，等到 server 將結果值回傳，最後再使用 resolve 將結果值回傳出去，並且可以使用 then 串連在一起，可讀性及維護性變高了。
+
+ES2015 的 Promise 物件的範列
+
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/hu98b63j/4/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+jQuery Deferred 的物件的範例
+
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/e2gp57h6/6/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+我最喜歡的用法，是使用 async/ await，因為 async/await 是基於 Promise，所以用像是同步的程式寫法來執行非同步的作業
+
+<iframe width="100%" height="300" src="//jsfiddle.net/thomascsd/xftmdsb9/3/embedded/js,html,result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+# 結論
+
+寫前端的程式，或多或少都會遇到同時發出多個 Ajax 的情況，這時 Promise 的概念就很重要
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[draxt.js-簡化存取檔案的小幫手]]></title>
+            <link>https://thomascsd.github.io/blog/2018-09-07-tutorial-of-draxtjs</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2018-09-07-tutorial-of-draxtjs</guid>
+            <pubDate>Fri, 07 Sep 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[Node.js 處理檔案我個人覺得不是很方便，有時候會覺得卡卡的。之前有發現 Node.js 套件draxt.js，它封裝了glob和fs-extra這兩個套件，並提供類似 jQuery 的語法，讓檔案的處理變簡單了。 因為我的 Blog 是分成兩個專案，一個是開發使用，一個是實際 Blog 的網站]]></description>
+            <content:encoded><![CDATA[Node.js 處理檔案我個人覺得不是很方便，有時候會覺得卡卡的。之前有發現 Node.js 套件[draxt.js](https://github.com/ramhejazi/draxt)，它封裝了[glob](https://github.com/isaacs/node-glob)和[fs-extra](https://github.com/jprichardson/node-fs-extra)這兩個套件，並提供類似 jQuery 的語法，讓檔案的處理變簡單了。
+
+因為我的 Blog 是分成兩個專案，一個是開發使用，一個是實際 Blog 的網站，而我使用 nuxt.js 建立 Blog 的心得，可以參考之前的[文章](/blog/2018-06-23-NuxtjsAndNuxtent)。之前的複製檔案都是用手動，所以想寫個小程式幫助複製檔案，剛好趁這個機會練習使用 draxt.js 這個套件。
+
+## 原始碼
+
+```javascript
+const fs = require('fs');
+const path = require('path');
+const util = require('util');
+const $ = require('draxt');
+const consola = require('consola');
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+
+(async () => {
+  const rootPath = path.join(process.cwd(), '..');
+  const blogDistPath = `/thomascsd.github.io/`;
+  let $blogSrc = await $('./dist/**');
+  const $blogDist = await $('.' + blogDistPath + '**', {
+    cwd: rootPath,
+  });
+
+  $blogDist
+    .filter((node) => (node.isDirectory() && node.baseName.indexOf('.') === -1) || node.isFile())
+    .each(async (node) => {
+      consola.info(`step1-1:刪除thomascsd.github.io內的檔案，name:${node.pathName}`);
+      await node.remove();
+    });
+
+  consola.info(`step2:api.js的localhost更換成thomascsd.github.io`);
+  const $api = $blogSrc
+    .filter((node) => node.baseName.indexOf('app.') !== -1 && node.extension === 'js')
+    .first();
+
+  let content = await readFileAsync($api.pathName);
+  content = content.toString().replace(/http:\/\/localhost:3200/i, 'https://thomascsd.github.io');
+  await writeFileAsync($api.pathName, content);
+
+  const blogPath = path.join(rootPath, blogDistPath);
+
+  $blogSrc = await $('./dist');
+  $blogSrc.each(async (node) => {
+    consola.info(`step3:復製檔案至thomascsd.github.io內的檔案，name:${node.pathName}`);
+
+    try {
+      await node.copy(blogPath);
+    } catch (err) {
+      consola.error(err);
+    }
+  });
+})().catch((err) => consola.error(err));
+```
+
+## 程式說明
+
+```javascript
+const fs = require('fs');
+const path = require('path');
+const util = require('util');
+const $ = require('draxt');
+const consola = require('consola');
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+
+(async () =>{
+
+}
+```
+
+一開始戴入所需的套件，這邊有用 util.promisify 將原本是 callback 型式的 readFile 及 writeFile，轉換成 Promise 的型式。
+
+因為 draxt.js 的方法都是設計成回傳 Promise 物件，可以使用 async/await 的語法，所以這裡用 async 的 IIFE 將檔案操作的邏輯包起來。關於 Promise，可以參考我的上一篇的[文章](/blog/2018-08-12-ExampleOfPromise)。
+
+```javascript
+const rootPath = path.join(process.cwd(), '..');
+const blogDistPath = `/thomascsd.github.io/`;
+let $blogSrc = await $('./dist/**');
+const $blogDist = await $('.' + blogDistPath + '**', {
+  cwd: rootPath,
+});
+```
+
+jQuery 是使用 CSS Selector 來選擇元素，而 draxt.js 是使用 glob pattern 選取檔案或目錄，關於 glog pattern 可以參考[文件](<https://en.wikipedia.org/wiki/Glob_(programming)>)。
+
+### 第一步刪除 thomascsd.github.io 內的檔案
+
+```javascript
+$blogDist
+  .filter((node) => (node.isDirectory() && node.baseName.indexOf('.') === -1) || node.isFile())
+  .each(async (node) => {
+    consola.info(`step1-1:刪除thomascsd.github.io內的檔案，name:${node.pathName}`);
+    await node.remove();
+  });
+```
+
+先用 filter 將包含.的目前都過濾掉，因為像是.git 的目錄不能希望刪除，並且也有提供**each**的方法，將 thomascsd.github.io 目錄下的子目錄及檔案都刪除。
+
+### 第二步 api.js 的 localhost 更換成 thomascsd.github.io
+
+```javascript
+const $api = $blogSrc
+  .filter((node) => node.baseName.indexOf('app.') !== -1 && node.extension === 'js')
+  .first();
+
+let content = await readFileAsync($api.pathName);
+content = content.toString().replace(/http:\/\/localhost:3200/i, 'https://thomascsd.github.io');
+await writeFileAsync($api.pathName, content);
+```
+
+因為 app.js 的檔名會包含雜湊值，所以使用**filter**取得檔名包含 app 及副檔名為 js 的檔案，最後讀取 app.js 內容，將 localhost 替換成 thomascsd.github.io 後，再寫回 app.js。
+
+### 第三步複製檔案至 thomascsd.github.io 目錄
+
+```javascript
+const blogPath = path.join(rootPath, blogDistPath);
+
+$blogSrc = await $('./dist');
+$blogSrc
+.each(async (node) => {
+consola.info(`step3:複製檔案至thomascsd.github.io內的檔案，name:${node.pathName}`);
+
+try {
+await node.copy(blogPath);
+} catch (err) {
+consola.error(err);
+}
+```
+
+這邊很單純的，將目錄 dist 複製至目錄 thomascsd.github.io，這樣即完成所有的步驟了，最後輸入`node deploy.js`即完成。
+
+## 結論
+
+個人是覺得這個套件簡化了處理檔案的一些煩瑣的操作，推薦給大家處理檔案的另外一種選擇。這次原始碼在[這裡](https://github.com/thomascsd/thomascsd-blog/blob/master/deploy.js)。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[談談JavaScript Module part1]]></title>
+            <link>https://thomascsd.github.io/blog/2018-10-31-module-pattern</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2018-10-31-module-pattern</guid>
+            <pubDate>Wed, 31 Oct 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[這次想談談模組(Module)，是 JavaScript 的設計模式的其中的一個，一般而言，我們都會希望程式有架構，被重覆使用，這時可以將程式分成一個個的模組，會用兩篇文章討論這個主題，這一篇是講述 Module pattern，下一篇會講述 ES2015 module。 Module patter]]></description>
+            <content:encoded><![CDATA[這次想談談模組(Module)，是 JavaScript 的設計模式的其中的一個，一般而言，我們都會希望程式有架構，被重覆使用，這時可以將程式分成一個個的模組，會用兩篇文章討論這個主題，這一篇是講述 Module pattern，下一篇會講述 ES2015 module。
+
+## Module pattern
+
+```javascript
+var user = (function () {
+  // private function
+  function add() {
+    const count = $('li').length;
+    $('#list').append(`<li>Thomas${count}</li>`);
+  }
+  function remove() {
+    const count = $('li').length;
+    const $li = $('#list').find('li:last');
+    $li.remove();
+  }
+  return {
+    //public function
+    addUser() {
+      add();
+    },
+    removeUser() {
+      remove();
+    },
+  };
+})();
+```
+
+Module pattern 的寫法就像上面這樣，使用 IIFE（ Immediately Invoked Function Expression）將程式邏輯封裝，在 IIFE 中定義私有數數或是方法，只有要公開的方法才會傳出，這樣就很像 OOP 中的封裝概念，模擬私有變數及公有變數，範例程式碼在[這邊](https://jsfiddle.net/thomascsd/b354wuoz/35/)可以看到。
+
+## Revealing Module Pattern
+
+```javascript
+var user = (function () {
+  function addUser() {
+    const count = $('li').length;
+    $('#list').append(`<li>Thomas${count}</li>`);
+  }
+  function removeUser() {
+    const count = $('li').length;
+    const $li = $('#list').find('li:last');
+    $li.remove();
+  }
+  return {
+    addUser: addUser,
+    removeUser: removeUser,
+  };
+})();
+```
+
+另外一種 Module pattern 的寫法，我們都是用這種寫法，程式碼的架構變得更清楚，範例程式碼在[這邊](https://jsfiddle.net/thomascsd/r2pm4cj1/)可以看到。
+
+每個模組都是全域變數，又覺得有點鬆散及零亂，所以需要另一種型式來組合，這時需要命名空間的協助。
+
+## JavaScript 模擬命名空間
+
+JavaScript 是沒有命名空間的，但可以使用物件來模擬。
+
+```javascript
+const window.NS = window.NS || {};
+```
+
+在 window 下建立屬性，當有 NS 這個屬性時，就使用原本的 NS 屬性，不然初始化一個空物件，我們習慣一個模組一個檔案，所以有多個模組時，每個模組會存取到同一個命名空間。這邊是以 NS 為例子，可以是任何的名稱，我們習慣是以目前的專案名稱的大寫英文來命名。
+
+## Module pattern + namespace
+
+```javascript
+(function () {
+  function addUser() {
+    const count = $('li').length;
+    $('#list').append(`<li>Thomas${count}</li>`);
+  }
+  function removeUser() {
+    const count = $('li').length;
+    const $li = $('#list').find('li:last');
+    $li.remove();
+  }
+
+  window.NS = window.NS || {};
+  window.NS.user = {
+    addUser: addUser,
+    removeUser: removeUser,
+  };
+})();
+```
+
+這樣的寫法我覺得是 module pattern 的變形，window 下只有一個定義的屬性，也就是我所定義的命名空間物件，之後將所有模組都設為這命名空間的屬性。範例程式在[這裡](https://jsfiddle.net/thomascsd/g6h8wza1/6/)
+
+## TypeScript
+
+```javascript
+namespace NS {
+  function addUser(){
+     const count = $('li').length;
+     $('#list').append(`<li>Thomas${count}</li>`);
+  }
+  function removeUser(){
+    const count = $('li').length;
+    const $li = $('#list').find('li:last');
+    $li.remove();
+  }
+  export const user = {
+    addUser: addUser,
+    removeUser: removeUser
+  }
+}
+
+```
+
+TypeScript 本身就有命名空間的關鍵字，與 Module pattern 的寫法很相似，差別在於最後是用 export 的方式，傳出所要公開的 function。
+
+<img class="img-responsive" loading="lazy" src="/images/08/08-1.png">
+
+並且我們發現，上面這段 TypeScript 轉成的 JavaScript（如上圖所示），與上節的 Module + Namespace 的程式碼很相似，也是先宣告全堿變數 NS，接著判斷 NS 是否已存在，之後將定義的模組設為 NS 的屬性。
+
+## 結論
+
+Module pattern 我個人覺得是很方便的模式，可以將煩雜的程式碼切割成一塊塊的模組，讓它們彼此之間合作。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[談談JavaScript Module part2]]></title>
+            <link>https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2</guid>
+            <pubDate>Sun, 23 Dec 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，而上一篇是談談 JavaScript Module part1。 Module 建立 ```javascript export const message = 'Hello'; export function ]]></description>
+            <content:encoded><![CDATA[這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，而上一篇是[談談 JavaScript Module part1](https://thomascsd.github.io/blog/2018-10-31-ModulePattern)。
+
+## Module 建立
+
+```javascript
+export const message = 'Hello';
+
+export function doSomeThing {
+}
+
+export class Util{
+}
+```
+
+ES2015 Module 是以檔案為基礎，也就是 1 個檔案視為 1 個 Module，在檔案內需要被外面引用的 function、class 還是變數，使用**export**關鍵字輸出，
+
+## Module 戴入
+
+```javascript
+import { message ] from './util.js';
+```
+
+有 export 就有 import，使用**import**關鍵字戴入剛剛所定義的 function、class 或是變數，之後用 from 指定所戴入的檔案是那一個，路徑是相對路徑。
+
+```javascript
+export default const message  = 'hello';
+
+import message from './util.js';
+
+```
+
+如果在 export 的地方，加上 default 關鍵字時，import 不需加上大括號。
+
+```javascript
+export default const message  = 'hello';
+
+expot function doSomeThing() {
+}
+
+import message, { doSomeThing} from './util.js';
+
+```
+
+也可以兩者混用。
+
+## Dynamic import
+
+```javascript
+import('./my-module.js').then((module) => {
+  // Do something with the module.
+});
+```
+
+有時候會希望動能戴入 Module，這時 import 變成了 function，而回傳值是 Promise。
+
+```javascript
+let module = await import('./my-module.js');
+```
+
+因回傳值是 Promise，所以支援 await 關鍵字。
+
+## 程式實作
+
+### 瀏覽器的支援
+
+<img class="img-responsive" loading="lazy" src="/images/09/09-1.png">
+
+根據 caniuse 的結果，現在全部的瀏覽器都有支援 ES2015 Module，可以不用使用 Webpack、Parcel 之類的 Module loader，直接使用原生語法就好了，但實務上還是需要 Webpack 之類的工具，幫忙將 js 打包、壓縮。
+
+### 原生的寫法
+
+```html
+<script type="module" src="./index.js" />
+```
+
+跟一般戴入 script 不同的地方在於，需指定 type="module"來告訴瀏覽器用 Module 的形式戴入 script。範例原始碼在[這裡](https://github.com/thomascsd/es-module-import)。
+
+### 戴入第三方套件需注意的地方
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="module" src="./scripts/index.js"></script>
+```
+
+```javascript
+const $ = window.jQuery;
+```
+
+是用 CDN 的方式將 jQuery 戴入，在 index.js 中需指派\$ = window.jQuery，因為在 Module 中無法取得全域變數，所以換個方式，用 window.jQuery 取得 jQuery 物件。
+
+## 結論
+
+現在幾乎每個瀏覽器都支援原生戴入 Module，說不定未來不用任何工具，就可以開發 Web Application。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[於Angular中，建立Library的心得]]></title>
+            <link>https://thomascsd.github.io/blog/2019-02-20-create-library-with-angular</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2019-02-20-create-library-with-angular</guid>
+            <pubDate>Wed, 20 Feb 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[在 Angular CLI 6.0 以上就可以直接建立 Library，而 Library 的用途可以將自已建立的元件發佈至 NPM，或是專案一些共同的元件拆分出去。 建立 Library ``` ng new ngx-lib-demo ng g library shared-comp ``` 先使]]></description>
+            <content:encoded><![CDATA[在 Angular CLI 6.0 以上就可以直接建立 Library，而 Library 的用途可以將自已建立的元件發佈至 NPM，或是專案一些共同的元件拆分出去。
+
+## 建立 Library
+
+```
+ng new ngx-lib-demo
+ng g library shared-comp
+```
+
+先使用 Angular CLI 建立範例專案，再來用上列的指令，建立 Library。有時會覺得記住 CLI 的參數很麻煩，會使用[Angular Console](https://angularconsole.com/)幫忙建立。
+
+<img class="img-responsive" loading="lazy" src="/images/10/10-01.gif">
+
+```
+ng g c header --project=shared-comp
+```
+
+接下來，在 Library 中建立 component，這邊是建立 header component，也可以使用 Angular Console 建立。
+
+<img class="img-responsive" loading="lazy" src="/images/10/10-2.png">
+
+如上圖，我們所建立 library 會在目錄 projects 下，例如這次我建立的 shared-comp，並且與一般的 Angular 專案不同，component 位於 lib 目錄下。
+
+```javascript
+//public_api.ts
+export * from './lib/header/header.component';
+export * from './lib/shared-comp.module';
+```
+
+接著，在 public_api.ts 中 export 我們所建立的 header component。
+
+<img class="img-responsive" loading="lazy" src="/images/10/10-3.png">
+
+```javascript
+//app.module.ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { SharedCompModule } from 'shared-comp';
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, SharedCompModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+```html
+<!--app.component.html-->
+<lib-header></lib-header>
+<div>Hello</div>
+```
+
+使用指令`ng build shared-comp`建置完 library 後，再來就可以在 Angular 應用程式中，匯入我們建立在 library 中的 component。
+
+## 發佈至 npm
+
+```
+ng build shared-comp --prod
+cd dist/shared-comp
+npm publish
+```
+
+要如何將我們建立的 conpont 部署至 npm 呢?輸入上列指令即可，最後輸入 npm publish，即可完成發佈的程序。
+
+```json
+"scripts": {
+"build:lib": "ng build shared-comp --prod",
+"deploy": "cd dist/shared-comp && npm publish"
+}
+```
+
+但是每次都這樣打也很麻煩，所以就將這些指令寫成上面的 npm script。
+
+## 升級需注意的心得
+
+我發現從 Angular 5 升級至 Angular6/7 時，除了輸入`ng update`外，還需另外調整一些設定才行，也可以參考這篇官方的[文章](https://github.com/angular/angular-cli/wiki/stories-create-library#note-for-upgraded-projects)
+
+- tsconfig.json：需調整 paths 的路徑，路徑調整至 dist/project-name，不然會發現找不到 package 的錯誤。
+
+- tsconfig.app.json：需要移除 baseUrl。
+
+## 結論
+
+Angular CLI 是很強大的工具，輸入一些命令，即可產生 Application 或是 Library，現在還可以搭配 Angular Console，程式開發變得很方便，
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Uppy - 最方便的上傳套件]]></title>
+            <link>https://thomascsd.github.io/blog/2019-06-16-tutorial-of-uppy</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2019-06-16-tutorial-of-uppy</guid>
+            <pubDate>Sun, 16 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[一直以來，我都覺得上傳檔案的程式開發，是表單處理中的痛點，一般的&lt;input type="file" />的功能比較簡略，介面不甚美觀。之前有發現 Uppy 這個套件，就對它感興趣，現在已經出了 1.0 版，想寫篇文章記錄一下心得。 這篇的文章的原始碼在這邊ngx-uppy-demo 安裝 `]]></description>
+            <content:encoded><![CDATA[一直以來，我都覺得上傳檔案的程式開發，是表單處理中的痛點，一般的&lt;input type="file" />的功能比較簡略，介面不甚美觀。之前有發現 Uppy 這個套件，就對它感興趣，現在已經出了 1.0 版，想寫篇文章記錄一下心得。
+
+這篇的文章的原始碼在這邊[ngx-uppy-demo](https://github.com/thomascsd/ngx-uppy-demo)
+
+## 安裝
+
+```
+npm install uppy
+```
+
+當執行 npm install uppy 時，是安裝 Uppy 的全部功能，這當然會使得安裝的檔案容量變大。
+
+```
+npm install @uppy/core @uppy/dashboard @uppy/xhr-upload
+```
+
+一般的作法，就是安裝所需的套件，如果想要使用 Dashboard，可以只安裝@uppy/dashboard 及@uppy/xhr-upload。
+
+```
+npm install @uppy/file-input @uppy/progress-bar @uppy/xhr-upload
+```
+
+如果只想要使用一般的 FileUpload，可以只安裝@uppy/file-input @uppy/progress-bar @uppy/xhr-upload
+
+## 實作
+
+### Angular
+
+```javascript
+@Component({
+  selector: 'app-uppy',
+  templateUrl: './uppy.component.html',
+  styleUrls: ['./uppy.component.scss'],
+})
+export class UppyComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    // Create Uppy object
+  }
+}
+```
+
+因為擅長的是 Angular，所以這個範例，想將 Angular 和 Uppy 整合，所以首先實作 AfterViewInit，確認頁面的 DOM 都戴入完成後，才能建立 Uppy 的物件。
+
+### Dashboard
+
+```html
+<div class="container">
+  <div class="uploadContainer"></div>
+</div>
+```
+
+```javascript
+import * as Uppy from '@uppy/core';
+import * as Dashboard from '@uppy/dashboard';
+import * as XHRUpload from '@uppy/xhr-upload';
+
+const uppy = Uppy({
+    autoProceed: true
+});
+
+uppy.use(Dashboard, {
+    inline: true,
+    target: '.uploadContainer'
+});
+uppy.use(XHRUpload, {
+    endpoint: '/api/file',
+    formData: true,
+    fieldName: 'fileData'
+});
+
+uppy.on('upload-success', (file, response: any) => {
+    this.imageDataService.add(response.body as ImageDatum);
+});
+```
+
+使用 use 戴入所需的套件，這裡戴入 Dashboard 及 XHRUpload。
+
+```javascript
+uppy.use(Dashboard, {
+  inline: true,
+  target: '.uploadContainer',
+});
+```
+
+Dashboard 的參數可以參考[官方文件](https://uppy.io/docs/dashboard/)。
+
+- inline(true)：直接將 Dashoboard 顯示在頁面上。
+- target('.uploadContainer')：Dashboard 顯示在 uploadContainer 上。
+
+```javascript
+uppy.use(XHRUpload, {
+    endpoint: '/api/file',
+    formData: true,
+    fieldName: 'fileData'
+});
+
+uppy.on('upload-success', (file, response: any) => {
+    this.imageDataService.add(response.body as ImageDatum);
+});
+```
+
+XHRUpload 的參數可以參考[文件](https://uppy.io/docs/xhr-upload/)，`endpoint`指定 Server 端的 API 位置，並且是用監聽事件 upload-success 來判斷是否上傳成功。如此檔案或是圖片上傳的功能就完成。
+
+<img class="img-responsive" loading="lazy" src="/images/11/11-1.png">
+
+Dashboard 的畫面如上，因為 Uppy 是上傳套件，無法戴入圖片，所以這邊有使用另一個套件[ngx-gallery](https://github.com/MurhafSousli/ngx-gallery)。
+
+### File Input
+
+```javascript
+uppy
+.use(FileInput, {
+  pretty: true,
+  target: '.uploadContainer',
+  inputName: 'fileData'
+})
+.use(Processbar, {
+  target: 'body',
+  fixed: true,
+  hideAfterFinish: true
+l
+});
+
+uppy.use(XHRUpload, {
+    endpoint: '/api/file',
+    formData: true,
+    fieldName: 'fileData'
+});
+
+uppy.on('upload-success', (file, response: any) => {
+    this.imageDataService.add(response.body as ImageDatum);
+});
+```
+
+程式碼與 Dashboard 的很相似，戴入 FileInput 的套件及設定參數，可以參考[文件](https://uppy.io/docs/file-input/)。
+
+- target('.uploadContainer')：FileInput 顯示在 uploadContainer 上。
+- inputName('fileData')：傳送至 Server 的名稱為 fileData。
+
+<img class="img-responsive" loading="lazy" src="/images/11/11-2.png">
+
+FileInput 的畫面如上。
+
+### Server
+
+```javascript
+import * as fileUpload from 'express-fileupload';
+app.use(fileUpload());
+```
+
+Server 端是使用 express.js，而處理上傳檔案是用[express-fileupload](https://github.com/richardgirges/express-fileupload)這個套件。
+
+```javascript
+async handler(req: express.Request, res: express.Response) {
+    const { fileData } = req['files'];
+    const service = new FileService();
+
+    const fileRes = await service.upload(fileData);
+    return res.json(fileRes);
+  }
+```
+
+只需用 req.files.fileData 就可以存取到所上傳的物件，而 fileData 就是在**XHRUpload**套件上所設定 fieldName 的值。
+
+## 結綸
+
+Uppy 是目前我覺得很方便的上傳套件，簡單幾段程式就可以實作檔案上傳。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[VSCode Extension的開發心得]]></title>
+            <link>https://thomascsd.github.io/blog/2019-09-01-tutorial-of-vscode-extension</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2019-09-01-tutorial-of-vscode-extension</guid>
+            <pubDate>Sun, 01 Sep 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[[2020/08/29 更新：加上 package.json 的設定] 前一陣子，開發了產生 README.md 的 VSCode Readme Pattern，如何大家還沒安裝的話，可以試試看。在開發中，有遇到一些問題，以及累積了一些心得，分享給的大家。 初始 首先按照官方文件，需要先安裝Yeom]]></description>
+            <content:encoded><![CDATA[[2020/08/29 更新：加上 package.json 的設定]
+
+前一陣子，開發了產生 README.md 的 VSCode - [Readme Pattern](https://marketplace.visualstudio.com/items?itemName=thomascsd.vscode-readme-pattern)，如何大家還沒安裝的話，可以試試看。在開發中，有遇到一些問題，以及累積了一些心得，分享給的大家。
+
+## 初始
+
+首先按照[官方文件](https://code.visualstudio.com/api/get-started/your-first-extension)，需要先安裝[Yeoman](https://yeoman.io/)以及 VS Code Extension Generator。
+
+```
+npm install -g yo generator-code
+```
+
+輸入`yo code`，來初始化 VSCode extesion 專案，接著輸入一些參數，這邊我是用 TypeScript 開發的，接著輸入一些參數後，就可以很輕易的建立一個樣板。
+
+<img class="img-responsive" loading="lazy" src="/images/12/12-1.png">
+
+<img class="img-responsive" loading="lazy" src="/images/12/12-2.png">
+
+## package.json 的設定
+
+```
+{
+   "activationEvents": [
+     "onCommand:extension.readme",
+     "onCommand:extension.readmeOnExplorer"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.readme",
+        "title": "readme: Generates README.md"
+      },
+      {
+        "command": "extension.readmeOnExplorer",
+        "title": "readme: Generates README.md on here"
+      }
+    ],
+  },
+}
+```
+
+需要在`activationEvents`及`contributes.commands`這 2 個地方都需加上需執行的 command，有多少的 command 就加上多少，不然 command 不會有作用。
+
+## 建立
+
+因為 VSCode 是使用 Electron 來開發的，代表使用 Node.js 的模組是沒有問題的，所以這邊有使用到`path`及`fs`。
+
+> 在 1.37 版之後，VSCode Extension API 有增加 vscode.workspace.fs 來取代 fs，是由於需要遠端存取檔案，可參考[VSCode 更新記錄 1.37](https://code.visualstudio.com/updates/v1_37#_extension-authoring)， 並且要注意的是，vscode 套件被拆分為@types/vscode 及 vscode-test。
+
+### 取得檔案的路徑
+
+一開始遇到的第一個問題是不知道專案內的檔案路徑是什麼?因為需要戴入 Markdown 檔案。
+
+查看範例及文件後，發現使用下列方法即可：
+
+> ExtensionContext.asAbsolutePath('relative path');
+
+```javascript
+const tempPath = this.context.asAbsolutePath(path.join('templates', `${selectedItem}.md`));
+```
+
+可以將相對路徑轉換成目前檔案的路徑，另外為了跨平台的相容性，相對路徑應該使用`path.join`來連結各個目錄及檔案。
+
+### 工作區(Workspace)
+
+接著要將處理過後的內容，寫入至工作區，而取得工作區路徑的方式：
+
+> vscode.workspace.workspaceFolders
+
+```javascript
+const folders = vscode.workspace.workspaceFolders;
+if (folders) {
+  const url = folders[0].uri;
+}
+```
+
+這邊取得第 1 個的路徑，最後用`writeFile`將檔案寫入。
+
+### 建立項目清單
+
+<img class="img-responsive" loading="lazy" src="/images/12/12-3.png">
+
+如上圖，有時會需要讓人選擇，可以使用下列 API 來顯示選項：
+
+> vscode.window.showQuickPick
+
+```javascript
+const items: string[] = ['Bot', 'Hackathon', 'Minimal', 'Standard'];
+const selectedItem = await vscode.window.showQuickPick(items, {
+  placeHolder: 'Select readme pattern that you want',
+});
+```
+
+這邊是傳入所顯示的字串陣例，並且`showQuickPick`是非同步的，所以使用 async/await 的方式，取得回傳所選擇的值。
+
+## README 的注意事項
+
+如果 extension 有截圖，截圖的完整路徑必須為https://raw.githubusercontent.com/{user}/{repository}/{branch}/{path}的形式，不然在VSCode marketplace 會因為安全名單的關係，會看不到截圖。
+
+## 結論
+
+這是我第一次建立 VSCode extension，只要按照官方文件及 Yeoman 就可以快速建立一個樣板，但是最花時間是查看範例及文件。老實說，[官方範例](https://github.com/microsoft/vscode-extension-samples)不是很清楚，要花些時間來查看。除些之外開發這個 extension 也是很有趣的經驗，分享給大家。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[SVG與Angular]]></title>
+            <link>https://thomascsd.github.io/blog/2019-11-30-svg-and-angular</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2019-11-30-svg-and-angular</guid>
+            <pubDate>Sat, 30 Nov 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[處理 SVG 已經是前端常常會遇到的事情，現在很多頁面上的圖片都是用 SVG 來取代，而 SVG 的優點這裡就不多述說。這邊提供我處理 SVG 的一些心得。 icon 資源 想要免費並且可以編輯的 icon 資源，我尋找了很久，最後發現iconify.design這個網站，它的 GitHub 星星數]]></description>
+            <content:encoded><![CDATA[處理 SVG 已經是前端常常會遇到的事情，現在很多頁面上的圖片都是用 SVG 來取代，而 SVG 的優點這裡就不多述說。這邊提供我處理 SVG 的一些心得。
+
+## icon 資源
+
+想要免費並且可以編輯的 icon 資源，我尋找了很久，最後發現[iconify.design](https://iconify.design/)這個網站，它的 GitHub 星星數雖不是很多，但很符合我的需求。
+
+<img class="img-responsive" loading="lazy" src="/images/13/13-01.png">
+
+例如搜索「search」會出現很多相關的 icon。
+
+<img class="img-responsive" loading="lazy" src="/images/13/13-02.png">
+
+當選擇所想要的 icon 時，可以使用 HTML 來呈現
+
+<img class="img-responsive" loading="lazy" src="/images/13/13-03.png">
+
+或是使用原始的 SVG 來呈現也可以，我個人是比較喜歡用原始的 SVG 來呈現，如此可進行一些客制化操作。
+
+## 與 Angular 整合
+
+AngularV8.0 之後支援`tempalteUrl`可以是 SVG，而不用是 HTML。可以參考[Using svg files as component templates with Angular CLI](https://levelup.gitconnected.com/using-svg-files-as-component-templates-with-angular-cli-ea58fe79b6c1)。
+
+<iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/ngx-svg-demo?embed=1&file=src/app/svg-title/svg-title.component.svg"></iframe>
+
+如以上的範例，SVG 中可以加上 Angular 語法：`<text x="45" y="80" fill="#fff">{{title}}</text>`，成為動態的 SVG。
+
+另外也可以註冊事件，使用 Angular 語法：`(click)="resetTitle()"`，如同範例，點擊 SVG 的圖型後，文字會重設為 Angular。
+
+## 實現 hover
+
+<img class="img-responsive" loading="lazy" src="/images/13/13-04.gif">
+
+有時會需要 hover 時改變 SVG 背景顏色，就像上圖所示。
+
+```html
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  aria-hidden="true"
+  focusable="false"
+  width="3em"
+  height="3em"
+  style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 24 24"
+>
+  <path
+    d="M4 6h2v2H4zm0 5h2v2H4zm0 5h2v2H4zm16-8V6H8.023v2H18.8zM8 11h12v2H8zm0 5h12v2H8z"
+    fill="#626262"
+    class="icon"
+  />
+</svg>
+```
+
+```css
+.icon:hover {
+  fill: #2980b9;
+}
+```
+
+這時只需要將定義的 class`.icon`放在 path 上`<path class="icon" />`即可，有試過放在 svg 上不會起作用，並且設定顏色時，需用 svg 的屬性 fill 在行。
+
+以上這三點是我最近處理 SVG 的心得，分享大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[class-validator & ngx-dynamic-form-builder]]></title>
+            <link>https://thomascsd.github.io/blog/2020-03-13-class-validator-and-ngx-dynamic-form-builder</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2020-03-13-class-validator-and-ngx-dynamic-form-builder</guid>
+            <pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[資料驗證是常常碰到的議題，一般說來，前端及後端都要驗證，但常常是前端驗證要寫一套，後端又要寫另一套，不太能共用。JavaScript 的世界也是如此，都會做重工。之前發現套件class-validator，使用 decorator 來設定要驗證的項目，並且是用 Angular 的話，搭配使用ngx-]]></description>
+            <content:encoded><![CDATA[資料驗證是常常碰到的議題，一般說來，前端及後端都要驗證，但常常是前端驗證要寫一套，後端又要寫另一套，不太能共用。JavaScript 的世界也是如此，都會做重工。之前發現套件[class-validator](https://github.com/typestack/class-validator)，使用 decorator 來設定要驗證的項目，並且是用 Angular 的話，搭配使用[ngx-dynamic-form-builder](https://github.com/EndyKaufman/ngx-dynamic-form-builder)即可進行表單驗證，而在 node.js 也可使用。
+
+## class-validator
+
+```
+npm install class-validator
+```
+
+首先使用 npm 安裝 class-validator。
+
+```javascript
+import { IsNotEmpty, IsEmail, IsMobilePhone, Matches, MinLength, MaxLength } from 'class-validator';
+
+export class Member {
+  @IsNotEmpty({
+    message: '姓名需填寫',
+  })
+  name = '';
+
+  @IsNotEmpty({
+    message: 'Email需填寫',
+  })
+  @IsEmail()
+  email = '';
+
+  @IsNotEmpty({
+    message: '手機需填寫',
+  })
+  @IsMobilePhone('zh-TW', {
+    message: '手機需填寫',
+  })
+  mobile = '';
+
+  @IsNotEmpty(options)
+  @MinLength(6, options)
+  @MaxLength(12, options)
+  @Matches(/[a-zA-Z\d]/g, options)
+  account = '';
+}
+```
+
+使用方式很簡單、直覺，在 class 上設定 decorator 即可。可以使用的 decorator 可以參考[文件](https://github.com/typestack/class-validator#validation-decorators)。並且後面可以傳入參數，來自定錯誤訊息。
+
+```javascript
+import { validateOrReject } from 'class-validator';
+
+try {
+  await validateOrReject(member);
+  const ret = await memberService.saveMember(member);
+  return res.json('ok');
+} catch (error) {
+  return res.status(500).json({
+    message: `errors:${error}`,
+  });
+}
+```
+
+需要驗證資料時呼叫`validateOrReject`，因為是非同步的所以搭配 await 使用，如果有失敗時，在 catch 中抓取錯誤訊息。
+
+## ngx-dynamic-form-builder
+
+而[ngx-dynamic-form-builder](https://github.com/EndyKaufman/ngx-dynamic-form-builder)這個套件可以將 class-validator 整合進 Angular。
+
+```javascript
+  group: DynamicFormGroup<Member>;
+
+  constructor(
+    private fb: DynamicFormBuilder,
+  ) {}
+
+  ngOnInit() {
+    this.group = this.fb.group(Member);
+  }
+
+```
+
+基於 Reactive forms 的方式開發，會需要用到`FormBuilder`及`FormGroup`這兩個物件，而 ngx-dynamic-form-builder 有`DynamicFormGroup`及`DynamicFormBuilder`這兩個物件，可以來建立我們的 form。
+
+使用`DynamicFormBuilder`的`Group`方法來產生`DynamicFormGroup`，並且參數傳入 Model 類別。
+
+```html
+<form
+  [formGroup]="group"
+  *ngIf="group?.customValidateErrors | async as errors"
+  (ngSubmit)="onSubmit()"
+  #form="ngForm"
+>
+  <div class="form-group">
+    <label for="memberName">姓名</label>
+    <input
+      type="text"
+      class="form-control"
+      id="memberName"
+      placeholder="name"
+      formControlName="name"
+    />
+    <small class="text-danger" *ngIf="errors.name?.length > 0">
+      {{ errors.name[0] }}
+    </small>
+  </div>
+</form>
+```
+
+顯示錯誤訊息的方式，使用`customValidationError`屬性，因為型別是 BehavioraSubject，所以這邊先用 async 處理，之後`errors.name[0]`顯示錯誤訊息。
+
+```javascript
+onSubmit() {
+    this.group.validate();
+    if (this.group.valid) {
+      this.memberService.saveMember(this.group.object).subscribe(() => {
+        this.snackBar.open('儲存成功', '', {
+          duration: 3000
+        });
+      });
+    }
+  }
+```
+
+最後儲存資料的階段，使用`validate`來驗證資料，`valid`判斷資料是否正確，`object`取回 model 物件。
+
+## 結論
+
+只需使用 class-validator 就可以讓前端及後端採用相同的驗證方式，讓程式不用為了驗證重覆再寫一次，並且搭配 ngx-dynamic-form-builder 後，可以輕易地整合至 Angular。
+
+範例程式碼如下[form-builder-demo](https://github.com/thomascsd/form-builder-demo)。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[6個推薦的Angular Library]]></title>
+            <link>https://thomascsd.github.io/blog/2020-07-05-angular-library</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2020-07-05-angular-library</guid>
+            <pubDate>Sun, 05 Jul 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[除了一些有名的 Library 之外，例如：Angular material，還有一些不為人知的 Library，我平常都會對有興趣的 Angular Library，加上星星加以儲藏，其中有使用過，有些覺得很不錯的想推薦給大家。 1. ngx-loading <img class="img-res]]></description>
+            <content:encoded><![CDATA[除了一些有名的 Library 之外，例如：Angular material，還有一些不為人知的 Library，我平常都會對有興趣的 Angular Library，加上星星加以儲藏，其中有使用過，有些覺得很不錯的想推薦給大家。
+
+## 1. [ngx-loading](https://github.com/Zak-C/ngx-loading)
+
+<img class="img-responsive" loading="lazy" src="/images/15/15-1.gif"/>
+
+一般常常會和後端用 Ajax 溝通，這時候為了向使用者顯示還在資料處理中，會需要用 Loading 呈現。
+發現[ngx-loading](https://github.com/Zak-C/ngx-loading)這個 library，方便設定及有各種的樣式。
+
+<iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/ngx-loading-blog?embed=1&file=src/app/app.component.html" ></iframe>
+
+## 2. [ngx-sweetalert2](https://github.com/sweetalert2/ngx-sweetalert2)
+
+要顯示 alert 或是 confirm 時，會有蠻多人推薦使用 sweetalert2，在 Angular 中可以使用[ngx-sweetalert2](https://github.com/sweetalert2/ngx-sweetalert2)，將 Angular 與 sweetalert2 整合。
+
+<iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/ngx-sweetalert2-blog?embed=1&file=src/app/app.component.html" ></iframe>
+
+## 3.[ng-select](https://github.com/ng-select/ng-select)
+
+我覺是目前最好用的取代 select 的 Libaray，有很多功能，例如：多選、自動完成、標韱的輸入。
+
+<iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/ngx-select-blog?embed=1&file=src/app/app.component.html" ></iframe>
+
+## 4. [ngx-smart-modal](https://github.com/maximelafarie/ngx-smart-modal)
+
+<img class="img-responsive" loading="lazy" src="/images/15/15-2.png">
+
+說到 Dialog，除了使用 Angular component 的[Dialog](https://material.angular.io/components/dialog/overview)之外，還可以使用[ngx-smart-modal](https://github.com/maximelafarie/ngx-smart-modal)，除了一般的之外，還有巢狀 Dialog 的功能，有時候我們會需要開啟 Dialog 後，再開啟另一個 Dialog，除此之外，滿足了使用 Dialog 的各項功能需求。
+
+<iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/ngx-smart-dialog-blog?embed=1&file=src/app/app.component.html" ></iframe>
+
+## 5.[until-destroy](https://github.com/ngneat/until-destroy)
+
+一般說來，在 component 中，有對 Observable 進行 subcribe 的話，都會需要在 ngOnDestroy 中執行 unsubscribe。如果有很多 component 的話，每個都要這麼寫，卻時很煩人，所以我有發現[until-destroy](https://github.com/ngneat/until-destroy)，可以簡化需撰寫的程式碼。
+
+```javascript
+import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
+import { CityService } from "../city.service";
+import { City } from "../models/City";
+
+@UntilDestroy()
+@Component({
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"]
+})
+export class HomeComponent implements OnInit {
+  cities: City[];
+  constructor(private cityService: CityService) {}
+
+  ngOnInit() {
+    this.cityService
+      .getCities()
+      .pipe(untilDestroyed(this))
+      .subscribe(d => (this.cities = d));
+  }
+}
+```
+
+如同上方的程式，只需引用 UntilDestroy、untilDestroyed，不需在另外加上 Subject 或是 ngOnDestroy 之類的程式。
+
+> `untilDestroyed`需要放在.pipe 的最後面才行，參考[RxJS: Avoiding takeUntil Leaks](https://medium.com/angular-in-depth/rxjs-avoiding-takeuntil-leaks-fb5182d047ef)
+
+## 6.[ngx-dynamic-form-builder](https://github.com/EndyKaufman/ngx-dynamic-form-builder)
+
+[ngx-dynamic-form-builder](https://github.com/EndyKaufman/ngx-dynamic-form-builder)是將 class-valdator 整合的 Angular library， 而 class-validator 則是驗證用的 Library，使用 decorator 設定資料驗證的規則。
+
+我在上一篇的[文章](/blog/2020-03-13-classValidatorAndNgxDynamicFormBuilder)有介紹過。
+
+## 結論
+
+以上 6 個 Angular Library，除了[ng-select](https://github.com/ng-select/ng-select)外，其他的星星數都不是很多，但是卻很實用，推薦給大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[使用 Angular Static Generator - Scully 建立Blog的心得記錄]]></title>
+            <link>https://thomascsd.github.io/blog/2020-08-03-build-blog-using-scully</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2020-08-03-build-blog-using-scully</guid>
+            <pubDate>Mon, 03 Aug 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[2022/09/09 更新：程式碼著色，改為 `prismjs` 一直以來 Angular 缺 Static Site Generator，像是 Vue.js 有 Nuxt.js，而 React.js 也有 Gatsby.js，終於 Angular 也出了 Static Site Generator]]></description>
+            <content:encoded><![CDATA[2022/09/09 更新：程式碼著色，改為 `prismjs`
+
+一直以來 Angular 缺 Static Site Generator，像是 Vue.js 有 Nuxt.js，而 React.js 也有 Gatsby.js，終於 Angular 也出了 Static Site Generator - [Scully](https://scully.io)，並且我的 Blog 從最早的 Jekyll，之後是用 Nuxt.js，現在要用 Scully 第三次改寫，因為我對 Angular 還是比較熟悉的原故，建立 Blog 的過程心程分享給大家參考看看
+
+## 起手式
+
+```
+ng new blog-demo
+```
+
+首先是用 Angular CLI 建立基本的版型。
+
+```
+ng add @scullyio/init
+```
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-1.png">
+
+接著參考[官方文件](https://scully.io/docs/getting-started/)，輸入上方指令，將 Scully 加入 Angular 專案，並產生 scully.{your project}.config.ts。
+
+```
+ng generate @scullyio/init:blog
+```
+
+再來就是建立 Blog 模組，輸入上列指命，就會產生基本的檔案。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-2.png">
+
+如上圖所示，主要會建立 Blog 目錄 - 存放 markdown 格式的文章，以及 BlogComponent - 顯示文章。這時再套上主題樣式就成為基本的 Blog 了。但是還要再加上下列的功能，才會是比較完整的 Blog。
+
+## 程式碼著色功能
+
+[Scully](https://scully.io)是使用 Plugin 的機制來擴充功能，除了[內建](https://scully.io/docs/scully-provided-plugins/)之外，也有其他人所寫的 Plugin，而程式碼著色功能使用內建的 Plugin - MD。
+
+```javascript
+import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
+
+setPluginConfig('md', { enableSyntaxHighlighting: true });
+
+export const config: ScullyConfig = {
+...
+}
+```
+
+在 scully.{your project name}.config.ts 中加上以上的設定，設定`enableSyntaxHighlighting: true`啟用程式碼著色功能。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-3.png">
+
+但是只有設定到一半，因為 css 還沒戴入，所以程式碼就是預設的文字顏色。
+
+```
+npm install prismjs
+```
+
+因為 Plugin - MD 是使用 `prismjs` 來著色程式碼，所以另外安裝 `prismjs`，接著再取得我們所需要的 css。
+
+```css
+@import '~prismjs/themes/prism-coy.min.css';
+```
+
+接著在 `style.css` 戴入樣式。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-5.png">
+
+這樣就 OK 了，程式碼有顏色了。
+
+## 留言系統
+
+一般說來，都希望在文章下方放置留言區塊，和讀者有互動，並且我想要比較簡單，可以與 GitHub issue 整合的，最後終於找到了[utterances](https://utteranc.es/)。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-6.png">
+
+按照網站上的步驟設定後，能將產生的 Script 放在想要顯示的地方，但是 script 放到 Angular html template 的話，script 會被過瀘掉，所以要動態插入 script。
+
+```javascript
+import { Component, OnInit, Renderer2 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
+@Component({
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.css'],
+  preserveWhitespaces: true,
+})
+export class BlogComponent implements OnInit {
+
+  constructor(
+    private renderer2: Renderer2,
+    @Inject(DOCUMENT) private document
+  ) {}
+
+  ngOnInit() {
+    const s = this.renderer2.createElement('script');
+    s.type = 'text/javascript';
+    s.src = 'https://utteranc.es/client.js';
+    s.setAttribute('repo', 'thomascsd/thomascsd.github.io');
+    s.setAttribute('issue-term', 'pathname');
+    s.setAttribute('theme', 'github-light');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.text = ``;
+    this.renderer2.appendChild(this.document.querySelector('#comments'), s);
+  }
+```
+
+使用 renderer2 來動態產生 script 元素，最後插入想要顯示的地方。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-7.png">
+
+## 分頁功能
+
+```javascript
+  constructor(
+    private scullyService: ScullyRoutesService,
+  ) {
+  }
+
+  private loadData() {
+    const pageSize = 10;
+
+    this.links$ = zip(this.scullyService.available$, this.route.queryParams).pipe(
+      map(([routes, params]) => {
+        this.page = parseInt(params.page || 1, 10); // 取得QueryString的頁數
+
+        const items = routes
+          .filter((route) => !!route.title)
+          .reverse()
+          .slice((this.page - 1) * pageSize, this.page * pageSize); // 使用slice來切割Arrary
+
+        items.forEach((route) => (route.date = this.blogService.getPostDateFormRoute(route.route)));
+
+        this.itemCount = items.length;
+
+        return items;
+      })
+    );
+  }
+
+  previous() {
+    let pageNum = this.page - 1;
+
+    if (pageNum === 0) {
+      pageNum = 1;
+    }
+
+    this.router.navigate(['/'], { queryParams: { page: pageNum }, replaceUrl: true });
+  }
+
+  next() {
+    this.router.navigate(['/'], { queryParams: { page: this.page + 1 }, replaceUrl: true });
+  }
+```
+
+隨著文章愈來愈多，所以就會想要有分頁的功能，運用 Scully 現成的 API，就可以輕鬆實現。如上列的程式碼，使用`ScullyRoutesService`的`available$`即可取得目前可使用的文章路由物件。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-8.png">
+
+而所謂的可使用就是文章 markdown 設定`published: true`。接著使用 Array 的`slice`，就可以根據 QueryString 所傳入頁數來切割 Array。
+
+## CLI 指令
+
+完整的指令可以參考[文件](https://scully.io/docs/scully-cmd-line/)，我這邊列出幾個常用的。
+
+- scanRoutes：`npx scully --scan`，當新增路由時，例如：新增一篇文章，需要執行這個指令，來找到新的路由。
+
+- watch：`npx scully --watch`，啟用 watch 模式，在開發階段很有幫助，可以立即看到修改的成果。
+
+<img class="img-responsive" loading="lazy" src="/images/16/16-9.png">
+
+- serve：`npx scully serve`，啟用 Scully Server，與`ng serve`相似，但不同點在於不會 build 專案。
+
+- scully: `scully`，如果不加上任何參數的話，Scully 根據路由就會產生靜態檔案，並將靜態檔案預設放在`dist/static`下，所以很適合與`ng build --prod`一併使用。
+
+```
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build --prod && npm run scully",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "deploy": "node deploy.js",
+    "scully": "scully",
+    "scully:scan": "npx scully --scan",
+    "scully:watch": "npx scully --watch",
+    "scully:serve": "npx scully serve"
+  },
+```
+
+並且為了方便，我將這些常用的指令放在 npm scripts 中。
+
+## 結論
+
+靠著 cli 的幫助，可以很快地建立 Blog 樣板，但我覺得這個只是開始，有些功能都還需求調整。而 Scully 目前在 1.0Beta 版，應該很快就到 1.0 正式版，加上之後 Plugins 愈來愈多的話，以後可以值得期待。
+
+原始碼：[https://github.com/thomascsd/blog-new](https://github.com/thomascsd/blog-new)
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[daily.dev - 整合各個技術文章的好用套件]]></title>
+            <link>https://thomascsd.github.io/blog/2020-09-05-introducing-daily-dev</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2020-09-05-introducing-daily-dev</guid>
+            <pubDate>Sat, 05 Sep 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[2025/03/16 重新改寫 我常常早上都會看一些技術文章，最近這幾年都是使用daily.dev 來閱讀文章。這個網站結合了各類文章，不只有網站，還有 Android 及 IOS 的 APP 可以使用，分享給大家參考看看。 <img class="img-responsive" loading="]]></description>
+            <content:encoded><![CDATA[2025/03/16 重新改寫
+
+我常常早上都會看一些技術文章，最近這幾年都是使用[daily.dev](https://daily.dev/) 來閱讀文章。這個網站結合了各類文章，不只有網站，還有 Android 及 IOS 的 APP 可以使用，分享給大家參考看看。
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-01.png">
+
+## 如何使用
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-02.png">
+
+如上圖所示，從網站到有 IOS 、 Android 的 APP，以及各個瀏覽器的擴充套件，幾乎可以從各個裝置存取，這次我以網站示範。
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-03.png">
+
+首先需要登入，我用 Github 的帳號登入
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-04.png">
+
+選擇感興趣的標籤，將根據這些標籤推薦相應的文章。
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-05.png">
+
+在 `My Feed` 上就可以瀏覽所有推薦的文章。
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-06.png">
+
+另外，在 `Explore` 中可以找到今天最受歡迎的文章，或是查看那些獲得最多推薦的文章。
+
+<img class="img-responsive" loading="lazy" src="/images/17/17-07.png">
+
+還有群組的功能，這邊稱為`Squads`，就像在以 .NET 主題的群組中，.NET 相關的文章全部集中在一起。
+
+## 結論
+
+使用了 daily.dev 這個服務 2 個星期以來，在一個地方即可瀏覽文章，而不會四處散落，真的是滿方便的，分享給大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[使用TypeScript建立Express.js]]></title>
+            <link>https://thomascsd.github.io/blog/2021-02-07-expressjss-with-typescript</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2021-02-07-expressjss-with-typescript</guid>
+            <pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[(2021-04-26 更新)service class 注入，@Inject 改為 @Service。 Express.js 是很受歡迎的 Node.js 框架，一般看來，比較少文章介紹使用 TypeScript 建立 Express.js，所以就想寫篇使用 TypeScript 建立 Expre]]></description>
+            <content:encoded><![CDATA[(2021-04-26 更新)service class 注入，@Inject 改為 @Service。
+
+Express.js 是很受歡迎的 Node.js 框架，一般看來，比較少文章介紹使用 TypeScript 建立 Express.js，所以就想寫篇使用 TypeScript 建立 Express.js 的方式，並且 Express.js 的架構是比較鬆散的，並且有發現兩個套件：[routing-controller](https://github.com/typestack/routing-controllers)及[typedi](https://github.com/typestack/typedi)，一些心得感想，請大家參考看看。
+
+## 起手式
+
+首先使用 npm 建立 node.js 的站台，將它命名為 webapi。
+
+```
+npm new webapi -y
+```
+
+接著安裝 Express.js 及用 TypeScript 開發所使用的套件。
+
+```
+npm install express @types/node @types/express
+```
+
+## 建立 Server
+
+```javascript
+import * as express from 'express';
+```
+
+首先使用 ESM 的語法戴入 express。
+
+```javascript
+// Server.ts
+export default class Server {
+  public app: express.Application;
+  private distFolder = path.join(__dirname, '..', 'client');
+
+  constructor() {
+    this.app = express();
+    this.config();
+    this.route();
+  }
+
+  public config() {
+    this.app.set('view engine', 'html');
+    this.app.set('views', 'src');
+
+    // Server static files from /dist
+    this.app.get('*.*', express.static(this.distFolder));
+  }
+
+  public route() {
+    this.app.get('*', (req, res, next) => {
+      if (req.url.indexOf('/api') !== -1) {
+        next();
+      } else {
+        res.sendFile(path.join(this.distFolder, 'index.html'));
+      }
+    });
+  }
+
+  public run(port: number) {
+    this.app.listen(port, () => {
+      console.log(`App run in Port: ${port}`);
+    });
+  }
+}
+```
+
+接著我習慣建立 class，所以這邊建立名為`Server`的 class，建立了 3 個方法：
+
+- config：是設定 Express.js。
+
+  - `this.app.get('_.\*', express.static(this.distFolder));`：因為前端是用 SPA 的架構，所以指定靜態檔案是導向 html 的路徑。
+
+- route：預設的路由，由於前端是 SPA 的原故，除了網址包點`api`之除，其於皆會導向 index.html。
+- run：供外部程式呼叫，啟動 Web Server。
+
+```javascript
+// index.ts
+import 'reflect-metadata';
+import Server from './server';
+const server = new Server();
+const port: number = parseInt(process.env.PORT, 10) || 3000;
+server.run(port);
+```
+
+再來就建立進入點 index.ts，這邊很單純的，建立 server 物件，執行 run 的方法。
+
+## tsconfig.json
+
+tsconfig 設定有時候覺得很麻煩，有發現一個 npm package：[tsconfigs](https://github.com/mightyiam/tsconfigs)，如此可以比較清鬆的設定。
+
+```
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["ESNext"]
+  },
+  "baseUrl": "src"
+}
+```
+
+或是可以參考上方的設定方式，因為會使用 decorator ，所以將`emitDecoratorMetadata`及`experimentalDecorators`設為`true`。
+
+## 加上架構
+
+Express.js 的架構比較自由、鬆散，沒有規定要如何建立，這讓本人困擾了一段時間，之後參考這篇[文章](https://www.coreycleary.me/project-structure-for-an-express-rest-api-when-there-is-no-standard-way/)，所以設定以下的目錄結構。
+
+<img class="img-responsive" loading="lazy" src="/images/18/18-1.png">
+
+要如何實作 controller 架構，之後有發現 [routing-controllers](https://github.com/typestack/routing-controllers)，可以與 Express.js 整合，輕鬆實作 controller 架構。
+
+接著也希望能夠可以在 Express.js 實現 DI(Dependency Injection)，所以使用了[typedi](https://github.com/typestack/typedi)，配合這 2 個套件如此可以實作本人覺得不錯的架構。
+
+### routing-controllers & typedi
+
+```
+npm install routing-controllers typedi class-validator class-transformer
+```
+
+使用 npm 安裝 routing-controllers、typedi，以及相依性的 package。
+
+```javascript
+// ContactControoler.ts
+import { JsonController, Get, Post, Body } from 'routing-controllers';
+import { Service } from 'typedi';
+import { ContactService } from '../services/ContactServices';
+import { Contact } from '../models/Contact';
+
+@Service()
+@JsonController()
+export class ContactController {
+ constructor(private contactService: ContactService) {}
+
+ @Get('/contact/list')
+ getContacts() {
+  return this.contactService.getContacts();
+ }
+
+ @Post('/contact/save')
+ saveContact(@Body() contact: Contact) {
+  return this.contactService.saveContact(contact);
+ }
+
+ @Post('/contact/update')
+ update(@Body() contact: Contact) {
+  return this.contactService.updateContact(contact);
+ }
+}
+```
+
+建立 controller 的方式很直覺，只要在 class 上加上 decorator `@Controller()`即可，因為是回傳 JSON，所以是使用`@JsonController()`。
+
+路由建立的方式也是一樣，使用`@Get`、`@Post`，再傳入路由路徑即可。
+
+而 DI 也是同樣的，在 class 上加上`@Inject()`代表著可以被注入，如同`ContactService`會在 runtime 時被建立實體。
+
+```javascript
+// Server.ts
+import { useExpressServer, useContainer } from 'routing-controllers';
+import { Container } from 'typedi';
+
+constructor() {
+    useContainer(Container);
+    this.app = express();
+    this.config();
+    this.setControllers();
+  }
+
+public setControllers() {
+    useExpressServer(this.app, {
+      routePrefix: 'api',
+      controllers: [__dirname + '/controllers/**/*.js'],
+    });
+  }
+
+```
+
+要將 routing-controllers、typedi 與 Express.js 整合也很簡單，使用`useExpressServer`並戴入 controllers。
+
+### Snippets
+
+因為每次都要設定 controller 覺得很麻煩，本人有[自定義 snippets](https://gist.github.com/thomascsd/19e1814f1b89c01588fa7f9f18540b20)，來減少一些重覆輸入的程式碼。
+
+<img class="img-responsive" loading="lazy" src="/images/18/18-2.gif">
+
+## 安全性
+
+除了上面的設定之外，最好可以於 Request 的 Header 上設定一些項目來增加網站的安全性，這時可以使用套件：[helmet](https://github.com/helmetjs/helmet)，設定方式如下。
+
+```javascript
+import * as helmet from 'helmet';
+this.app.use(helmet());
+```
+
+另外可以參考這篇[文章](https://wanago.io/2020/12/14/security-express-applications-helmet-middleware/)，總共調整了那些項目。
+
+## 結論
+
+以上就是我花了一段時間反復測試後，覺得不錯的 Express.js 的架構，並且有建立範本[angular-express-starter](https://github.com/thomascsd/angular-express-starter) ，請大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[將AirTable做為資料庫的心得]]></title>
+            <link>https://thomascsd.github.io/blog/2021-04-24-airtable-as-database</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2021-04-24-airtable-as-database</guid>
+            <pubDate>Sat, 24 Apr 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[當開始寫自已的 Side Project 時，常常遇到問題是，不知道要將資料寫入至那裡?最初是使用restdb，優點：很好串接，有 UI 介面很好設定，但是只能有 2 個免費的資料庫。 之後尋找了一些解決方案，發現AirTable符合我的需求。 優點： 有 UI 介面，可以很方便設定欄位。 欄位支援]]></description>
+            <content:encoded><![CDATA[當開始寫自已的 Side Project 時，常常遇到問題是，不知道要將資料寫入至那裡?最初是使用[restdb](https://restdb.io/)，優點：很好串接，有 UI 介面很好設定，但是只能有 2 個免費的資料庫。
+之後尋找了一些解決方案，發現[AirTable](https://airtable.com/)符合我的需求。
+
+- 優點：
+  - 有 UI 介面，可以很方便設定欄位。
+  - 欄位支援很多的類型，連自動編號的類型也有。
+  - 使用 CSV，可以直接匯入資料。
+- 缺點：
+  - 每秒可接受的 Request 數有限制，現在每秒最多是 5 個 Request，如果是一般小的 Side Project，這個限制還可以接受。
+
+## 串接方式
+
+首先要串接至 AirTable 需要 ApiKey ，可以參考[文件](https://support.airtable.com/hc/en-us/articles/219046777-How-do-I-get-my-API-key-)，接著取得 Base ID，如下圖所示，點選 Help > API documetation。
+
+<img class="img-responsive" loading="lazy" src="/images/19/19-01.png">
+
+在文件中就可以找到呼叫 API 時，需要的 Base ID。並且也可以看到官方的 JavaScript API client，但是我覺得官方的不好用，會使用其他的 Libary 來串接。
+
+<img class="img-responsive" loading="lazy" src="/images/19/19-02.png">
+
+### 使用 API Client
+
+尋找及測試 2 個套件後，最後我選擇了[async-airtable](https://github.com/GV14982/async-airtable)，這個套件最主要是 Wrapper Libary，將 AirTable API 包裝成容易呼叫的形式，並因為是使用 TypeScript 開發的，而且到最近都有更新，所有決定採用了。
+
+```javascript
+import AsyncAirtable from 'asyncairtable';
+import { AirtableRecord, SelectOptions } from 'asyncairtable/lib/@types';
+import { Service, Inject, Token } from 'typedi';
+import { BaseModel } from '../models/BaseModel';
+
+@Service()
+export class DataService {
+  async getDatas<T extends BaseModel>(
+    baseId: string,
+    tableName: string,
+    options?: SelectOptions
+  ): Promise<T[]> {
+     ........
+  }
+
+  async saveData<T extends BaseModel>(baseId: string, tableName: string, model: T) {
+    .........
+  }
+
+  async updateData<T extends BaseModel>(baseId: string, tableName: string, model: T) {
+    .........
+  }
+
+async deleteData<T extends BaseModel>(baseId: string, tableName: string, model: T) {
+    ..........
+  }
+
+}
+
+```
+
+另外有寫一個泛型類別將這些包裝起來，定義了新增、修改、刪除及查詢的方法，希望所有的 Model 都是使用相同的方式來存取資料。
+
+## 取得資料
+
+```javascript
+// BaseModel.ts
+export interface BaseObj extends Record<string, unknown> {
+  id?: string;
+}
+
+export class BaseModel implements BaseObj {
+  [x: string]: unknown;
+  id?: string;
+}
+```
+
+接著再建立 BaseModel class，將做為所有 Model 的基礎類別，`T extends BaseModel`，以及繼承`Record<string, unknown>`來做為轉換成`AirTableRecord`的準備。
+
+> Recored<key, value>是 TypeScript 內建的 Helper，它的定義如下：
+
+```javascript
+type Record<K extends keyof any, T> = {
+    [P in K]: T;
+};
+```
+
+> 就是可以快速宣告 key/value 組合的型別，之前可能需要這樣宣告：
+
+```javascript
+interface Options {
+  [key: string]: string;
+}
+```
+
+> 現在只要這麼寫
+
+```javascript
+type Options = Record<string, string>.
+```
+
+```
+{
+  id: 'recYFjxxUF7EWAhH5',
+  fields: {
+    name: 'thomas123',
+    email: 't@sample.com',
+    mobile: '0999123456'
+    },
+  createdTime: '2021-04-17T10:18:47.000Z'
+}
+```
+
+AirtTable 回傳的資料格式如上，id 是自動建立的唯一 key 值，而`fields`就是所定義的欄位，而我的目標就是將`fields`這塊抽出來。
+
+```javascript
+async getDatas<T extends BaseModel>(
+    baseId: string,
+    tableName: string,
+    options?: SelectOptions
+  ): Promise<T[]> {
+    const airtable = this.getAirTableClient(baseId);
+    const records: AirtableRecord[] = await airtable.select(tableName, options);
+
+    const body = records
+      .map((o: AirtableRecord) => {
+        const fields = o.fields;
+        fields.id = o.id;
+        return fields;
+      })
+      .map(fields => {
+        const obj: Record<string, unknown> = { ...fields };
+        return obj;
+      }) as T[];
+
+    return body;
+  }
+```
+
+綄合上述的程式，取得資料的地方，使用 2 個`Map`來轉換`T[]`：
+
+- 第 1 個`Map`是要將 fields 屬性抽出，並將唯一值指派至`fields`上。
+- 第 2 個`Map`是為了轉成`T[]`，建立一個物件，使用 [spread operator](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Spread_syntax) 複製`fields`至物件中，最後轉型成`T[]`。
+
+## 新增資料
+
+```javascript
+async saveData<T extends BaseModel>(baseId: string, tableName: string, model: T) {
+    const airtable = this.getAirTableClient(baseId);
+    const body = await airtable.createRecord(tableName, model);
+
+    return body;
+  }
+```
+
+新增就很單純，將 Model 物件傳入 `createRecord`方法即可在 AirtTable 新增一筆資料。
+
+## 更新資料
+
+```javascript
+async updateData<T extends BaseModel>(baseId: string, tableName: string, model: T) {
+    const airtable = this.getAirTableClient(baseId);
+    const tmpModel = { ...model };
+    const id = tmpModel.id;
+    delete tmpModel.id;
+    const body = await airtable.updateRecord(tableName, {
+      id: id as string,
+      fields: tmpModel,
+    });
+
+    return body;
+  }
+```
+
+更新和新增類似，會多傳入唯一鍵值 id ，執行`updateRecord`即可完成，而這邊`delete tmpModel.id`的目的是，id 是自動產生的，所以不需要傳入至 AirTable。
+
+## 結論
+
+雖然還有其他的儲存資料的解決方案，比如使用 Google sheets，或是使用其它的雲端免費方案，但使用 AirTable 一陣子後，有符合我的期待，目前使用蠻滿意的。
+有將這些程式包成 [npm package](https://www.npmjs.com/package/@thomascsd/stools)，大家可以參考看看。
+
+原始碼的位置：[https://github.com/thomascsd/stools](https://github.com/thomascsd/stools)
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[將AirTable做為資料庫的心得 - .NET Core 篇]]></title>
+            <link>https://thomascsd.github.io/blog/2021-06-12-air-table-with-dotnet-core</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2021-06-12-air-table-with-dotnet-core</guid>
+            <pubDate>Sat, 12 Jun 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[我在上一篇的文章將 AirTable 做為資料庫的心得，有寫到：我為什麼使用 AirTable 當作資料庫，以及優、缺點，並且環境是 Node.js ，語言是 TypeScript ，而這次想要使用 .NET Core 、 C來改寫。 串接 AirTable <img class="img-resp]]></description>
+            <content:encoded><![CDATA[我在上一篇的文章[將 AirTable 做為資料庫的心得](https://thomascsd.github.io/blog/2021-04-24-AirtableAsDatabase)，有寫到：我為什麼使用 [AirTable](https://airtable.com/) 當作資料庫，以及優、缺點，並且環境是 Node.js ，語言是 TypeScript ，而這次想要使用 .NET Core 、 C# 來改寫。
+
+## 串接 AirTable
+
+<img class="img-responsive" loading="lazy" src="/images/20/20-01.png">
+
+串接 AirTable 所需要的 APIKey、BaseID，可以參考的上一篇的文章，而連結 AirtTable 使用的套件是 [airtable.net](https://github.com/ngocnicholas/airtable.net) ，並且使用 Nuget 安裝即可。
+
+## 建立泛型類別
+
+仿造原本 TypeScript 的寫法，寫一個泛型類別，將取得資料、新增、修改及刪除都封裝起來。
+
+```
+public class DataService : IDataService
+    {
+        private string m_ApiKey;
+
+        public DataService(IConfiguration configuration)
+        {
+            this.m_ApiKey = configuration.GetValue<string>("AirTable:ApiKey");
+        }
+
+        public async Task<IEnumerable<T>> GetDatas<T>(string baseId, string tableName) where T : BaseModel
+        {
+           ........
+        }
+
+        public async Task<AirtableCreateUpdateReplaceRecordResponse> SaveData<T>(string baseId, string tableName, T model) where T : BaseModel
+        {
+          ...........
+        }
+
+        public async Task<AirtableCreateUpdateReplaceRecordResponse> UpdateData<T>(string baseId, string tableName, T model) where T : BaseModel
+        {
+         ...........
+        }
+
+        public async Task<AirtableDeleteRecordResponse> DeleteData(string baseId, string tableName, string id)
+        {
+          ............ 
+        }
+```
+
+## 取得資料
+
+```
+// BaseModel.cs
+public class BaseModel
+    {
+        public string Id { get; set; }
+    }
+```
+
+```
+// DataService.cs
+public async Task<IEnumerable<T>> GetDatas<T>(string baseId, string tableName) where T : BaseModel
+        {
+            string offset = null;
+            List<T> models = new List<T>();
+            List<AirtableRecord<T>> records = new List<AirtableRecord<T>>();
+            AirtableListRecordsResponse<T> res;
+
+            using (AirtableBase airtable = new AirtableBase(this.m_ApiKey, baseId))
+            {
+                do
+                {
+                    res = await airtable.ListRecords<T>(tableName, offset);
+                    records.AddRange(res.Records);
+                    offset = res.Offset;
+                } while (offset != null);
+            }
+
+            models = records
+                .Select(m =>
+                {
+                    m.Fields.Id = m.Id;
+                    return m.Fields;
+                })
+                .ToList();
+
+            return models;
+        }
+```
+
+可以先參考 [airtable.net](https://github.com/ngocnicholas/airtable.net) 的 GitHub，建立 `AirtableBase` 的實體，之後用 `ListRecords<T>` 泛型方法，讀取 AirTable 中的資料。
+
+再來使用 `Select` 方法轉換物件，取得屬性 `Fields` ，並且將由 AirTable 自動產生的 `Id` 鍵值保存下來。
+
+<img class="img-responsive" loading="lazy" src="/images/20/20-02.png">
+
+最後使用 Postman 測試，Response 的結果如上圖所示，而 `id` 就是 AirtTable 自動產生的 `Id` 鍵值。
+
+## 新增資料
+
+```
+public async Task<AirtableCreateUpdateReplaceRecordResponse> SaveData<T>(string baseId, string tableName, T model) where T : BaseModel
+        {
+            var fields = this.GetFields<T>(model);
+            AirtableCreateUpdateReplaceRecordResponse res;
+
+            using (AirtableBase airTable = new AirtableBase(this.m_ApiKey, baseId))
+            {
+                res = await airTable.CreateRecord(tableName, fields);
+            }
+
+            return res;
+        }
+
+private Fields GetFields<T>(T model) where T : BaseModel
+        {
+            var dic = new Dictionary<string, object>();
+            var props = typeof(T).GetProperties();
+
+            foreach (var prop in props)
+            {
+                object value = prop.GetValue(model);
+                dic.Add(prop.Name, value);
+            }
+
+            var fields = new Fields
+            {
+                FieldsCollection = dic
+            };
+
+            return fields;
+        }
+```
+
+在寫入資料前需要進行處理，建立方法 `GetFields<T>` 來處理，因為`Fields`內部是使用`Dctionary<Tkey, TValue>`來保存資料，所以採用反射的方式，將`T `輔換成`Dctionary<Tkey, TValue>`。
+之後新增資料使用`CreateRecord`方法，將`Fields`物件傳入。
+
+## 修改資料
+
+```
+public async Task<AirtableCreateUpdateReplaceRecordResponse> UpdateData<T>(string baseId, string tableName, T model) where T : BaseModel
+        {
+            var fields = this.GetFields<T>(model);
+            AirtableCreateUpdateReplaceRecordResponse res;
+
+            using (AirtableBase airTable = new AirtableBase(this.m_ApiKey, baseId))
+            {
+                res = await airTable.UpdateRecord(tableName, fields, model.Id);
+            }
+
+            return res;
+        }
+```
+
+修改資料是呼叫 `UpdateRecord` 方法，和新增資料類似，只差別在 `UpdateRecord` 會多傳唯一 `Id` 鍵值。
+
+## 結論
+
+目前覺得 [AirTable](https://airtable.com/) 寫 Side Project 的好幫手，除了上次的 TypeScript 的版本外，而這次想轉成 .NET Core 的版本，之後我在將這些程式包裝成 Nuget 的版本，請大家參考看看。
+
+原始碼位置：[https://github.com/thomascsd/BookApi](https://github.com/thomascsd/BookApi)
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[CodeWars - Coding Challenge Site]]></title>
+            <link>https://thomascsd.github.io/blog/2021-08-07-codewars</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2021-08-07-codewars</guid>
+            <pubDate>Sat, 07 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[一般說來，剛剛學習一門程式語言，或是學習一段時間後，除了建立 Side Project 之外，也可以至一些網站練習程式，而之前在 Twitter 上發現有人 PO 出 Coding challenge 的列表，其中有個網站CodeWars，嘗試了一陣子之後覺得很不錯，想說寫篇心得文分享。 <a hr]]></description>
+            <content:encoded><![CDATA[一般說來，剛剛學習一門程式語言，或是學習一段時間後，除了建立 Side Project 之外，也可以至一些網站練習程式，而之前在 Twitter 上發現有人 PO 出 Coding challenge 的列表，其中有個網站[CodeWars](https://www.codewars.com)，嘗試了一陣子之後覺得很不錯，想說寫篇心得文分享。
+
+<a href="https://twitter.com/_KenWilliams_/status/1313077252033179650?s=20"><img class="img-responsive" loading="lazy" src="/images/21/21-08.png"></a>
+
+## 如何開始
+
+最簡單註冊會員的方式，就是使用 GitHub 的帳戶來註冊，完成之後會請你選擇想要使用的程式語言，接著就可以開始了。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-01.png">
+
+## Kata
+
+成功登入後，就可以選擇想要解決的 Kata 了，而所謂的 Kata 就是題目，難度分類從 1 到 8，而 8 kyu 是最簡單的，反之 1 kyu 是最難的，我的個人經驗是從 4 kyu 開始就有難度了。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-02.png">
+
+如上圖，選擇想要的條件後，而這邊我選擇難度 4 kyu。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-03.png">
+
+顯示所搜索的 Kata 結果，而右邊的圖示表示可以支援的語言。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-04.png">
+
+覺得有興趣的問題的話，可以進入說明的頁頁，也可以改變想要使用的語言，如果想繼續進行的話，點選 Train。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-05.png">
+
+最後就可以開始你的解題了，不過有個缺點就是程式編輯的區堿不是很好用，所以會在 VSCode 上寫完之後，再貼回頁面上的編輯區裡。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-06.png">
+
+當解題完成後，還可以查看其他人的解題方式(solution)。看到有些簡短的寫法，會讓我有種恍然大誤的感覺，原來還有這種寫法，這是我覺得最好的地方，有種被回饋的感覺。
+
+解完題之後會得到 Honor ，就像 RPG 的經驗值一樣，難度愈高的，得到的 Honer 也愈高，之後還會升級，而開放更多的功能，比如可以出題目、對題目回饋。
+
+<img class="img-responsive" loading="lazy" src="/images/21/21-07.png">
+
+最後可查看 Profile ，這頁會顯示目前的解題次數，以及各個曾經使用語言的解題次數，會讓人有小小的成就感。
+
+## 結論
+
+透過這種網站可以練習平常很少接觸的題目，也可以練習演算法，並且除了 CodeWars 之外，還有其他的程式練習網站，請大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Netlify functions 初體驗記錄]]></title>
+            <link>https://thomascsd.github.io/blog/2021-09-20-netlify-function-tutorial</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2021-09-20-netlify-function-tutorial</guid>
+            <pubDate>Mon, 20 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[一直以來斷斷續續接獨 Servless funcion 的服務，從 FireBase 到 Azure 都有，但是一些原因，而覺得沒有符合我的需求，直到前一陣子，我嘗試使用 Netlify functions ，發現簡單易用，並且也整合 CI/CD ，如果想整合至舊有專案也是挻方便的，就想寫篇文章做個]]></description>
+            <content:encoded><![CDATA[一直以來斷斷續續接獨 Servless funcion 的服務，從 FireBase 到 Azure 都有，但是一些原因，而覺得沒有符合我的需求，直到前一陣子，我嘗試使用 [Netlify functions](https://www.netlify.com/products/functions/) ，發現簡單易用，並且也整合 CI/CD ，如果想整合至舊有專案也是挻方便的，就想寫篇文章做個記錄。
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-08.png">
+
+查看了文件之後，發現是將 AWS Lambda 包裝起來，另外免費版的話，提供一個月 125,000 的 Request 數，總共可以執行 100 小時，以一個小專案或是 Side Project 算是足夠了。
+
+## 開始
+
+這次是範例是將概有的 Side Project [form-builder-demo](https://github.com/thomascsd/form-builder-demo) 整合進 Netlify function。
+
+```
+npm install netlify-cli -g
+```
+
+首先安裝 Netlify CLI，後續可以在本機上除錯或是在本機上啟用網站。
+
+```
+npm install @netlify/functions
+```
+
+之後會用 TypeScript 來開發，所以需要安裝 `@netlify/functions`。
+
+```
+netlify init
+
+```
+
+之後為了要和 GitHub 的專案整合，整合至 CI/CD，所以執行 `netlify init`。
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-01.png">
+
+```
+[build]
+  functions = "functions"
+  publish = "dist"
+```
+
+執行完後，會一起建立 netlify.toml ，設定值就是剛剛執行`Netlify init`  所詢問問題的答案，用來設定 Netlify functions 的。
+
+- functions：設定存放 Netlify function 的目錄，預設是在 /netlify/functions。
+- command：設定建置時，要執行的指令，我是設定 'npm run build' 。
+- publish：設定建置後檔案的位置，我是用預設的 dist。
+
+## 開發
+
+```javascript
+import { Handler } from '@netlify/functions';
+
+const handler: Handler = async (event, context) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Hello World' }),
+  };
+};
+
+export { handler };
+```
+
+可以參考[文件](https://docs.netlify.com/functions/build-with-typescript/)，程式格式如上所示，但是關於用去沒有說明很清楚，所以來彙整一下。
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-02.png">
+
+- event：定義如上圖所示，可以從 node_modules\@netlify\functions\src\function\event.d.ts 中找到，如同了包裝 Request 類似。
+- boby：與 Express 一樣使用 body 取得 post 來的資訊。
+- queryStringParameters：使用此屬性取得 QueryString 資訊。
+
+- response：如同程式自我描述般的，回傳 `statusCode` 及 `body`，應 `body`需為字串，所使用 `JSON.stringify` 將物件轉成字串。
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-03.png">
+
+如果有開發過 Serverless function 程式的人，應該都知道，都是會一支 Api 一支檔案，這邊另外有些共用的程式，我再建立 Services 的目錄。
+
+## Netlify dev
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-04.png">
+
+執行 `netlify dev`，就可以在本機除錯或是在本機啟動，如上圖啟動 Port 為 8888 的本機 Server ，並且判斷到前端是用 Angular 來開發，跟著執行 ng serve，也同時啟動 Angular Live Development Server，一整個開發的爽快感。
+
+## etlify 站台設定
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-05.png">
+
+一開始的`netlify init` 的設定，就會與 GitHub 連結，當程式 push 至 GitHub 後，即會自動部署至 Netlify。
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-06.png">
+
+另外我將資料寫入至 AirTable，所以需要設定環境變數。
+
+<img class="img-responsive" loading="lazy" src="/images/22/22-07.png">
+
+最後可以在 Functions 頁籤，看到這次所設定的 function 的清單。
+
+## 結論
+
+除了可以將 SPA 的站台部署至 Netlify 上，並且後端功能使用 Netlify function，加上搭配 Netlify CI/CD 之後，覺得開發及部署一氣合成。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[tsdx - 快速建立 npm 套件樣板的CLI工具]]></title>
+            <link>https://thomascsd.github.io/blog/2021-12-09-tutorial-of-tsdx</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2021-12-09-tutorial-of-tsdx</guid>
+            <pubDate>Thu, 09 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[之前的文章使用 TypeScript 建立 Express.js，需要快速建立 npm 套件，所以在 GitHub 上尋找有沒有方便的套件，結果發現到了 tsdx，這個方便的 CLI 工具。 建立 ``` npx tsdx create mylib ``` 按照文件的說明，直接執行`npx tsdx]]></description>
+            <content:encoded><![CDATA[之前的文章[使用 TypeScript 建立 Express.js](https://thomascsd.github.io/blog/2021-02-07-ExpressjssWithTypescript)，需要快速建立 npm 套件，所以在 GitHub 上尋找有沒有方便的套件，結果發現到了 [tsdx](httptrs://github.com/jaredpalmer/tsdx)，這個方便的 CLI 工具。
+
+## 建立
+
+```
+npx tsdx create mylib
+```
+
+按照[文件](https://tsdx.io/)的說明，直接執行`npx tsdx create <package name>`，馬上建立好從開發、測試到部署全部都設定完成的樣版，節省了很多前期整合各種套件的時間。
+
+<img class="img-responsive" loading="lazy" src="/images/23/23-01.png">
+
+所選擇的樣板是 'basic'，會建立如下圖的目錄架構。
+
+<img class="img-responsive" loading="lazy" src="/images/23/23-02.png">
+
+## 微調的項目
+
+但是實際開發後，發現還是需要一些調整才行，以下會介紹。
+
+### tsconfig.json
+
+因為開發的套件[stools](https://www.npmjs.com/package/@thomascsd/stools)有使用到 DI 的機制，而使用的套件是 [typeDi](https://github.com/typestack/typedi) ，而且會用到 Decorator 的功能，因此需要在 tsconfig.json 加上以下設定。
+
+```
+"emitDecoratorMetadata": true,
+"experimentalDecorators": true,
+```
+
+## 測試
+
+<img class="img-responsive" loading="lazy" src="/images/23/23-03.png">
+
+測試方面是使用 Jest ，有 React 的背景的人，應該很多都有使用過，而這是我第一次使用 Jest 來進行測試。當測試執行完畢，會直接顯示詳細的測試資訊，如同上圖，這部份有讓我有點驚艷到，就連未測試的程式行數也會顯示。
+
+```javascript
+// jest.config.js
+module.exports = {
+  verbose: true,
+  testEnvironment: 'node',
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  collectCoverageFrom: ['src/**/*.{js,ts}', '!<rootDir>/node_modules/'],
+};
+```
+
+但是還有需要調整的地方，預設是沒有加入 jest.config.js 的，而這次建立的套件[stools](https://www.npmjs.com/package/@thomascsd/stools)是運行在 node.js 環境上的，所以執行測試時會發生錯誤，所以指定`testEnvironment`為 node 即可，並且參考其他專案的設定，也一併設定需顯示測試的覆蓋度。
+
+## 建置(build)
+
+建置是與 Rollup 整合，當執行`npm run build` ，也就會執行`tsdx build --target node`。
+
+<img class="img-responsive" loading="lazy" src="/images/23/23-05.png">
+
+這邊也是一段指令執行完，就會產生可以部署至 npm 的相關檔案，如大部份網站的慣列，預設是放在*dist*。
+
+<img class="img-responsive" loading="lazy" src="/images/23/23-04.png">
+
+## 結論
+
+如果想快速開發 npm package 時，使用 tsdx 已經整合各種建立套件所需的工具，所以只需將時間放在建立套件的程式上即可，減少很多前置的時間，請大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[我的Terminal 設定方式 - Windows Terminal & ohmyposh]]></title>
+            <link>https://thomascsd.github.io/blog/2022-05-20-window-teminal-and-oh-my-posh</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2022-05-20-window-teminal-and-oh-my-posh</guid>
+            <pubDate>Fri, 20 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[一直以來都是使用 IDE 來開發程式，自從進入前端世界後，開始很常使用 CLI ，而 Windows 的 terminal 一直不是很好使用，直到 Windows Terminal 的出現。 Windows Terminal 整合 cmd、PowerShell，並可 以自定樣式，但是還是希望和 oh]]></description>
+            <content:encoded><![CDATA[一直以來都是使用 IDE 來開發程式，自從進入前端世界後，開始很常使用 CLI ，而 Windows 的 terminal 一直不是很好使用，直到 Windows Terminal 的出現。
+Windows Terminal 整合 cmd、PowerShell，並可 以自定樣式，但是還是希望和 [oh my zsh](https://ohmyz.sh/)一樣，可以顯示更多資訊，直到最近發現 [ohmyposh](https://github.com/jandedobbeleer/oh-my-posh)可以讓 PowerShell 更好用。
+
+## Windows terminal 設定
+
+```
+{
+    "background": "#336699",
+    "backgroundImage": "d:\\Path.png",
+    "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "name": "Windows PowerShell",
+    "opacity": 80,
+    "startingDirectory": "d:\\projects",
+    "useAcrylic": true
+}
+```
+
+我習慣的設定如上，主要是設定啟起目錄，以及設定背景色和圖片。
+
+## ohmyposh 安裝
+
+ohmyposh 是跨平台的套件，而我是使用 Windows ，所以是選擇 scoop 來進行安裝，可以參考官方的[文件](https://ohmyposh.dev/docs/installation/windows)來進行。
+
+在 PowerShell 輸入下列指令，即可安裝完成。
+
+```
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+```
+
+<img class="img-responsive" loading="lazy" src="/images/24/24-01.png">
+
+接下來需要進行[設定](https://ohmyposh.dev/docs/installation/prompt)，當啟動 Windows Terminal 時，自動戴入 ohmyposh。
+
+首先在 Documents 建立目錄，命名為 WindowsPowerShell。
+
+> C:\Users\{user name}\Documents\WindowsPowerShell
+
+接下來輸入指令`note $PROFILE`，如下圖，在 Microsoft.PowerShell_profile.ps1 裡 加上指令 oh-my-posh init pwsh | Invoke-Expression。
+
+<img class="img-responsive" loading="lazy" src="/images/24/24-02.png">
+
+存檔後重啟即可。
+
+## 字型
+
+因為預設的字型是 Nerd Fonts，所以會發現一些圖示沒有顯示正常，需下戴[字型](https://ohmyposh.dev/docs/configuration/fonts)來安裝 。
+
+<img class="img-responsive" loading="lazy" src="/images/24/24-03.png">
+
+Windows terminal 還需將字型設為 MesloLGM NF。
+
+```
+{
+    "profiles":
+    {
+        "defaults":
+        {
+            "font":
+            {
+                "face": "MesloLGM NF"
+            }
+        }
+    }
+}
+
+```
+
+可以顯示正確的字型。
+
+<img class="img-responsive" loading="lazy" src="/images/24/24-04.png">
+
+## 主題
+
+預設的主題比較單調，可以自定樣式或是戴入其他人建立好的[主題](https://ohmyposh.dev/docs/themes)，第一步輸入`Get-PoshThemes` 如果初次使用沒有指定目錄的話，會決定主題要存放的位置，不然會顯示目前已下戴的主題。
+
+<img class="img-responsive" loading="lazy" src="/images/24/24-05.png">
+
+目前選擇的主題是[slim](https://ohmyposh.dev/docs/themes#slim)，這個主題有包含 Node.js 的版本，和顯示 GIT 的狀態，都是開發上所必要的資訊。之此之外，調整 Profile，加上`--config`參數指定主題，之後重新戴入即可。
+
+```
+oh-my-posh init pwsh --config D:\themes\slim.omp.json | Invoke-Expression
+```
+
+<img class="img-responsive" loading="lazy" src="/images/24/24-06.png">
+
+## 結論
+
+使用過的 terminal 從最早的 cmd ，再到 cmder，再到最近的 Windows Terminal，再搭配 ohmyposh，這是目前我覺得很搭配的組合。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Angular TypeForm - 強型別Form的心得]]></title>
+            <link>https://thomascsd.github.io/blog/2022-09-08-angular-typeform</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2022-09-08-angular-typeform</guid>
+            <pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[2024-11-10 更新：增加 FormBuild.group 和 class-validator 的程式說明 <hr 在 Angular v14 中最重要的 2 個功能，除了 Single Component 之外，就是 Typeform 了，而 Typeform 也就是在建立 Form 功能時]]></description>
+            <content:encoded><![CDATA[2024-11-10 更新：增加 FormBuild.group 和 class-validator 的程式說明
+
+<hr>
+
+在 Angular v14 中最重要的 2 個功能，除了 Single Component 之外，就是 Typeform 了，而 Typeform 也就是在建立 Form 功能時，終於可以套用型別，方便開發及除錯，是期待很久的功能。
+查詢[官方文件](https://angular.tw/guide/typed-forms)可以發現，範列都是使用從建立 `FormGroup`，再建立 'FormControl' 的方式。
+
+<img class="img-responsive" loading="lazy" src="/images/25/25-01.png">
+
+本人還是比較偏好用 `FormBuilder` 來建立 FormGroup，所以分享一下用 `FromBuilder` 建立的心得。
+
+## 使用方式
+
+```javascript
+import { Component, OnInit } from '@angular/core';
+import { UntypedFormGroup, NgForm, Validators, UntypedFormBuilder } from '@angular/forms';
+```
+
+首先使用 Angular CLI 來將之前建立的小專案升級至 V.14，如上，升級後原本的程式會自動轉換成 `UntypedFormGroup` 、 `UntypedFormBuilder`。
+
+```javascript
+import { FormGroup, NgForm, Validators, FormBuilder, FormControl } from '@angular/forms';
+
+interface MemberForm {
+  id?: FormControl<string>;
+  name: FormControl<string>;
+  email: FormControl<string>;
+  mobile: FormControl<string>;
+  birthday: FormControl<string>;
+  account: FormControl<string>;
+  password: FormControl<string>;
+}
+```
+
+接著替換成 `FormGroup`、 `FormBuilder`，並且建立使用於 `FormBuilder` 上的 interface。
+
+```javascript
+group: FormGroup<MemberForm>;
+```
+
+接著在 `FormGroup` 中使用已建立的 `MemberForm`。
+
+```javascript
+  constructor(
+    private fb: FormBuilder,
+  ) {}
+
+  ngOnInit() {
+    this.group = this.fb.nonNullable.group({
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      mobile: new FormControl('', Validators.required),
+      birthday: new FormControl('', Validators.required),
+      account: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
+
+  }
+
+```
+
+之後像之前 v.13 的一樣寫法，使用 'group' 方式來建立 `FormGroup` ，因為每個屬性都是必填，所以設定 `Validators.required` 。
+
+```javascript
+class Member extends BaseModel {
+  name = '';
+  email = '';
+  mobile = '';
+  birthday = '';
+  password = '';
+}
+
+interface MemberForm {
+  id?: FormControl<string>;
+  name: FormControl<string>;
+  email: FormControl<string>;
+  mobile: FormControl<string>;
+  birthday: FormControl<string>;
+  account: FormControl<string>;
+  password: FormControl<string>;
+}
+```
+
+一般說來，每個 Form 都會有相對應的 Model，也就是類型，比如上面程式碼中的 `Member`。而 `FormGroup` 也會建立都是相同屬性的類型，比如上面程式碼的 `MemberForm` ，如此就會重覆建立。
+
+```javascript
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
+
+export type Unpacked<T> = T extends Array<infer U> ? U : T;
+
+export type ToForm<OriginalType> = {
+  [key in keyof OriginalType]: OriginalType[key] extends Array<any>
+    ? FormArray<
+        Unpacked<OriginalType[key]> extends object
+          ? FormGroup<ToForm<Unpacked<OriginalType[key]>>>
+          : FormControl<Unpacked<OriginalType[key]> | null>
+      >
+    : OriginalType[key] extends object
+    ? FormGroup<ToForm<OriginalType[key]>>
+    : FormControl<OriginalType[key] | null>;
+};
+```
+
+可以參考文章[搶先體驗強型別表單（Strict Typed Reactive Forms）](https://fullstackladder.dev/blog/2022/05/15/angular-14-strict-typed-reactive-forms/)，就可以方便轉換。
+
+```javascript
+import { ToForm } from '../utils/toForm';
+
+group: FormGroup<ToForm<Member>>;
+```
+
+只需改成 `FormGroup<ToForm<Member>>` 即可。
+
+## [class-validator](https://github.com/typestack/class-validator)
+
+因為驗證是每個 Form 都是必須會需要做的行為，所以會使用 `class-validator` 來共同驗證，之前有接觸過 `class-validator` 這個套件，是用 decorator 的方式，在物件的屬性上設定所要驗證的格式，之前都是在 Node.js 上來使用，不過 Angular 上使用的話，需要整合一下。
+
+```javascript
+import {
+  IsNotEmpty,
+  IsEmail,
+  IsMobilePhone,
+  ValidationOptions,
+  Matches,
+  MinLength,
+  MaxLength,
+} from 'class-validator';
+import { plainToClassFromExist } from 'class-transformer';
+import { BaseModel } from './baseModel';
+
+const options: ValidationOptions = { message: '填寫正式資料' };
+
+export class Member extends BaseModel {
+  @IsNotEmpty({
+    message: '姓名需填寫',
+  })
+  name = '';
+
+  @IsNotEmpty({
+    message: 'Email需填寫',
+  })
+  @IsEmail()
+  email = '';
+
+  @IsNotEmpty({
+    message: '手機需填寫',
+  })
+  @IsMobilePhone(
+    'zh-TW',
+    {
+      strictMode: false,
+    },
+    {
+      message: '手機需填寫',
+    }
+  )
+  mobile = '';
+
+  birthday: string;
+
+  @IsNotEmpty(options)
+  @MinLength(6, options)
+  @MaxLength(12, options)
+  @Matches(/[a-zA-Z\d]/g, options)
+  account = '';
+
+  @IsNotEmpty(options)
+  @MinLength(6, options)
+  @MaxLength(12, options)
+  @Matches(/[a-zA-Z\d]/g, options)
+  password = '';
+
+  constructor(data?: any) {
+    super();
+    plainToClassFromExist(this, data);
+  }
+}
+```
+
+`class-validator` 預設已經定義一些常用的驗證方式，例如是否必填、Email 或是手機驗證，直接套用在類別上的屬性即可，可以參考[文件](https://github.com/typestack/class-validator#validation-decorators)。
+
+```javascript
+import { ValidationErrors, ValidatorFn } from '@angular/forms';
+import { validateSync } from 'class-validator';
+
+export function utilValidator<T extends Record<string, any>>(
+  model: T,
+  prop: string,
+): ValidatorFn {
+  return (control): ValidationErrors | null => {
+    let invalid = false;
+
+    (model as any)[prop] = control.value;
+
+    const errors = validateSync(model, {
+      skipMissingProperties: true,
+    });
+
+    if (errors && errors.length) {
+      const propError = errors.filter((e) => e.property == prop);
+
+      if (propError.length > 0) {
+        const message = propError.map(({ constraints }) =>
+          Object.values(constraints || {}).join(', '),
+        );
+        invalid = true;
+
+        return {
+          hasError: invalid && (control.dirty || control.touched),
+          message: message,
+        };
+      }
+    }
+
+    return null;
+  };
+}
+```
+
+為了要將 `class-validator` 和 `FormGroup` 、`FormControl` 整合，建立了共同方法 `utilValidator`，使用`class-validator`中的方法 `validateSync` 來驗證 model，並且取得特定屬性的錯誤訊息。
+
+```javascript
+this.group = this.fb.group({
+  name: new FormControl('', utilValidator(new Member(), 'name')),
+  email: new FormControl('', utilValidator(new Member(), 'email')),
+  mobile: new FormControl('', utilValidator(new Member(), 'mobile')),
+  birthday: new FormControl('', utilValidator(new Member(), 'birthday')),
+  account: new FormControl('', utilValidator(new Member(), 'account')),
+  password: new FormControl('', utilValidator(new Member(), 'password')),
+});
+```
+
+接著在 `FormBuilder` 的 `Group` 方法中，使用剛剛建立的 `utilValidator`，傳入 model 及屬性，即可將`class-validator` 及 `FormGroup` 整合在一起。
+
+```html
+@if (group.controls.name.errors?.["hasError"]) {
+<p class="help is-danger">{{ group.controls.name.errors?.["message"] }}</p>
+}
+```
+
+而如果有錯誤的話，固定回傳格式為 `{ hasError: true, message }`，所以頁面上只需判斷 `hasError === true`即可。
+
+<img class="img-responsive" loading="lazy" src="/images/25/25-02.png">
+
+並且因為是強型別的關系，在 html 上也有程式碼提示的幫助。
+
+## 結論
+
+一直以來，TypeForm 就是榜上有名的希望實作的功能，對於開發及除錯的幫助很大，我將以前的小專案改為 TypeForm 的方式嘗試看看，這是小小的心得分享。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[建立簡報的工具 - Slidev 的介紹]]></title>
+            <link>https://thomascsd.github.io/blog/2023-02-06-slidev</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2023-02-06-slidev</guid>
+            <pubDate>Mon, 06 Feb 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 Slidev ，覺得簡單易用，就決定採]]></description>
+            <content:encoded><![CDATA[去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 [Slidev](https://sli.dev) ，覺得簡單易用，就決定採用了，現在分享給大家參考看看。
+
+## 安裝
+
+```
+npm init slidev
+```
+
+可以參考[官方網站](https://sli.dev/guide/)，輸入上列的指令建立初始樣版。
+
+<img class="img-responsive" loading="lazy" src="/images/26/26-01.png">
+
+如上圖，輸入簡報名稱後，即會安裝相依的套件。
+
+<img class="img-responsive" loading="lazy" src="/images/26/26-02.png">
+<img class="img-responsive" loading="lazy" src="/images/26/26-03.png">
+
+之後會開啟範例網站 http://localhost:3030 。可以確認一下 Slidev 的功能有那些。
+
+## 建立簡報
+
+<img class="img-responsive" loading="lazy" src="/images/26/26-04.png">
+
+根據[文件](https://sli.dev/guide/#markdown-syntax)，進入點是 slides.md，一切的簡報這邊即可。
+
+````
+# Slidev
+
+Hello World
+
+---
+
+# Page 2
+
+Directly use code blocks for highlighting
+
+
+``` ts
+console.log('Hello, World!')
+```
+
+---
+
+# Page 3
+````
+
+而內容格式如上，看起來一目了然，都是很基本的 [markdown 語法](https://sli.dev/guide/syntax.html)就可以建立簡報了。
+
+<img class="img-responsive" loading="lazy" src="/images/26/26-05.png">
+
+另外為了便於建立簡報，可以安裝 [Slidev VSCode Extension](https://marketplace.visualstudio.com/items?itemName=antfu.slidev)。
+
+<img class="img-responsive" loading="lazy" src="/images/26/26-06.png">
+
+這樣子就可以列表目前的簡報，及目前所選擇簡報的預覽圖
+
+## 程式碼
+
+````
+```ts {all|2|1-6|9|all}
+interface User {
+  id: number
+  firstName: string
+  lastName: string
+  role: string
+}
+```
+
+function updateUser(id: number, update: User) {
+  const user = getUser(id)
+  const newUser = { ...user, ...update }
+  saveUser(id, newUser)
+}
+
+````
+
+接著就是我選擇 Slidev 的原因之一，可以 Highlight 程式碼，如同上面的格式，參考[文件](https://sli.dev/guide/syntax.html#line-highlighting)，在後方加上程式碼的行號 `{all|2|1-6|9|all}`，即可顯示 Highlight 的程式碼。
+
+<img class="img-responsive" loading="lazy" src="/images/26/26-07.gif">
+
+之後就像是上方的圖片，可以配合簡報強調特定行數的程式碼。
+
+## PDF
+
+```
+npm i -D playwright-chromium
+```
+
+另外還可以匯出成 PDF，就需要安裝 `playwright-chromium` ，可以參考[文件](https://sli.dev/guide/exporting.html#pdf) 。
+
+```
+slidev export
+```
+
+接著輸入指令`export` 即可匯出 PDF。
+
+## 結論
+
+Slidev 是很好使用的工具，搭配 VSCode Exntension ，能快速輕鬆建立起簡報。而簡報所需的功能都有具備，推薦給大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[使用TypeScript建立Express.js-使用Ts.ED]]></title>
+            <link>https://thomascsd.github.io/blog/2023-05-24-expressjs-typescript-tsed</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2023-05-24-expressjs-typescript-tsed</guid>
+            <pubDate>Wed, 24 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[之前有寫過一篇文章使用 TypeScript 建立 Express.js，介紹了 routing-controllers，可以將 `TypeScipt` 與 `Express.js`整合，並使用 Controller 的方式建立 `Express.js`，然而發現套件更新有點緩慢，最近在該專案的Gi]]></description>
+            <content:encoded><![CDATA[之前有寫過一篇文章[使用 TypeScript 建立 Express.js](https://thomascsd.github.io/blog/2021-02-07-ExpressjssWithTypescript)，介紹了 [routing-controllers](https://github.com/typestack/routing-controllers)，可以將 `TypeScipt` 與 `Express.js`整合，並使用 Controller 的方式建立 `Express.js`，然而發現套件更新有點緩慢，最近在該專案的[GitHub issue](https://github.com/typestack/routing-controllers/issues/900)中有人詢問是否已經停止維護，並在此 isssue 中發現了另一個相似的套件[Ts.ED](https://tsed.io/)。在研究和測試後，覺得可以將程式轉換到 Ts.ED，寫篇心得文分享。
+
+## 建立專案
+
+```bash
+npm install -g @tsed/cli
+tsed init .
+```
+
+參考[Getting started](https://tsed.io/getting-started/)，首先安裝 CLI 工具，再初始化專案。
+
+<img class="img-responsive" loading="lazy" src="/images/27/27-01.png">
+
+TS.ed 本身會與一些套件整合，可以勾選想要整合的功能，一般的選擇是 Testing、Linter、Swagger。
+
+<img class="img-responsive" loading="lazy" src="/images/27/27-02.png">
+
+接著等待安裝完相依性的套件之後，就可以開啟專案開發了。
+另外因為覺得[文件](https://tsed.io/docs/configuration.html)寫得有點分散，所以這篇文章會大致說明一下，從設定 Server，再到建立 Controller，最後建立 Service 的步驟。
+
+## 設定 Server
+
+```typescript
+@Configuration({
+  httpPort: '127.0.0.1:8080',
+  mount: {
+    '/': [ApiController],
+  },
+  swagger: [
+    {
+      path: '/doc',
+      specVersion: '3.0.1',
+    },
+  ],
+  middlewares: ['cors', 'helmet', 'compression', 'method-override', 'json-parser'],
+  views: {
+    root: join(process.cwd(), '../views'),
+    extensions: {
+      ejs: 'ejs',
+    },
+  },
+})
+export class Server {
+  @Inject()
+  protected app: PlatformApplication;
+}
+```
+
+一般會建立類別 `Server`，並且用`@Configuration`來設定 Server 的行為，可參考[文件 Configuration](https://tsed.io/docs/configuration.html)，講解一下常用的設定。
+
+- mount：設定路由，因想設為每個 API 的起始路由為 api，所以使用了 [Nested Controller](https://tsed.io/docs/controllers.html#nested-controllers)。
+- middlewares：來戴入 Expression.js 的 middlewares。
+- swagger：Swagger 的相關設定，例如 API 文件的路徑和規格版本。
+
+## 啟動 Application
+
+```javascript
+import { PlatformExpress } from '@tsed/platform-express';
+import Server from './server';
+import dotenv from 'dotenv';
+import 'reflect-metadata';
+
+const config = dotenv.config({
+  path: '.env',
+});
+
+async function bootstrap() {
+  let httpPort: string | number = 8080;
+
+  try {
+    if (process.env.MODE === 'dev') {
+      httpPort = '127.0.0.1:8080';
+    }
+    const configObj = {
+      ...config.parsed,
+      httpPort,
+    };
+
+    const platform = await PlatformExpress.bootstrap(Server, configObj);
+    await platform.listen();
+  } catch (er) {
+    $log.error(er);
+  }
+}
+
+bootstrap();
+```
+
+接著在`index.ts`中，呼叫`PlatformExpress.bootstrap`來啟動 `Express.js`，而`boostrap`的第一個參數就是剛剛建立`Server`物件，而一般來說，都會使用`.env`來儲存設定，所以可以將 config 物件傳入至第二個參數。並且這邊有個小技巧，可以覆寫在`Server.ts`的`Configuration`的設定，比如正式及測試所使用的 port 不相同，所以就根據正式或是測試來切換`httpPort`。
+
+## Controller
+
+```javascript
+@Controller({
+  path: '/api',
+  children: [ForecastController, ContactController],
+})
+export class ApiController {}
+```
+
+TS.ed 支援 Nested Controller 的設定方式，因為想將所有的 API 起始路由設為 `/api`，可以使用屬性 `children`，來包含其他的 controller。
+
+```javascript
+@Controller('/contact')
+export class ContactController {
+  constructor(private contactService: ContactService) {}
+
+  @Get('/list')
+  getContacts() {
+    return this.contactService.getContacts();
+  }
+
+  @Post('/save')
+  saveContact(@BodyParams() contact: Contact) {
+    return this.contactService.saveContact(contact);
+  }
+
+  @Post('/update')
+  update(@BodyParams() contact: Contact) {
+    return this.contactService.updateContact(contact);
+  }
+}
+```
+
+- 與`routing-controllers`相似，使用 Decorator `@Controller`來定義 Controller 設定路由，以及使用`@Get`、`@Post`來定義 Action。
+- 使用`@BodyParams`來對應`request.body`。
+- 再來也支援 Depenency Injection，一樣是在建構函式中宣告想注入的類別。
+
+## Service
+
+```javascript
+@Service()
+export class ForecastService {
+  @Value('WEATHERBIT_API_KEY')
+  apiKey!: string;
+
+  async getDays(lat: number, lon: number) {
+    const url = `${this.apiUrl}?key=${this.apiKey}&lang=zh-tw&lat=${lat}&lon=${lon}`;
+    const res = await axios.get<Daily>(url);
+
+    return res.data;
+  }
+}
+```
+
+- 使用`@Service`來讓 class 成為 Service，代表著這個 class 可以被注入至其他的 Service 或是 Controller 中。
+- 使用`@Value`可以取得設定檔.env 內所設定的 value，這邊取得 API key。
+
+## 啟動
+
+<img class="img-responsive" loading="lazy" src="/images/27/27-03.png">
+
+```json
+"scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "ts-node ./src/index.ts",
+    "build": "tsc"
+  },
+```
+
+啟動很簡單的，只要執行`index.js`即可，而我習慣在本機開發階段是使用`ts-node`啟用，如此方便使用 VSCode 來 debug。並且站台啟用後，還可以看到輸出內容上顯示執行時間，及 api 列表，能一目了然目前狀態。
+
+## 結論
+
+總結而言，Ts.ED 是一個強大且易於使用的 framework，並且在最新版 7.0.0 之後，不只 Express.js，還會支援 Koa、Fastify，而且與 TypeScript 整合，開發很容易，推薦給大家參考看看。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Angular判斷 DOM Render 是否完成]]></title>
+            <link>https://thomascsd.github.io/blog/2023-08-27-angular-on-changes</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2023-08-27-angular-on-changes</guid>
+            <pubDate>Sun, 27 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有` $trick`方法，可以得知 Dom render 已完成。當查看 Sta]]></description>
+            <content:encoded><![CDATA[最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有` $trick`方法，可以得知 Dom render 已完成。當查看 StackOverFlow 都是建議使用 `ngAfterViewChecked`，但經過測試後，覺得同時使用 `ngOnChanges` 及`ngAfterViewChecked`後會比較好，分享一下我的做法。
+
+<iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/stackblitz-starters-l96j3d?embed=1&file=src%2Fchildren%2Fchildren.component.ts" ></iframe>
+
+如同程式範例，Component (app-childred) 屬性`content`，會於 `main.ts`點擊按鈕時，才會取得要顯示的內容。因為這時`ngAfterViewInit`已經執行了，而 div 的內容尚未截入，所以 div 的高度為零，也就是`scrollHeightInit` 為零。
+
+程式寫法如下：
+
+- 於`ngOnChanges`判斷屬性`content`的值是否有改變，有改變的話，設定`Flag`為 `true`。
+
+- 因為每次 Change Detection 都會執行`ngAfterViewChecked`，到這一步生命周期時代表 Dom render 已完成，也就是 div 的內容已截入完成，而如此可以取得 div 的高度。
+
+- 取得 div 高度後，進行後續的處理，取得捲軸的高度，來判斷是否捲軸到底。
+
+## 結論
+
+使用 `ngOnChanges` 及`ngAfterViewChecked`這 2 個生命週期來判斷，經過測試後覺得很不錯，符合目前的需求，如果大家覺得可以調整的地方，可以提出來。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[.NET 好用套件 - commandline]]></title>
+            <link>https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line</guid>
+            <pubDate>Fri, 29 Dec 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件System.CommandLine，但覺得沒有很好使用，之前有發現一個套件 commandline，設定及讀取參考很簡單易用，寫篇心得文分享一下。 設定 ```csharp publi]]></description>
+            <content:encoded><![CDATA[在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件[System.CommandLine](https://www.nuget.org/packages/System.CommandLine)，但覺得沒有很好使用，之前有發現一個套件 [commandline](https://github.com/commandlineparser/commandline)，設定及讀取參考很簡單易用，寫篇心得文分享一下。
+
+## 設定
+
+```csharp
+public class DefaultOptions
+    {
+
+        [Option('n', "name", Required = true, HelpText = "名稱")]
+        public string Name { get; set; }
+
+        [Option('r', "retry", HelpText = "是否要重新執行")]
+        public bool Retry { get; set; }
+
+        [Option('d', "date", HelpText = "要執行的日期")]
+        public string Date { get; set; }
+    }
+
+```
+
+首先建立 Options 類別，`Commandline`會透過 `Attribute`將屬性和 CLI 參數對應，可以參考[文件](https://github.com/commandlineparser/commandline/wiki/Option-Attribute)，所以第一個參數設定簡短名稱，第二個參數設定完整名稱，看起來很淺顯易懂。
+
+## 解析參數
+
+```csharp
+await Parser.Default.ParseArguments<DefaultOptions>(args).WithParsedAsync(RunJob);
+
+ async Task RunJob(DefaultOptions options)
+{
+    //do something
+    Console.WriteLine($"name:{options.Name}");
+}
+```
+
+使用`ParseArguments` 及 `WithParsedAsync`來解析參數，並取得 options 物件，也是很淺顯易懂的。
+
+<img class="img-responsive" loading="lazy" src="/images/29/29-1.png">
+
+接著就可以使用熟悉的 [unix style](https://github.com/commandlineparser/commandline/wiki/CommandLine-Grammar) 方式設定參數來執行。
+
+## 另一種方式
+
+<img class="img-responsive" loading="lazy" src="/images/29/29-2.png">
+
+有時會需要根據不同的參數，取得不同的 Options 物件。看了一下原始檔，發現 `ParseArguments` 還有另一個多戴方法，可傳入 factory 工廠方式，來決定傳出的 Options 物件。
+
+```csharp
+public class ActionAOptions: DefaultOptions
+ {
+        [Option('a', "action")]
+        public string Action { get; set; }
+  }
+
+await Parser.Default.ParseArguments<DefaultOptions>(SelectOptions(args), args)
+.WithParsedAsync(RunJob2);
+
+async Task RunJob2(DefaultOptions options)
+{
+    var actionOptions = (ActionAOptions)options;
+
+    //do something
+    Console.WriteLine($"name:{actionOptions.Name}, action:{actionOptions.Action}");
+}
+
+Func<DefaultOptions> SelectOptions(string[] args)
+{
+    return () =>
+    {
+        var isAction = args[1]?.IndexOf("action") != -1;
+        if (isAction)
+        {
+            return new ActionAOptions();
+        }
+        return new DefaultOptions();
+    };
+}
+```
+
+<img class="img-responsive" loading="lazy" src="/images/29/29-3.png">
+
+如同上面的程式碼，可以根據不同名稱，取回不同的 options 物件，例如名稱(-n/--name)為 action 時，可以多傳入參數 action。
+
+## 結論
+
+總結來說，使用命令列參數解析工具可以讓我們更輕鬆地處理參數，這不僅讓程式碼更易讀，也讓程式開發更加輕鬆。藉由簡單的設定和解析過程，我們能夠更專注於實際的工作。這種方式不僅提高了效率，同時也增加了程式碼的整體易讀性。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Bulma的初體驗]]></title>
+            <link>https://thomascsd.github.io/blog/2024-07-14-firtst-step-bulma</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2024-07-14-firtst-step-bulma</guid>
+            <pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近對一款 CSS 框架 Bulma 產生了興趣，發現它的開發者體驗（DX）非常出色，使用起來比 Bootstrap 更直觀。前不久，它推出了 1.0 版本，因此我想撰寫一篇心得文，稍微介紹一下。 使用 要引用`Bulma`，最簡單的方式，就是在頁面上使用 CDN 連結。 ```html <link]]></description>
+            <content:encoded><![CDATA[最近對一款 CSS 框架 - [Bulma](https://bulma.io/) 產生了興趣，發現它的開發者體驗（DX）非常出色，使用起來比 Bootstrap 更直觀。前不久，它推出了 1.0 版本，因此我想撰寫一篇心得文，稍微介紹一下。
+
+## 使用
+
+要引用`Bulma`，最簡單的方式，就是在頁面上使用 CDN 連結。
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+```
+
+## 特點
+
+下面列出幾個特點，對比 Bootstrap，有這些地方讓我覺得很方便使用。
+
+- Column Layout
+
+使用 Column 來排版，看了語法後會讓人眼睛一亮，只需使用 `columns` 及 `columns` 就會自動排版。
+
+```html
+<div class="columns">
+  <div class="column"></div>
+  <div class="column">
+    <strong>Bulma - Blog theme</strong> by <a href="https://gonzalojs.com">Gonzalo Gutierrez</a>.
+    Based on the <a href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>.
+  </div>
+  <div class="column"></div>
+</div>
+```
+
+<img class="img-responsive" loading="lazy" src="/images/30/30-1.png">
+
+如上圖，預設是左右均分，看起來會有點跑版
+
+```html
+<div class="columns">
+  <div class="column is-2"></div>
+  <div class="column is-8">
+    <strong>Bulma - Blog theme</strong> by <a href="https://gonzalojs.com">Gonzalo Gutierrez</a>.
+    Based on the <a href="http://jigsaw-blog-staging.tighten.co/">jigsaw-blog</a>.
+  </div>
+  <div class="column is-2"></div>
+</div>
+```
+
+<img class="img-responsive" loading="lazy" src="/images/30/30-2.png">
+
+一樣也是有 [12 columns system](https://bulma.io/documentation/columns/sizes/#12-columns-system)，我這邊就設定 `is-8` ，將寬度設寬。
+
+- Component 的設定
+
+比如 [Navbar](https://bulma.io/documentation/components/navbar/) 的設定，使用的階層是比較少。
+
+```html
+<!--Bootstrap-->
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link">Member</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link">List</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link">Order</a>
+    </li>
+  </ul>
+</div>
+```
+
+```html
+<!--Bluma-->
+<div id="navbarBasic" class="navbar-menu">
+  <div class="navbar-start">
+    <a class="navbar-item" [routerLink]="['/member']">Member</a>
+    <a class="navbar-item" [routerLink]="['/list']">List</a>
+    <a class="navbar-item" [routerLink]="['/order']">Order</a>
+  </div>
+</div>
+```
+
+- is-\*的語法
+
+這邊也是我覺得開發者體體很好的地方，如同上方的 `Column Layout` ，設定寬度使用 `is-8`、`is-2`。
+
+```html
+<input class="input is-link" type="text" placeholder="Link input" />
+<input class="input is-small" type="text" placeholder="Small input" />
+<div class="control">
+  <input class="input is-focused" type="text" placeholder="Focused input" />
+</div>
+```
+
+另外在 `input` 有很多這種的設定，如上方的 `is-link`、`is-small`、`is-focused` ，可以參考 [input 章節](https://bulma.io/documentation/form/input/)
+
+## 參考內容
+
+Bulma 有蠻多的資源可以參考，雖然沒有像 Bootstrap 這麼龎大，我覺得還是有不少的資源。
+
+<img class="img-responsive" loading="lazy" src="/images/30/30-3.png">
+
+- [Free Bulma Templates](https://bulmatemplates.github.io/bulma-templates/)：蠻多的免費板型可以使用，其中的[Blog 2 - Tailsaw](https://bulmatemplates.github.io/bulma-templates/templates/blog-tailsaw.html)就是我所使用的版型。
+
+<img class="img-responsive" loading="lazy" src="/images/30/30-4.png">
+
+- [Awesome Bulma](https://github.com/aldi/awesome-bulma)：大家都熟悉的 Awesome 系例，各個資源的集合。
+
+## 結論
+
+結論來說，Bulma 確實是一個非常直觀且方便使用的 CSS 框架。它的開發者體驗（DX）優秀，對比 Bootstrap 有著更為簡潔的語法和設計。特別是在排版和元件設定方面，Bulma 可以來試試看，並且將 Blog 也一起使用 Bulma 翻新。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[VSCode Extensions 其他的選擇]]></title>
+            <link>https://thomascsd.github.io/blog/2024-09-01-vs-code-extensions</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2024-09-01-vs-code-extensions</guid>
+            <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[這次我要跟大家分享一些我覺得很好用的 VSCode 擴充套件。這些套件可能不太熱門，但我覺得它們非常實用。當然，我們都知道像 ESLint 和 GitLens 這樣的知名套件，所以我不會再提到它們了。請大家參考看看。 Separators <img class="img-responsive" lo]]></description>
+            <content:encoded><![CDATA[這次我要跟大家分享一些我覺得很好用的 VSCode 擴充套件。這些套件可能不太熱門，但我覺得它們非常實用。當然，我們都知道像 ESLint 和 GitLens 這樣的知名套件，所以我不會再提到它們了。請大家參考看看。
+
+## [Separators](https://marketplace.visualstudio.com/items?itemName=alefragnani.separators)
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-01.png">
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-02.png"><br>
+
+這個套件的功能很單純，在`function` 或 `method` 上方出現分隔線，讓程式變成一個一個區塊的。
+
+## [TabOut](https://marketplace.visualstudio.com/items?itemName=albert.TabOut)
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-03.png">
+<br>
+<img class="img-responsive" loading="lazy" src="/images/31/31-04.gif">
+
+這個功能就是如上圖示，按下`tab`鍵即可跳至下一個區塊，而這個功能是我一直在尋找的，因為在`Visual Studio`有類似這個功能，增加很大的便利性。<br>
+
+## [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-05.png">
+<br>
+<img class="img-responsive" loading="lazy" src="/images/31/31-06.png">
+
+一般來說，在開發時常常需要切換不同的專案，而這個這個套件預設會將使用 git 做版本控管的專案自動匯入，並且還有加入`favorites`、設定標籤的功能，很實用的套件。<br>
+
+## [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens)
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-08.png">
+
+有時候，我們會需要查看安裝的套件是否是最新版，以及希望能夠快速更新，而這個套件就可完成這目的。
+<br>
+<img class="img-responsive" loading="lazy" src="/images/31/31-12.png">
+
+裝好套件後，在`package.json`時，即可按右上方的 V 按鈕
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-13.png">
+
+等待一下後，即會在套件上方出現版本號的資料
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-09.png">
+
+如此可以快速的更新至最新版本，最後執行 `npm install`就完成了。<br>
+
+## [Readme Pattern](https://marketplace.visualstudio.com/items?itemName=thomascsd.vscode-readme-pattern)
+
+<img class="img-responsive" loading="lazy" src="/images/31/31-10.png">
+<br>
+<img class="img-responsive" loading="lazy" src="/images/31/31-11.gif">
+
+最後推薦一下我自已開發的套件，有時候可以快速的新增 ReadMe.md 範本。
+
+## 結論
+
+總之，VSCode 的擴充套件確實有很多選擇，而且社群也非常活躍。希望我介紹的一些不太知名但實用的套件，能夠為大家的開發工作帶來一些幫助。加強功能、提高效率，這些都是我們使用擴充套件的初衷。希望大家也能樂在其中，找到適合自己的擴充套件。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[開發程式中一些有用的網站]]></title>
+            <link>https://thomascsd.github.io/blog/2025-03-16-useful-web-sites</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2025-03-16-useful-web-sites</guid>
+            <pubDate>Sun, 16 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[隨著 IT 技術的快速發展，各種新的觀念和程式框架層出不窮，每年都有所更新。因此，我認為多閱讀一些文章是一個非常有效的方式。接下來，我想介紹兩個文章集合網站（Echo.js 和 Daily.dev）。此外，我還會分享一些我平常收集的工具類型網站。 Echo.js <img class="img-re]]></description>
+            <content:encoded><![CDATA[隨著 IT 技術的快速發展，各種新的觀念和程式框架層出不窮，每年都有所更新。因此，我認為多閱讀一些文章是一個非常有效的方式。接下來，我想介紹兩個文章集合網站（Echo.js 和 Daily.dev）。此外，我還會分享一些我平常收集的工具類型網站。
+
+## [Echo.js](https://www.echojs.com/)
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-01.png">
+
+網站的內容主要是彙整前端技術的文章，任何人都可以註冊後，將有興趣的文章貼上。最近這個網站比較少看了，主要是看接下來的網站。
+
+## [daily.dev](https://daily.dev/)
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-02.png">
+
+可以參考之前曾撰寫過一篇[daily.dev 的文章](https://thomascsd.github.io/blog/2020-09-05-IntroducingDailyDev)，並且因為以前的介面和功能與目前差距太大，所以趁這次機會，重新改寫這篇文章。
+
+## [devdocs](https://devdocs.io/)
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-03.png">
+
+這是一個集中各種語言、函式庫和框架文件的網站，並且同時也是 [Open Source 項目](https://github.com/freeCodeCamp/devdocs)。
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-04.png">
+
+其中一個是特點是搜索是跨越各個文件，例如搜索 `date `，將會返回各種相關的文件的結果。
+
+## [regex101](https://regex101.com/)
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-05.png">
+
+在開發規則運算式時，會需要確認規則運算式是否正確，而這時就需要方便的工具，[regex101](https://regex101.com/)是我試過的工具中最好用的。
+如上圖所示，當我們輸入`^09\d{8}$` 來比對手機號碼，在右側欄即會顯示該規則的解釋，同時輸入的測試資料也會被高亮顯示，這使得測試和除錯的過程更為方便。。
+
+## [it-tools](https://it-tools.tech/)
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-06.png">
+
+最近發現的工具類型網站，是 [Open Source 項目](https://github.com/CorentinTh/it-tools)，包含很多開發時所需的小工具，例如 Base64 編號、字串比對、IP 的計算。
+
+<img class="img-responsive" loading="lazy" src="/images/32/32-07.png">
+
+例如上圖，有時會想要快速產生 UUID 來使用。
+
+## 結論
+
+隨著技術的不斷演進，掌握最新的工具和資源對於開發者來說至關重要。希望以上介紹的網站和工具能夠幫助你在學習和開發的過程中更加高效與便捷。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Zen Browser小小心得]]></title>
+            <link>https://thomascsd.github.io/blog/2025-08-24-zen-browser</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2025-08-24-zen-browser</guid>
+            <pubDate>Sun, 24 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[最近瀏覽 daily.dev 上的文章時，偶然發現一款名為 Zen Browser 的瀏覽器。它不僅結合了其他瀏覽器的特色，更特別的是以 Firefox 為核心開發。身為 Firefox 的長期用戶，我立刻感到好奇並下載試用。隨著使用時間拉長，我越來越覺得它得心應手，甚至將其設為我的預設瀏覽器。因此]]></description>
+            <content:encoded><![CDATA[最近瀏覽 [daily.dev](https://daily.dev/) 上的文章時，偶然發現一款名為 [Zen Browser](https://zen-browser.app/) 的瀏覽器。它不僅結合了其他瀏覽器的特色，更特別的是以 Firefox 為核心開發。身為 Firefox 的長期用戶，我立刻感到好奇並下載試用。隨著使用時間拉長，我越來越覺得它得心應手，甚至將其設為我的預設瀏覽器。因此，我決定寫下這篇文章，記錄我的使用心得。
+
+## 安裝
+
+安裝 Zen Browser 非常簡單，只需前往[官方網站](https://zen-browser.app/)下載最新版本，就像安裝其他瀏覽器一樣，幾個步驟就能輕鬆完成。
+
+<img class="img-responsive" loading="lazy" src="/images/33/33-01.png">
+
+## 特色
+
+以下我將分享幾個最讓我喜歡的特色：
+
+- _側邊垂直分頁_ — 就像 _Arc Browser_ 一樣，分頁是以垂直方式排列。相較於傳統瀏覽器的水平分頁，垂直分頁能更有效地利用螢幕空間，解決分頁一多就變得擁擠、難以辨識的問題。
+
+<img class="img-responsive" loading="lazy" src="/images/33/33-02.png">
+
+- _Add To Essentials_ — 這個功能可以將常用網站釘選在側邊欄上方，最多可釘選 12 個，並以小圖示呈現，非常直觀。對我來說，它最適合用來放置社群網站，只需點擊一下，就能快速切換。
+
+<img class="img-responsive" loading="lazy" src="/images/33/33-03.png">
+
+- _緊湊模式（Compact Mode）_ — 緊湊模式會預設隱藏側邊分頁欄，讓網頁以近乎全螢幕的方式呈現，提供更廣闊的視覺空間，特別適合閱讀文章或觀看影片。設定方法也很簡單，只需在分頁欄按右鍵選擇「開啟緊湊模式」即可。
+
+<img class="img-responsive" loading="lazy" src="/images/33/33-04.png">
+
+- _Space_ — 這個功能讓你能將分頁分組，方便管理。舉例來說，最近我對 _monorepo_ 很有興趣，便建立了一個 _monorepo_ 的 Space，將所有與 Turborepo 相關的分頁都集中管理。此外，你還可以為每個 Space 設定不同的背景顏色。
+
+<img class="img-responsive" loading="lazy" src="/images/33/33-05.png">
+
+## 設定
+
+使用後，覺得要設定下列的項目，會讓使用體驗更好：
+
+- *登入 Firefox 帳號* — 身為 Firefox 的長期使用者，登入帳號後，就能將所有資訊同步回來，包括書籤與擴充套件，對我來說，這根本是「無痛轉移」。
+
+- *書籤設定* — 預設狀態下，書籤工具列是隱藏的，但我個人偏好將它顯示出來。
+
+## 待改善之處
+
+當然，Zen Browser 也不是十全十美，在使用上仍有幾點可以改進：
+
+- *擴充套件使用不便*：目前需要點擊左上角的圖示，才能開啟擴充套件的選單，操作上稍嫌繁瑣。希望未來的版本能優化這個部分，讓擴充套件的使用更直觀。
+
+<img class="img-responsive" loading="lazy" src="/images/33/33-06.png">
+
+- *不支援 Firefox 主題*：對於習慣個人化主題的用戶來說，Zen Browser 目前還不支援 Firefox 主題是一個小小的遺憾，期待未來能加入這項功能。
+
+## 結論
+
+使用 Zen Browser 至今約一個多月，我認為它足以被視為 Firefox 的「加強版」。如果您之前不曾使用 Firefox，我會強烈推薦您直接試用 Zen Browser，親身體驗它所帶來的流暢與便利。
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Ts.ED 設定 middleware]]></title>
+            <link>https://thomascsd.github.io/blog/2025-11-17-tsed-middleware</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2025-11-17-tsed-middleware</guid>
+            <pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。 根據官方文件，middleware 分為 Global middlewar]]></description>
+            <content:encoded><![CDATA[之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。
+
+根據[官方文件](https://tsed.dev/docs/middlewares.html)，middleware 分為 Global middleware 和 Endpoint middleware 兩種。而 Gobal middleware 需在 `Server`上的 `@Configuration`  中透過 `middlewares` 屬性設定。然而，我按照文件範例將自訂 middleware 加入 `middlewares` 後，發現 middleware 並未如預期般觸發。
+
+另一種是 Endpoint middleware，它使用 `@UseBefore` 裝飾器(decorator)設定在 Controller 上。我認為這種方式更符合我當前的專案需求。
+
+這是因為我的專案採用了類似 sub-controller 的架構：先建立一個基礎 `ApiController`（路由設為 `/api`），而其他 `Controller` 都設定）在它之下。
+
+因此，解決方案是直接在 `ApiController` 上使用 `@UseBefore`，並傳入自訂的 middleware。這樣一來，所有使用 `/api` 路徑的子路由都能自動套用此 middleware。
+
+```typescript
+@UseBefore(ApiKeyMiddleware)
+@Controller({
+  path: '/api',
+  children: [
+    ImageFileController,
+    ForecastController,
+    CountyController,
+    MemberController,
+  ],
+})
+export class ApiController {}
+```
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Angular HttpResource]]></title>
+            <link>https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource</link>
+            <guid isPermaLink="false">https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource</guid>
+            <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Angular 在19之後推出的新功能，基於 Signal 的新功能：`httpResource`，它將原本的 `HttpClient` 進行了封裝，並內建了三種核心狀態：`isLoading`、`hasValue` 與 `error`，之前版本需要另外實作的功能，目前已成為內建標準]]></description>
+            <content:encoded><![CDATA[Angular 在19之後推出的新功能，基於 Signal 的新功能：`httpResource`，它將原本的 `HttpClient` 進行了封裝，並內建了三種核心狀態：`isLoading`、`hasValue` 與 `error`，之前版本需要另外實作的功能，目前已成為內建標準，所以記錄一下到目前為止的使用心得。
+
+## HTTP GET
+
+### defaultValue
+
+```typescript
+const url = '.netlify/functions/member/list';
+const members = httpResource<Member[]>(() => url, {
+  defaultValue: [],
+});
+```
+
+使用 httpResource 最簡單的方式是傳入一個回傳 URL 的 Arrow Function。我習慣在 `HttpResourceOptions` 中設定 `defaultValue`。
+
+設定 `defaultValue: []` 的好處在於能確保回傳型別始終為 `Member[]`，而非 `Member[] | undefined`。這讓我們在處理資料時不需要反覆判斷 undefined，程式碼會簡潔許多。
+
+### isLoading, error,hasValue
+
+```html
+@if (forecastData.isLoading()) {
+<div class="lodingContainer">
+  <mat-spinner></mat-spinner>
+</div>
+} @else if (forecastData.hasValue()) {
+<div class="columns is-multiline">
+  @for (data of forecastData.value(); track data.country_code) {
+  <div class="column is-one-quarter">
+    <app-forecast-item [forecastDatum]="data"></app-forecast-item>
+  </div>
+  }
+</div>
+} @else {
+<div class="errorContainer">
+  <p class="errorMessage">An error occurred while fetching the forecast data.</p>
+</div>
+}
+```
+
+過去使用`HttpClient`時還會需要另外寫一些重覆程式碼來判斷是否是載入中，現在使用`httpResourceRequest`內建的方法 loading, hasValue，來判斷是否載入中，或是是否有資料。最後使用`Value`，由於 value 本身也是個 Signal，讀取資料時記得加上括號 value()。
+
+### parse
+
+```typescript
+httpResource <ForecastDatum[]> (
+  () => {
+    url: '/.netlify/functions/proxy',
+    params: {
+      path: encodeURIComponent(forecast / location ? city = $ {
+        cityValue
+      }),
+    },
+  }, {
+    parse: (data) => this.toForecastDatums(data),
+    defaultValue: [],
+  },
+);
+private toForecastDatums(forecast: any): ForecastDatum[] {
+  const data = forecast.data as ForecastDatum[];
+  let index = 1;
+  const newData = data.map((m) => {
+    return {
+      ...m,
+      id: index++,
+      city_name: forecast.city_name,
+      lon: forecast.lon,
+      timezone: forecast.timezone,
+      lat: forecast.lat,
+      country_code: forecast.country_code,
+    }
+    as ForecastDatum;
+  });
+  return newData;
+}
+```
+
+有時當後端回傳的格式與前端定義的 Model 不一致時，如範例，要回傳的物件為`forecast.data`，這時可以使用`HttpResourceOptions`的其中一個屬性`parse`進行轉換。
+
+## HTTP POST
+
+```typescript
+//MemberService
+saveMember(member: Member) {
+  const params = {
+    path: '/contact/save',
+  };
+
+  return httpResource < Member > (() => ({
+    url: API_BASE_URL,
+    params,
+    method: 'POST',
+    body: member,
+  }));
+
+}
+
+//MemberComponent
+onSubmit() {
+  if (this.group.valid) {
+    this.memberService.saveMember(this.group.value as Member);
+  }
+}
+
+```
+
+使用 HTTP POST 時，還會需另外設定 `method` 與 `body` 參數，這樣就能使用 POST 的方式呼叫 API。
+一般來說，都會習慣將呼叫其他API的程式封裝成方法，讓component呼叫。
+
+但是會出現下列錯誤：
+> httpResource2() can only be used within an injection context such as a constructor
+
+原因是因為 httpResouce 只能在 component 或是 Service 初始化階段（例如建構子或屬性宣告時）定義，不能在一般方法（如 onSubmit）中動態觸發。
+
+```typescript
+//MemberService
+saveMember(memberReq: () => Member | null) {
+  return httpResource(() => {
+    const member = memberReq();
+    if (!member) {
+      return undefined;
+    }
+
+    return {
+      url: API_BASE_URL,
+      params: {
+        path: '/contact/save',
+      },
+      method: 'POST',
+      body: member,
+    };
+  });
+
+}
+
+//MemberComponent
+member = signal < Member | null > (null);
+saveResource = this.memberService.saveMember(() => this.member());
+
+onSubmit() {
+  if (this.group.valid) {
+
+    this.member.set(this.group.value as Member);
+  }
+}
+
+```
+
+要修改這個錯誤，就需要使用*signal*，當在 onSubmit 中，signal 被設定新值時，.就會觸發 `saveMember(() => this.member())` ，接著會重新執行 `httpResource`，如此可避免這種錯誤。
+
+## 結論
+
+httpResource 是以 signal 為基礎，Angular 逐漸將 signal 整合到各個功能中，讓我們在使用 Angular 時能更方便的使用 signal 來管理狀態。
+
+另外這次使用 AI 來學習 HttpResouce，及當 Http POST 時出錯時，也是使用 AI 讓我知道解決錯誤及出錯的原因。
+
+]]></content:encoded>
+        </item>
+    </channel>
+</rss>
