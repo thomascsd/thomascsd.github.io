@@ -1,9 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
-    <title>Thomas Blog</title>
+    <title>Angular判斷 DOM Render 是否完成｜Thomas Blog</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Thomas Blog RSS Feed" href="/api/rss.xml">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
@@ -16,7 +17,7 @@
 
       gtag('config', 'G-704JZ9KNS1');
     </script>
-    <script type="module" crossorigin="" src="/assets/index-CwsdFOqf.js"></script>
+    <script type="module" crossorigin="" src="/assets/index-Cmij_Sf3.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
   <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
       --bg: #ffffff;
@@ -119,9 +120,9 @@
     @media (max-width: 640px) {
       nav[_ngcontent-ng-c1425333472] { flex-wrap: wrap; }
       .theme-toggle[_ngcontent-ng-c1425333472] { margin-left: 0; }
-    }</style><style>[_nghost-ng-c4148159750] { display: block; }
+    }</style><style>[_nghost-ng-c919897015] { display: block; }
 
-    .post__image-fullwidth[_ngcontent-ng-c4148159750] {
+    .post__image-fullwidth[_ngcontent-ng-c919897015] {
       width: 100vw;
       position: relative;
       left: 50%;
@@ -132,7 +133,7 @@
       overflow: hidden;
     }
 
-    .post__image[_ngcontent-ng-c4148159750] {
+    .post__image[_ngcontent-ng-c919897015] {
       width: 100%;
       height: auto;
       max-height: 50vh;
@@ -140,35 +141,35 @@
       display: block;
     }
 
-    article[_ngcontent-ng-c4148159750] {
+    article[_ngcontent-ng-c919897015] {
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
-    .post__header[_ngcontent-ng-c4148159750] {
+    .post__header[_ngcontent-ng-c919897015] {
       margin-bottom: 2rem;
     }
 
-    .post__date[_ngcontent-ng-c4148159750] {
+    .post__date[_ngcontent-ng-c919897015] {
       color: var(--muted);
       font-size: 1.15rem;
       margin-bottom: 0.5rem;
     }
 
-    .post__title[_ngcontent-ng-c4148159750] {
+    .post__title[_ngcontent-ng-c919897015] {
       font-size: 2.5rem;
       font-weight: 700;
       line-height: 1.2;
       margin: 0;
     }
 
-    .post__content[_ngcontent-ng-c4148159750] {
+    .post__content[_ngcontent-ng-c919897015] {
       line-height: 1.7;
-    }</style></head>
+    }</style><meta name="description" content="最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有$trick 方法，可以得知 Dom render 已完成。"><link rel="canonical" href="https://thomascsd.github.io/blog/2023-08-27-angular-on-changes/"><meta property="og:title" content="Angular判斷 DOM Render 是否完成｜Thomas Blog"><meta property="og:description" content="最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有$trick 方法，可以得知 Dom render 已完成。"><meta property="og:url" content="https://thomascsd.github.io/blog/2023-08-27-angular-on-changes/"><meta property="og:type" content="article"><meta property="og:image" content="https://thomascsd.github.io/images/28/28-0.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Angular判斷 DOM Render 是否完成｜Thomas Blog"><meta name="twitter:description" content="最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有$trick 方法，可以得知 Dom render 已完成。"><meta name="twitter:image" content="https://thomascsd.github.io/images/28/28-0.jpg"><meta property="article:published_time" content="2023-08-27"><meta property="article:modified_time" content="2023-08-27"><meta property="article:author" content="Thomas"><script type="application/ld+json" data-seo="blog-posting">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Angular判斷 DOM Render 是否完成","description":"最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有$trick 方法，可以得知 Dom render 已完成。","datePublished":"2023-08-27","dateModified":"2023-08-27","author":{"@type":"Person","name":"Thomas"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thomascsd.github.io/blog/2023-08-27-angular-on-changes/"},"image":"https://thomascsd.github.io/images/28/28-0.jpg"}</script></head>
   <body><!--nghm-->
-    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c4148159750="" ngh="1"><div _ngcontent-ng-c4148159750="" class="post__image-fullwidth"><img _ngcontent-ng-c4148159750="" class="post__image" src="/images/28/28-0.jpg" alt="Angular判斷 DOM Render 是否完成"></div><article _ngcontent-ng-c4148159750=""><header _ngcontent-ng-c4148159750="" class="post__header"><div _ngcontent-ng-c4148159750="" class="post__date">2023-08-27</div><h1 _ngcontent-ng-c4148159750="" class="post__title">Angular判斷 DOM Render 是否完成</h1></header><div _ngcontent-ng-c4148159750="" class="post__content"><analog-markdown _ngcontent-ng-c4148159750="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有<code> $trick</code>方法，可以得知 Dom render 已完成。當查看 StackOverFlow 都是建議使用 <code>ngAfterViewChecked</code>，但經過測試後，覺得同時使用 <code>ngOnChanges</code> 及<code>ngAfterViewChecked</code>後會比較好，分享一下我的做法。</p><iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/stackblitz-starters-l96j3d?embed=1&amp;file=src%2Fchildren%2Fchildren.component.ts"></iframe>
+    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c919897015="" ngh="1"><div _ngcontent-ng-c919897015="" class="post__image-fullwidth"><img _ngcontent-ng-c919897015="" class="post__image" src="/images/28/28-0.jpg" alt="Angular判斷 DOM Render 是否完成"></div><article _ngcontent-ng-c919897015=""><header _ngcontent-ng-c919897015="" class="post__header"><div _ngcontent-ng-c919897015="" class="post__date">2023-08-27</div><h1 _ngcontent-ng-c919897015="" class="post__title">Angular判斷 DOM Render 是否完成</h1></header><div _ngcontent-ng-c919897015="" class="post__content"><analog-markdown _ngcontent-ng-c919897015="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有<code> $trick</code>方法，可以得知 Dom render 已完成。當查看 StackOverFlow 都是建議使用 <code>ngAfterViewChecked</code>，但經過測試後，覺得同時使用 <code>ngOnChanges</code> 及<code>ngAfterViewChecked</code>後會比較好，分享一下我的做法。</p><iframe width="100%" height="450" frameborder="0" src="https://stackblitz.com/edit/stackblitz-starters-l96j3d?embed=1&amp;file=src%2Fchildren%2Fchildren.component.ts"></iframe>
 
 <p>如同程式範例，Component (app-childred) 屬性<code>content</code>，會於 <code>main.ts</code>點擊按鈕時，才會取得要顯示的內容。因為這時<code>ngAfterViewInit</code>已經執行了，而 div 的內容尚未截入，所以 div 的高度為零，也就是<code>scrollHeightInit</code> 為零。</p><p>程式寫法如下：</p><ul>
 <li><p>於<code>ngOnChanges</code>判斷屬性<code>content</code>的值是否有改變，有改變的話，設定<code>Flag</code>為 <code>true</code>。</p></li>
@@ -183,4 +184,4 @@
 </script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
   
 
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c4148159750","r":1}]}}]}</script></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c919897015","r":1}]}}]}</script></body></html>

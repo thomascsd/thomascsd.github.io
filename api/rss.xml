@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+  <title>Thomas Blog</title>
+  <description>Thomas Blog RSS Feed</description>
+  <link>https://thomascsd.github.io/</link>
+  <language>zh-TW</language>
+    <item>
+      <title>使用 Analog.js 建立 Blog</title>
+      <link>https://thomascsd.github.io/blog/2026-09-26-analog-js-blog/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2026-09-26-analog-js-blog/</guid>
+      <description>選擇 Analog.js，主要是看中它的兩大核心特性：File-based Routing 與 Static Site Generation。對個人 Blog 來說，架構越單純俐落越好，因此開箱即用的 File-based Routing 非常合適；而在部署方面，我也希望如以往使用 Scully.js 時一樣，將網站預先打包為純靜態頁面，而 Analog.js 原生就對此提供極佳的支援</description>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Angular HttpResource</title>
+      <link>https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource/</guid>
+      <description>Angular 在19之後推出的新功能，基於 Signal 的新功能：httpResource，它將原本的 HttpClient 進行了封裝，並內建了三種核心狀態：isLoading、asValue 與 error，之前版本需要另外實作的功能，目前已成為內建標準</description>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ts.ED 設定 middleware</title>
+      <link>https://thomascsd.github.io/blog/2025-11-17-tsed-middleware/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2025-11-17-tsed-middleware/</guid>
+      <description>之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。 根據官方文件，middleware 分為 Global middlewar</description>
+      <pubDate>Mon, 17 Nov 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Zen Browser小小心得</title>
+      <link>https://thomascsd.github.io/blog/2025-08-24-zen-browser/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2025-08-24-zen-browser/</guid>
+      <description>最近瀏覽 daily.dev 上的文章時，偶然發現一款名為 Zen Browser 的瀏覽器。它不僅結合了其他瀏覽器的特色，更特別的是以 Firefox 為核心開發。身為 Firefox 的長期用戶，我立刻感到好奇並下載試用。隨著使用時間拉長，我越來越覺得它得心應手，甚至將其設為我的預設瀏覽器。</description>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>開發程式中一些有用的網站</title>
+      <link>https://thomascsd.github.io/blog/2025-03-16-useful-web-sites/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2025-03-16-useful-web-sites/</guid>
+      <description>隨著 IT 技術的快速發展，各種新的觀念和程式框架層出不窮，每年都有所更新。因此，我認為多閱讀一些文章是一個非常有效的方式。接下來，我想介紹兩個文章集合網站（Echo.js 和 Daily.dev）。此外，我還會分享一些我平常收集的工具類型網站。</description>
+      <pubDate>Sun, 16 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>VSCode Extensions 其他的選擇</title>
+      <link>https://thomascsd.github.io/blog/2024-09-01-vs-code-extensions/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2024-09-01-vs-code-extensions/</guid>
+      <description>這次我要跟大家分享一些我覺得很好用的 VSCode 擴充套件。這些套件可能不太熱門，但我覺得它們非常實用。當然，我們都知道像 ESLint 和 GitLens 這樣的知名套件，所以我不會再提到它們了。請大家參考看看。</description>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bulma的初體驗</title>
+      <link>https://thomascsd.github.io/blog/2024-07-14-firtst-step-bulma/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2024-07-14-firtst-step-bulma/</guid>
+      <description>最近對一款 CSS 框架 Bulma 產生了興趣，發現它的開發者體驗（DX）非常出色，使用起來比 Bootstrap 更直觀。前不久，它推出了 1.0 版本，因此我想撰寫一篇心得文，稍微介紹一下。 使用 要引用`Bulma`，最簡單的方式，就是在頁面上使用 CDN 連結。</description>
+      <pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>.NET 好用套件 - commandline</title>
+      <link>https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line/</guid>
+      <description>在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件System.CommandLine，但覺得沒有很好使用，之前有發現一個套件 commandline，設定及讀取參考很簡單易用，寫篇心得文分享一下。</description>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Angular判斷 DOM Render 是否完成</title>
+      <link>https://thomascsd.github.io/blog/2023-08-27-angular-on-changes/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2023-08-27-angular-on-changes/</guid>
+      <description>最近有遇到一個需求，是判斷頁面的捲軸是否到底，但有個不一様的點是會開啟 Dialog 後，才動態戴入內容再判斷捲軸是否到底，也就是需要判斷 DOM 是否 戴入完成，但碰到難題，Angular 並沒有像是 Vue.js 般有$trick 方法，可以得知 Dom render 已完成。</description>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>使用TypeScript建立Express.js-使用Ts.ED</title>
+      <link>https://thomascsd.github.io/blog/2023-05-24-expressjs-typescript-tsed/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2023-05-24-expressjs-typescript-tsed/</guid>
+      <description>之前有寫過一篇文章使用 TypeScript 建立 Express.js，介紹了 routing-controllers，可以將 TypeScipt 與 Express.js 整合，並使用 Controller 的方式建立 Express.js，然而發現套件更新有點緩慢，在研究和測試後，覺得可以將程式轉換到 Ts.ED</description>
+      <pubDate>Wed, 24 May 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>建立簡報的工具 - Slidev 的介紹</title>
+      <link>https://thomascsd.github.io/blog/2023-02-06-slidev/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2023-02-06-slidev/</guid>
+      <description>去年(2022 年) 11 月的時候，需要建立簡報向同事介紹 Angular 基礎，之前都是使用 Google 簡報或是 PowerPoint 來製作，但是發現有個缺點，對程式碼不夠有善。接著我想起在 GitHub Stars 中儲存一些簡報用的專案，其中發現 Slidev ，覺得簡單易用</description>
+      <pubDate>Mon, 06 Feb 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Angular TypeForm - 強型別Form的心得</title>
+      <link>https://thomascsd.github.io/blog/2022-09-08-angular-typeform/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2022-09-08-angular-typeform/</guid>
+      <description>在 Angular v14 中最重要的 2 個功能，除了 Single Component 之外，就是 Typeform 了，而 Typeform 也就是在建立 Form 功能時，終於可以套用型別，方便開發及除錯</description>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>我的Terminal 設定方式 - Windows Terminal &amp; ohmyposh</title>
+      <link>https://thomascsd.github.io/blog/2022-05-20-window-teminal-and-oh-my-posh/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2022-05-20-window-teminal-and-oh-my-posh/</guid>
+      <description>一直以來都是使用 IDE 來開發程式，自從進入前端世界後，開始很常使用 CLI ，而 Windows 的 terminal 一直不是很好使用，直到 Windows Terminal 的出現。 Windows Terminal 整合 cmd、PowerShell，並可 以自定樣式，直到最近發現 ohmyposh 可以讓 PowerShell 更好用。</description>
+      <pubDate>Fri, 20 May 2022 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>tsdx - 快速建立 npm 套件樣板的CLI工具</title>
+      <link>https://thomascsd.github.io/blog/2021-12-09-tutorial-of-tsdx/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2021-12-09-tutorial-of-tsdx/</guid>
+      <description>之前的文章使用 TypeScript 建立 Express.js，需要快速建立 npm 套件，所以在 GitHub 上尋找有沒有方便的套件，結果發現到了 tsdx，這個方便的 CLI 工具。</description>
+      <pubDate>Thu, 09 Dec 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Netlify functions 初體驗記錄</title>
+      <link>https://thomascsd.github.io/blog/2021-09-20-netlify-function-tutorial/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2021-09-20-netlify-function-tutorial/</guid>
+      <description>一直以來斷斷續續接獨 Servless funcion 的服務，從 FireBase 到 Azure 都有，但是一些原因，而覺得沒有符合我的需求，直到前一陣子，我嘗試使用 Netlify functions ，發現簡單易用，並且也整合 CI/CD ，如果想整合至舊有專案也是挻方便的，就想寫篇文章做個記錄</description>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>CodeWars - Coding Challenge Site</title>
+      <link>https://thomascsd.github.io/blog/2021-08-07-codewars/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2021-08-07-codewars/</guid>
+      <description>一般說來，剛剛學習一門程式語言，或是學習一段時間後，除了建立 Side Project 之外，也可以至一些網站練習程式，而之前在 Twitter 上發現有人 PO 出 Coding challenge 的列表，其中有個網站CodeWars，嘗試了一陣子之後覺得很不錯，想說寫篇心得文分享。</description>
+      <pubDate>Sat, 07 Aug 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>將AirTable做為資料庫的心得 - .NET Core 篇</title>
+      <link>https://thomascsd.github.io/blog/2021-06-12-air-table-with-dotnet-core/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2021-06-12-air-table-with-dotnet-core/</guid>
+      <description>我在上一篇的文章將 AirTable 做為資料庫的心得，有寫到：我為什麼使用 AirTable 當作資料庫，以及優、缺點，並且環境是 Node.js ，語言是 TypeScript ，而這次想要使用 .NET Core 、 C來改寫。</description>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>將AirTable做為資料庫的心得</title>
+      <link>https://thomascsd.github.io/blog/2021-04-24-airtable-as-database/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2021-04-24-airtable-as-database/</guid>
+      <description>當開始寫自已的 Side Project 時，常常遇到問題是，不知道要將資料寫入至那裡?最初是使用restdb，優點：很好串接，有 UI 介面很好設定，但是只能有 2 個免費的資料庫。 之後尋找了一些解決方案，發現AirTable符合我的需求。 優點： 有 UI 介面，可以很方便設定欄位。</description>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>使用TypeScript建立Express.js</title>
+      <link>https://thomascsd.github.io/blog/2021-02-07-expressjss-with-typescript/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2021-02-07-expressjss-with-typescript/</guid>
+      <description>使用 TypeScript 建立 Express.js 的方式，並且 Express.js 的架構是比較鬆散的，並且有發現兩個套件：routing-controller及typedi，一些心得感想</description>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>daily.dev - 整合各個技術文章的好用套件</title>
+      <link>https://thomascsd.github.io/blog/2020-09-05-introducing-daily-dev/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2020-09-05-introducing-daily-dev/</guid>
+      <description>我常常早上都會看一些技術文章，最近這幾年都是使用daily.dev 來閱讀文章。這個網站結合了各類文章，不只有網站，還有 Android 及 IOS 的 APP 可以使用，分享給大家參考看看。</description>
+      <pubDate>Sat, 05 Sep 2020 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>使用 Angular Static Generator - Scully 建立Blog的心得記錄</title>
+      <link>https://thomascsd.github.io/blog/2020-08-03-build-blog-using-scully/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2020-08-03-build-blog-using-scully/</guid>
+      <description>一直以來 Angular 缺 Static Site Generator，像是 Vue.js 有 Nuxt.js，而 React.js 也有 Gatsby.js，終於 Angular 也出了 Static Site Generator，現在要用 Scully 第三次改寫，因為我對 Angular 還是比較熟悉的原故，建立 Blog 的過程心程分享給大家參考看看</description>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>6個推薦的Angular Library</title>
+      <link>https://thomascsd.github.io/blog/2020-07-05-angular-library/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2020-07-05-angular-library/</guid>
+      <description>除了一些有名的 Library 之外，例如：Angular material，還有一些不為人知的 Library，我平常都會對有興趣的 Angular Library，加上星星加以儲藏，其中有使用過，有些覺得很不錯的想推薦給大家。</description>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>class-validator &amp; ngx-dynamic-form-builder</title>
+      <link>https://thomascsd.github.io/blog/2020-03-13-class-validator-and-ngx-dynamic-form-builder/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2020-03-13-class-validator-and-ngx-dynamic-form-builder/</guid>
+      <description>資料驗證是常常碰到的議題，一般說來，前端及後端都要驗證，但常常是前端驗證要寫一套，後端又要寫另一套，不太能共用。JavaScript 的世界也是如此，都會做重工。之前發現套件class-validator，使用 decorator 來設定要驗證的項目，並且是用 Angular 的話，搭配使用ngx-dynamic-form-builder</description>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>SVG與Angular</title>
+      <link>https://thomascsd.github.io/blog/2019-11-30-svg-and-angular/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2019-11-30-svg-and-angular/</guid>
+      <description>處理 SVG 已經是前端常常會遇到的事情，現在很多頁面上的圖片都是用 SVG 來取代，而 SVG 的優點這裡就不多述說。這邊提供我處理 SVG 的一些心得。 icon 資源 想要免費並且可以編輯的 icon 資源，我尋找了很久，最後發現iconify.design這個網站</description>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>VSCode Extension的開發心得</title>
+      <link>https://thomascsd.github.io/blog/2019-09-01-tutorial-of-vscode-extension/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2019-09-01-tutorial-of-vscode-extension/</guid>
+      <description>前一陣子，開發了產生 README.md 的 VSCode Readme Pattern，如何大家還沒安裝的話，可以試試看。在開發中，有遇到一些問題，以及累積了一些心得，分享給的大家。</description>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Uppy - 最方便的上傳套件</title>
+      <link>https://thomascsd.github.io/blog/2019-06-16-tutorial-of-uppy/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2019-06-16-tutorial-of-uppy/</guid>
+      <description>一直以來，我都覺得上傳檔案的程式開發，是表單處理中的痛點，一般的&amp;lt;input type=&quot;file&quot; /&gt;的功能比較簡略，介面不甚美觀。之前有發現 Uppy 這個套件，就對它感興趣，現在已經出了 1.0 版，想寫篇文章記錄一下心得。</description>
+      <pubDate>Sun, 16 Jun 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>於Angular中，建立Library的心得</title>
+      <link>https://thomascsd.github.io/blog/2019-02-20-create-library-with-angular/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2019-02-20-create-library-with-angular/</guid>
+      <description>在 Angular CLI 6.0 以上就可以直接建立 Library，而 Library 的用途可以將自已建立的元件發佈至 NPM，或是專案一些共同的元件拆分出去。</description>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>談談JavaScript Module part2</title>
+      <link>https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2/</guid>
+      <description>這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，</description>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>談談JavaScript Module part1</title>
+      <link>https://thomascsd.github.io/blog/2018-10-31-module-pattern/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2018-10-31-module-pattern/</guid>
+      <description>這次想談談模組(Module)，是 JavaScript 的設計模式的其中的一個，一般而言，我們都會希望程式有架構，被重覆使用，這時可以將程式分成一個個的模組，會用兩篇文章討論這個主題，這一篇是講述 Module pattern，下一篇會講述 ES2015 module。</description>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>draxt.js-簡化存取檔案的小幫手</title>
+      <link>https://thomascsd.github.io/blog/2018-09-07-tutorial-of-draxtjs/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2018-09-07-tutorial-of-draxtjs/</guid>
+      <description>Node.js 處理檔案我個人覺得不是很方便，有時候會覺得卡卡的。之前有發現 Node.js 套件draxt.js，它封裝了glob和fs-extra這兩個套件，並提供類似 jQuery 的語法，讓檔案的處理變簡單了。</description>
+      <pubDate>Fri, 07 Sep 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>從範例講解Promise概念</title>
+      <link>https://thomascsd.github.io/blog/2018-08-12-example-of-promise/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2018-08-12-example-of-promise/</guid>
+      <description>一般而言，呼叫多個 ajax，最簡單的方式是用 callback 函式，如以下的範例 執行完 1 個 ajax 之後，再執行另一個 ajax。</description>
+      <pubDate>Sun, 12 Aug 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>使用Nuxt.js及Nuxtent建立Blog的心得</title>
+      <link>https://thomascsd.github.io/blog/2018-06-23-nuxtjs-and-nuxtent/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2018-06-23-nuxtjs-and-nuxtent/</guid>
+      <description>Nuxt.js 是內建 SSR 的 vue.js 框架，我最感興趣的部份是可輸出靜態的 Html，如此就可以輕鬆的將程式部署至 GitHub Page 上，並且可以使用 module 來擴充功能。 當我看到了 Nuxtent 這個 module，它是可以取得 Markdown 內容的 module</description>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>使用VSCode偵錯Node.js及Angular的小技巧</title>
+      <link>https://thomascsd.github.io/blog/2017-12-23-vscode-debug-for-nodejs-andn-agular/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2017-12-23-vscode-debug-for-nodejs-andn-agular/</guid>
+      <description>使用 Angular 後就迷上了 TypeScript，我有建立一個小專案叫做angular-express-starter，Server 及 Client 端都是使用 TypeScript 建立的，而 Client 端是使用 Angular CLI，然後 Server 端是使用 Express.js</description>
+      <pubDate>Sat, 23 Dec 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>在asp.net MVC上使用vue.js需注意的事項</title>
+      <link>https://thomascsd.github.io/blog/2017-10-08-vuejs-in-aspnet-mvc/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2017-10-08-vuejs-in-aspnet-mvc/</guid>
+      <description>最近開始使用 vue.js 在公司的專案上，並且專案是用 asp.net mvc 來開發的，所以發現在.cshtml 上無法使用 vue.js 的需要注意的小地方。 第 1 個是@click 之類的事件綁定簡寫方式，因為會和原本的 Razor 語法衝突，所以需要使用完整的寫法。</description>
+      <pubDate>Sun, 08 Oct 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>使用Jekyll建立Blog -1</title>
+      <link>https://thomascsd.github.io/blog/2017-07-13-build-blog-with-jekyll/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2017-07-13-build-blog-with-jekyll/</guid>
+      <description>建立 Blog 的工具有很多，但是可以一鍵馬上完成架站及能夠完全客制化的工具就不多了，其中一個就是Jekyll。 但是 Jekyll 需要在本機安裝 Ruby 環境，這樣還是有點麻煩，還要先設定環境，之後我找到一個很方便的工具Jekyll-now，只要 Fork 就可以建立一個網站。</description>
+      <pubDate>Thu, 13 Jul 2017 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Hello World!</title>
+      <link>https://thomascsd.github.io/blog/2017-06-20-hello-world/</link>
+      <guid isPermaLink="true">https://thomascsd.github.io/blog/2017-06-20-hello-world/</guid>
+      <description>第一篇文章，談談為什麼想寫 Blog，有兩個原因： 第一是 ITHome 有個鐵人幫幫忙的活動，其中有人說工程師就是要建 Blog，所以開始建立自己的 Blog，順便練習 Angular。 第二點是看了我為什麼鼓勵工程師寫 blog | In 91，想說寫程式這樣久，也有些心得可以分享</description>
+      <pubDate>Tue, 20 Jun 2017 00:00:00 GMT</pubDate>
+    </item>
+</channel></rss>

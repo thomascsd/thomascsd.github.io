@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Angular HttpResource｜Thomas Blog</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Thomas Blog RSS Feed" href="/api/rss.xml">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-704JZ9KNS1');
+    </script>
+    <script type="module" crossorigin="" src="/assets/index-Cmij_Sf3.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
+  <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --link: #2563eb;
+      display: block;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    [data-theme='dark'][_nghost-ng-c1425333472] {
+      --bg: #0b0f1a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1f2937;
+      --link: #60a5fa;
+    }
+
+    header[_ngcontent-ng-c1425333472] {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      width: 100vw;
+      left: 0;
+    }
+
+    .nav-wrap[_ngcontent-ng-c1425333472] {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem 1rem 2rem;
+    }
+
+    nav[_ngcontent-ng-c1425333472] {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav[_ngcontent-ng-c1425333472]   a[_ngcontent-ng-c1425333472] {
+      padding: 0.5rem 0.25rem;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 2px solid transparent;
+      font-size: 1.08rem;
+    }
+
+    nav[_ngcontent-ng-c1425333472]   a.active[_ngcontent-ng-c1425333472] {
+      border-bottom-color: var(--link);
+      color: var(--link);
+    }
+
+    .theme-toggle[_ngcontent-ng-c1425333472] {
+      margin-left: 1.5rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .theme-toggle[_ngcontent-ng-c1425333472]:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    main[_ngcontent-ng-c1425333472] {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    .main-inner[_ngcontent-ng-c1425333472] {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer[_ngcontent-ng-c1425333472] {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      nav[_ngcontent-ng-c1425333472] { flex-wrap: wrap; }
+      .theme-toggle[_ngcontent-ng-c1425333472] { margin-left: 0; }
+    }</style><style>[_nghost-ng-c919897015] { display: block; }
+
+    .post__image-fullwidth[_ngcontent-ng-c919897015] {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+
+    .post__image[_ngcontent-ng-c919897015] {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    article[_ngcontent-ng-c919897015] {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .post__header[_ngcontent-ng-c919897015] {
+      margin-bottom: 2rem;
+    }
+
+    .post__date[_ngcontent-ng-c919897015] {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post__title[_ngcontent-ng-c919897015] {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .post__content[_ngcontent-ng-c919897015] {
+      line-height: 1.7;
+    }</style><meta name="description" content="Angular 在19之後推出的新功能，基於 Signal 的新功能：httpResource，它將原本的 HttpClient 進行了封裝，並內建了三種核心狀態：isLoading、asValue 與 error，之前版本需要另外實作的功能，目前已成為內建標準"><link rel="canonical" href="https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource/"><meta property="og:title" content="Angular HttpResource｜Thomas Blog"><meta property="og:description" content="Angular 在19之後推出的新功能，基於 Signal 的新功能：httpResource，它將原本的 HttpClient 進行了封裝，並內建了三種核心狀態：isLoading、asValue 與 error，之前版本需要另外實作的功能，目前已成為內建標準"><meta property="og:url" content="https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource/"><meta property="og:type" content="article"><meta property="og:image" content="https://thomascsd.github.io/images/35/35-00.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Angular HttpResource｜Thomas Blog"><meta name="twitter:description" content="Angular 在19之後推出的新功能，基於 Signal 的新功能：httpResource，它將原本的 HttpClient 進行了封裝，並內建了三種核心狀態：isLoading、asValue 與 error，之前版本需要另外實作的功能，目前已成為內建標準"><meta name="twitter:image" content="https://thomascsd.github.io/images/35/35-00.jpg"><meta property="article:published_time" content="2026-03-29"><meta property="article:modified_time" content="2026-03-29"><meta property="article:author" content="Thomas"><script type="application/ld+json" data-seo="blog-posting">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Angular HttpResource","description":"Angular 在19之後推出的新功能，基於 Signal 的新功能：httpResource，它將原本的 HttpClient 進行了封裝，並內建了三種核心狀態：isLoading、asValue 與 error，之前版本需要另外實作的功能，目前已成為內建標準","datePublished":"2026-03-29","dateModified":"2026-03-29","author":{"@type":"Person","name":"Thomas"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thomascsd.github.io/blog/2026-03-29-angular-Httpresource/"},"image":"https://thomascsd.github.io/images/35/35-00.jpg"}</script></head>
+  <body><!--nghm-->
+    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c919897015="" ngh="1"><div _ngcontent-ng-c919897015="" class="post__image-fullwidth"><img _ngcontent-ng-c919897015="" class="post__image" src="/images/35/35-00.jpg" alt="Angular HttpResource"></div><article _ngcontent-ng-c919897015=""><header _ngcontent-ng-c919897015="" class="post__header"><div _ngcontent-ng-c919897015="" class="post__date">2026-03-29</div><h1 _ngcontent-ng-c919897015="" class="post__title">Angular HttpResource</h1></header><div _ngcontent-ng-c919897015="" class="post__content"><analog-markdown _ngcontent-ng-c919897015="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>Angular 在19之後推出的新功能，基於 Signal 的新功能：<code>httpResource</code>，它將原本的 <code>HttpClient</code> 進行了封裝，並內建了三種核心狀態：<code>isLoading</code>、<code>hasValue</code> 與 <code>error</code>，之前版本需要另外實作的功能，目前已成為內建標準，所以記錄一下到目前為止的使用心得。</p><h2 id="http-get">HTTP GET</h2>
+<h3 id="defaultvalue">defaultValue</h3>
+<pre><code class="language-typescript"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token string">'.netlify/functions/member/list'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> members <span class="token operator">=</span> <span class="token generic-function"><span class="token function">httpResource</span><span class="token generic class-name"><span class="token operator">&lt;</span>Member<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> url<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  defaultValue<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>使用 httpResource 最簡單的方式是傳入一個回傳 URL 的 Arrow Function。我習慣在 <code>HttpResourceOptions</code> 中設定 <code>defaultValue</code>。</p><p>設定 <code>defaultValue: []</code> 的好處在於能確保回傳型別始終為 <code>Member[]</code>，而非 <code>Member[] | undefined</code>。這讓我們在處理資料時不需要反覆判斷 undefined，程式碼會簡潔許多。</p><h3 id="isloading-errorhasvalue">isLoading, error,hasValue</h3>
+<pre><code class="language-html">@if (forecastData.isLoading()) {
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lodingContainer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mat-spinner</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mat-spinner</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+} @else if (forecastData.hasValue()) {
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>columns is-multiline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  @for (data of forecastData.value(); track data.country_code) {
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>column is-one-quarter<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>app-forecast-item</span> <span class="token attr-name">[forecastDatum]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>app-forecast-item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  }
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+} @else {
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>errorContainer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>errorMessage<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>An error occurred while fetching the forecast data.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+}
+</code></pre><p>過去使用<code>HttpClient</code>時還會需要另外寫一些重覆程式碼來判斷是否是載入中，現在使用<code>httpResourceRequest</code>內建的方法 loading, hasValue，來判斷是否載入中，或是是否有資料。最後使用<code>Value</code>，由於 value 本身也是個 Signal，讀取資料時記得加上括號 value()。</p><h3 id="parse">parse</h3>
+<pre><code class="language-typescript"><span class="token generic-function"><span class="token function">httpResource</span> <span class="token generic class-name"><span class="token operator">&lt;</span>ForecastDatum<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span></span></span> <span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    url<span class="token operator">:</span> <span class="token string">'/.netlify/functions/proxy'</span><span class="token punctuation">,</span>
+    params<span class="token operator">:</span> <span class="token punctuation">{</span>
+      path<span class="token operator">:</span> <span class="token function">encodeURIComponent</span><span class="token punctuation">(</span>forecast <span class="token operator">/</span> location <span class="token operator">?</span> city <span class="token operator">=</span> $ <span class="token punctuation">{</span>
+        cityValue
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">parse</span><span class="token operator">:</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toForecastDatums</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    defaultValue<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> <span class="token function">toForecastDatums</span><span class="token punctuation">(</span>forecast<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> ForecastDatum<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> forecast<span class="token punctuation">.</span>data <span class="token keyword">as</span> ForecastDatum<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> newData <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token operator">...</span>m<span class="token punctuation">,</span>
+      id<span class="token operator">:</span> index<span class="token operator">++</span><span class="token punctuation">,</span>
+      city_name<span class="token operator">:</span> forecast<span class="token punctuation">.</span>city_name<span class="token punctuation">,</span>
+      lon<span class="token operator">:</span> forecast<span class="token punctuation">.</span>lon<span class="token punctuation">,</span>
+      timezone<span class="token operator">:</span> forecast<span class="token punctuation">.</span>timezone<span class="token punctuation">,</span>
+      lat<span class="token operator">:</span> forecast<span class="token punctuation">.</span>lat<span class="token punctuation">,</span>
+      country_code<span class="token operator">:</span> forecast<span class="token punctuation">.</span>country_code<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">as</span> ForecastDatum<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> newData<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>有時當後端回傳的格式與前端定義的 Model 不一致時，如範例，要回傳的物件為<code>forecast.data</code>，這時可以使用<code>HttpResourceOptions</code>的其中一個屬性<code>parse</code>進行轉換。</p><h2 id="http-post">HTTP POST</h2>
+<pre><code class="language-typescript"><span class="token comment">//MemberService</span>
+<span class="token function">saveMember</span><span class="token punctuation">(</span>member<span class="token operator">:</span> Member<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">{</span>
+    path<span class="token operator">:</span> <span class="token string">'/contact/save'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token generic-function"><span class="token function">httpResource</span> <span class="token generic class-name"><span class="token operator">&lt;</span> Member <span class="token operator">&gt;</span></span></span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token operator">:</span> <span class="token constant">API_BASE_URL</span><span class="token punctuation">,</span>
+    params<span class="token punctuation">,</span>
+    method<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+    body<span class="token operator">:</span> member<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">//MemberComponent</span>
+<span class="token function">onSubmit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>group<span class="token punctuation">.</span>valid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>memberService<span class="token punctuation">.</span><span class="token function">saveMember</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>group<span class="token punctuation">.</span>value <span class="token keyword">as</span> Member<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>使用 HTTP POST 時，還會需另外設定 <code>method</code> 與 <code>body</code> 參數，這樣就能使用 POST 的方式呼叫 API。
+一般來說，都會習慣將呼叫其他API的程式封裝成方法，讓component呼叫。</p><p>但是會出現下列錯誤：</p><blockquote>
+<p>httpResource2() can only be used within an injection context such as a constructor</p></blockquote>
+<p>原因是因為 httpResouce 只能在 component 或是 Service 初始化階段（例如建構子或屬性宣告時）定義，不能在一般方法（如 onSubmit）中動態觸發。</p><pre><code class="language-typescript"><span class="token comment">//MemberService</span>
+<span class="token function">saveMember</span><span class="token punctuation">(</span><span class="token function-variable function">memberReq</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Member <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">httpResource</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> member <span class="token operator">=</span> <span class="token function">memberReq</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>member<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      url<span class="token operator">:</span> <span class="token constant">API_BASE_URL</span><span class="token punctuation">,</span>
+      params<span class="token operator">:</span> <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> <span class="token string">'/contact/save'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      method<span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+      body<span class="token operator">:</span> member<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">//MemberComponent</span>
+member <span class="token operator">=</span> <span class="token generic-function"><span class="token function">signal</span> <span class="token generic class-name"><span class="token operator">&lt;</span> Member <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">&gt;</span></span></span> <span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+saveResource <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>memberService<span class="token punctuation">.</span><span class="token function">saveMember</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">member</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">onSubmit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>group<span class="token punctuation">.</span>valid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>member<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>group<span class="token punctuation">.</span>value <span class="token keyword">as</span> Member<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>要修改這個錯誤，就需要使用<em>signal</em>，當在 onSubmit 中，signal 被設定新值時，.就會觸發 <code>saveMember(() =&gt; this.member())</code> ，接著會重新執行 <code>httpResource</code>，如此可避免這種錯誤。</p><h2 id="結論-28">結論</h2>
+<p>httpResource 是以 signal 為基礎，Angular 逐漸將 signal 整合到各個功能中，讓我們在使用 Angular 時能更方便的使用 signal 來管理狀態。</p><p>另外這次使用 AI 來學習 HttpResouce，及當 Http POST 時出錯時，也是使用 AI 讓我知道解決錯誤及出錯的原因。</p></div> </analog-markdown></div></article><!----></app-blog-post><!----></div></main><footer _ngcontent-ng-c1425333472=""><small _ngcontent-ng-c1425333472="">© 2026 · Contact: <a _ngcontent-ng-c1425333472="" href="https://github.com/thomascsd" rel="noopener" target="_blank">GitHub</a></small></footer></app-layout></app-root>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    <script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
+  
+
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c919897015","r":1}]}}]}</script></body></html>

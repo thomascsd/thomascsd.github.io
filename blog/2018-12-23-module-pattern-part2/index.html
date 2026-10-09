@@ -1,9 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
-    <title>Thomas Blog</title>
+    <title>談談JavaScript Module part2｜Thomas Blog</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Thomas Blog RSS Feed" href="/api/rss.xml">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
@@ -16,7 +17,7 @@
 
       gtag('config', 'G-704JZ9KNS1');
     </script>
-    <script type="module" crossorigin="" src="/assets/index-CwsdFOqf.js"></script>
+    <script type="module" crossorigin="" src="/assets/index-Cmij_Sf3.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
   <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
       --bg: #ffffff;
@@ -119,9 +120,9 @@
     @media (max-width: 640px) {
       nav[_ngcontent-ng-c1425333472] { flex-wrap: wrap; }
       .theme-toggle[_ngcontent-ng-c1425333472] { margin-left: 0; }
-    }</style><style>[_nghost-ng-c4148159750] { display: block; }
+    }</style><style>[_nghost-ng-c919897015] { display: block; }
 
-    .post__image-fullwidth[_ngcontent-ng-c4148159750] {
+    .post__image-fullwidth[_ngcontent-ng-c919897015] {
       width: 100vw;
       position: relative;
       left: 50%;
@@ -132,7 +133,7 @@
       overflow: hidden;
     }
 
-    .post__image[_ngcontent-ng-c4148159750] {
+    .post__image[_ngcontent-ng-c919897015] {
       width: 100%;
       height: auto;
       max-height: 50vh;
@@ -140,35 +141,35 @@
       display: block;
     }
 
-    article[_ngcontent-ng-c4148159750] {
+    article[_ngcontent-ng-c919897015] {
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
-    .post__header[_ngcontent-ng-c4148159750] {
+    .post__header[_ngcontent-ng-c919897015] {
       margin-bottom: 2rem;
     }
 
-    .post__date[_ngcontent-ng-c4148159750] {
+    .post__date[_ngcontent-ng-c919897015] {
       color: var(--muted);
       font-size: 1.15rem;
       margin-bottom: 0.5rem;
     }
 
-    .post__title[_ngcontent-ng-c4148159750] {
+    .post__title[_ngcontent-ng-c919897015] {
       font-size: 2.5rem;
       font-weight: 700;
       line-height: 1.2;
       margin: 0;
     }
 
-    .post__content[_ngcontent-ng-c4148159750] {
+    .post__content[_ngcontent-ng-c919897015] {
       line-height: 1.7;
-    }</style></head>
+    }</style><meta name="description" content="這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，"><link rel="canonical" href="https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2/"><meta property="og:title" content="談談JavaScript Module part2｜Thomas Blog"><meta property="og:description" content="這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，"><meta property="og:url" content="https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2/"><meta property="og:type" content="article"><meta property="og:image" content="https://thomascsd.github.io/images/08/08-0.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="談談JavaScript Module part2｜Thomas Blog"><meta name="twitter:description" content="這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，"><meta name="twitter:image" content="https://thomascsd.github.io/images/08/08-0.jpg"><meta property="article:published_time" content="2018-12-23"><meta property="article:modified_time" content="2018-12-23"><meta property="article:author" content="Thomas"><script type="application/ld+json" data-seo="blog-posting">{"@context":"https://schema.org","@type":"BlogPosting","headline":"談談JavaScript Module part2","description":"這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，","datePublished":"2018-12-23","dateModified":"2018-12-23","author":{"@type":"Person","name":"Thomas"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thomascsd.github.io/blog/2018-12-23-module-pattern-part2/"},"image":"https://thomascsd.github.io/images/08/08-0.jpg"}</script></head>
   <body><!--nghm-->
-    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c4148159750="" ngh="1"><div _ngcontent-ng-c4148159750="" class="post__image-fullwidth"><img _ngcontent-ng-c4148159750="" class="post__image" src="/images/08/08-0.jpg" alt="談談JavaScript Module part2"></div><article _ngcontent-ng-c4148159750=""><header _ngcontent-ng-c4148159750="" class="post__header"><div _ngcontent-ng-c4148159750="" class="post__date">2018-12-23</div><h1 _ngcontent-ng-c4148159750="" class="post__title">談談JavaScript Module part2</h1></header><div _ngcontent-ng-c4148159750="" class="post__content"><analog-markdown _ngcontent-ng-c4148159750="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，而上一篇是<a href="https://thomascsd.github.io/blog/2018-10-31-ModulePattern">談談 JavaScript Module part1</a>。</p><h2 id="module-建立">Module 建立</h2>
+    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c919897015="" ngh="1"><div _ngcontent-ng-c919897015="" class="post__image-fullwidth"><img _ngcontent-ng-c919897015="" class="post__image" src="/images/08/08-0.jpg" alt="談談JavaScript Module part2"></div><article _ngcontent-ng-c919897015=""><header _ngcontent-ng-c919897015="" class="post__header"><div _ngcontent-ng-c919897015="" class="post__date">2018-12-23</div><h1 _ngcontent-ng-c919897015="" class="post__title">談談JavaScript Module part2</h1></header><div _ngcontent-ng-c919897015="" class="post__content"><analog-markdown _ngcontent-ng-c919897015="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>這篇會繼續上篇的主題：Module，這篇會講述 ES6（ES2015）Module 寫法，而上一篇是<a href="https://thomascsd.github.io/blog/2018-10-31-ModulePattern">談談 JavaScript Module part1</a>。</p><h2 id="module-建立">Module 建立</h2>
 <pre><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token string">'Hello'</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">function</span> doSomeThing <span class="token punctuation">{</span>
@@ -202,7 +203,7 @@ expot <span class="token keyword">function</span> <span class="token function">d
 <pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./scripts/index.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
 </code></pre><pre><code class="language-javascript"><span class="token keyword">const</span> $ <span class="token operator">=</span> window<span class="token punctuation">.</span>jQuery<span class="token punctuation">;</span>
-</code></pre><p>是用 CDN 的方式將 jQuery 戴入，在 index.js 中需指派$ = window.jQuery，因為在 Module 中無法取得全域變數，所以換個方式，用 window.jQuery 取得 jQuery 物件。</p><h2 id="結論-18">結論</h2>
+</code></pre><p>是用 CDN 的方式將 jQuery 戴入，在 index.js 中需指派$ = window.jQuery，因為在 Module 中無法取得全域變數，所以換個方式，用 window.jQuery 取得 jQuery 物件。</p><h2 id="結論-11">結論</h2>
 <p>現在幾乎每個瀏覽器都支援原生戴入 Module，說不定未來不用任何工具，就可以開發 Web Application。</p></div> </analog-markdown></div></article><!----></app-blog-post><!----></div></main><footer _ngcontent-ng-c1425333472=""><small _ngcontent-ng-c1425333472="">© 2026 · Contact: <a _ngcontent-ng-c1425333472="" href="https://github.com/thomascsd" rel="noopener" target="_blank">GitHub</a></small></footer></app-layout></app-root>
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 
@@ -210,4 +211,4 @@ expot <span class="token keyword">function</span> <span class="token function">d
 </script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
   
 
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c4148159750","r":1}]}}]}</script></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c919897015","r":1}]}}]}</script></body></html>

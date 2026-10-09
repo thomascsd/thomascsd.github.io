@@ -1,9 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
-    <title>Thomas Blog</title>
+    <title>Ts.ED 設定 middleware｜Thomas Blog</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Thomas Blog RSS Feed" href="/api/rss.xml">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
@@ -16,7 +17,7 @@
 
       gtag('config', 'G-704JZ9KNS1');
     </script>
-    <script type="module" crossorigin="" src="/assets/index-CwsdFOqf.js"></script>
+    <script type="module" crossorigin="" src="/assets/index-Cmij_Sf3.js"></script>
     <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
   <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
       --bg: #ffffff;
@@ -119,9 +120,9 @@
     @media (max-width: 640px) {
       nav[_ngcontent-ng-c1425333472] { flex-wrap: wrap; }
       .theme-toggle[_ngcontent-ng-c1425333472] { margin-left: 0; }
-    }</style><style>[_nghost-ng-c4148159750] { display: block; }
+    }</style><style>[_nghost-ng-c919897015] { display: block; }
 
-    .post__image-fullwidth[_ngcontent-ng-c4148159750] {
+    .post__image-fullwidth[_ngcontent-ng-c919897015] {
       width: 100vw;
       position: relative;
       left: 50%;
@@ -132,7 +133,7 @@
       overflow: hidden;
     }
 
-    .post__image[_ngcontent-ng-c4148159750] {
+    .post__image[_ngcontent-ng-c919897015] {
       width: 100%;
       height: auto;
       max-height: 50vh;
@@ -140,35 +141,35 @@
       display: block;
     }
 
-    article[_ngcontent-ng-c4148159750] {
+    article[_ngcontent-ng-c919897015] {
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
-    .post__header[_ngcontent-ng-c4148159750] {
+    .post__header[_ngcontent-ng-c919897015] {
       margin-bottom: 2rem;
     }
 
-    .post__date[_ngcontent-ng-c4148159750] {
+    .post__date[_ngcontent-ng-c919897015] {
       color: var(--muted);
       font-size: 1.15rem;
       margin-bottom: 0.5rem;
     }
 
-    .post__title[_ngcontent-ng-c4148159750] {
+    .post__title[_ngcontent-ng-c919897015] {
       font-size: 2.5rem;
       font-weight: 700;
       line-height: 1.2;
       margin: 0;
     }
 
-    .post__content[_ngcontent-ng-c4148159750] {
+    .post__content[_ngcontent-ng-c919897015] {
       line-height: 1.7;
-    }</style></head>
+    }</style><meta name="description" content="之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。 根據官方文件，middleware 分為 Global middlewar"><link rel="canonical" href="https://thomascsd.github.io/blog/2025-11-17-tsed-middleware/"><meta property="og:title" content="Ts.ED 設定 middleware｜Thomas Blog"><meta property="og:description" content="之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。 根據官方文件，middleware 分為 Global middlewar"><meta property="og:url" content="https://thomascsd.github.io/blog/2025-11-17-tsed-middleware/"><meta property="og:type" content="article"><meta property="og:image" content="https://thomascsd.github.io/images/34/34-00.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ts.ED 設定 middleware｜Thomas Blog"><meta name="twitter:description" content="之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。 根據官方文件，middleware 分為 Global middlewar"><meta name="twitter:image" content="https://thomascsd.github.io/images/34/34-00.jpg"><meta property="article:published_time" content="2025-11-17"><meta property="article:modified_time" content="2025-11-17"><meta property="article:author" content="Thomas"><script type="application/ld+json" data-seo="blog-posting">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Ts.ED 設定 middleware","description":"之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。 根據官方文件，middleware 分為 Global middlewar","datePublished":"2025-11-17","dateModified":"2025-11-17","author":{"@type":"Person","name":"Thomas"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thomascsd.github.io/blog/2025-11-17-tsed-middleware/"},"image":"https://thomascsd.github.io/images/34/34-00.jpg"}</script></head>
   <body><!--nghm-->
-    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c4148159750="" ngh="1"><div _ngcontent-ng-c4148159750="" class="post__image-fullwidth"><img _ngcontent-ng-c4148159750="" class="post__image" src="/images/34/34-00.png" alt="Ts.ED 設定 middleware"></div><article _ngcontent-ng-c4148159750=""><header _ngcontent-ng-c4148159750="" class="post__header"><div _ngcontent-ng-c4148159750="" class="post__date">2025-11-17</div><h1 _ngcontent-ng-c4148159750="" class="post__title">Ts.ED 設定 middleware</h1></header><div _ngcontent-ng-c4148159750="" class="post__content"><analog-markdown _ngcontent-ng-c4148159750="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。</p><p>根據<a href="https://tsed.dev/docs/middlewares.html">官方文件</a>，middleware 分為 Global middleware 和 Endpoint middleware 兩種。而 Gobal middleware 需在 <code>Server</code>上的 <code>@Configuration</code>  中透過 <code>middlewares</code> 屬性設定。然而，我按照文件範例將自訂 middleware 加入 <code>middlewares</code> 後，發現 middleware 並未如預期般觸發。</p><p>另一種是 Endpoint middleware，它使用 <code>@UseBefore</code> 裝飾器(decorator)設定在 Controller 上。我認為這種方式更符合我當前的專案需求。</p><p>這是因為我的專案採用了類似 sub-controller 的架構：先建立一個基礎 <code>ApiController</code>（路由設為 <code>/api</code>），而其他 <code>Controller</code> 都設定）在它之下。</p><p>因此，解決方案是直接在 <code>ApiController</code> 上使用 <code>@UseBefore</code>，並傳入自訂的 middleware。這樣一來，所有使用 <code>/api</code> 路徑的子路由都能自動套用此 middleware。</p><pre><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">UseBefore</span></span><span class="token punctuation">(</span>ApiKeyMiddleware<span class="token punctuation">)</span>
+    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c919897015="" ngh="1"><div _ngcontent-ng-c919897015="" class="post__image-fullwidth"><img _ngcontent-ng-c919897015="" class="post__image" src="/images/34/34-00.jpg" alt="Ts.ED 設定 middleware"></div><article _ngcontent-ng-c919897015=""><header _ngcontent-ng-c919897015="" class="post__header"><div _ngcontent-ng-c919897015="" class="post__date">2025-11-17</div><h1 _ngcontent-ng-c919897015="" class="post__title">Ts.ED 設定 middleware</h1></header><div _ngcontent-ng-c919897015="" class="post__content"><analog-markdown _ngcontent-ng-c919897015="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>之前的文章介紹過 Ts.ED，它是一個建構在 express.js 或是 koa.js 之上，並添加許多便利功能的 TypeScript 框架。最近在設定自訂 middleware 時，我發現了一個不錯的作法，特此記錄下來。</p><p>根據<a href="https://tsed.dev/docs/middlewares.html">官方文件</a>，middleware 分為 Global middleware 和 Endpoint middleware 兩種。而 Gobal middleware 需在 <code>Server</code>上的 <code>@Configuration</code>  中透過 <code>middlewares</code> 屬性設定。然而，我按照文件範例將自訂 middleware 加入 <code>middlewares</code> 後，發現 middleware 並未如預期般觸發。</p><p>另一種是 Endpoint middleware，它使用 <code>@UseBefore</code> 裝飾器(decorator)設定在 Controller 上。我認為這種方式更符合我當前的專案需求。</p><p>這是因為我的專案採用了類似 sub-controller 的架構：先建立一個基礎 <code>ApiController</code>（路由設為 <code>/api</code>），而其他 <code>Controller</code> 都設定）在它之下。</p><p>因此，解決方案是直接在 <code>ApiController</code> 上使用 <code>@UseBefore</code>，並傳入自訂的 middleware。這樣一來，所有使用 <code>/api</code> 路徑的子路由都能自動套用此 middleware。</p><pre><code class="language-typescript"><span class="token decorator"><span class="token at operator">@</span><span class="token function">UseBefore</span></span><span class="token punctuation">(</span>ApiKeyMiddleware<span class="token punctuation">)</span>
 <span class="token decorator"><span class="token at operator">@</span><span class="token function">Controller</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   path<span class="token operator">:</span> <span class="token string">'/api'</span><span class="token punctuation">,</span>
   children<span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -186,4 +187,4 @@
 </script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
   
 
-<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c4148159750","r":1}]}}]}</script></body></html>
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c919897015","r":1}]}}]}</script></body></html>
