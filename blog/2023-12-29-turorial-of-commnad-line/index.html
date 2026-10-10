@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>.NET 好用套件 - commandline｜Thomas Blog</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Thomas Blog RSS Feed" href="/api/rss.xml">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-704JZ9KNS1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-704JZ9KNS1');
+    </script>
+    <script type="module" crossorigin="" src="/assets/index-Cmij_Sf3.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-mVzQNABK.css">
+  <style>[_nghost-ng-c3984273398] { display: block; }</style><style>[_nghost-ng-c1425333472] {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --link: #2563eb;
+      display: block;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    [data-theme='dark'][_nghost-ng-c1425333472] {
+      --bg: #0b0f1a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1f2937;
+      --link: #60a5fa;
+    }
+
+    header[_ngcontent-ng-c1425333472] {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      width: 100vw;
+      left: 0;
+    }
+
+    .nav-wrap[_ngcontent-ng-c1425333472] {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 2rem 1rem 2rem;
+    }
+
+    nav[_ngcontent-ng-c1425333472] {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    nav[_ngcontent-ng-c1425333472]   a[_ngcontent-ng-c1425333472] {
+      padding: 0.5rem 0.25rem;
+      text-decoration: none;
+      color: var(--text);
+      border-bottom: 2px solid transparent;
+      font-size: 1.08rem;
+    }
+
+    nav[_ngcontent-ng-c1425333472]   a.active[_ngcontent-ng-c1425333472] {
+      border-bottom-color: var(--link);
+      color: var(--link);
+    }
+
+    .theme-toggle[_ngcontent-ng-c1425333472] {
+      margin-left: 1.5rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .theme-toggle[_ngcontent-ng-c1425333472]:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    main[_ngcontent-ng-c1425333472] {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    .main-inner[_ngcontent-ng-c1425333472] {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer[_ngcontent-ng-c1425333472] {
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      nav[_ngcontent-ng-c1425333472] { flex-wrap: wrap; }
+      .theme-toggle[_ngcontent-ng-c1425333472] { margin-left: 0; }
+    }</style><style>[_nghost-ng-c919897015] { display: block; }
+
+    .post__image-fullwidth[_ngcontent-ng-c919897015] {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+
+    .post__image[_ngcontent-ng-c919897015] {
+      width: 100%;
+      height: auto;
+      max-height: 50vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    article[_ngcontent-ng-c919897015] {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .post__header[_ngcontent-ng-c919897015] {
+      margin-bottom: 2rem;
+    }
+
+    .post__date[_ngcontent-ng-c919897015] {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post__title[_ngcontent-ng-c919897015] {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .post__content[_ngcontent-ng-c919897015] {
+      line-height: 1.7;
+    }</style><meta name="description" content="在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件System.CommandLine，但覺得沒有很好使用，之前有發現一個套件 commandline，設定及讀取參考很簡單易用，寫篇心得文分享一下。"><link rel="canonical" href="https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line/"><meta property="og:title" content=".NET 好用套件 - commandline｜Thomas Blog"><meta property="og:description" content="在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件System.CommandLine，但覺得沒有很好使用，之前有發現一個套件 commandline，設定及讀取參考很簡單易用，寫篇心得文分享一下。"><meta property="og:url" content="https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line/"><meta property="og:type" content="article"><meta property="og:image" content="https://thomascsd.github.io/images/29/29-0.jpeg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content=".NET 好用套件 - commandline｜Thomas Blog"><meta name="twitter:description" content="在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件System.CommandLine，但覺得沒有很好使用，之前有發現一個套件 commandline，設定及讀取參考很簡單易用，寫篇心得文分享一下。"><meta name="twitter:image" content="https://thomascsd.github.io/images/29/29-0.jpeg"><meta property="article:published_time" content="2023-12-29"><meta property="article:modified_time" content="2023-12-29"><meta property="article:author" content="Thomas"><script type="application/ld+json" data-seo="blog-posting">{"@context":"https://schema.org","@type":"BlogPosting","headline":".NET 好用套件 - commandline","description":"在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件System.CommandLine，但覺得沒有很好使用，之前有發現一個套件 commandline，設定及讀取參考很簡單易用，寫篇心得文分享一下。","datePublished":"2023-12-29","dateModified":"2023-12-29","author":{"@type":"Person","name":"Thomas"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thomascsd.github.io/blog/2023-12-29-turorial-of-commnad-line/"},"image":"https://thomascsd.github.io/images/29/29-0.jpeg"}</script></head>
+  <body><!--nghm-->
+    <app-root ng-version="21.0.1" _nghost-ng-c3984273398="" ngh="0" ng-server-context="ssr-analog"><app-layout _ngcontent-ng-c3984273398="" _nghost-ng-c1425333472="" data-theme="light" ngh="2"><header _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="nav-wrap"><nav _ngcontent-ng-c1425333472="" aria-label="Primary"><div _ngcontent-ng-c1425333472="" id="docsearch"></div><a _ngcontent-ng-c1425333472="" routerlink="/" routerlinkactive="active" href="/" class="active" jsaction="click:;">Blog</a><a _ngcontent-ng-c1425333472="" routerlink="/tags" routerlinkactive="active" href="/tags" class="" jsaction="click:;">Tags</a><a _ngcontent-ng-c1425333472="" routerlink="/about" routerlinkactive="active" href="/about" class="" jsaction="click:;">About</a><button _ngcontent-ng-c1425333472="" type="button" class="theme-toggle" aria-pressed="false" jsaction="click:;"> Light </button></nav></div></header><main _ngcontent-ng-c1425333472=""><div _ngcontent-ng-c1425333472="" class="main-inner"><router-outlet _ngcontent-ng-c1425333472=""></router-outlet><app-blog-post _nghost-ng-c919897015="" ngh="1"><div _ngcontent-ng-c919897015="" class="post__image-fullwidth"><img _ngcontent-ng-c919897015="" class="post__image" src="/images/29/29-0.jpeg" alt=".NET 好用套件 - commandline"></div><article _ngcontent-ng-c919897015=""><header _ngcontent-ng-c919897015="" class="post__header"><div _ngcontent-ng-c919897015="" class="post__date">2023-12-29</div><h1 _ngcontent-ng-c919897015="" class="post__title">.NET 好用套件 - commandline</h1></header><div _ngcontent-ng-c919897015="" class="post__content"><analog-markdown _ngcontent-ng-c919897015="" ngh="0" jsaction="click:;"> <div class="analog-markdown"><p>在.NET Framework 的時候，沒有內建的 CLI 指令參數解析，再到.NET Core 時，雖然有個套件<a href="https://www.nuget.org/packages/System.CommandLine">System.CommandLine</a>，但覺得沒有很好使用，之前有發現一個套件 <a href="https://github.com/commandlineparser/commandline">commandline</a>，設定及讀取參考很簡單易用，寫篇心得文分享一下。</p><h2 id="設定-1">設定</h2>
+<pre><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DefaultOptions</span>
+    <span class="token punctuation">{</span>
+
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'n'</span><span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> Required <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> HelpText <span class="token operator">=</span> <span class="token string">"名稱"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Name <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'r'</span><span class="token punctuation">,</span> <span class="token string">"retry"</span><span class="token punctuation">,</span> HelpText <span class="token operator">=</span> <span class="token string">"是否要重新執行"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">bool</span></span> Retry <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'d'</span><span class="token punctuation">,</span> <span class="token string">"date"</span><span class="token punctuation">,</span> HelpText <span class="token operator">=</span> <span class="token string">"要執行的日期"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Date <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>首先建立 Options 類別，<code>Commandline</code>會透過 <code>Attribute</code>將屬性和 CLI 參數對應，可以參考<a href="https://github.com/commandlineparser/commandline/wiki/Option-Attribute">文件</a>，所以第一個參數設定簡短名稱，第二個參數設定完整名稱，看起來很淺顯易懂。</p><h2 id="解析參數">解析參數</h2>
+<pre><code class="language-csharp"><span class="token keyword">await</span> Parser<span class="token punctuation">.</span>Default<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">ParseArguments</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>DefaultOptions<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">WithParsedAsync</span><span class="token punctuation">(</span>RunJob<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">RunJob</span><span class="token punctuation">(</span><span class="token class-name">DefaultOptions</span> options<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">//do something</span>
+    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"name:</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">options<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>使用<code>ParseArguments</code> 及 <code>WithParsedAsync</code>來解析參數，並取得 options 物件，也是很淺顯易懂的。</p><img class="img-responsive" loading="lazy" src="/images/29/29-1.png">
+
+<p>接著就可以使用熟悉的 <a href="https://github.com/commandlineparser/commandline/wiki/CommandLine-Grammar">unix style</a> 方式設定參數來執行。</p><h2 id="另一種方式">另一種方式</h2>
+<img class="img-responsive" loading="lazy" src="/images/29/29-2.png">
+
+<p>有時會需要根據不同的參數，取得不同的 Options 物件。看了一下原始檔，發現 <code>ParseArguments</code> 還有另一個多戴方法，可傳入 factory 工廠方式，來決定傳出的 Options 物件。</p><pre><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ActionAOptions</span><span class="token punctuation">:</span> <span class="token type-list"><span class="token class-name">DefaultOptions</span></span>
+ <span class="token punctuation">{</span>
+        <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">Option</span><span class="token attribute-arguments"><span class="token punctuation">(</span><span class="token char">'a'</span><span class="token punctuation">,</span> <span class="token string">"action"</span><span class="token punctuation">)</span></span></span><span class="token punctuation">]</span>
+        <span class="token keyword">public</span> <span class="token return-type class-name"><span class="token keyword">string</span></span> Action <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+<span class="token keyword">await</span> Parser<span class="token punctuation">.</span>Default<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">ParseArguments</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>DefaultOptions<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token function">SelectOptions</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token function">WithParsedAsync</span><span class="token punctuation">(</span>RunJob2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token return-type class-name">Task</span> <span class="token function">RunJob2</span><span class="token punctuation">(</span><span class="token class-name">DefaultOptions</span> options<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword">var</span></span> actionOptions <span class="token operator">=</span> <span class="token punctuation">(</span>ActionAOptions<span class="token punctuation">)</span>options<span class="token punctuation">;</span>
+
+    <span class="token comment">//do something</span>
+    Console<span class="token punctuation">.</span><span class="token function">WriteLine</span><span class="token punctuation">(</span><span class="token interpolation-string"><span class="token string">$"name:</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">actionOptions<span class="token punctuation">.</span>Name</span><span class="token punctuation">}</span></span><span class="token string">, action:</span><span class="token interpolation"><span class="token punctuation">{</span><span class="token expression language-csharp">actionOptions<span class="token punctuation">.</span>Action</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token return-type class-name">Func<span class="token punctuation">&lt;</span>DefaultOptions<span class="token punctuation">&gt;</span></span> <span class="token function">SelectOptions</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span> args<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    <span class="token punctuation">{</span>
+        <span class="token class-name"><span class="token keyword">var</span></span> isAction <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">?.</span><span class="token function">IndexOf</span><span class="token punctuation">(</span><span class="token string">"action"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>isAction<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ActionAOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">DefaultOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><img class="img-responsive" loading="lazy" src="/images/29/29-3.png">
+
+<p>如同上面的程式碼，可以根據不同名稱，取回不同的 options 物件，例如名稱(-n/--name)為 action 時，可以多傳入參數 action。</p><h2 id="結論-26">結論</h2>
+<p>總結來說，使用命令列參數解析工具可以讓我們更輕鬆地處理參數，這不僅讓程式碼更易讀，也讓程式開發更加輕鬆。藉由簡單的設定和解析過程，我們能夠更專注於實際的工作。這種方式不僅提高了效率，同時也增加了程式碼的整體易讀性。</p></div> </analog-markdown></div></article><!----></app-blog-post><!----></div></main><footer _ngcontent-ng-c1425333472=""><small _ngcontent-ng-c1425333472="">© 2026 · Contact: <a _ngcontent-ng-c1425333472="" href="https://github.com/thomascsd" rel="noopener" target="_blank">GitHub</a></small></footer></app-layout></app-root>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+    <script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
+</script><script>window.__jsaction_bootstrap(document.body,"ng",["click"],[]);</script>
+  
+
+<script id="ng-state" type="application/json">{"__nghData__":[{},{"t":{"0":"t4"},"c":{"0":[{"i":"t4","r":2}]}},{"c":{"14":[{"i":"c919897015","r":1}]}}]}</script></body></html>
