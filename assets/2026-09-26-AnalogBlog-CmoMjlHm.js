@@ -44,11 +44,11 @@ tags: ['Angular']
   <span class="token keyword">readonly</span> post$ <span class="token operator">=</span> <span class="token generic-function"><span class="token function">injectContent</span><span class="token generic class-name"><span class="token operator">&lt;</span>PostAttributes<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">'slug'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><p>所有的 Markdown 文章都統一存放在 <code>src/content</code> 目錄中。我們可以在文章開頭使用 YAML Frontmatter 來定義自訂欄位，例如封面圖片 <code>bgImageUrl</code>，在 <code>[slug].page.ts</code> 中，就能直接透過 <code>post.attributes.bgImageUrl</code> 取得 Frontmatter 定義的值。</p><pre><code class="language-yaml">
-title: 使用 Analog.js 建立 Blog
-bgImageUrl: /images/36/36-00.jpg
-description: 選擇 Analog.js，主要是看中它的兩大核心特性：File-based Routing...
-slug: 2026-09-26-analog-js-blog
-tags: [&#39;Angular&#39;]
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 使用 Analog.js 建立 Blog
+<span class="token key atrule">bgImageUrl</span><span class="token punctuation">:</span> /images/36/36<span class="token punctuation">-</span>00.jpg
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 選擇 Analog.js，主要是看中它的兩大核心特性：File<span class="token punctuation">-</span>based Routing<span class="token punctuation">...</span>
+<span class="token key atrule">slug</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>09<span class="token punctuation">-</span>26<span class="token punctuation">-</span>analog<span class="token punctuation">-</span>js<span class="token punctuation">-</span>blog
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Angular'</span><span class="token punctuation">]</span>
 </code></pre><img class="img-responsive" loading="lazy" src="/images/36/36-5.png">
 
 
